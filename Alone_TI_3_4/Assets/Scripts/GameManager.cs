@@ -4,17 +4,29 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
     public Barra_Status barraVida;
     public Barra_Status barraFome;
     public Barra_Status barraSede;
     public Barra_Status barra_Temp;
+    
 
     public int vida = 100;
     public int fome = 50;
     public int sede = 50;
     public float tempMin = -50.00f;
     public float tempMax =  50.00f;
-
+    /*void atualizarTemp(){
+        if(Hud != null){
+            Hud.instance.UpdateHud(tempMax);
+            if(instance == null){
+                instance = this;
+            }else{
+                Destroy(this.gameObject);
+            }
+            DontDestroyOnLoad(this.gameObject);
+        }
+    }*/
     void Start()
     {
         vida = 100;
