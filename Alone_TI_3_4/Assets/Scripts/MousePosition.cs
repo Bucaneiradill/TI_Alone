@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -5,7 +6,7 @@ public class MousePosition : MonoBehaviour
 {
     [SerializeField] Camera mainCamera;
     [SerializeField] LayerMask layerMask;
-    [SerializeField] PlayerMovement playerMovement;
+    [SerializeField] PlayerActions player;
     [SerializeField] NavMeshAgent agent;
 
     void Update()
@@ -16,11 +17,13 @@ public class MousePosition : MonoBehaviour
         {
             transform.position = rayCastHit.point;
             //Verificando o input e qual layer está sendo atingida
-            if (Input.GetMouseButtonDown(1) && 
-                rayCastHit.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
+            if (Input.GetMouseButtonDown(0))
             {
-                //Ao clicar com o botão direito, cria o destino do player
                 agent.SetDestination(rayCastHit.point);
+                if (rayCastHit.collider.gameObject.layer == LayerMask.NameToLayer("Tree"))
+                {
+                    player.CutTree();
+                }
             }
         }
     }
