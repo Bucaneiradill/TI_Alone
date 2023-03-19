@@ -158,7 +158,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 192
-  player: {fileID: 796091414}
+  playerActions: {fileID: 796091414}
   agent: {fileID: 796091415}
 --- !u!23 &416151223
 MeshRenderer:
@@ -547,6 +547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3e244556f4b63140a3f45b4c7698bf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerAgent: {fileID: 416151221}
 --- !u!195 &796091415
 NavMeshAgent:
   m_ObjectHideFlags: 0
