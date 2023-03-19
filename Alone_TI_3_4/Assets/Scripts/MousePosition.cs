@@ -6,8 +6,9 @@ public class MousePosition : MonoBehaviour
 {
     [SerializeField] Camera mainCamera;
     [SerializeField] LayerMask layerMask;
-    [SerializeField] PlayerActions player;
-    [SerializeField] NavMeshAgent agent;
+    [SerializeField] PlayerActions playerActions;
+    GameObject targetObj;
+    public NavMeshAgent agent;
 
     void Update()
     {
@@ -16,13 +17,15 @@ public class MousePosition : MonoBehaviour
         if(Physics.Raycast(ray, out RaycastHit rayCastHit, float.MaxValue, layerMask))
         {
             transform.position = rayCastHit.point;
-            //Verificando o input e qual layer está sendo atingida
+            //Verificando o input
             if (Input.GetMouseButtonDown(0))
             {
                 agent.SetDestination(rayCastHit.point);
-                if (rayCastHit.collider.gameObject.layer == LayerMask.NameToLayer("Tree"))
+                //Pegando referência do objeto pai do GameObject pra n interagir só com o tronco da árvore
+                targetObj = rayCastHit.collider.gameObject;
+                if (targetObj.layer == LayerMask.NameToLayer("Tree") && playerActions != null)
                 {
-                    player.CutTree();
+                    playerActions.SetTarget(targetObj.transform.parent.gameObject);
                 }
             }
         }
