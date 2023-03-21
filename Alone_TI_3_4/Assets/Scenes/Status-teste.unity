@@ -152,10 +152,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d1318fd0995f01478c4f4065613fd41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barraVida: {fileID: 476615008}
-  barraFome: {fileID: 1788808737}
-  barraSede: {fileID: 1247859243}
-  barra_Temp: {fileID: 344967807}
+  SliderVida: {fileID: 476615008}
+  SliderFome: {fileID: 1788808737}
+  SliderSede: {fileID: 1247859243}
+  SliderTemp: {fileID: 344967807}
   vida: 100
   fome: 50
   sede: 50
@@ -859,6 +859,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0191c01131d9062418a212cda90a5837, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  barraVida: {fileID: 476615008}
+  barraFome: {fileID: 1788808737}
+  barraSede: {fileID: 1247859243}
+  barra_Temp: {fileID: 344967807}
 --- !u!1 &915131810
 GameObject:
   m_ObjectHideFlags: 0
@@ -1465,8 +1469,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 122.17999, y: -41.3349}
-  m_SizeDelta: {x: 89.46921, y: 27.955597}
+  m_AnchoredPosition: {x: 122.18, y: -37.7911}
+  m_SizeDelta: {x: 89.469, y: 35.0433}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1385051046
 MonoBehaviour:

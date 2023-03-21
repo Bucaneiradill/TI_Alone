@@ -5,10 +5,10 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public Barra_Status barraVida;
-    public Barra_Status barraFome;
-    public Barra_Status barraSede;
-    public Barra_Status barra_Temp;
+    public Barra_Status SliderVida;
+    public Barra_Status SliderFome;
+    public Barra_Status SliderSede;
+    public Barra_Status SliderTemp;
     
 
     public int vida = 100;
@@ -16,66 +16,79 @@ public class GameManager : MonoBehaviour
     public int sede = 50;
     public float tempMin = -50.00f;
     public float tempMax =  50.00f;
-    /*void atualizarTemp(){
-        if(Hud != null){
-            Hud.instance.UpdateHud(tempMax);
-            if(instance == null){
-                instance = this;
-            }else{
-                Destroy(this.gameObject);
-            }
-            DontDestroyOnLoad(this.gameObject);
+    
+    void Awake(){
+        if(instance == null){
+            instance = this;
+        }else{
+            Destroy(gameObject);
         }
-    }*/
+        DontDestroyOnLoad(this.gameObject);
+    }
+    public void addVida()
+    {
+        vida += 1;
+        Hud.instance.UpdateVidaHud(vida);
+    }
+    public void addFome()
+    {
+        fome += 0;
+        Hud.instance.UpdateFomeHud(fome);
+    }
+    public void addSede()
+    {
+        sede += 0;
+        Hud.instance.UpdateSedeHud(sede);
+    }
+    public void addTemp()
+    {
+        tempMax += 0f;
+        tempMin -= 0f;
+        Hud.instance.UpdateTempHud(tempMax, tempMin);
+    }
     void Start()
     {
-        vida = 100;
-        barraVida.ColocarStatusMaxima(vida);
-        fome = 50;
-        barraFome.ColocarStatusMaxima(fome);
-        sede = 50;
-        barraSede.ColocarStatusMaxima(sede);
-        tempMin = -50.00f;
-        tempMax =  50.00f;
-        barra_Temp.ColocarTempMaxima(tempMax);
-        barra_Temp.ColocarTempMinimo(tempMin);
+        addVida();
+        addFome();
+        addSede();
+        addTemp();
+    
     }
 
-    // Update is called once per frame
     void Update()
     {
         //estrutura exemplo de condição de dano e testes
         if(Input.GetKeyDown(KeyCode.D)){
             vida -= 10;
-            barraVida.AlterarStatus(vida);
+            SliderVida.AlterarStatus(vida);
         }
          if(Input.GetKeyDown(KeyCode.E)){
             vida += 10;
-            barraVida.AlterarStatus(vida);
+            SliderVida.AlterarStatus(vida);
         }
         if(Input.GetKeyDown(KeyCode.A)){
             fome -= 10;
-            barraFome.AlterarStatus(fome);
+            SliderFome.AlterarStatus(fome);
         }
         if(Input.GetKeyDown(KeyCode.Q)){
             fome += 10;
-            barraFome.AlterarStatus(fome);
+            SliderFome.AlterarStatus(fome);
         }
         if(Input.GetKeyDown(KeyCode.S)){
             sede -= 10;
-            barraSede.AlterarStatus(sede);
+           SliderSede.AlterarStatus(sede);
         }
         if(Input.GetKeyDown(KeyCode.W)){
             sede += 10;
-            barraSede.AlterarStatus(sede);
+            SliderSede.AlterarStatus(sede);
         }
         if(Input.GetKeyDown(KeyCode.UpArrow)){
-            tempMax += 10f;
-            barra_Temp.AlterarStatusFlo(tempMax);
+            tempMax += 5f;
+            SliderTemp.AlterarStatusFlo(tempMax);
         }
         if(Input.GetKeyDown(KeyCode.DownArrow)){
-            tempMax -= 10f;
-            barra_Temp.AlterarStatusFlo(tempMax);
+            tempMax -= 5f;
+            SliderTemp.AlterarStatusFlo(tempMax);
         }
     }
 }
