@@ -25,7 +25,7 @@ public class MousePosition : MonoBehaviour
                 targetObj = rayCastHit.collider.gameObject;
                 if (targetObj.layer == LayerMask.NameToLayer("Tree") && playerActions != null)
                 {
-                    playerActions.SetTarget(targetObj.transform.parent.gameObject);
+                    playerActions.SetTarget(targetObj);
                 }
             }
         }

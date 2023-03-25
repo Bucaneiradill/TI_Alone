@@ -26,7 +26,7 @@ public class PlayerActions : MonoBehaviour
     {
         if(!isInteracting)
         {
-            playerAgent.agent.SetDestination(target.transform.position);
+            agent.SetDestination(target.transform.position);
             isInteracting = true;
         }
         if(agent.remainingDistance < 2)
