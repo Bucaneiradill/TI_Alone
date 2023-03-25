@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -5,22 +6,23 @@ public class MousePosition : MonoBehaviour
 {
     [SerializeField] Camera mainCamera;
     [SerializeField] LayerMask layerMask;
-    [SerializeField] PlayerMovement playerMovement;
-    [SerializeField] NavMeshAgent agent;
+    [SerializeField] PlayerActions playerActions;
+    public NavMeshAgent agent;
 
     void Update()
     {
-        //Pegando o ponto em que o mouse está
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
         if(Physics.Raycast(ray, out RaycastHit rayCastHit, float.MaxValue, layerMask))
         {
             transform.position = rayCastHit.point;
-            //Verificando o input e qual layer está sendo atingida
-            if (Input.GetMouseButtonDown(1) && 
-                rayCastHit.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
+            if (Input.GetMouseButtonDown(0))
             {
-                //Ao clicar com o botão direito, cria o destino do player
                 agent.SetDestination(rayCastHit.point);
+                //targetObj = rayCastHit.collider.gameObject;
+                //if (targetObj.layer == LayerMask.NameToLayer("Tree") && playerActions != null)
+                //{
+                //    playerActions.SetTarget(targetObj);
+                //}
             }
         }
     }
