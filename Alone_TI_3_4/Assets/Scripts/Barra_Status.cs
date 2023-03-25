@@ -27,6 +27,7 @@ public class Barra_Status : MonoBehaviour
         slider.minValue = statusMin;
      }//Atera o valor usando um float
      public void AlterarStatusFlo(float statusVal){
+       
        slider.value = statusVal;
      }
 }
