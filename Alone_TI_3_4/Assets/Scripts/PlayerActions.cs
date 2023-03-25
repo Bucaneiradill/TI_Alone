@@ -29,7 +29,7 @@ public class PlayerActions : MonoBehaviour
             agent.SetDestination(target.transform.position);
             isInteracting = true;
         }
-        if(agent.remainingDistance < 2)
+        if(agent.remainingDistance < 1)
         {
             agent.SetDestination(transform.position);
             Interact(target);
@@ -39,7 +39,7 @@ public class PlayerActions : MonoBehaviour
     void Interact(GameObject target)
     {
         Destroy(target);
-        target = null;
+        this.target = null;
         isInteracting = false;
     }
 
