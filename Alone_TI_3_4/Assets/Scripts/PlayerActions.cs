@@ -8,6 +8,7 @@ public class PlayerActions : MonoBehaviour
     GameObject target;
     [SerializeField] MousePosition playerAgent;
     bool isInteracting;
+    
 
     private void Start()
     {
@@ -35,12 +36,14 @@ public class PlayerActions : MonoBehaviour
             Interact(target);
         }
     }
-
+    
+    //
     void Interact(GameObject target)
     {
         Destroy(target);
         this.target = null;
         isInteracting = false;
+        
     }
 
     public void SetTarget(GameObject target)

@@ -17,17 +17,17 @@ public class Barra_Status : MonoBehaviour
      }
      public void AlterarStatus(int statusVal){       
         slider.value = statusVal;  
-     }///Define o valor maximo da temperatura
+     }
+     //Define o valor maximo da temperatura
      public void ColocarTempMaxima(float statusMax){
         slider.maxValue = statusMax;
-        slider.value = 0f;
      }
      //Define o valor minimo da temperatura
      public void ColocarTempMinimo(float statusMin){
         slider.minValue = statusMin;
-     }//Atera o valor usando um float
-     public void AlterarStatusFlo(float statusVal){
-       
+     }
+     //Atera o valor usando um float
+     public void AlterarStatusFlo(float statusVal){    
        slider.value = statusVal;
      }
 }
