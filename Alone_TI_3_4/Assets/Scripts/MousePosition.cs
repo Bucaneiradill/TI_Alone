@@ -17,13 +17,22 @@ public class MousePosition : MonoBehaviour
             transform.position = rayCastHit.point;
             if (Input.GetMouseButtonDown(0))
             {
-                agent.SetDestination(rayCastHit.point);
-                //targetObj = rayCastHit.collider.gameObject;
-                //if (targetObj.layer == LayerMask.NameToLayer("Tree") && playerActions != null)
-                //{
-                //    playerActions.SetTarget(targetObj);
-                //}
+                Interactable interactable = rayCastHit.collider.gameObject.GetComponent<Interactable>();
+                // Debug.Log(interactable.gameObject.name);
+                // if (TryGetComponent<Interactable>(rayCastHit.transform, out Interactable interactable))
+                if (interactable != null)
+                {
+                    SetTarget(interactable);
+                } else {
+                    playerActions.RemoveTarget();
+                    playerActions.MoveToPoint(rayCastHit.point);
+                }
             }
         }
+    }
+
+    void SetTarget(Interactable newTarget)
+    {
+        playerActions.SetTarget(newTarget);
     }
 }
