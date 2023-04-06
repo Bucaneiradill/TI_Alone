@@ -152,15 +152,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d1318fd0995f01478c4f4065613fd41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SliderVida: {fileID: 476615008}
-  SliderFome: {fileID: 1788808737}
-  SliderSede: {fileID: 1247859243}
-  SliderTemp: {fileID: 344967807}
+  SliderVida: {fileID: 0}
+  SliderFome: {fileID: 0}
+  SliderSede: {fileID: 0}
+  SliderTemp: {fileID: 0}
   vida: 100
   fome: 50
   sede: 50
   tempMin: -50
   tempMax: 50
+  tempValue: 0
+  luzDirecional: {fileID: 0}
+  duracaoDia: 0
+  horarioTxt: {fileID: 0}
 --- !u!4 &96490513
 Transform:
   m_ObjectHideFlags: 0
@@ -188,7 +192,7 @@ GameObject:
   - component: {fileID: 344967808}
   - component: {fileID: 344967807}
   m_Layer: 5
-  m_Name: Slider-temp
+  m_Name: Slider-Temp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -30,4 +30,5 @@ public class Barra_Status : MonoBehaviour
      public void AlterarStatusFlo(float statusVal){    
        slider.value = statusVal;
      }
+     
 }

@@ -27,7 +27,11 @@ public class GameManager : MonoBehaviour
     public float tempValue = 0f;
     private int cont = 0;
     private int[] AtualizacaoDeVariavel = {2, 2, 2};
-    
+    //Variaveis para buscar os sliders
+    GameObject findSliderVida;
+    GameObject findSliderFome;
+    GameObject findSliderSede;
+    GameObject findSliderTemp;
     //Variaveis do sistema de dia e noite
     [Header("Variaveis do sistema de dia e noite")]
     [SerializeField] public Transform luzDirecional;
@@ -135,7 +139,7 @@ public class GameManager : MonoBehaviour
             SliderVida.AlterarStatus(vida);
         }
     }
-    public  void Comer(int val){
+    public void Comer(int val){
         if(fome == fomeMax){
             Debug.Log("Cheio");
         }else{
@@ -143,7 +147,7 @@ public class GameManager : MonoBehaviour
          SliderFome.AlterarStatus(fome);
         }
     }
-   public  void Beber(int val){
+    public void Beber(int val){
         if(sede == sedeMax){
             Debug.Log("Cheio");
         }else{
@@ -154,11 +158,23 @@ public class GameManager : MonoBehaviour
     //metodos Start e Update
     void Start()
     {
+        findSliderVida = GameObject.Find("Canvas/Slider-Vida");
+        SliderVida = findSliderVida.GetComponent<Barra_Status>();
+        findSliderFome = GameObject.Find("Canvas/Slider-Fome");
+        SliderFome = findSliderFome.GetComponent<Barra_Status>();
+        findSliderSede = GameObject.Find("Canvas/Slider-Sede");
+        SliderSede = findSliderSede.GetComponent<Barra_Status>();
+        findSliderTemp = GameObject.Find("Canvas/Slider-Temp");
+        SliderTemp = findSliderTemp.GetComponent<Barra_Status>();
+
+        //Tempo 
         multiplicador = 86400/duracaoDia;
+        //Ajustes dos sliders
         addVida();
         addFome();
         addSede();
         addTemp();
+        //Ajustes de max status
         vidaMax = vida;
         fomeMax = fome;
         sedeMax = sede;
@@ -179,5 +195,9 @@ public class GameManager : MonoBehaviour
         
         prosCeu();
         CalcHora();
+    }
+    public static void FindSlider(GameObject obj, Barra_Status slider, string sliderName){
+        obj = GameObject.Find($"Canvas/{sliderName}");
+        slider = obj.GetComponent<Barra_Status>();
     }
 }
