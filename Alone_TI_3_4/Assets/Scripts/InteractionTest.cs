@@ -23,10 +23,10 @@ public class InteractionTest : Interactable
     public override void Interact()
     {
         base.Interact();
-        GameManager.instance.Beber(10);
-        GameManager.instance.Comer(10);
+        GameManager.instance.toDrink(10);
+        GameManager.instance.toEat(10);
         Debug.Log("Comeu e Bebeu");
-        uiManager.DisplayAction($"Comida e água +10");
+        uiManager.DisplayAction($"Comida e ï¿½gua +10");
         Destroy(gameObject);
     }
 }

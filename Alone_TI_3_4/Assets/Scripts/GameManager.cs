@@ -12,33 +12,36 @@ public class GameManager : MonoBehaviour
 
     //Variaveis do sistema de status
     [Header("Variaveis do sistema de status")]
-    public Barra_Status SliderVida;
-    public Barra_Status SliderFome;
-    public Barra_Status SliderSede;
-    public Barra_Status SliderTemp;
-    public int vida = 100;
-    private int vidaMax;
-    public int fome = 50;
-    private int fomeMax;
-    public int sede = 50;
-    private int sedeMax;
+    public StatsBar SliderLife;
+    public StatsBar SliderHunger;
+    public StatsBar SliderThirst;
+    public StatsBar SliderTemp;
+    public int life = 100;
+    private int lifeMax;
+    public int hunger = 50;
+    private int hungerMax;
+    public int thirst = 50;
+    private int thirstMax;
     public float tempMin = -50.0f;
     public float tempMax =  50.0f;
     public float tempValue = 0f;
     private int cont = 0;
-    private int[] AtualizacaoDeVariavel = {2, 2, 2};
+    private int[] UpdateOfVariable = {2, 2, 2};
+    private int[] StatsMin = {0, 0, 0};
     //Variaveis para buscar os sliders
-    GameObject findSliderVida;
-    GameObject findSliderFome;
-    GameObject findSliderSede;
+    GameObject findSliderLife;
+    GameObject findSliderHunger;
+    GameObject findSliderThirst;
     GameObject findSliderTemp;
+    GameObject findDirectionalLight;
+    GameObject findTempTxt;
     //Variaveis do sistema de dia e noite
     [Header("Variaveis do sistema de dia e noite")]
-    [SerializeField] public Transform luzDirecional;
-    [SerializeField][Tooltip("Duração do dia em segundos")] private int duracaoDia;
-    [SerializeField] private TextMeshProUGUI horarioTxt;
+    [SerializeField] public Transform directionalLight;
+    [SerializeField][Tooltip("Duração do dia em segundos")] private int durationDay;
+    [SerializeField] private TextMeshProUGUI timeTxt;
 
-    private float segundos;
+    private float seconds;
     private float multiplicador;
 
     //methods
@@ -52,20 +55,20 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
     //metodos do sistema de status
-    public void addVida()
+    public void addLife()
     {
-         vida += 0;
-        Hud.instance.UpdateVidaHud(vida);
+         life += 0;
+        Hud.instance.UpdateVidaHud(life);
     }
-    public void addFome()
+    public void addHunger()
     {
-        this.fome += fome;
-        Hud.instance.UpdateFomeHud(fome);
+         hunger += 0;
+        Hud.instance.UpdateFomeHud(hunger);
     }
-    public void addSede()
+    public void addThirst()
     {
-        sede += 0;
-        Hud.instance.UpdateSedeHud(sede);
+        thirst += 0;
+        Hud.instance.UpdateSedeHud(thirst);
     }    
     public void addTemp()
     {
@@ -76,128 +79,140 @@ public class GameManager : MonoBehaviour
     //Metodos do sistema de dia e noite
     private void prosCeu()
     {
-      float rotX = Mathf.Lerp(-90, 270, segundos/86400);
-      luzDirecional.rotation = Quaternion.Euler(rotX,0,0);
+      float rotX = Mathf.Lerp(-90, 270, seconds/86400);
+      directionalLight.rotation = Quaternion.Euler(rotX,0,0);
     }
-    private void CalcHora(){
-       horarioTxt.text = TimeSpan.FromSeconds(segundos).ToString(@"hh\:mm");
+    private void CalcTime(){
+       timeTxt.text = TimeSpan.FromSeconds(seconds).ToString(@"hh\:mm");
       
     }
     //Atualizçãoes
-    private void atualizacaoDeCiclo(){
-        segundos += Time.deltaTime * multiplicador;
+    private void updateDayCycle(){
+        seconds += Time.deltaTime * multiplicador;
         
-        if(segundos > 86400){
-            segundos = 0;
+        if(seconds > 86400){
+            seconds = 0;
         }
         cont++;
         if(cont == 3600){
             //Ficar com fome
-            fome -= AtualizacaoDeVariavel[0];
-            SliderFome.AlterarStatus(fome);
+            hunger -= UpdateOfVariable[0];
+            SliderHunger.UpdateStats(hunger);
             //Ficar com sede
-            sede -= AtualizacaoDeVariavel[1];
-            SliderSede.AlterarStatus(sede);
+            thirst -= UpdateOfVariable[1];
+            SliderThirst.UpdateStats(thirst);
            temperaturaTest();
            perdaDeVida();
            cont = 0;
         }
 
-        if(fome == 0){
-            AtualizacaoDeVariavel[0] = 0; 
+        if(hunger == 0){
+            UpdateOfVariable[0] = 0; 
         }
-        if(sede == 0){
-            AtualizacaoDeVariavel[1] = 0;           
+        if(thirst == 0){
+            UpdateOfVariable[1] = 0;           
         }
         
     }
     private void perdaDeVida(){
-        if(sede == 0 || fome == 0){
-            if(vida == 0){
-                AtualizacaoDeVariavel[2]= 0;
+        if(hunger == 0 || hunger == 0){
+            if(life == 0){
+                UpdateOfVariable[2]= 0;
                 Debug.Log("Morreu");
             }
-            vida -= AtualizacaoDeVariavel[2];
-            SliderVida.AlterarStatus(vida);
+            life -= UpdateOfVariable[2];
+            SliderLife.UpdateStats(life);
         }
     }
     private void temperaturaTest(){
         if(tempValue >= 50||tempValue <= -50){
-            if(vida == 0){
-                AtualizacaoDeVariavel[2]= 0;
+            if(life == 0){
+                UpdateOfVariable[2]= 0;
                 Debug.Log("Morreu");
             }
-            vida -= AtualizacaoDeVariavel[2];
-            SliderVida.AlterarStatus(vida);
+            life -= UpdateOfVariable[2];
+            SliderLife.UpdateStats(life);
         }
     }
     public void recover(int val){
-        if(vida == vidaMax){
+        if(life == lifeMax){
             Debug.Log("Vida Maxima");
         }else{
-            vida += val;
-            SliderVida.AlterarStatus(vida);
+            life += val;
+            SliderLife.UpdateStats(life);
         }
     }
-    public void Comer(int val){
-        if(fome == fomeMax){
+    public void toEat(int val){
+        if(hunger == hungerMax){
             Debug.Log("Cheio");
         }else{
-         fome += val;
-         SliderFome.AlterarStatus(fome);
+         hunger += val;
+         SliderHunger.UpdateStats(hunger);
         }
     }
-    public void Beber(int val){
-        if(sede == sedeMax){
+    public void toDrink(int val){
+        if(thirst == thirstMax){
             Debug.Log("Cheio");
         }else{
-            sede += val;
-            SliderSede.AlterarStatus(sede);
+            thirst += val;
+            SliderThirst.UpdateStats(thirst);
         }
     }
     //metodos Start e Update
     void Start()
     {
-        findSliderVida = GameObject.Find("Canvas/Slider-Vida");
-        SliderVida = findSliderVida.GetComponent<Barra_Status>();
-        findSliderFome = GameObject.Find("Canvas/Slider-Fome");
-        SliderFome = findSliderFome.GetComponent<Barra_Status>();
-        findSliderSede = GameObject.Find("Canvas/Slider-Sede");
-        SliderSede = findSliderSede.GetComponent<Barra_Status>();
+        findSliderLife = GameObject.Find("Canvas/Slider-Vida");
+        SliderLife = findSliderLife.GetComponent<StatsBar>();
+        findSliderHunger = GameObject.Find("Canvas/Slider-Fome");
+        SliderHunger = findSliderHunger.GetComponent<StatsBar>();
+        findSliderThirst = GameObject.Find("Canvas/Slider-Sede");
+        SliderThirst = findSliderThirst.GetComponent<StatsBar>();
         findSliderTemp = GameObject.Find("Canvas/Slider-Temp");
-        SliderTemp = findSliderTemp.GetComponent<Barra_Status>();
+        SliderTemp = findSliderTemp.GetComponent<StatsBar>();
+        
+        findDirectionalLight = GameObject.Find("Directional_Light");
+        directionalLight = findDirectionalLight.GetComponent<Transform>();
+        findTempTxt = GameObject.Find("Canvas/TempoTxt");
+        timeTxt = findTempTxt.GetComponent<TextMeshProUGUI>();
 
         //Tempo 
-        multiplicador = 86400/duracaoDia;
+        durationDay = 1440;
+        multiplicador = 86400/durationDay;
         //Ajustes dos sliders
-        addVida();
-        addFome();
-        addSede();
+        addLife();
+        addHunger();
+        addThirst();
         addTemp();
         //Ajustes de max status
-        vidaMax = vida;
-        fomeMax = fome;
-        sedeMax = sede;
+        lifeMax = life;
+        hungerMax = hunger;
+        thirstMax = thirst;
         
     }
     void Update()
     {
-        if(vida > vidaMax){
-            vida = vidaMax;
+        if(life > lifeMax){
+            life = lifeMax;
         }
-        if(fome > fomeMax){
-            fome = fomeMax;
+        if(hunger > hungerMax){
+            hunger = hungerMax;
         }
-        if(sede > sedeMax){
-            sede = sedeMax;
+        if(thirst > thirstMax){
+            thirst = thirstMax;
         }
-        atualizacaoDeCiclo();
+        if(hunger < StatsMin[0]){
+            hunger = StatsMin[0];
+        }
+        if(thirst < StatsMin[1]){
+            thirst = StatsMin[1];
+        }
+        updateDayCycle();
         
         prosCeu();
-        CalcHora();
+        CalcTime();
     }
-    public static void FindSlider(GameObject obj, Barra_Status slider, string sliderName){
+    public static void FindSlider(GameObject obj, StatsBar slider, string sliderName){
         obj = GameObject.Find($"Canvas/{sliderName}");
-        slider = obj.GetComponent<Barra_Status>();
+        slider = obj.GetComponent<StatsBar>();
     }
 }

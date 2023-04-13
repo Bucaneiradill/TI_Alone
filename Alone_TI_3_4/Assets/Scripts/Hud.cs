@@ -5,36 +5,36 @@ using UnityEngine;
 public class Hud : MonoBehaviour
 {
    public static Hud instance;
-   public Barra_Status barraVida;
-   public Barra_Status barraFome;
-   public Barra_Status barraSede;
-   public Barra_Status barra_Temp;
+   public StatsBar lifeBar;
+   public StatsBar hungerBar;
+   public StatsBar thirstBar;
+   public StatsBar tempBar;
 
    void Awake(){
       instance = this;
    }
-   public void ColocaStatMax(Barra_Status stat, int val){
-      stat.ColocarStatusMaxima(val);
+   public void ColocaStatMax(StatsBar stat, int val){
+      stat.SetStatsMax(val);
    }
-   public void ColocaStatTemp(Barra_Status stat, float valMax, float valMin, float valIni){
-      stat.ColocarTempMaxima(valMax);
-      stat.ColocarTempMinimo(valMin);
-      stat.AlterarStatusFlo(valIni);
+   public void ColocaStatTemp(StatsBar stat, float valMax, float valMin, float valIni){
+      stat.SetTempMax(valMax);
+      stat.SetTempMin(valMin);
+      stat.UpdateStatsFloat(valIni);
    }
    /*public void ColocaStatMinTemp(Barra_Status stat, float val){
       stat.ColocarTempMinimo(val);
    }*/
    
    public void UpdateVidaHud(int vida){
-        ColocaStatMax(barraVida, vida);
+        ColocaStatMax(lifeBar, vida);
    }
    public void UpdateFomeHud(int fome){
-        ColocaStatMax(barraFome, fome); 
+        ColocaStatMax(hungerBar, fome); 
    }
    public void UpdateSedeHud(int sede){
-        ColocaStatMax(barraSede, sede); 
+        ColocaStatMax(thirstBar, sede); 
    }
    public void UpdateTempHud(float tempMax, float tempMin, float tempValue){
-        ColocaStatTemp(barra_Temp, tempMax, tempMin, tempValue);
+        ColocaStatTemp(tempBar, tempMax, tempMin, tempValue);
    }
 }

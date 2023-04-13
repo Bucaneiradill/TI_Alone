@@ -207,7 +207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 138499609}
   - component: {fileID: 138499611}
-  - component: {fileID: 138499610}
+  - component: {fileID: 138499612}
   m_Layer: 5
   m_Name: Slider-Vida
   m_TagString: Untagged
@@ -238,19 +238,6 @@ RectTransform:
   m_AnchoredPosition: {x: -110.18494, y: 114.71}
   m_SizeDelta: {x: 127.5036, y: 43.8118}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &138499610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 138499608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 750a5834af3eeac45a68d67ca60ff1be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 138499611}
 --- !u!114 &138499611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,6 +289,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &138499612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138499608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24fa3dfcb783a4e4ebc1a5bd5261652b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 138499611}
 --- !u!1 &166806170
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,7 +410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 205362806}
   - component: {fileID: 205362808}
-  - component: {fileID: 205362807}
+  - component: {fileID: 205362809}
   m_Layer: 5
   m_Name: Slider-Fome
   m_TagString: Untagged
@@ -441,19 +441,6 @@ RectTransform:
   m_AnchoredPosition: {x: -111, y: 71.2}
   m_SizeDelta: {x: 128.10913, y: 43.2045}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &205362807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 205362805}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 750a5834af3eeac45a68d67ca60ff1be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 205362808}
 --- !u!114 &205362808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -505,6 +492,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &205362809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205362805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24fa3dfcb783a4e4ebc1a5bd5261652b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 205362808}
 --- !u!1 &217035339
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,7 +514,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 217035341}
-  - component: {fileID: 217035340}
+  - component: {fileID: 217035342}
   m_Layer: 0
   m_Name: GameMenager
   m_TagString: Untagged
@@ -522,31 +522,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &217035340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 217035339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d1318fd0995f01478c4f4065613fd41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SliderVida: {fileID: 0}
-  SliderFome: {fileID: 0}
-  SliderSede: {fileID: 0}
-  SliderTemp: {fileID: 0}
-  vida: 100
-  fome: 50
-  sede: 50
-  tempMin: -50
-  tempMax: 50
-  tempValue: 0
-  luzDirecional: {fileID: 705507995}
-  duracaoDia: 1440
-  horarioTxt: {fileID: 1964826381}
 --- !u!4 &217035341
 Transform:
   m_ObjectHideFlags: 0
@@ -562,6 +537,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &217035342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217035339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1318fd0995f01478c4f4065613fd41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SliderLife: {fileID: 0}
+  SliderHunger: {fileID: 0}
+  SliderThirst: {fileID: 0}
+  SliderTemp: {fileID: 0}
+  life: 100
+  hunger: 50
+  thirst: 50
+  tempMin: -50
+  tempMax: 50
+  tempValue: 0
+  directionalLight: {fileID: 0}
+  durationDay: 0
+  timeTxt: {fileID: 0}
 --- !u!1 &234800761
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,7 +734,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 15, z: -13}
+  m_FollowOffset: {x: 0, y: 2.5, z: -3}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -926,7 +926,7 @@ GameObject:
   m_Component:
   - component: {fileID: 451646635}
   - component: {fileID: 451646637}
-  - component: {fileID: 451646636}
+  - component: {fileID: 451646638}
   m_Layer: 5
   m_Name: Slider-Temp
   m_TagString: Untagged
@@ -957,19 +957,6 @@ RectTransform:
   m_AnchoredPosition: {x: -25.570007, y: 71.03}
   m_SizeDelta: {x: 42.758606, y: 170.95001}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &451646636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 451646634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 750a5834af3eeac45a68d67ca60ff1be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 451646637}
 --- !u!114 &451646637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1021,6 +1008,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &451646638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451646634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24fa3dfcb783a4e4ebc1a5bd5261652b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 451646637}
 --- !u!1 &497450344
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,7 +1234,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 547837712}
-  m_LocalRotation: {x: 0.20253949, y: 0.7835924, z: -0.32395118, w: 0.48991466}
+  m_LocalRotation: {x: 0.1622441, y: 0.8072302, z: -0.2595006, w: 0.5046938}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1504,7 +1504,7 @@ GameObject:
   - component: {fileID: 705507995}
   - component: {fileID: 705507994}
   m_Layer: 0
-  m_Name: Directional Light
+  m_Name: Directional_Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1912,8 +1912,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.22020195, y: 0.77130777, z: -0.35220134, w: 0.48223403}
-  m_LocalPosition: {x: -32.487164, y: 25.21, z: -52.107002}
+  m_LocalRotation: {x: 0.17137332, y: 0.80238956, z: -0.2741023, w: 0.5016673}
+  m_LocalPosition: {x: -23.497038, y: 12.71, z: -56.486233}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2288,7 +2288,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1138004183}
   - component: {fileID: 1138004185}
-  - component: {fileID: 1138004184}
+  - component: {fileID: 1138004186}
   m_Layer: 5
   m_Name: Slider-Sede
   m_TagString: Untagged
@@ -2319,19 +2319,6 @@ RectTransform:
   m_AnchoredPosition: {x: -110.8425, y: 29.300003}
   m_SizeDelta: {x: 128.8185, y: 44.3483}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1138004184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1138004182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 750a5834af3eeac45a68d67ca60ff1be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 1138004185}
 --- !u!114 &1138004185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2383,6 +2370,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1138004186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138004182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24fa3dfcb783a4e4ebc1a5bd5261652b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 1138004185}
 --- !u!1 &1149448206
 GameObject:
   m_ObjectHideFlags: 3
@@ -2452,7 +2452,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1149448206}
-  m_LocalRotation: {x: 0.21139394, y: 0.7775865, z: -0.3381134, w: 0.48615965}
+  m_LocalRotation: {x: 0.17137331, y: 0.8023896, z: -0.2741022, w: 0.50166744}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2954,7 +2954,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 15, z: -13}
+  m_FollowOffset: {x: 0, y: 2.5, z: -3}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -3113,7 +3113,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1831954400}
-  m_LocalRotation: {x: 0.22020198, y: 0.77130777, z: -0.35220134, w: 0.4822341}
+  m_LocalRotation: {x: 0.18047, y: 0.7972711, z: -0.28865194, w: 0.49846718}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3267,10 +3267,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0191c01131d9062418a212cda90a5837, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barraVida: {fileID: 138499610}
-  barraFome: {fileID: 205362807}
-  barraSede: {fileID: 1138004184}
-  barra_Temp: {fileID: 451646636}
+  lifeBar: {fileID: 138499612}
+  hungerBar: {fileID: 205362809}
+  thirstBar: {fileID: 1138004186}
+  tempBar: {fileID: 451646638}
 --- !u!114 &1921667610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3369,7 +3369,7 @@ GameObject:
   - component: {fileID: 1964826382}
   - component: {fileID: 1964826381}
   m_Layer: 5
-  m_Name: Tempo
+  m_Name: TempoTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3548,7 +3548,7 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_YAxis:
-    Value: 1
+    Value: 0.5
     m_SpeedMode: 0
     m_MaxSpeed: 2
     m_AccelTime: 0.2
@@ -3621,7 +3621,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2000945596}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -32.487164, y: 25.21, z: -52.107002}
+  m_LocalPosition: {x: -23.497038, y: 12.71, z: -56.486233}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3705,7 +3705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 15, z: -13}
+  m_FollowOffset: {x: 0, y: 2.5, z: -3}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -4295,6 +4295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e968afd906e24fd4cb5926622446b7ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  radius: 3
 --- !u!65 &2125268160
 BoxCollider:
   m_ObjectHideFlags: 0
