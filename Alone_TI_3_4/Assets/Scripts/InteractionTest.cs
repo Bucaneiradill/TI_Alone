@@ -5,15 +5,11 @@ using UnityEngine;
 public class InteractionTest : Interactable
 {
     UIManager uiManager;
-    //void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.CompareTag("Player")){
-    //        Destroy(gameObject);
-    //        GameManager.instance.Beber(10);
-    //        GameManager.instance.Comer(10);
-    //        Debug.Log("Comeu e Bebeu");
-    //    }
-    //}
+
+
+    //Ítalo, n vou mudar seus códigos mas vou deixar minhas ideias aqui
+    //Se a gente mudar pro jeito q tô pensando, consumir o item q tá no mundo
+    //é só uma das opções de interação, já q tbm vai ter a opção de só guardar
 
     private void Start()
     {

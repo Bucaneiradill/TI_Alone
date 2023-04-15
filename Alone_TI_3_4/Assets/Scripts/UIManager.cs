@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] GameObject messagesPanel;
     [SerializeField] Text messageText;
+    [SerializeField] float messageDuration;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,6 @@ public class UIManager : MonoBehaviour
     {
         Text newMessage = Instantiate(messageText, messagesPanel.transform);
         newMessage.text = message;
-        Destroy(newMessage.gameObject, 3f);
+        Destroy(newMessage.gameObject, messageDuration);
     }
 }

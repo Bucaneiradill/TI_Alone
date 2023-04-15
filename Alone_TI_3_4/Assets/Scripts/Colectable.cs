@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Object : Interactable
+public class Colectable : Interactable
 {
-    [SerializeField] GameObject loot;
+    UIManager uiManager;
     [SerializeField] int lootAmount;
     [SerializeField] string lootName;
-    UIManager uiManager;
 
+    //Esse código é pra itens que são adicionados no inventário assim que o player interage
+    //Tipo graveto, pedra coletável, etc
+    //Talvez isso possa ser usado em baús tbm 
     private void Start()
     {
         uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
@@ -17,8 +19,8 @@ public class Object : Interactable
     public override void Interact()
     {
         base.Interact();
-        Instantiate(loot, transform.position, Quaternion.identity);
         uiManager.DisplayAction($"Coletou {lootAmount} {lootName}");
+        //Chama a função de adicionar no inventário (quando tiver um inventário)
         Destroy(gameObject);
     }
 }
