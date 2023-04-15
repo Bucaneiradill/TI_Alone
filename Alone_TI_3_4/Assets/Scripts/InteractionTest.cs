@@ -26,7 +26,7 @@ public class InteractionTest : Interactable
         GameManager.instance.toDrink(10);
         GameManager.instance.toEat(10);
         Debug.Log("Comeu e Bebeu");
-        uiManager.DisplayAction($"Comida e �gua +10");
+        uiManager.DisplayAction($"Comida e água +10");
         Destroy(gameObject);
     }
 }

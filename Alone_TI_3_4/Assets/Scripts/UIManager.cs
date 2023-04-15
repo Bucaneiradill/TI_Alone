@@ -21,6 +21,8 @@ public class UIManager : MonoBehaviour
 
     public void DisplayAction(string message)
     {
-        messageText.text = message;
+        Text newMessage = Instantiate(messageText, messagesPanel.transform);
+        newMessage.text = message;
+        Destroy(newMessage.gameObject, 3f);
     }
 }

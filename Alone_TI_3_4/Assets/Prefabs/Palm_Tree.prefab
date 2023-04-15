@@ -111,4 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f79ba14c0a3c6f429f049550677c516, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerActions: {fileID: 4257557191405021029, guid: 8d904dc9a797e5942bab7821fbf6168c, type: 3}
+  radius: 3
+  loot: {fileID: 4062688706886711010, guid: 4a882832adc194d44b8e96a1c4fb3702, type: 3}
+  lootAmount: 1
+  lootName: Coco
