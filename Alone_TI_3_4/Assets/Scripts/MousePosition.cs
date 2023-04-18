@@ -1,5 +1,4 @@
 using System;
-using UnityEngine.EventSystems;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -12,7 +11,6 @@ public class MousePosition : MonoBehaviour
 
     void Update()
     {
-        if(EventSystem.current.IsPointerOverGameObject()) return;
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
         if(Physics.Raycast(ray, out RaycastHit rayCastHit, float.MaxValue, layerMask))
         {
