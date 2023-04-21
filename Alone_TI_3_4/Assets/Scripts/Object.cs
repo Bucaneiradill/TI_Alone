@@ -37,10 +37,9 @@ public class Object : Interactable
     Saída:      -
     ------------------------------------------------------------------------------*/
     private void ObjectPickUp(){
-
-        Debug.Log("Peguei o:" + item.name);
-        bool spaceInventory = Inventory.instance.AddItem(item);
-        if(spaceInventory){
+        
+        bool spaceInventory = Inventory.instance.AddItem(item, 1);
+        if(spaceInventory == true){
             Destroy(gameObject);
         }
     }

@@ -22,6 +22,7 @@ public class Inventory : MonoBehaviour
     public List<Item> items = new List<Item>();
     public delegate void OnItemChange();
     public OnItemChange onItemChangeCallBack;
+    //public InventorySlot IventorySlots;
 
     /*------------------------------------------------------------------------------
     Função:     Awake
@@ -43,8 +44,14 @@ public class Inventory : MonoBehaviour
     Entrada:    Item - Qual item está sendo adicionado ao inventario. 
     Saída:      Bool - Retorna se o inventario está cheio ou não.
     ------------------------------------------------------------------------------*/
-    public bool AddItem(Item item){
+    public bool AddItem(Item item, int amountToAdd){
         if(!item.isDefaultItem){
+           // if(CoinstainItem){
+               // if(InventorySlots.RoomLeftInStack(amountToAdd)){
+                    //InventorySlots.AddStackSlot(amountToAdd);
+                    //return true;
+               // }
+          //  }
             if(items.Count >= inventorySpace){
                 Debug.Log("Inventario Cheio");
                 return false;
@@ -64,4 +71,14 @@ public class Inventory : MonoBehaviour
         items.Remove(item);
         if(onItemChangeCallBack != null) onItemChangeCallBack.Invoke(); //não sei pra que quer serve preciso ver com rock
     }
+    /*------------------------------------------------------------------------------
+    Função:     CoinstainItem
+    Descrição:  Verifica se já existe esse item no inventário
+    Entrada:    
+    Saída:      Bool - Diz se o item existe já existe no inventário
+    ------------------------------------------------------------------------------*/
+    //public bool CoinstainItem(Item item){
+      //  bool ItemExist = items.Exists(i => i == item);
+      //  return ItemExist;
+   // }
 }

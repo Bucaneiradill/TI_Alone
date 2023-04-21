@@ -19,7 +19,7 @@ public class InventorySlot : MonoBehaviour
 {
     [SerializeField] Image icon; 
     [SerializeField] Button removeButton;
-   // [SerializeField]  int stackSize;
+    [SerializeField] int stackSize;
     Item item;
 
     /*------------------------------------------------------------------------------
@@ -54,13 +54,47 @@ public class InventorySlot : MonoBehaviour
     Saída:      
     ------------------------------------------------------------------------------*/
     public void OnRemoveButton(){
-        Inventory.instance.RemoveItem(item);
+        stackSize -= 1;
+        if(stackSize <= 0){
+            Inventory.instance.RemoveItem(item);
+        }
     }
-
-   // public void AddToStack(){
-
-    //}
-   // public void RemoveToStack(){
-
-//    }
+    /*------------------------------------------------------------------------------
+    Função:     RoomLeftInStack
+    Descrição: 
+    Entrada:    
+    Saída:      
+    ------------------------------------------------------------------------------*/
+    public bool RoomLeftInStack(int AmountToAdd, out int AmountRemaining){
+        AmountRemaining = item.maxStackSize - stackSize;
+        return RoomLeftInStack (AmountToAdd);
+    }
+    /*------------------------------------------------------------------------------
+    Função:     RoomLeftInStack
+    Descrição:  
+    Entrada:    
+    Saída:      
+    ------------------------------------------------------------------------------*/
+    public bool RoomLeftInStack(int AmountToAdd){
+        if(stackSize + AmountToAdd <= item.maxStackSize) return true;
+        else return false;
+    }
+    /*------------------------------------------------------------------------------
+    Função:     AddStackSlot
+    Descrição:  
+    Entrada:    
+    Saída:      
+    ------------------------------------------------------------------------------*/
+    public void AddStackSlot(int stackAdd){
+        stackSize -= stackAdd;
+    }
+    /*------------------------------------------------------------------------------
+    Função:     RemoveStackSlot
+    Descrição:  
+    Entrada:    
+    Saída:      
+    ------------------------------------------------------------------------------*/
+    public void RemoveStackSlot(int stackRemove){
+        stackSize -= stackRemove;
+    }
 }
