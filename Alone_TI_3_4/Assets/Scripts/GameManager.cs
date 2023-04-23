@@ -12,10 +12,6 @@ public class GameManager : MonoBehaviour
 
     //Variaveis do sistema de status
     [Header("Variaveis do sistema de status")]
-    public StatsBar SliderLife;
-    public StatsBar SliderHunger;
-    public StatsBar SliderThirst;
-    public StatsBar SliderTemp;
     public int life = 100;
     private int lifeMax;
     public int hunger = 50;
@@ -28,19 +24,9 @@ public class GameManager : MonoBehaviour
     private int cont = 0;
     private int[] UpdateOfVariable = {2, 2, 2};
     private int[] StatsMin = {0, 0, 0};
-    //Variaveis para buscar os sliders
-    GameObject findSliderLife;
-    GameObject findSliderHunger;
-    GameObject findSliderThirst;
-    GameObject findSliderTemp;
-    GameObject findDirectionalLight;
-    GameObject findTempTxt;
     //Variaveis do sistema de dia e noite
-    [Header("Variaveis do sistema de dia e noite")]
-    [SerializeField] public Transform directionalLight;
+    [Header("Variavel de duração do dia")]
     [SerializeField][Tooltip("Duração do dia em segundos")] private int durationDay;
-    [SerializeField] private TextMeshProUGUI timeTxt;
-
     private float seconds;
     private float multiplicador;
 
@@ -76,16 +62,6 @@ public class GameManager : MonoBehaviour
         tempMin -= 0f;
         Hud.instance.UpdateTempHud(tempMax, tempMin, tempValue);
     }
-    //Metodos do sistema de dia e noite
-    private void prosCeu()
-    {
-      float rotX = Mathf.Lerp(-90, 270, seconds/86400);
-      directionalLight.rotation = Quaternion.Euler(rotX,0,0);
-    }
-    private void CalcTime(){
-       timeTxt.text = TimeSpan.FromSeconds(seconds).ToString(@"hh\:mm");
-      
-    }
     //Atualizçãoes
     private void updateDayCycle(){
         seconds += Time.deltaTime * multiplicador;
@@ -97,12 +73,12 @@ public class GameManager : MonoBehaviour
         if(cont == 3600){
             //Ficar com fome
             hunger -= UpdateOfVariable[0];
-            SliderHunger.UpdateStats(hunger);
+            Hud.instance?.updateFood(hunger);
             //Ficar com sede
             thirst -= UpdateOfVariable[1];
-            SliderThirst.UpdateStats(thirst);
+            Hud.instance?.updateWater(thirst);
            temperaturaTest();
-           perdaDeVida();
+           hungryAndThirstDamage();
            cont = 0;
         }
 
@@ -114,24 +90,36 @@ public class GameManager : MonoBehaviour
         }
         
     }
-    private void perdaDeVida(){
+    public void setSpeedDay(int mult){
+            if(mult == 1){
+             multiplicador = 86400/durationDay;
+            }else if( mult == 2){
+             multiplicador = (86400/durationDay)*2 ;
+            }else if (mult == 3){
+             multiplicador = (86400/durationDay)*3;
+            }
+    }
+    private void hungryAndThirstDamage(){
         if(hunger == 0 || hunger == 0){
-            if(life == 0){
+            if(life <= 0){
                 UpdateOfVariable[2]= 0;
                 Debug.Log("Morreu");
+            }else{
+                life -= UpdateOfVariable[2];
+                Hud.instance.updateLife(life);
             }
-            life -= UpdateOfVariable[2];
-            SliderLife.UpdateStats(life);
+            
         }
     }
     private void temperaturaTest(){
         if(tempValue >= 50||tempValue <= -50){
-            if(life == 0){
+            if(life <= 0){
                 UpdateOfVariable[2]= 0;
                 Debug.Log("Morreu");
+            }else{
+               life -= UpdateOfVariable[2];
+               Hud.instance?.updateLife(life);
             }
-            life -= UpdateOfVariable[2];
-            SliderLife.UpdateStats(life);
         }
     }
     public void recover(int val){
@@ -139,7 +127,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Vida Maxima");
         }else{
             life += val;
-            SliderLife.UpdateStats(life);
+            Hud.instance?.updateLife(life);
         }
     }
     public void toEat(int val){
@@ -147,7 +135,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Cheio");
         }else{
             hunger += val;
-            SliderHunger.UpdateStats(hunger);
+            Hud.instance?.updateFood(hunger);
             UIManager.instance.DisplayAction($"Comida +{val}");
         }
     }
@@ -156,27 +144,13 @@ public class GameManager : MonoBehaviour
             Debug.Log("Cheio");
         }else{
             thirst += val;
-            SliderThirst.UpdateStats(thirst);
+            Hud.instance?.updateWater(thirst);
             UIManager.instance.DisplayAction($"Hidratação +{val}");
         }
     }
     //metodos Start e Update
     void Start()
     {
-        findSliderLife = GameObject.Find("Canvas/Status/Slider-Vida");
-        SliderLife = findSliderLife.GetComponent<StatsBar>();
-        findSliderHunger = GameObject.Find("Canvas/Status/Slider-Fome");
-        SliderHunger = findSliderHunger.GetComponent<StatsBar>();
-        findSliderThirst = GameObject.Find("Canvas/Status/Slider-Sede");
-        SliderThirst = findSliderThirst.GetComponent<StatsBar>();
-        findSliderTemp = GameObject.Find("Canvas/Status/Slider-Temp");
-        SliderTemp = findSliderTemp.GetComponent<StatsBar>();
-        
-        findDirectionalLight = GameObject.Find("Directional_Light");
-        directionalLight = findDirectionalLight.GetComponent<Transform>();
-        findTempTxt = GameObject.Find("Canvas/TempoTxt");
-        timeTxt = findTempTxt.GetComponent<TextMeshProUGUI>();
-
         //Tempo 
         durationDay = 1440;
         multiplicador = 86400/durationDay;
@@ -210,11 +184,8 @@ public class GameManager : MonoBehaviour
         }
         updateDayCycle();
         
-        prosCeu();
-        CalcTime();
+        Hud.instance?.prosCeu(seconds);
+        Hud.instance?.CalcTime(seconds);
     }
-    public static void FindSlider(GameObject obj, StatsBar slider, string sliderName){
-        obj = GameObject.Find($"Canvas/{sliderName}");
-        slider = obj.GetComponent<StatsBar>();
-    }
+    
 }
