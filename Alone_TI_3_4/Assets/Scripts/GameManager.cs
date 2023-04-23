@@ -161,13 +161,13 @@ public class GameManager : MonoBehaviour
     //metodos Start e Update
     void Start()
     {
-        findSliderLife = GameObject.Find("Canvas/Slider-Vida");
+        findSliderLife = GameObject.Find("Canvas/Status/Slider-Vida");
         SliderLife = findSliderLife.GetComponent<StatsBar>();
-        findSliderHunger = GameObject.Find("Canvas/Slider-Fome");
+        findSliderHunger = GameObject.Find("Canvas/Status/Slider-Fome");
         SliderHunger = findSliderHunger.GetComponent<StatsBar>();
-        findSliderThirst = GameObject.Find("Canvas/Slider-Sede");
+        findSliderThirst = GameObject.Find("Canvas/Status/Slider-Sede");
         SliderThirst = findSliderThirst.GetComponent<StatsBar>();
-        findSliderTemp = GameObject.Find("Canvas/Slider-Temp");
+        findSliderTemp = GameObject.Find("Canvas/Status/Slider-Temp");
         SliderTemp = findSliderTemp.GetComponent<StatsBar>();
         
         findDirectionalLight = GameObject.Find("Directional_Light");

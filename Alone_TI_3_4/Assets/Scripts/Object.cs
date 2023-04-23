@@ -16,9 +16,15 @@ using UnityEngine;
 
 public class Object : Interactable
 {
+    UIManager uiManager;
+    [SerializeField] Item item;
+    [SerializeField] int amount = 1;
 
-    [SerializeField] Item item; 
-    
+    private void Start()
+    {
+        uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
+    }
+
     /*------------------------------------------------------------------------------
     Função:     Interact
     Descrição:  
@@ -38,8 +44,9 @@ public class Object : Interactable
     ------------------------------------------------------------------------------*/
     private void ObjectPickUp(){
         
-        bool spaceInventory = Inventory.instance.AddItem(item, 1);
+        bool spaceInventory = Inventory.instance.AddItem(item, amount);
         if(spaceInventory == true){
+            uiManager.DisplayAction($"Coletou {amount} {item.name}");
             Destroy(gameObject);
         }
     }

@@ -24,7 +24,6 @@ public class ColectableSource : Interactable
         //Caso o objeto seja adicionado automaticamente depois que destruir a fonte, só trocar 
         //o instantiate pela função de adicionar no inventário e ligar a mensagem dnv
         Instantiate(loot, transform.position, Quaternion.identity);
-        uiManager.DisplayAction($"Coletou {lootAmount} {lootName}");
         Destroy(gameObject);
     }
 }
