@@ -5,13 +5,22 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    public static UIManager instance;
     [SerializeField] GameObject messagesPanel;
     [SerializeField] Text messageText;
     [SerializeField] float messageDuration;
-    // Start is called before the first frame update
-    void Start()
+
+    void Awake()
     {
-        
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(this.gameObject);
     }
 
     // Update is called once per frame

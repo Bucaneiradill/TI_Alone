@@ -134,8 +134,9 @@ public class GameManager : MonoBehaviour
         if(hunger == hungerMax){
             Debug.Log("Cheio");
         }else{
-         hunger += val;
-         Hud.instance?.updateFood(hunger);
+            hunger += val;
+            Hud.instance?.updateFood(hunger);
+            UIManager.instance.DisplayAction($"Comida +{val}");
         }
     }
     public void toDrink(int val){
@@ -143,7 +144,8 @@ public class GameManager : MonoBehaviour
             Debug.Log("Cheio");
         }else{
             thirst += val;
-           Hud.instance?.updateWater(thirst);
+            Hud.instance?.updateWater(thirst);
+            UIManager.instance.DisplayAction($"Hidratação +{val}");
         }
     }
     //metodos Start e Update

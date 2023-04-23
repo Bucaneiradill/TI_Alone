@@ -97,4 +97,14 @@ public class InventorySlot : MonoBehaviour
     public void RemoveStackSlot(int stackRemove){
         stackSize -= stackRemove;
     }
+
+    public void UseItem()
+    {
+        if(item.iD == 1)
+        {
+            GameManager.instance.toDrink(10);
+            GameManager.instance.toEat(10);
+            OnRemoveButton();
+        }
+    }
 }
