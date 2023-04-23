@@ -225,19 +225,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d1318fd0995f01478c4f4065613fd41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SliderLife: {fileID: 0}
-  SliderHunger: {fileID: 0}
-  SliderThirst: {fileID: 0}
-  SliderTemp: {fileID: 0}
   life: 100
   hunger: 50
   thirst: 50
   tempMin: -50
   tempMax: 50
   tempValue: 0
-  directionalLight: {fileID: 0}
-  durationDay: 0
-  timeTxt: {fileID: 0}
+  durationDay: 1440
 --- !u!4 &89265177
 Transform:
   m_ObjectHideFlags: 0
@@ -4888,6 +4882,8 @@ MonoBehaviour:
   hungerBar: {fileID: 919145626}
   thirstBar: {fileID: 1713417791}
   tempBar: {fileID: 1601525302}
+  timeTxt: {fileID: 2143903378}
+  directionalLight: {fileID: 705507995}
 --- !u!114 &1441669009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5422,7 +5418,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1672980883}
-  m_LocalRotation: {x: 0.3987582, y: -0.000000015779221, z: 0.0000000068611876, w: 0.91705614}
+  m_LocalRotation: {x: 0.3987582, y: 0.000000015779213, z: -0.000000006861184, w: 0.91705614}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
