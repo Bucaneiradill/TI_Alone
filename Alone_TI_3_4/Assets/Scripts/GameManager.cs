@@ -165,9 +165,9 @@ public class GameManager : MonoBehaviour
         thirstMax = thirst;
         
     }
-    void Update()
+    void FixedUpdate()
     {
-        if(life > lifeMax){
+        /*if(life > lifeMax){
             life = lifeMax;
         }
         if(hunger > hungerMax){
@@ -181,7 +181,7 @@ public class GameManager : MonoBehaviour
         }
         if(thirst < StatsMin[1]){
             thirst = StatsMin[1];
-        }
+        }*/
         updateDayCycle();
         
         Hud.instance?.prosCeu(seconds);

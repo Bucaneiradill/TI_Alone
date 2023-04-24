@@ -62,7 +62,7 @@ public class Hud : MonoBehaviour
    public void prosCeu(float seconds)
     {
       float rotX = Mathf.Lerp(-90, 270, seconds/86400);
-      directionalLight.rotation = Quaternion.Euler(rotX,0,0);
+      directionalLight.rotation = Quaternion.Euler(rotX,44.002f,0);
     }
     
 }
