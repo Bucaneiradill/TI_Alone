@@ -19,7 +19,7 @@ public class MousePosition : MonoBehaviour
             transform.position = rayCastHit.point;
             if (Input.GetMouseButtonDown(0))
             {
-                Interactable interactable = rayCastHit.collider.gameObject.GetComponent<Interactable>();
+                Interactable interactable = rayCastHit.collider.gameObject.GetComponentInParent<Interactable>();
                 if (interactable != null)
                 {
                     SetTarget(interactable);

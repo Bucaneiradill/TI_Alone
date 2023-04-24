@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b401f09c90c098c4681f1d38689dc858, type: 3}
-  m_Name: Coconut
+  m_Name: Banana
   m_EditorClassIdentifier: 
   iD: 1
-  name: Coco
-  icon: {fileID: 21300000, guid: 6c9d65b1fcd92ea4bb01e6a96d0a3ff8, type: 3}
+  name: Banana
+  icon: {fileID: 0}
   Derscription: 
   isDefaultItem: 0
   maxStackSize: 0

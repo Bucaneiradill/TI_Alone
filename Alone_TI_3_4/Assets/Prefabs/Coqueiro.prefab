@@ -177,6 +177,7 @@ GameObject:
   - component: {fileID: 218191767982363268}
   - component: {fileID: 7485821047633477779}
   - component: {fileID: 6973585155204115628}
+  - component: {fileID: 331746338}
   m_Layer: 7
   m_Name: Tronco
   m_TagString: Untagged
@@ -249,6 +250,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &331746338
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918147346787181178}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2832250006122358947, guid: 46fee4856e81b9146b790cecc581f341, type: 3}
 --- !u!1 &2906847649293791863
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,6 +312,7 @@ Transform:
   - {fileID: 520321956967856238}
   - {fileID: 4858341005355313139}
   - {fileID: 218191767982363268}
+  - {fileID: 2042902665442377522}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -330,6 +346,7 @@ MonoBehaviour:
   loot: {fileID: 4062688706886711010, guid: 4a882832adc194d44b8e96a1c4fb3702, type: 3}
   lootAmount: 1
   lootName: Coco
+  dropPoint: {fileID: 2042902665442377522}
 --- !u!208 &-7323370654939611085
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -357,6 +374,7 @@ GameObject:
   - component: {fileID: 8026899851949247290}
   - component: {fileID: 2330925263561020269}
   - component: {fileID: 701696263081819684}
+  - component: {fileID: 661146990}
   m_Layer: 7
   m_Name: Folhas
   m_TagString: Untagged
@@ -429,6 +447,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &661146990
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2933508558882610504}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2842626634743084676, guid: 46fee4856e81b9146b790cecc581f341, type: 3}
 --- !u!1 &3404094209498196544
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,6 +627,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &3596076332364255985
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2042902665442377522}
+  m_Layer: 7
+  m_Name: DropPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2042902665442377522
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3596076332364255985}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.78, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2530145742084221133}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3804189212986807456
 GameObject:
   m_ObjectHideFlags: 0

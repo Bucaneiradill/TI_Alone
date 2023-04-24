@@ -7,12 +7,7 @@ public class ColectableSource : Interactable
     [SerializeField] GameObject loot;
     [SerializeField] int lootAmount;
     [SerializeField] string lootName;
-    UIManager uiManager;
-
-    private void Start()
-    {
-        uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
-    }
+    [SerializeField] Transform dropPoint;
 
     //Minha ideia é q esse código seja só pra coisas tipo árvore, pedra, etc.
     //Ent nada daqui vai adicionar coisas no inventário, só dropar o loot dps de ser quebrado.
@@ -23,7 +18,7 @@ public class ColectableSource : Interactable
         base.Interact();
         //Caso o objeto seja adicionado automaticamente depois que destruir a fonte, só trocar 
         //o instantiate pela função de adicionar no inventário e ligar a mensagem dnv
-        Instantiate(loot, transform.position, Quaternion.identity);
+        Instantiate(loot, dropPoint ? dropPoint.position : transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }
