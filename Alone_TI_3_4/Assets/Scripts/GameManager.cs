@@ -12,29 +12,22 @@ public class GameManager : MonoBehaviour
 
     //Variaveis do sistema de status
     [Header("Variaveis do sistema de status")]
-    public Barra_Status SliderVida;
-    public Barra_Status SliderFome;
-    public Barra_Status SliderSede;
-    public Barra_Status SliderTemp;
-    public int vida = 100;
-    private int vidaMax;
-    public int fome = 50;
-    private int fomeMax;
-    public int sede = 50;
-    private int sedeMax;
+    public int life = 100;
+    private int lifeMax;
+    public int hunger = 50;
+    private int hungerMax;
+    public int thirst = 50;
+    private int thirstMax;
     public float tempMin = -50.0f;
     public float tempMax =  50.0f;
     public float tempValue = 0f;
     private int cont = 0;
-    private int[] AtualizacaoDeVariavel = {2, 2, 2};
-    
+    private int[] UpdateOfVariable = {2, 2, 2};
+    private int[] StatsMin = {0, 0, 0};
     //Variaveis do sistema de dia e noite
-    [Header("Variaveis do sistema de dia e noite")]
-    [SerializeField] public Transform luzDirecional;
-    [SerializeField][Tooltip("Duração do dia em segundos")] private int duracaoDia;
-    [SerializeField] private TextMeshProUGUI horarioTxt;
-
-    private float segundos;
+    [Header("Variavel de duração do dia")]
+    [SerializeField][Tooltip("Duração do dia em segundos")] private int durationDay;
+    private float seconds;
     private float multiplicador;
 
     //methods
@@ -48,20 +41,20 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
     //metodos do sistema de status
-    public void addVida()
+    public void addLife()
     {
-         vida += 0;
-        Hud.instance.UpdateVidaHud(vida);
+         life += 0;
+        Hud.instance.UpdateVidaHud(life);
     }
-    public void addFome()
+    public void addHunger()
     {
-        this.fome += fome;
-        Hud.instance.UpdateFomeHud(fome);
+         hunger += 0;
+        Hud.instance.UpdateFomeHud(hunger);
     }
-    public void addSede()
+    public void addThirst()
     {
-        sede += 0;
-        Hud.instance.UpdateSedeHud(sede);
+        thirst += 0;
+        Hud.instance.UpdateSedeHud(thirst);
     }    
     public void addTemp()
     {
@@ -69,115 +62,130 @@ public class GameManager : MonoBehaviour
         tempMin -= 0f;
         Hud.instance.UpdateTempHud(tempMax, tempMin, tempValue);
     }
-    //Metodos do sistema de dia e noite
-    private void prosCeu()
-    {
-      float rotX = Mathf.Lerp(-90, 270, segundos/86400);
-      luzDirecional.rotation = Quaternion.Euler(rotX,0,0);
-    }
-    private void CalcHora(){
-       horarioTxt.text = TimeSpan.FromSeconds(segundos).ToString(@"hh\:mm");
-      
-    }
     //Atualizçãoes
-    private void atualizacaoDeCiclo(){
-        segundos += Time.deltaTime * multiplicador;
+    private void updateDayCycle(){
+        seconds += Time.deltaTime * multiplicador;
         
-        if(segundos > 86400){
-            segundos = 0;
+        if(seconds > 86400){
+            seconds = 0;
         }
         cont++;
         if(cont == 3600){
             //Ficar com fome
-            fome -= AtualizacaoDeVariavel[0];
-            SliderFome.AlterarStatus(fome);
+            hunger -= UpdateOfVariable[0];
+            Hud.instance?.updateFood(hunger);
             //Ficar com sede
-            sede -= AtualizacaoDeVariavel[1];
-            SliderSede.AlterarStatus(sede);
+            thirst -= UpdateOfVariable[1];
+            Hud.instance?.updateWater(thirst);
            temperaturaTest();
-           perdaDeVida();
+           hungryAndThirstDamage();
            cont = 0;
         }
 
-        if(fome == 0){
-            AtualizacaoDeVariavel[0] = 0; 
+        if(hunger == 0){
+            UpdateOfVariable[0] = 0; 
         }
-        if(sede == 0){
-            AtualizacaoDeVariavel[1] = 0;           
+        if(thirst == 0){
+            UpdateOfVariable[1] = 0;           
         }
         
     }
-    private void perdaDeVida(){
-        if(sede == 0 || fome == 0){
-            if(vida == 0){
-                AtualizacaoDeVariavel[2]= 0;
-                Debug.Log("Morreu");
+    public void setSpeedDay(int mult){
+            if(mult == 1){
+             multiplicador = 86400/durationDay;
+            }else if( mult == 2){
+             multiplicador = (86400/durationDay)*2 ;
+            }else if (mult == 3){
+             multiplicador = (86400/durationDay)*3;
             }
-            vida -= AtualizacaoDeVariavel[2];
-            SliderVida.AlterarStatus(vida);
+    }
+    private void hungryAndThirstDamage(){
+        if(hunger == 0 || hunger == 0){
+            if(life <= 0){
+                UpdateOfVariable[2]= 0;
+                Debug.Log("Morreu");
+            }else{
+                life -= UpdateOfVariable[2];
+                Hud.instance.updateLife(life);
+            }
+            
         }
     }
     private void temperaturaTest(){
         if(tempValue >= 50||tempValue <= -50){
-            if(vida == 0){
-                AtualizacaoDeVariavel[2]= 0;
+            if(life <= 0){
+                UpdateOfVariable[2]= 0;
                 Debug.Log("Morreu");
+            }else{
+               life -= UpdateOfVariable[2];
+               Hud.instance?.updateLife(life);
             }
-            vida -= AtualizacaoDeVariavel[2];
-            SliderVida.AlterarStatus(vida);
         }
     }
     public void recover(int val){
-        if(vida == vidaMax){
+        if(life == lifeMax){
             Debug.Log("Vida Maxima");
         }else{
-            vida += val;
-            SliderVida.AlterarStatus(vida);
+            life += val;
+            Hud.instance?.updateLife(life);
         }
     }
-    public  void Comer(int val){
-        if(fome == fomeMax){
+    public void toEat(int val){
+        if(hunger == hungerMax){
             Debug.Log("Cheio");
         }else{
-         fome += val;
-         SliderFome.AlterarStatus(fome);
+            hunger += val;
+            Hud.instance?.updateFood(hunger);
+            UIManager.instance.DisplayAction($"Comida +{val}");
         }
     }
-   public  void Beber(int val){
-        if(sede == sedeMax){
+    public void toDrink(int val){
+        if(thirst == thirstMax){
             Debug.Log("Cheio");
         }else{
-            sede += val;
-            SliderSede.AlterarStatus(sede);
+            thirst += val;
+            Hud.instance?.updateWater(thirst);
+            UIManager.instance.DisplayAction($"Hidratação +{val}");
         }
     }
     //metodos Start e Update
     void Start()
     {
-        multiplicador = 86400/duracaoDia;
-        addVida();
-        addFome();
-        addSede();
+        //Tempo 
+        durationDay = 1440;
+        multiplicador = 86400/durationDay;
+        //Ajustes dos sliders
+        addLife();
+        addHunger();
+        addThirst();
         addTemp();
-        vidaMax = vida;
-        fomeMax = fome;
-        sedeMax = sede;
+        //Ajustes de max status
+        lifeMax = life;
+        hungerMax = hunger;
+        thirstMax = thirst;
         
     }
-    void Update()
+    void FixedUpdate()
     {
-        if(vida > vidaMax){
-            vida = vidaMax;
+        /*if(life > lifeMax){
+            life = lifeMax;
         }
-        if(fome > fomeMax){
-            fome = fomeMax;
+        if(hunger > hungerMax){
+            hunger = hungerMax;
         }
-        if(sede > sedeMax){
-            sede = sedeMax;
+        if(thirst > thirstMax){
+            thirst = thirstMax;
         }
-        atualizacaoDeCiclo();
+        if(hunger < StatsMin[0]){
+            hunger = StatsMin[0];
+        }
+        if(thirst < StatsMin[1]){
+            thirst = StatsMin[1];
+        }*/
+        updateDayCycle();
         
-        prosCeu();
-        CalcHora();
+        Hud.instance?.prosCeu(seconds);
+        Hud.instance?.CalcTime(seconds);
     }
+    
 }

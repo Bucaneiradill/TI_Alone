@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 854515184122376375}
   - component: {fileID: 544119462735045166}
   - component: {fileID: 7959126944601748920}
-  - component: {fileID: 6265713788023580}
+  - component: {fileID: -2975141936534492222}
   m_Layer: 8
   m_Name: Coco
   m_TagString: Untagged
@@ -98,7 +98,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6265713788023580
+--- !u!114 &-2975141936534492222
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,8 +107,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4062688706886711010}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e968afd906e24fd4cb5926622446b7ee, type: 3}
+  m_Script: {fileID: 11500000, guid: d0ddfec4d9a1eac479cf6883df1bd513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
-  uiManager: {fileID: 0}
+  item: {fileID: 11400000, guid: 3ca64080b9c82b84087512f72233c807, type: 2}
+  amount: 1
