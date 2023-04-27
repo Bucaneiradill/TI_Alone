@@ -21,14 +21,9 @@ public class GameManager : MonoBehaviour
     public float tempMin = -50.0f;
     public float tempMax =  50.0f;
     public float tempValue = 0f;
-    private int cont = 0;
-    private int[] UpdateOfVariable = {2, 2, 2};
-    private int[] StatsMin = {0, 0, 0};
-    //Variaveis do sistema de dia e noite
-    [Header("Variavel de duração do dia")]
-    [SerializeField][Tooltip("Duração do dia em segundos")] private int durationDay;
-    private float seconds;
-    private float multiplicador;
+    [NonSerialized]public int[] UpdateOfVariable = {2, 2, 2};
+    [NonSerialized]public int[] StatsMin = {0, 0, 0};
+   
 
     //methods
     //metodo de preservar o GameManger
@@ -63,43 +58,8 @@ public class GameManager : MonoBehaviour
         Hud.instance.UpdateTempHud(tempMax, tempMin, tempValue);
     }
     //Atualizçãoes
-    private void updateDayCycle(){
-        seconds += Time.deltaTime * multiplicador;
-        
-        if(seconds > 86400){
-            seconds = 0;
-        }
-        cont++;
-        if(cont == 3600){
-            //Ficar com fome
-            hunger -= UpdateOfVariable[0];
-            Hud.instance?.updateFood(hunger);
-            //Ficar com sede
-            thirst -= UpdateOfVariable[1];
-            Hud.instance?.updateWater(thirst);
-           temperaturaTest();
-           hungryAndThirstDamage();
-           cont = 0;
-        }
-
-        if(hunger == 0){
-            UpdateOfVariable[0] = 0; 
-        }
-        if(thirst == 0){
-            UpdateOfVariable[1] = 0;           
-        }
-        
-    }
-    public void setSpeedDay(int mult){
-            if(mult == 1){
-             multiplicador = 86400/durationDay;
-            }else if( mult == 2){
-             multiplicador = (86400/durationDay)*2 ;
-            }else if (mult == 3){
-             multiplicador = (86400/durationDay)*3;
-            }
-    }
-    private void hungryAndThirstDamage(){
+    
+    public void hungryAndThirstDamage(){
         if(hunger == 0 || hunger == 0){
             if(life <= 0){
                 UpdateOfVariable[2]= 0;
@@ -111,7 +71,7 @@ public class GameManager : MonoBehaviour
             
         }
     }
-    private void temperaturaTest(){
+    public void temperaturaTest(){
         if(tempValue >= 50||tempValue <= -50){
             if(life <= 0){
                 UpdateOfVariable[2]= 0;
@@ -129,6 +89,14 @@ public class GameManager : MonoBehaviour
             life += val;
             Hud.instance?.updateLife(life);
         }
+    }
+    public void toHungry(){
+            hunger -= 2;
+            Hud.instance?.updateFood(hunger);
+    }
+    public void toThirst(){
+            thirst -= 2;
+            Hud.instance?.updateWater(thirst);
     }
     public void toEat(int val){
         if(hunger == hungerMax){
@@ -151,9 +119,7 @@ public class GameManager : MonoBehaviour
     //metodos Start e Update
     void Start()
     {
-        //Tempo 
-        durationDay = 1440;
-        multiplicador = 86400/durationDay;
+        
         //Ajustes dos sliders
         addLife();
         addHunger();
@@ -182,10 +148,7 @@ public class GameManager : MonoBehaviour
         if(thirst < StatsMin[1]){
             thirst = StatsMin[1];
         }*/
-        updateDayCycle();
-        
-        Hud.instance?.prosCeu(seconds);
-        Hud.instance?.CalcTime(seconds);
+       
     }
     
 }

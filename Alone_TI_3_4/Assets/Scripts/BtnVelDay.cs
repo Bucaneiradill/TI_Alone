@@ -7,6 +7,6 @@ public class BtnVelDay : MonoBehaviour
    public int speDay;
 
    public void OnButtonClick(){
-      GameManager.instance?.setSpeedDay(speDay);
+      TimeManager.instance?.setSpeedDay(speDay);
    }
 }

@@ -15,9 +15,7 @@ public class Hud : MonoBehaviour
    public StatsBar thirstBar;
    public StatsBar tempBar;
    //txt e  transform
-   [Header("Tempo e Sol")]
-   [SerializeField] private TextMeshProUGUI timeTxt;
-   [SerializeField] public Transform directionalLight;
+   
    void Awake(){
       instance = this;
    }
@@ -56,13 +54,6 @@ public class Hud : MonoBehaviour
    public void updateWater(int water){
        thirstBar.UpdateStats(water);
    }
-   public void CalcTime(float seconds){
-       timeTxt.text = TimeSpan.FromSeconds(seconds).ToString(@"hh\:mm");
-   }
-   public void prosCeu(float seconds)
-    {
-      float rotX = Mathf.Lerp(-90, 270, seconds/86400);
-      directionalLight.rotation = Quaternion.Euler(rotX,44.002f,0);
-    }
+   
     
 }
