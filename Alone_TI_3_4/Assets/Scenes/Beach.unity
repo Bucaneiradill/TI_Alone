@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: f155758f67d7e6b48bc43f53ff05e689, type: 2}
   m_LightingSettings: {fileID: 1348144797}
 --- !u!196 &4
 NavMeshSettings:
@@ -556,7 +556,6 @@ MonoBehaviour:
   tempMin: -50
   tempMax: 50
   tempValue: 0
-  durationDay: 0
 --- !u!114 &217035343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1647,7 +1646,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 1.02e-43, y: 0, z: 0, w: -1.7710774e-19}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -3386,7 +3385,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1831954400}
-  m_LocalRotation: {x: 0.29381752, y: 0.47488493, z: -0.17193207, w: 0.81153864}
+  m_LocalRotation: {x: 0.29381755, y: 0.474885, z: -0.17193207, w: 0.81153864}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3546,8 +3545,6 @@ MonoBehaviour:
   hungerBar: {fileID: 205362809}
   thirstBar: {fileID: 1138004186}
   tempBar: {fileID: 451646638}
-  timeTxt: {fileID: 0}
-  directionalLight: {fileID: 0}
 --- !u!114 &1921667610
 MonoBehaviour:
   m_ObjectHideFlags: 0
