@@ -7,38 +7,38 @@ using System;
 public class TimeManager : MonoBehaviour
 {
     public static TimeManager instance;
+    public float delay = 0.05f;
+    public bool isPlaying;
     
     void Awake(){
       instance = this;
+        
     }
      //Variaveis do sistema de dia e noite
     [Header("Variavel de duração do dia")]
-    [SerializeField][Tooltip("Duração do dia em segundos")] private int durationDay;
-    private float seconds;
-    private float multiplicador;
+    private int seconds;
+    private int contHora;
+    
     [Header("Tempo e Sol")]
     [SerializeField] private TextMeshProUGUI timeTxt;
     [SerializeField] public Transform directionalLight;
-    [SerializeField] private float cont = 0;
+    [SerializeField] private int cont = 0;
 
-    public void CalcTime(float seconds){
-       timeTxt.text = TimeSpan.FromSeconds(seconds).ToString(@"hh\:mm");
+    void CalcTime(){
+       
+       timeTxt.text = TimeSpan.FromSeconds(seconds).ToString(@"hh\:mm");//\:ss
    }
-   public void prosCeu(float seconds)
-    {
-      float rotX = Mathf.Lerp(-90, 270, seconds/86400);
+   public void prosCeu()
+    { 
+        Debug.Log(seconds);
+        float rotX = Mathf.Lerp(-90, 270, seconds/86400.0f);
       directionalLight.rotation = Quaternion.Euler(rotX,44.002f,0);
     }
 
     public void updateDayCycle(){
-        seconds += Time.deltaTime * multiplicador;
-        
-        if(seconds > 86400){
-            seconds = 0;
-        }
-       
+        seconds += 1;       
         if(cont >= 600){
-            //3600
+            
             //Ficar com fome
             GameManager.instance?.toHungry();
             //Ficar com sede
@@ -47,30 +47,33 @@ public class TimeManager : MonoBehaviour
            GameManager.instance?.hungryAndThirstDamage();
            cont = 0;
         }
-         cont +=  Time.deltaTime * multiplicador;
+         cont = cont + 1;
     }
     public void setSpeedDay(int mult){
             if(mult == 1){
-             multiplicador = 86400/durationDay;
+             delay = 0.05f;
             }else if( mult == 2){
-             multiplicador = (86400/durationDay)*4 ;
+             delay = (0.05f/2);
             }else if (mult == 3){
-             multiplicador = (86400/durationDay)*6;
+             delay = (0.05f/3);
             }
     }
     // Start is called before the first frame update
     void Start()
     {
-        //Tempo 
-        durationDay = 1440;
-        multiplicador = 86400/durationDay;
+        //Tempo
+        Invoke("TimeCount", delay);
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    void TimeCount()
     {
-        updateDayCycle();
-        prosCeu(seconds);
-        CalcTime(seconds);
+        if (isPlaying)
+        {
+            updateDayCycle();
+            prosCeu();
+            CalcTime();
+        }
+
+        Invoke("TimeCount", delay);
     }
 }

@@ -23,12 +23,6 @@ public class UIManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void DisplayAction(string message)
     {
         Text newMessage = Instantiate(messageText, messagesPanel.transform);
