@@ -9,12 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b401f09c90c098c4681f1d38689dc858, type: 3}
-  m_Name: Coconut
+  m_Script: {fileID: 11500000, guid: 6a6ba35c7235f784689fe414fc130fa8, type: 3}
+  m_Name: Pedra
   m_EditorClassIdentifier: 
-  iD: 1
-  name: Coco
-  icon: {fileID: 21300000, guid: 6c9d65b1fcd92ea4bb01e6a96d0a3ff8, type: 3}
+  iD: 0
+  name: Pedra
+  icon: {fileID: 21300000, guid: 17f07647e65693b4e8c9f496374db33f, type: 3}
   Derscription: 
   isDefaultItem: 0
-  maxStackSize: 0
+  maxStackSize: 99
+  ingredients: []

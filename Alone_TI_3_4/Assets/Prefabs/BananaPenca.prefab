@@ -141,9 +141,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4337459113726495721}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0ddfec4d9a1eac479cf6883df1bd513, type: 3}
+  m_Script: {fileID: 11500000, guid: 30125879e7bc29f469c90fe05ef613a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 2
+  radius: 3
   item: {fileID: 11400000, guid: 5b1a9705cdda30843ba39215e1d5c74a, type: 2}
   amount: 1
