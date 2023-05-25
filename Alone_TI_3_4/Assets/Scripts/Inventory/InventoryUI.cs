@@ -16,22 +16,9 @@ using UnityEngine;
 
 public class InventoryUI : MonoBehaviour
 {
-    public static InventoryUI instance;
-    [SerializeField] public Transform itemsParent;
+    [SerializeField] Transform itemsParent;
     [SerializeField] GameObject inventoryUI;
     InventorySlot[] slots;
-
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
 
     /*------------------------------------------------------------------------------
     Função:     Start

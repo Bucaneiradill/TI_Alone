@@ -38,22 +38,13 @@ public class Inventory : MonoBehaviour
         }
         DontDestroyOnLoad(this.gameObject);
     }
-
-    private void Start()
-    {
-        inventorySpace = InventoryUI.instance.itemsParent.childCount;
-    }
     /*------------------------------------------------------------------------------
     Função:     AddItem
     Descrição:  Adiciona o item ao inventario.
     Entrada:    Item - Qual item está sendo adicionado ao inventario. 
     Saída:      Bool - Retorna se o inventario está cheio ou não.
     ------------------------------------------------------------------------------*/
-    public void AddItem(Item item)
-    {
-        CheckAndAddItem(item);
-    }
-    public bool CheckAndAddItem(Item item){
+    public bool AddItem(Item item, int amountToAdd){
         if(!item.isDefaultItem){
            // if(CoinstainItem){
                // if(InventorySlots.RoomLeftInStack(amountToAdd)){
@@ -66,7 +57,7 @@ public class Inventory : MonoBehaviour
                 return false;
             }
             items.Add(item);
-            if(onItemChangeCallBack != null) onItemChangeCallBack.Invoke(); //não sei pra que quer serve preciso ver com rock
+        if(onItemChangeCallBack != null) onItemChangeCallBack.Invoke(); //não sei pra que quer serve preciso ver com rock
         }
         return true;
     }
@@ -80,9 +71,14 @@ public class Inventory : MonoBehaviour
         items.Remove(item);
         if(onItemChangeCallBack != null) onItemChangeCallBack.Invoke(); //não sei pra que quer serve preciso ver com rock
     }
-
-    public bool SearchItem(Item item)
-    {
-        return items.Contains(item);
-    }
+    /*------------------------------------------------------------------------------
+    Função:     CoinstainItem
+    Descrição:  Verifica se já existe esse item no inventário
+    Entrada:    
+    Saída:      Bool - Diz se o item existe já existe no inventário
+    ------------------------------------------------------------------------------*/
+    //public bool CoinstainItem(Item item){
+      //  bool ItemExist = items.Exists(i => i == item);
+      //  return ItemExist;
+   // }
 }

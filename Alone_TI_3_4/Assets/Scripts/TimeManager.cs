@@ -7,27 +7,24 @@ using System;
 public class TimeManager : MonoBehaviour
 {
     public static TimeManager instance;
-    public float delay = 0.05f;
-    public bool isPlaying;
     
     void Awake(){
       instance = this;
-        
     }
      //Variaveis do sistema de dia e noite
     [Header("Variavel de duração do dia")]
-    private int seconds;
-    private int contHora;
-    
+    [SerializeField][Tooltip("Duração do dia em segundos")] private int durationDay;
+    private float seconds;
+    private float multiplicador;
     [Header("Tempo e Sol")]
     [SerializeField] private TextMeshProUGUI timeTxt;
     [SerializeField] public Transform directionalLight;
-    [SerializeField] private int cont = 0;
+    [SerializeField] private float cont = 0;
 
-    void CalcTime(){
-       
-       timeTxt.text = TimeSpan.FromSeconds(seconds).ToString(@"hh\:mm");//\:ss
+    public void CalcTime(float seconds){
+       timeTxt.text = TimeSpan.FromSeconds(seconds).ToString(@"hh\:mm");
    }
+<<<<<<< HEAD:Alone_TI_3_4/Assets/Scripts/Managers/TimeManager.cs
    public void prosCeu()
     { 
 <<<<<<< HEAD:Alone_TI_3_4/Assets/Scripts/TimeManager.cs
@@ -36,13 +33,23 @@ public class TimeManager : MonoBehaviour
         //Debug.Log(seconds);
 >>>>>>> parent of 764e0b2 (Revert "Merge branch 'main' of https://github.com/Bucaneiradill/TI_Alone"):Alone_TI_3_4/Assets/Scripts/Managers/TimeManager.cs
         float rotX = Mathf.Lerp(-90, 270, seconds/86400.0f);
+=======
+   public void prosCeu(float seconds)
+    {
+      float rotX = Mathf.Lerp(-90, 270, seconds/86400);
+>>>>>>> 07e82113ee5c1f9f1ca760b9895060b6e31727d8:Alone_TI_3_4/Assets/Scripts/TimeManager.cs
       directionalLight.rotation = Quaternion.Euler(rotX,44.002f,0);
     }
 
     public void updateDayCycle(){
-        seconds += 1;       
+        seconds += Time.deltaTime * multiplicador;
+        
+        if(seconds > 86400){
+            seconds = 0;
+        }
+       
         if(cont >= 600){
-            
+            //3600
             //Ficar com fome
             GameManager.instance?.toHungry();
             //Ficar com sede
@@ -51,33 +58,30 @@ public class TimeManager : MonoBehaviour
            GameManager.instance?.hungryAndThirstDamage();
            cont = 0;
         }
-         cont = cont + 1;
+         cont +=  Time.deltaTime * multiplicador;
     }
     public void setSpeedDay(int mult){
             if(mult == 1){
-             delay = 0.05f;
+             multiplicador = 86400/durationDay;
             }else if( mult == 2){
-             delay = (0.05f/2);
+             multiplicador = (86400/durationDay)*4 ;
             }else if (mult == 3){
-             delay = (0.05f/3);
+             multiplicador = (86400/durationDay)*6;
             }
     }
     // Start is called before the first frame update
     void Start()
     {
-        //Tempo
-        Invoke("TimeCount", delay);
+        //Tempo 
+        durationDay = 1440;
+        multiplicador = 86400/durationDay;
     }
 
-    void TimeCount()
+    // Update is called once per frame
+    void FixedUpdate()
     {
-        if (isPlaying)
-        {
-            updateDayCycle();
-            prosCeu();
-            CalcTime();
-        }
-
-        Invoke("TimeCount", delay);
+        updateDayCycle();
+        prosCeu(seconds);
+        CalcTime(seconds);
     }
 }
