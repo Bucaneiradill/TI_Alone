@@ -133,21 +133,24 @@ public class GameManager : MonoBehaviour
     }
     void FixedUpdate()
     {
-        /*if(life > lifeMax){
-            life = lifeMax;
+        if(life == 50){
+            UIManager.instance.DisplayAction("Vida baixa");
         }
-        if(hunger > hungerMax){
-            hunger = hungerMax;
+        if(life == 10){
+            UIManager.instance.DisplayAction("Você esta morrendo");
         }
-        if(thirst > thirstMax){
-            thirst = thirstMax;
+        if(hunger == 25){
+           UIManager.instance.DisplayAction("Você está com fome");
         }
-        if(hunger < StatsMin[0]){
-            hunger = StatsMin[0];
+       if(hunger == 10){
+           UIManager.instance.DisplayAction("Você está faminto");
         }
-        if(thirst < StatsMin[1]){
-            thirst = StatsMin[1];
-        }*/
+        if(thirst == 25){
+           UIManager.instance.DisplayAction("Você está com sede");
+        }
+        if(thirst == 10){
+           UIManager.instance.DisplayAction("Você está desidratado");
+        }
        
     }
     

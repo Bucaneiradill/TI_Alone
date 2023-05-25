@@ -30,14 +30,14 @@ public class MousePosition : MonoBehaviour
             }
 
             //gambiarra sinistra abaixo só pra testar diferentes tipos de interação
-            //else if (Input.GetMouseButtonDown(1))
-            //{
-            //    Colectable colectable = rayCastHit.collider.gameObject.GetComponent<Colectable>();
-            //    if (colectable != null)
-            //    {
-            //        colectable.ObjectConsume();
-            //    }
-            //}
+            else if (Input.GetMouseButtonDown(1))
+            {
+                Colectable colectable = rayCastHit.collider.gameObject.GetComponent<Colectable>();
+                if (colectable != null)
+                {
+                    colectable.ObjectConsume();
+                }
+            }
         }
     }
 
