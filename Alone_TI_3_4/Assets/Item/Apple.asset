@@ -9,13 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a6ba35c7235f784689fe414fc130fa8, type: 3}
-  m_Name: Banana
+  m_Script: {fileID: 11500000, guid: b401f09c90c098c4681f1d38689dc858, type: 3}
+  m_Name: Apple
   m_EditorClassIdentifier: 
-  iD: 0
-  name: Banana
-  icon: {fileID: 21300000, guid: 1eb6ff38904de50478797fe254b6357d, type: 3}
-  Derscription: 
+  name: Apple
+  icon: {fileID: 21300000, guid: 0473c79bb86fac74c8f1fedb29809617, type: 3}
   isDefaultItem: 0
-  maxStackSize: 99
-  ingredients: []

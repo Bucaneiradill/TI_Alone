@@ -30,7 +30,7 @@ public class TimeManager : MonoBehaviour
    }
    public void prosCeu()
     { 
-        //Debug.Log(seconds);
+        Debug.Log(seconds);
         float rotX = Mathf.Lerp(-90, 270, seconds/86400.0f);
       directionalLight.rotation = Quaternion.Euler(rotX,44.002f,0);
     }
