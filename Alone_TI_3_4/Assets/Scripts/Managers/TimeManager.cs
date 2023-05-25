@@ -30,7 +30,11 @@ public class TimeManager : MonoBehaviour
    }
    public void prosCeu()
     { 
+<<<<<<< HEAD:Alone_TI_3_4/Assets/Scripts/TimeManager.cs
         Debug.Log(seconds);
+=======
+        //Debug.Log(seconds);
+>>>>>>> parent of 764e0b2 (Revert "Merge branch 'main' of https://github.com/Bucaneiradill/TI_Alone"):Alone_TI_3_4/Assets/Scripts/Managers/TimeManager.cs
         float rotX = Mathf.Lerp(-90, 270, seconds/86400.0f);
       directionalLight.rotation = Quaternion.Euler(rotX,44.002f,0);
     }

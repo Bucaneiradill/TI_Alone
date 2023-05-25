@@ -31,7 +31,8 @@ public class InventorySlot : MonoBehaviour
     public void AddItemSlot(Item newItem){
         item = newItem;
         icon.sprite = item.icon; // Pega a imagem do item e armazena na variavel sprite do slot para que seja visivel qual item foi adicionado
-        icon.enabled = true; 
+        icon.enabled = true;
+        icon.preserveAspect = true;
         removeButton.interactable = true; //Ativa a intereção com o botão de remover o item
     }
     /*------------------------------------------------------------------------------
@@ -98,13 +99,13 @@ public class InventorySlot : MonoBehaviour
         stackSize -= stackRemove;
     }
 
-    public void UseItem()
-    {
-        if(item.iD == 1)
-        {
-            GameManager.instance.toDrink(10);
-            GameManager.instance.toEat(10);
-            OnRemoveButton();
-        }
-    }
+    //public void UseItem()
+    //{
+    //    if(item.iD == 1)
+    //    {
+    //        GameManager.instance.toDrink(10);
+    //        GameManager.instance.toEat(10);
+    //        OnRemoveButton();
+    //    }
+    //}
 }
