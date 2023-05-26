@@ -54,6 +54,8 @@ public class Hud : MonoBehaviour
    public void updateWater(int water){
        thirstBar.UpdateStats(water);
    }
-   
+   public void updateTemp(float temp){
+       tempBar.UpdateStatsFloat(temp);
+   }
     
 }
