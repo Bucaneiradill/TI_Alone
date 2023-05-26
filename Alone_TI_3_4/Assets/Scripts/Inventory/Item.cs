@@ -24,5 +24,5 @@ public class Item : ScriptableObject {
     public string Derscription;
     public bool isDefaultItem = false;
     public int maxStackSize;
-
+    public Item[] ingredients;
 }

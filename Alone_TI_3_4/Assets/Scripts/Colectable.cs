@@ -2,42 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Colectable : Interactable
+public class Colectable : MonoBehaviour
 {
-    UIManager uiManager;
     [SerializeField] Item item;
-    [SerializeField] int amount = 1;
 
     private void Start()
     {
-        uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
+
     }
 
-    public override void Interact()
+    public void ObjectPickUp()
     {
-        base.Interact();
-        ObjectPickUp();
-    }
-
-    private void ObjectPickUp()
-    {
-
-        bool spaceInventory = Inventory.instance.AddItem(item, amount);
+        bool spaceInventory = Inventory.instance.items.Count < Inventory.instance.inventorySpace;
         if (spaceInventory == true)
         {
-            uiManager.DisplayAction($"Coletou {amount} {item.name}");
             Destroy(gameObject);
         }
     }
 
-    //continuação da gambiarra do MousePosition
-    public void ObjectConsume()
+    private void OnTriggerEnter(Collider other)
     {
-        base.Interact();
-        GameManager.instance.toDrink(10);
-        GameManager.instance.toEat(10);
-        Debug.Log("Comeu e Bebeu");
-        uiManager.DisplayAction($"Comida e água +10");
-        Destroy(gameObject);
-    } 
+        if (other.gameObject.CompareTag("Player"))
+        {
+            ObjectPickUp();
+        }
+    }
 }
