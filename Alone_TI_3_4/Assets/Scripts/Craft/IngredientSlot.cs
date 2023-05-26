@@ -11,5 +11,6 @@ public class IngredientSlot : MonoBehaviour
     public void SetIcon(Sprite icon)
     {
         this.icon.sprite = icon;
+        this.icon.enabled = true;
     }
 }

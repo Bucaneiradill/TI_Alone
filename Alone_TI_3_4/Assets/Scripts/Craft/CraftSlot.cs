@@ -8,7 +8,7 @@ public class CraftSlot : MonoBehaviour
     public Item item;
     [SerializeField] Image icon;
     GameObject recipePanel;
-    public bool canCraft = false;
+    public bool canCraft;
 
     private void Start()
     {
@@ -16,11 +16,13 @@ public class CraftSlot : MonoBehaviour
         icon.enabled = true;
         icon.preserveAspect = true;
         //tenho q pegar referência do painel
+        recipePanel = InventoryUI.instance.recipeUI;
     }
 
     //Verifica se tem todos os itens no inventário
     public void CheckRequiredItems()
     {
+        canCraft = true;
         foreach (Item item in item.ingredients)
         {
             if (!Inventory.instance.SearchItem(item))
@@ -28,17 +30,7 @@ public class CraftSlot : MonoBehaviour
                 canCraft = false;
             }
         }
-        canCraft = true;
+        recipePanel.GetComponent<CraftUI>().SetItem(item, canCraft);
         recipePanel.SetActive(true);
-    }
-
-    //Remove os itens necessários e cria o novo item
-    public void CraftItem()
-    {
-        foreach(Item item in item.ingredients)
-        {
-            Inventory.instance.RemoveItem(item);
-        }
-        Inventory.instance.AddItem(item);
     }
 }

@@ -19,6 +19,7 @@ public class InventoryUI : MonoBehaviour
     public static InventoryUI instance;
     [SerializeField] public Transform itemsParent;
     [SerializeField] GameObject inventoryUI;
+    public GameObject recipeUI;
     InventorySlot[] slots;
 
     private void Awake()
