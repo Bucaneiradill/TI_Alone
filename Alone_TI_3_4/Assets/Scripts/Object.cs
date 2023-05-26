@@ -44,10 +44,14 @@ public class Object : Interactable
     ------------------------------------------------------------------------------*/
     private void ObjectPickUp(){
         
-        bool spaceInventory = Inventory.instance.AddItem(item, amount);
+        bool spaceInventory = Inventory.instance.CheckAndAddItem(item);
         if(spaceInventory == true){
             uiManager.DisplayAction($"Coletou {amount} {item.name}");
             Destroy(gameObject);
+        }
+        else
+        {
+            uiManager.DisplayAction("Inventário cheio");
         }
     }
 }
