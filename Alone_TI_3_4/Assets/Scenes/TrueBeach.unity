@@ -123,115 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: d26e90fbbabca6549b5e88c903e2d38f, type: 2}
---- !u!1001 &2714723
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1390922226}
-    m_Modifications:
-    - target: {fileID: -444429757627719089, guid: f63506738b011cf44bcdd9192713e45e, type: 3}
-      propertyPath: item
-      value: 
-      objectReference: {fileID: 11400000, guid: ae517a8408777c6449e2bf96d78c73f8, type: 2}
-    - target: {fileID: 5611594924282704060, guid: f63506738b011cf44bcdd9192713e45e, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5611594924282704060, guid: f63506738b011cf44bcdd9192713e45e, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5611594924282704060, guid: f63506738b011cf44bcdd9192713e45e, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5611594924282704060, guid: f63506738b011cf44bcdd9192713e45e, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5611594924282704060, guid: f63506738b011cf44bcdd9192713e45e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5611594924282704060, guid: f63506738b011cf44bcdd9192713e45e, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5611594924282704060, guid: f63506738b011cf44bcdd9192713e45e, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5611594924282704060, guid: f63506738b011cf44bcdd9192713e45e, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 5611594924282704060, guid: f63506738b011cf44bcdd9192713e45e, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 5611594924282704060, guid: f63506738b011cf44bcdd9192713e45e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5611594924282704060, guid: f63506738b011cf44bcdd9192713e45e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5611594924282704060, guid: f63506738b011cf44bcdd9192713e45e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5611594924282704060, guid: f63506738b011cf44bcdd9192713e45e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5611594924282704060, guid: f63506738b011cf44bcdd9192713e45e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5611594924282704060, guid: f63506738b011cf44bcdd9192713e45e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5611594924282704060, guid: f63506738b011cf44bcdd9192713e45e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5611594924282704060, guid: f63506738b011cf44bcdd9192713e45e, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 5611594924282704060, guid: f63506738b011cf44bcdd9192713e45e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -40
-      objectReference: {fileID: 0}
-    - target: {fileID: 5611594924282704060, guid: f63506738b011cf44bcdd9192713e45e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5611594924282704060, guid: f63506738b011cf44bcdd9192713e45e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5611594924282704060, guid: f63506738b011cf44bcdd9192713e45e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5611594924282704061, guid: f63506738b011cf44bcdd9192713e45e, type: 3}
-      propertyPath: m_Name
-      value: CraftSlot
-      objectReference: {fileID: 0}
-    - target: {fileID: 5611594925420302946, guid: f63506738b011cf44bcdd9192713e45e, type: 3}
-      propertyPath: m_PreserveAspect
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5611594925420302947, guid: f63506738b011cf44bcdd9192713e45e, type: 3}
-      propertyPath: m_Interactable
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f63506738b011cf44bcdd9192713e45e, type: 3}
 --- !u!1001 &68016449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -350,11 +241,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4257557191405020958, guid: 8d904dc9a797e5942bab7821fbf6168c, type: 3}
   m_PrefabInstance: {fileID: 69771070}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &76648976 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5611594924282704060, guid: f63506738b011cf44bcdd9192713e45e, type: 3}
-  m_PrefabInstance: {fileID: 2714723}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &89265175
 GameObject:
@@ -558,7 +444,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 117349278}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1390922230}
+        m_TargetAssemblyTypeName: CraftUI, Assembly-CSharp
+        m_MethodName: Craft
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &117349278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2911,7 +2809,6 @@ GameObject:
   - component: {fileID: 673402196}
   - component: {fileID: 673402198}
   - component: {fileID: 673402197}
-  - component: {fileID: 673402199}
   m_Layer: 5
   m_Name: CraftRecipePanel
   m_TagString: RecipePanel
@@ -2981,23 +2878,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 673402195}
   m_CullTransparentMesh: 1
---- !u!114 &673402199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 673402195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebab46d735c5d5e4e853f2bb59499fc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slot: {fileID: 3836855988530757602, guid: e5f679604303f4a45951fa34f5ab4374, type: 3}
-  ingredientsPanel: {fileID: 443910091}
-  itemIcon: {fileID: 3995024441204440122}
-  craftButton: {fileID: 117349277}
-  itemToCraft: {fileID: 0}
 --- !u!1 &674629947
 GameObject:
   m_ObjectHideFlags: 0
@@ -5058,7 +4938,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 673402199}
+      - m_Target: {fileID: 1390922230}
         m_TargetAssemblyTypeName: CraftUI, Assembly-CSharp
         m_MethodName: CloseWindow
         m_Mode: 1
@@ -5542,7 +5422,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1224292117}
-  m_LocalRotation: {x: 0.38205582, y: 0.000000015901094, z: -0.000000006573799, w: 0.92413926}
+  m_LocalRotation: {x: 0.38205582, y: -0.000000015901092, z: 0.0000000065737984, w: 0.92413926}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5942,6 +5822,7 @@ GameObject:
   - component: {fileID: 1390922229}
   - component: {fileID: 1390922228}
   - component: {fileID: 1390922227}
+  - component: {fileID: 1390922230}
   m_Layer: 5
   m_Name: Crafting
   m_TagString: Untagged
@@ -5960,8 +5841,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 76648976}
+  m_Children: []
   m_Father: {fileID: 809292682}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6032,6 +5912,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1390922225}
   m_CullTransparentMesh: 1
+--- !u!114 &1390922230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390922225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebab46d735c5d5e4e853f2bb59499fc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slot: {fileID: 3836855988530757602, guid: e5f679604303f4a45951fa34f5ab4374, type: 3}
+  craftWindow: {fileID: 673402195}
+  ingredientsPanel: {fileID: 443910091}
+  itemIcon: {fileID: 3995024441204440122}
+  craftButton: {fileID: 117349277}
+  craftSlot: {fileID: 5611594924282704061, guid: f63506738b011cf44bcdd9192713e45e, type: 3}
+  itemToCraft: {fileID: 0}
 --- !u!195 &1401419065 stripped
 NavMeshAgent:
   m_CorrespondingSourceObject: {fileID: 4257557191405021028, guid: 8d904dc9a797e5942bab7821fbf6168c, type: 3}
@@ -6196,7 +6095,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemsParent: {fileID: 923456903}
   inventoryUI: {fileID: 809292679}
-  recipeUI: {fileID: 673402195}
+  recipeUI: {fileID: 1390922225}
 --- !u!114 &1441669008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7044,7 +6943,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1672980883}
-  m_LocalRotation: {x: 0.3987582, y: 0.000000015779213, z: -0.000000006861184, w: 0.91705614}
+  m_LocalRotation: {x: 0.3987582, y: -0.000000015779221, z: 0.0000000068611876, w: 0.91705614}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

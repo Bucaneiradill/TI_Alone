@@ -31,6 +31,5 @@ public class CraftSlot : MonoBehaviour
             }
         }
         recipePanel.GetComponent<CraftUI>().SetItem(item, canCraft);
-        recipePanel.SetActive(true);
     }
 }

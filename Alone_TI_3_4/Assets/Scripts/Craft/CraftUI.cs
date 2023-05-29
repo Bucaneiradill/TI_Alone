@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,14 +8,26 @@ public class CraftUI : MonoBehaviour
 {
     public static CraftUI instance;
     [SerializeField] GameObject slot;
+    [SerializeField] GameObject craftWindow;
     [SerializeField] Transform ingredientsPanel;
     [SerializeField] Image itemIcon;
     [SerializeField] Button craftButton;
+    [SerializeField] GameObject craftSlot;
     public Item itemToCraft;
 
     private void Awake()
     {
         instance= this;
+    }
+
+    private void Start()
+    {
+        Item[] itens = Resources.LoadAll<Item>("Craftable");
+
+        foreach (Item item in itens)
+        {
+            Instantiate(craftSlot, transform).GetComponent<CraftSlot>().item = item;
+        }
     }
 
     public void SetItem(Item item, bool canCraft)
@@ -24,6 +37,7 @@ public class CraftUI : MonoBehaviour
         itemIcon.enabled = true;
         FillRecipe();
         craftButton.enabled = canCraft;
+        craftWindow.SetActive(true);
     }
 
     private void FillRecipe()
@@ -32,7 +46,6 @@ public class CraftUI : MonoBehaviour
         {
             GameObject aux = Instantiate(slot, ingredientsPanel, false);
             aux.GetComponent<IngredientSlot>().SetIcon(item.icon);
-            Debug.Log(aux.name);
         }
     }
 
@@ -43,7 +56,7 @@ public class CraftUI : MonoBehaviour
 
     public void CloseWindow()
     {
-        gameObject.SetActive(false);
+        craftWindow.SetActive(false);
     }
 
     private void OnDisable()
