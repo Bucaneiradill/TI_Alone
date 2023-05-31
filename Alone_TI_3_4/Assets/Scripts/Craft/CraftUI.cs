@@ -32,6 +32,10 @@ public class CraftUI : MonoBehaviour
 
     public void SetItem(Item item, bool canCraft)
     {
+        if(item != itemToCraft)
+        {
+            ClearPanel();
+        }
         itemToCraft = item;
         itemIcon.sprite = itemToCraft.icon;
         itemIcon.enabled = true;
@@ -59,7 +63,7 @@ public class CraftUI : MonoBehaviour
         craftWindow.SetActive(false);
     }
 
-    private void OnDisable()
+    private void ClearPanel()
     {
         itemToCraft = null;
         for(int i = 0; i < ingredientsPanel.childCount; i++)
