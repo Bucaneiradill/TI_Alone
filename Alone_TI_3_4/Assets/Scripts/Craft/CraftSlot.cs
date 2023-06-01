@@ -7,35 +7,29 @@ public class CraftSlot : MonoBehaviour
 {
     public Item item;
     [SerializeField] Image icon;
+    GameObject recipePanel;
+    public bool canCraft;
 
     private void Start()
     {
         icon.sprite = item.icon;
         icon.enabled = true;
         icon.preserveAspect = true;
+        //tenho q pegar referência do painel
+        recipePanel = InventoryUI.instance.recipeUI;
     }
 
     //Verifica se tem todos os itens no inventário
     public void CheckRequiredItems()
     {
+        canCraft = true;
         foreach (Item item in item.ingredients)
         {
             if (!Inventory.instance.SearchItem(item))
             {
-                Debug.Log("Não possui todos os itens");
-                return;
+                canCraft = false;
             }
         }
-        CraftItem();
-    }
-
-    //Remove os itens necessários e cria o novo item
-    private void CraftItem()
-    {
-        foreach(Item item in item.ingredients)
-        {
-            Inventory.instance.RemoveItem(item);
-        }
-        Inventory.instance.AddItem(item);
+        recipePanel.GetComponent<CraftUI>().SetItem(item, canCraft);
     }
 }
