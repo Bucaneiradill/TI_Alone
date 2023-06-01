@@ -22,9 +22,26 @@ public class TimeManager : MonoBehaviour
     [SerializeField] public Transform directionalLight;
     [SerializeField] private float cont = 0;
 
-    public void CalcTime(float seconds)
-    {
-        timeTxt.text = TimeSpan.FromSeconds(seconds).ToString(@"hh\:mm");
+    //temperatura
+
+    void CalcTime(){
+       
+       timeTxt.text = TimeSpan.FromSeconds(seconds).ToString(@"hh\:mm");//\:ss
+   }
+
+   
+   public void prosCeu()
+    { 
+        //Debug.Log(seconds);
+        float rotX = Mathf.Lerp(-90, 270, seconds/86400.0f);
+    }
+    public void tempValue(float temp){
+        if(temp <= 86400.0f/2 ){
+            GameManager.instance.toCold();
+        }
+        else{
+            GameManager.instance.toHot();
+        }
     }
     public void prosCeu(float seconds)
     {
@@ -35,15 +52,12 @@ public class TimeManager : MonoBehaviour
     public void updateDayCycle()
     {
         seconds += Time.deltaTime * multiplicador;
-
-        if (seconds > 86400)
-        {
-            seconds = 0;
-        }
-
-        if (cont >= 600)
-        {
-            //3600
+    }
+    
+    public void updateDayCycle(){
+        seconds += 1;
+        tempValue(seconds);       
+        if(cont >= 600){
             //Ficar com fome
             GameManager.instance?.toHungry();
             //Ficar com sede

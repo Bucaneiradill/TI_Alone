@@ -18,11 +18,11 @@ public class GameManager : MonoBehaviour
     private int hungerMax;
     public int thirst = 50;
     private int thirstMax;
-    public float tempMin = -50.0f;
-    public float tempMax =  50.0f;
+    //temperature
+    public float tempMin = -30.0f;
+    public float tempMax =  30.0f;
     public float tempValue = 0f;
-    [NonSerialized]public int[] UpdateOfVariable = {2, 2, 2};
-    [NonSerialized]public int[] StatsMin = {0, 0, 0};
+
    
 
     //methods
@@ -61,45 +61,64 @@ public class GameManager : MonoBehaviour
     
     public void hungryAndThirstDamage(){
         if(hunger == 0 || hunger == 0){
-            if(life <= 0){
-                UpdateOfVariable[2]= 0;
+            if(life <= 0){                
                 Debug.Log("Morreu");
             }else{
-                life -= UpdateOfVariable[2];
-                Hud.instance.updateLife(life);
-            }
-            
+                damage(1);
+            }           
         }
     }
     public void temperaturaTest(){
-        if(tempValue >= 50||tempValue <= -50){
-            if(life <= 0){
-                UpdateOfVariable[2]= 0;
+        if(tempValue >= 30||tempValue <= -30){
+            if(life <= 0){             
                 Debug.Log("Morreu");
             }else{
-               life -= UpdateOfVariable[2];
-               Hud.instance?.updateLife(life);
+              damage(1);
             }
         }
     }
+    public void damage(int val){
+        if(life == 50){
+            UIManager.instance.DisplayAction("Vida baixa");
+        }
+        if(life == 10){
+            UIManager.instance.DisplayAction("Você esta morrendo");
+        }
+        life -= val;
+        Hud.instance.updateLife(life);
+    }
     public void recover(int val){
         if(life == lifeMax){
-            Debug.Log("Vida Maxima");
+            UIManager.instance.DisplayAction("Você Maxima");
         }else{
             life += val;
             Hud.instance?.updateLife(life);
         }
     }
     public void toHungry(){
-            hunger -= 2;
+         if(hunger == 25){
+           UIManager.instance.DisplayAction("Você está com fome");
+        }
+        if(hunger <= 0){
+           UIManager.instance.DisplayAction("Você está faminto");
+        }else{
+            hunger -= 1;
             Hud.instance?.updateFood(hunger);
+        }      
     }
     public void toThirst(){
-            thirst -= 2;
+        if(thirst == 25){
+           UIManager.instance.DisplayAction("Você está com sede");
+        }
+        if(thirst <= 0){
+         UIManager.instance.DisplayAction("Você está desidratado");
+        }else{
+             thirst -= 1;
             Hud.instance?.updateWater(thirst);
+        }           
     }
     public void toEat(int val){
-        if(hunger == hungerMax){
+        if(hunger >= hungerMax){
             Debug.Log("Cheio");
         }else{
             hunger += val;
@@ -108,12 +127,28 @@ public class GameManager : MonoBehaviour
         }
     }
     public void toDrink(int val){
-        if(thirst == thirstMax){
+        if(thirst >= thirstMax){
             Debug.Log("Cheio");
         }else{
             thirst += val;
             Hud.instance?.updateWater(thirst);
             UIManager.instance.DisplayAction($"Hidratação +{val}");
+        }
+    }
+    public void toCold(){
+        if(tempValue >= tempMin){
+            tempValue += 0.1f*Time.deltaTime;
+            Hud.instance.updateTemp(tempValue);
+        }else{
+            UIManager.instance.DisplayAction("Frio Estremo");
+        }
+    }
+    public void toHot(){
+        if(tempValue <= tempMax){
+            tempValue -= 0.1f*Time.deltaTime;
+            Hud.instance.updateTemp(tempValue);
+        }else{
+            UIManager.instance.DisplayAction("Calor Estremo");
         }
     }
     //metodos Start e Update
@@ -132,26 +167,7 @@ public class GameManager : MonoBehaviour
         
     }
     void FixedUpdate()
-    {
-        if(life == 50){
-            UIManager.instance.DisplayAction("Vida baixa");
-        }
-        if(life == 10){
-            UIManager.instance.DisplayAction("Você esta morrendo");
-        }
-        if(hunger == 25){
-           UIManager.instance.DisplayAction("Você está com fome");
-        }
-       if(hunger == 10){
-           UIManager.instance.DisplayAction("Você está faminto");
-        }
-        if(thirst == 25){
-           UIManager.instance.DisplayAction("Você está com sede");
-        }
-        if(thirst == 10){
-           UIManager.instance.DisplayAction("Você está desidratado");
-        }
-       
+    {  
     }
     
 }
