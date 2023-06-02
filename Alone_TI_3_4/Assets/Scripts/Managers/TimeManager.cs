@@ -24,13 +24,13 @@ public class TimeManager : MonoBehaviour
 
     //temperatura
 
-    void CalcTime(){
-       
+    void CalcTime(float seconds)
+    {
        timeTxt.text = TimeSpan.FromSeconds(seconds).ToString(@"hh\:mm");//\:ss
-   }
+    }
 
    
-   public void prosCeu()
+    public void prosCeu()
     { 
         //Debug.Log(seconds);
         float rotX = Mathf.Lerp(-90, 270, seconds/86400.0f);
