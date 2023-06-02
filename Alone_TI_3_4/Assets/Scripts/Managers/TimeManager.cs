@@ -49,24 +49,20 @@ public class TimeManager : MonoBehaviour
         directionalLight.rotation = Quaternion.Euler(rotX, 44.002f, 0);
     }
 
-    public void updateDayCycle()
-    {
-        seconds += Time.deltaTime * multiplicador;
-    }
-    
     public void updateDayCycle(){
         seconds += 1;
         tempValue(seconds);       
         if(cont >= 600){
+
             //Ficar com fome
             GameManager.instance?.toHungry();
             //Ficar com sede
             GameManager.instance?.toThirst();
-            GameManager.instance?.temperaturaTest();
-            GameManager.instance?.hungryAndThirstDamage();
-            cont = 0;
+           GameManager.instance?.temperaturaTest();
+           GameManager.instance?.hungryAndThirstDamage();
+           cont = 0;
         }
-        cont += Time.deltaTime * multiplicador;
+         cont = cont + 1;
     }
     public void setSpeedDay(int mult)
     {
