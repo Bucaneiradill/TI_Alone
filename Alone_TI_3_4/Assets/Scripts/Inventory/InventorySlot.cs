@@ -108,4 +108,12 @@ public class InventorySlot : MonoBehaviour
     //        OnRemoveButton();
     //    }
     //}
+
+    public void EquipItem()
+    {
+        if (item.isEquipable)
+        {
+            EquipmentUI.instance.SetItem(item);
+        }
+    }
 }

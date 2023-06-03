@@ -17,6 +17,8 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: fcb57f6addd8fbc4b9219f18ce529b8b, type: 3}
   Derscription: 
   isDefaultItem: 0
+  isEquipable: 1
+  isConsumable: 0
   maxStackSize: 1
   ingredients:
   - {fileID: 11400000, guid: 5c28aaf7e7c820542ae348264afebcd0, type: 2}
