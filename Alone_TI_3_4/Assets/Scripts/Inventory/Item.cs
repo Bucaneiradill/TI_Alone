@@ -23,6 +23,8 @@ public class Item : ScriptableObject {
     [TextArea(4, 4)]
     public string Derscription;
     public bool isDefaultItem = false;
+    public bool isEquipable = false;
+    public bool isConsumable = false;
     public int maxStackSize;
     public Item[] ingredients;
 }

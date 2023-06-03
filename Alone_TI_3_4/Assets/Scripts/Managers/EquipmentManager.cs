@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class EquipmentManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static EquipmentManager instance;
+    private Item equippedItem;
+    public delegate void UseItem();
+    public UseItem useItem;
+
+    private void Awake()
     {
-        
+        instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void EquipItem(Item item)
     {
-        
+        equippedItem= item;
+    }
+
+    public void UnequipItem()
+    {
+        equippedItem= null;
+    }
+
+    public Item GetItem()
+    {
+        return equippedItem;
     }
 }
