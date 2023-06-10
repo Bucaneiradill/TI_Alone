@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: Coconut
   m_EditorClassIdentifier: Assembly-CSharp::Food
-  itemType: 2
+  itemType: 1
   iD: 0
   name: Coco
   icon: {fileID: 21300000, guid: 87cb47a38196c464f845a8a35dcfde3b, type: 3}

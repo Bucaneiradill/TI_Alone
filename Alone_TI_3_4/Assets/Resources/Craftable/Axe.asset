@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: Machado
+  m_Script: {fileID: 11500000, guid: 73f2dc203c464b6499bfb08af59f4bcd, type: 3}
+  m_Name: Axe
   m_EditorClassIdentifier: Assembly-CSharp::AxeItem
   itemType: 0
   iD: 0
@@ -20,7 +20,7 @@ MonoBehaviour:
   isDefaultItem: 0
   isEquipable: 1
   isConsumable: 0
-  maxStackSize: 0
+  maxStackSize: 1
   ingredients:
   - {fileID: 11400000, guid: 49785011511d4c34da614e7a0d6983a3, type: 2}
-  - {fileID: 11400000, guid: 49785011511d4c34da614e7a0d6983a3, type: 2}
+  - {fileID: 11400000, guid: f34a1b39a03900b4c9779c1402e112ea, type: 2}
