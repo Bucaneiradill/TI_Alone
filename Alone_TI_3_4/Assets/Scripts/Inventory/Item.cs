@@ -14,9 +14,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item")]
-public class Item : ScriptableObject {
-    
+public enum ItemType
+{
+    Axe,
+    Food,
+    Foraging
+}
+
+public abstract class Item : ScriptableObject
+{
+    public abstract void PerformAction();
+    public ItemType itemType;
     public int iD;
     new public string name = "New Item";
     public Sprite icon = null;
@@ -26,5 +34,5 @@ public class Item : ScriptableObject {
     public bool isEquipable = false;
     public bool isConsumable = false;
     public int maxStackSize;
-    public Item[] ingredients;
+    public List<Item> ingredients;
 }
