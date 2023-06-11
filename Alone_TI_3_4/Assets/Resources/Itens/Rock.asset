@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58fba91c885dc4c4fabb5bc93744cb3d, type: 3}
   m_Name: Rock
   m_EditorClassIdentifier: Assembly-CSharp::Foraging
-  itemType: 0
+  itemType: 2
   iD: 0
   name: Pedra
   icon: {fileID: 21300000, guid: 17f07647e65693b4e8c9f496374db33f, type: 3}

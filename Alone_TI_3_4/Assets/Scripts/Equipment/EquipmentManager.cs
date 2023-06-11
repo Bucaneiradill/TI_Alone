@@ -5,7 +5,7 @@ using UnityEngine;
 public class EquipmentManager : MonoBehaviour
 {
     public static EquipmentManager instance;
-    private Item equippedItem;
+    public Item equippedItem;
     public delegate void UseItem();
     public UseItem useItem;
 
