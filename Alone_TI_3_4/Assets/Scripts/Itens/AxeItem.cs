@@ -5,9 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Axe", menuName = "Inventory/Axe")]
 public class AxeItem : Item
 {
-    public override void PerformAction()
+    public int damage = 2;
+    public override void PerformAction(ColectableSource source)
     {
-        // Lógica específica para ação do machado
-        Debug.Log("Axe action performed");
+        source.health -= damage;
     }
 }

@@ -11,9 +11,11 @@ public class Interactable : MonoBehaviour
 
     bool hasInteracted = false;
 
+    public int health = 5;
+
     public virtual void Interact()
     {
-        Debug.Log("Interagindo com" + transform.name);
+        
     }
 
     private void Update()
