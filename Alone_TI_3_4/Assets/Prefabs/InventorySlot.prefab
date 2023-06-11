@@ -275,7 +275,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6763968728733682154}
         m_TargetAssemblyTypeName: InventorySlot, Assembly-CSharp
-        m_MethodName: EquipItem
+        m_MethodName: OnClickItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

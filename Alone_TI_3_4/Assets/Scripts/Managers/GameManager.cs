@@ -81,8 +81,12 @@ public class GameManager : MonoBehaviour
         if(life == 50){
             UIManager.instance.DisplayAction("Vida baixa");
         }
-        if(life == 10){
+        else if(life == 10){
             UIManager.instance.DisplayAction("Você esta morrendo");
+        }
+        else if(life <= 0)
+        {
+            UIManager.instance.ShowGameOver();
         }
         life -= val;
         Hud.instance.updateLife(life);
