@@ -24,7 +24,8 @@ public class EquipmentManager : MonoBehaviour
             {
                 if (numberPressed >= 1 && numberPressed <= EquipmentUI.instance.slots.Length)
                 {
-                    EquipItem(EquipmentUI.instance.slots[numberPressed - 1].item);
+                    if(EquipmentUI.instance.slots[numberPressed - 1].item != null)
+                        EquipItem(EquipmentUI.instance.slots[numberPressed - 1].item);
                 }
             }
         }
