@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class EquipmentManager : MonoBehaviour
 {
@@ -24,8 +25,9 @@ public class EquipmentManager : MonoBehaviour
             {
                 if (numberPressed >= 1 && numberPressed <= EquipmentUI.instance.slots.Length)
                 {
-                    if(EquipmentUI.instance.slots[numberPressed - 1].item != null)
+                    if (EquipmentUI.instance.slots[numberPressed - 1].item != null)
                         EquipItem(EquipmentUI.instance.slots[numberPressed - 1].item);
+                    else UnequipItem();
                 }
             }
         }
@@ -34,12 +36,13 @@ public class EquipmentManager : MonoBehaviour
     public void EquipItem(Item item)
     {
         equippedItem= item;
-        Debug.Log($"Item equipado: {item.name}");
+        UIManager.instance.DisplayAction($"Item equipado: {item.name}");
     }
 
     public void UnequipItem()
     {
         equippedItem= null;
+        UIManager.instance.DisplayAction($"Nenhum item equipado");
     }
 
     public Item GetItem()
