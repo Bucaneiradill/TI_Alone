@@ -61,6 +61,7 @@ public class CraftUI : MonoBehaviour
     public void CloseWindow()
     {
         craftWindow.SetActive(false);
+        ClearPanel();
     }
 
     private void ClearPanel()
