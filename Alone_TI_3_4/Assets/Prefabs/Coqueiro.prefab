@@ -313,6 +313,7 @@ Transform:
   - {fileID: 4858341005355313139}
   - {fileID: 218191767982363268}
   - {fileID: 2042902665442377522}
+  - {fileID: 2861089735640116311}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -343,10 +344,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
+  health: 5
   loot: {fileID: 4062688706886711010, guid: 4a882832adc194d44b8e96a1c4fb3702, type: 3}
   lootAmount: 1
   lootName: Coco
   dropPoint: {fileID: 2042902665442377522}
+  particlePoint: {fileID: 2861089735640116311}
+  particle: {fileID: 3190041756260390103, guid: 161dcb31c3ddf9344961180b1746ce57, type: 3}
+  counterType: 0
 --- !u!208 &-7323370654939611085
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -461,6 +466,37 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2842626634743084676, guid: 46fee4856e81b9146b790cecc581f341, type: 3}
+--- !u!1 &3164410850398824795
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2861089735640116311}
+  m_Layer: 7
+  m_Name: ParticlePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2861089735640116311
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3164410850398824795}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.09, y: 1.19, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2530145742084221133}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3404094209498196544
 GameObject:
   m_ObjectHideFlags: 0

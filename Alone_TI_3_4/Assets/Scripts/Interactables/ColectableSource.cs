@@ -8,10 +8,16 @@ public class ColectableSource : Interactable
     [SerializeField] int lootAmount;
     [SerializeField] string lootName;
     [SerializeField] Transform dropPoint;
+    [SerializeField] Transform particlePoint;
+    [SerializeField] GameObject particle;
     public ItemType counterType;
     public override void Interact()
     {
         base.Interact();
+        if(particlePoint!= null)
+        {
+            Instantiate(particle, particlePoint.position, Quaternion.identity);
+        }
         if(EquipmentManager.instance.equippedItem?.itemType == counterType)
         {
             EquipmentManager.instance.equippedItem.PerformAction(this);

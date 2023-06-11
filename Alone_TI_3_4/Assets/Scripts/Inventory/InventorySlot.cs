@@ -51,11 +51,17 @@ public class InventorySlot : MonoBehaviour
         stackSize -= stackRemove;
     }
 
-    public void EquipItem()
+    public void OnClickItem()
     {
         if (item.isEquipable)
         {
             EquipmentUI.instance.SetItem(item);
+        }
+        else if (item.isConsumable)
+        {
+            GameManager.instance.toEat(10);
+            GameManager.instance.toDrink(10);
+            ClearSlot();
         }
     }
 }

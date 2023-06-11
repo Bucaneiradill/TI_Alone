@@ -616,6 +616,7 @@ Transform:
   - {fileID: 509177464992663441}
   - {fileID: 7908432691085760858}
   - {fileID: 2949544073061983943}
+  - {fileID: 4667359244486151738}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -632,10 +633,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
+  health: 5
   loot: {fileID: 4337459113726495721, guid: e784b5fa70ce44240942b70774a05b9b, type: 3}
   lootAmount: 1
   lootName: Banana
   dropPoint: {fileID: 2949544073061983943}
+  particlePoint: {fileID: 4667359244486151738}
+  particle: {fileID: 3190041756260390103, guid: 161dcb31c3ddf9344961180b1746ce57, type: 3}
+  counterType: 0
 --- !u!208 &1334967347475745069
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -1187,3 +1192,34 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5550380247795683603, guid: 9383b8eb099f38640a3fc1861ef949c6, type: 3}
+--- !u!1 &9216495429385611380
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4667359244486151738}
+  m_Layer: 7
+  m_Name: ParticlePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4667359244486151738
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9216495429385611380}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.373, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1334967347475745064}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

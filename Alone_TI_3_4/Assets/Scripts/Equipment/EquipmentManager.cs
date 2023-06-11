@@ -1,14 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class EquipmentManager : MonoBehaviour
 {
     public static EquipmentManager instance;
     public Item equippedItem;
-    public delegate void UseItem();
-    public UseItem useItem;
 
     private void Awake()
     {
