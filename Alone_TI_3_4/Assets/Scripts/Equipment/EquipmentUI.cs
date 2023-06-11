@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class EquipmentUI : MonoBehaviour
 {
     public static EquipmentUI instance;
-    EquipmentSlot[] slots;
+    public EquipmentSlot[] slots;
 
     private void Awake()
     {

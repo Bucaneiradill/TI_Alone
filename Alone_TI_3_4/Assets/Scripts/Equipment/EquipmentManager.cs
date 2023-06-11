@@ -14,9 +14,26 @@ public class EquipmentManager : MonoBehaviour
         instance = this;
     }
 
+    private void Update()
+    {
+        string input = Input.inputString;
+
+        if(input.Length == 1 )
+        {
+            if (int.TryParse(input, out int numberPressed))
+            {
+                if (numberPressed >= 1 && numberPressed <= EquipmentUI.instance.slots.Length)
+                {
+                    EquipItem(EquipmentUI.instance.slots[numberPressed - 1].item);
+                }
+            }
+        }
+    }
+
     public void EquipItem(Item item)
     {
         equippedItem= item;
+        Debug.Log($"Item equipado: {item.name}");
     }
 
     public void UnequipItem()
