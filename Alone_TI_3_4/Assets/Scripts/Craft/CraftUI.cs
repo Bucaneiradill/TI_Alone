@@ -56,6 +56,13 @@ public class CraftUI : MonoBehaviour
     public void Craft()
     {
         CraftManager.instance.CraftItem(itemToCraft);
+        foreach(Item item in itemToCraft.ingredients)
+        {
+            if (!Inventory.instance.SearchItem(item))
+            {
+                craftButton.enabled = false;
+            }
+        }
     }
 
     public void CloseWindow()
