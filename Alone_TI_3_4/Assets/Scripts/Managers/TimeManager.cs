@@ -15,14 +15,17 @@ public class TimeManager : MonoBehaviour
     //Variaveis do sistema de dia e noite
     [Header("Variavel de duração do dia")]
     [SerializeField][Tooltip("Duração do dia em segundos")] private int durationDay;
-    private float seconds;
+    //private float seconds;
     private float multiplicador;
     [Header("Tempo e Sol")]
     [SerializeField] private TextMeshProUGUI timeTxt;
     [SerializeField] public Transform directionalLight;
-    [SerializeField] private float cont = 0;
+    [SerializeField] private int cont = 0;
 
-    //temperatura
+    public float delay = 0.05f;
+    public bool isPlaying;
+    private int seconds;
+    private int contHora;
 
     void CalcTime(float seconds)
     {
@@ -37,10 +40,10 @@ public class TimeManager : MonoBehaviour
     }
     public void tempValue(float temp){
         if(temp <= 86400.0f/2 ){
-            GameManager.instance.toCold();
+            GameManager.instance?.toCold();
         }
         else{
-            GameManager.instance.toHot();
+            GameManager.instance?.toHot();
         }
     }
     public void prosCeu(float seconds)
@@ -68,30 +71,40 @@ public class TimeManager : MonoBehaviour
     {
         if (mult == 1)
         {
-            multiplicador = 86400 / durationDay;
+            Debug.Log("1X");
+            delay = 0.05f;
         }
         else if (mult == 2)
         {
-            multiplicador = (86400 / durationDay) * 4;
+            Debug.Log("2X");
+            delay = (0.05f/2);
         }
         else if (mult == 3)
         {
-            multiplicador = (86400 / durationDay) * 6;
+            Debug.Log("3X");
+            delay = (0.05f/3);
         }
     }
     // Start is called before the first frame update
     void Start()
     {
-        //Tempo 
+       /* //Tempo 
         durationDay = 1440;
-        multiplicador = 86400 / durationDay;
+        multiplicador = 86400 / durationDay;*/
+        //Tempo
+        Invoke("TimeCount", delay);
     }
-
+    void TimeCount(){
+        if(isPlaying){
+            updateDayCycle();
+            prosCeu(seconds);
+            CalcTime(seconds);
+        }
+       Invoke("TimeCount", delay);
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
-        updateDayCycle();
-        prosCeu(seconds);
-        CalcTime(seconds);
+        
     }
 }

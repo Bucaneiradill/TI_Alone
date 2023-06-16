@@ -39,23 +39,23 @@ public class GameManager : MonoBehaviour
     public void addLife()
     {
          life += 0;
-        Hud.instance.UpdateVidaHud(life);
+        Hud.instance?.UpdateVidaHud(life);
     }
     public void addHunger()
     {
          hunger += 0;
-        Hud.instance.UpdateFomeHud(hunger);
+        Hud.instance?.UpdateFomeHud(hunger);
     }
     public void addThirst()
     {
         thirst += 0;
-        Hud.instance.UpdateSedeHud(thirst);
+        Hud.instance?.UpdateSedeHud(thirst);
     }    
     public void addTemp()
     {
         tempMax += 0f;
         tempMin -= 0f;
-        Hud.instance.UpdateTempHud(tempMax, tempMin, tempValue);
+        Hud.instance?.UpdateTempHud(tempMax, tempMin, tempValue);
     }
     //Atualizçãoes
     
@@ -79,21 +79,24 @@ public class GameManager : MonoBehaviour
     }
     public void damage(int val){
         if(life == 50){
-            UIManager.instance.DisplayAction("Vida baixa");
+            UIManager.instance?.DisplayAction("Vida baixa");
         }
         else if(life == 10){
-            UIManager.instance.DisplayAction("Você esta morrendo");
+            UIManager.instance?.DisplayAction("Você esta morrendo");
         }
         else if(life <= 0)
         {
-            UIManager.instance.ShowGameOver();
+            UIManager.instance?.ShowGameOver();
         }
         life -= val;
-        Hud.instance.updateLife(life);
+        Hud.instance?.updateLife(life);
     }
     public void recover(int val){
+        life += val;
         if(life == lifeMax){
-            UIManager.instance.DisplayAction("Você Maxima");
+            UIManager.instance?.DisplayAction("Você Maxima");
+            life = lifeMax;
+            Hud.instance?.updateLife(life);
         }else{
             life += val;
             Hud.instance?.updateLife(life);
@@ -101,58 +104,75 @@ public class GameManager : MonoBehaviour
     }
     public void toHungry(){
          if(hunger == 25){
-           UIManager.instance.DisplayAction("Você está com fome");
+           UIManager.instance?.DisplayAction("Você está com fome");
         }
         if(hunger <= 0){
-           UIManager.instance.DisplayAction("Você está faminto");
+           UIManager.instance?.DisplayAction("Você está faminto");
         }else{
             hunger -= 1;
             Hud.instance?.updateFood(hunger);
         }      
     }
+    /*IEnumerator lifeStage(string stage){
+        if(stage == "healthy"){
+
+        }else if(stage == "healing"){
+            recover(1);
+            yield return 
+        }else{
+            
+        }
+        yield return stage;
+    }*/
     public void toThirst(){
         if(thirst == 25){
-           UIManager.instance.DisplayAction("Você está com sede");
+           UIManager.instance?.DisplayAction("Você está com sede");
         }
         if(thirst <= 0){
-         UIManager.instance.DisplayAction("Você está desidratado");
+         UIManager.instance?.DisplayAction("Você está desidratado");
         }else{
              thirst -= 1;
             Hud.instance?.updateWater(thirst);
         }           
     }
     public void toEat(int val){
+         hunger += val;
         if(hunger >= hungerMax){
             Debug.Log("Cheio");
-        }else{
-            hunger += val;
+            hunger = hungerMax;
             Hud.instance?.updateFood(hunger);
-            UIManager.instance.DisplayAction($"Comida +{val}");
+            UIManager.instance?.DisplayAction($"Comida +{val}");
+        }else{        
+            Hud.instance?.updateFood(hunger);
+            UIManager.instance?.DisplayAction($"Comida +{val}");
         }
     }
     public void toDrink(int val){
+        thirst += val;
         if(thirst >= thirstMax){
             Debug.Log("Cheio");
-        }else{
-            thirst += val;
+            thirst = thirstMax;
             Hud.instance?.updateWater(thirst);
-            UIManager.instance.DisplayAction($"Hidratação +{val}");
+            UIManager.instance?.DisplayAction($"Hidratação +{val}");
+        }else{            
+            Hud.instance?.updateWater(thirst);
+            UIManager.instance?.DisplayAction($"Hidratação +{val}");
         }
     }
     public void toCold(){
         if(tempValue >= tempMin){
             tempValue += 0.1f*Time.deltaTime;
-            Hud.instance.updateTemp(tempValue);
+            Hud.instance?.updateTemp(tempValue);
         }else{
-            UIManager.instance.DisplayAction("Frio Estremo");
+            UIManager.instance?.DisplayAction("Frio Estremo");
         }
     }
     public void toHot(){
         if(tempValue <= tempMax){
             tempValue -= 0.1f*Time.deltaTime;
-            Hud.instance.updateTemp(tempValue);
+            Hud.instance?.updateTemp(tempValue);
         }else{
-            UIManager.instance.DisplayAction("Calor Estremo");
+            UIManager.instance?.DisplayAction("Calor Estremo");
         }
     }
     //metodos Start e Update

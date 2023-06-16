@@ -530,6 +530,8 @@ MonoBehaviour:
   timeTxt: {fileID: 2143903378}
   directionalLight: {fileID: 705507995}
   cont: 0
+  delay: 0.05
+  isPlaying: 1
 --- !u!114 &89265180
 MonoBehaviour:
   m_ObjectHideFlags: 0
