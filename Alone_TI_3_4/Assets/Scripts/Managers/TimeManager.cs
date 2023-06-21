@@ -14,17 +14,16 @@ public class TimeManager : MonoBehaviour
     }
     //Variaveis do sistema de dia e noite
     [Header("Variavel de duração do dia")]
-    [SerializeField][Tooltip("Duração do dia em segundos")] private int durationDay;
-    //private float seconds;
-    private float multiplicador;
+    //[SerializeField][Tooltip("Duração do dia em segundos")] private int durationDay;
     [Header("Tempo e Sol")]
     [SerializeField] private TextMeshProUGUI timeTxt;
     [SerializeField] public Transform directionalLight;
     [SerializeField] private int cont = 0;
-
-    public float delay = 0.05f;
+    [SerializeField][Tooltip("Valor padrão do delay")] private float dalayValue = 0.05f;
+    public float delay;
+    
     public bool isPlaying;
-    private int seconds;
+    [SerializeField][Tooltip("Duração do dia em segundos")] private int seconds = 21643;
     private int contHora;
 
     void CalcTime(float seconds)
@@ -72,17 +71,17 @@ public class TimeManager : MonoBehaviour
         if (mult == 1)
         {
             Debug.Log("1X");
-            delay = 0.05f;
+            delay = dalayValue;
         }
         else if (mult == 2)
         {
             Debug.Log("2X");
-            delay = (0.05f/2);
+            delay = (dalayValue/2);
         }
         else if (mult == 3)
         {
             Debug.Log("3X");
-            delay = (0.05f/3);
+            delay = (dalayValue/3);
         }
     }
     // Start is called before the first frame update
@@ -92,6 +91,7 @@ public class TimeManager : MonoBehaviour
         durationDay = 1440;
         multiplicador = 86400 / durationDay;*/
         //Tempo
+        delay = dalayValue;
         Invoke("TimeCount", delay);
     }
     void TimeCount(){

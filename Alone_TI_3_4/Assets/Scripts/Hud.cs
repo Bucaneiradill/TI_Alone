@@ -23,10 +23,9 @@ public class Hud : MonoBehaviour
    public void ColocaStatMax(StatsBar stat, int val){
       stat.SetStatsMax(val);
    }
-   public void ColocaStatTemp(StatsBar stat, float valMax, float valMin, float valIni){
+   public void ColocaStatTemp(StatsBar stat, float valMax, float valMin){
       stat.SetTempMax(valMax);
       stat.SetTempMin(valMin);
-      stat.UpdateStatsFloat(valIni);
    }
    public void ColocaStatMinTemp(StatsBar stat, float val){
       stat.SetTempMin(val);
@@ -40,10 +39,10 @@ public class Hud : MonoBehaviour
    public void UpdateSedeHud(int sede){
         ColocaStatMax(thirstBar, sede); 
    }
-   public void UpdateTempHud(float tempMax, float tempMin, float tempValue){
-        ColocaStatTemp(tempBar, tempMax, tempMin, tempValue);
+   public void UpdateTempHud(float tempMax, float tempMin){
+        ColocaStatTemp(tempBar, tempMax, tempMin);
    }
-   //
+   //atualização dos status
    public void updateLife(int life)
     {
         lifeBar.UpdateStats(life);

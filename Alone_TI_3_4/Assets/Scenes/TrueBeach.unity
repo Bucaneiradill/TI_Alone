@@ -479,9 +479,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d1318fd0995f01478c4f4065613fd41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 100
-  hunger: 50
-  thirst: 50
+  lifeMax: 100
+  hungerMax: 50
+  thirstMax: 50
   tempMin: -30
   tempMax: 30
   tempValue: -30
@@ -526,12 +526,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8cb99dabf6ace4483ad62151bc9950, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  durationDay: 0
   timeTxt: {fileID: 2143903378}
   directionalLight: {fileID: 705507995}
   cont: 0
+  dalayValue: 0.05
   delay: 0.05
   isPlaying: 1
+  seconds: 21643
 --- !u!114 &89265180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4269,7 +4270,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5.5982056, y: 30}
+  m_AnchoredPosition: {x: -5.5981445, y: 30}
   m_SizeDelta: {x: -128.11902, y: -65.13599}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &810380598 stripped

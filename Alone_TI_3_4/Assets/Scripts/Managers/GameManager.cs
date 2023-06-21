@@ -12,12 +12,12 @@ public class GameManager : MonoBehaviour
 
     //Variaveis do sistema de status
     [Header("Variaveis do sistema de status")]
-    public int life = 100;
-    private int lifeMax;
-    public int hunger = 50;
-    private int hungerMax;
-    public int thirst = 50;
-    private int thirstMax;
+    private int life;
+    public int lifeMax = 100;
+    private int hunger;
+    public int hungerMax = 50;
+    private int thirst;
+    public int thirstMax = 50;
     //temperature
     public float tempMin = -30.0f;
     public float tempMax =  30.0f;
@@ -38,24 +38,28 @@ public class GameManager : MonoBehaviour
     //metodos do sistema de status
     public void addLife()
     {
-         life += 0;
-        Hud.instance?.UpdateVidaHud(life);
+         life = 30;
+        Hud.instance?.UpdateVidaHud(lifeMax);
+        Hud.instance?.updateLife(life);
     }
     public void addHunger()
     {
-         hunger += 0;
-        Hud.instance?.UpdateFomeHud(hunger);
+         hunger = 15;
+        Hud.instance?.UpdateFomeHud(hungerMax);
+        Hud.instance?.updateFood(hunger);
     }
     public void addThirst()
     {
-        thirst += 0;
-        Hud.instance?.UpdateSedeHud(thirst);
+        thirst = 15;
+        Hud.instance?.UpdateSedeHud(thirstMax);
+        Hud.instance?.updateWater(thirst);
     }    
     public void addTemp()
     {
         tempMax += 0f;
         tempMin -= 0f;
-        Hud.instance?.UpdateTempHud(tempMax, tempMin, tempValue);
+        Hud.instance?.UpdateTempHud(tempMax, tempMin);
+        Hud.instance?.updateTemp(tempValue);
     }
     //Atualizçãoes
     
@@ -63,6 +67,7 @@ public class GameManager : MonoBehaviour
         if(hunger == 0 || hunger == 0){
             if(life <= 0){                
                 Debug.Log("Morreu");
+                UIManager.instance?.ShowGameOver();
             }else{
                 damage(1);
             }           
@@ -103,40 +108,29 @@ public class GameManager : MonoBehaviour
         }
     }
     public void toHungry(){
-         if(hunger == 25){
+        hunger -= 1;
+        if(hunger == 25){
            UIManager.instance?.DisplayAction("Você está com fome");
         }
-        if(hunger <= 0){
+        if(hunger <= 0 || hunger == 10){
            UIManager.instance?.DisplayAction("Você está faminto");
-        }else{
-            hunger -= 1;
-            Hud.instance?.updateFood(hunger);
+        }else{       
+           Hud.instance?.updateFood(hunger);
         }      
     }
-    /*IEnumerator lifeStage(string stage){
-        if(stage == "healthy"){
-
-        }else if(stage == "healing"){
-            recover(1);
-            yield return 
-        }else{
-            
-        }
-        yield return stage;
-    }*/
     public void toThirst(){
+        thirst -= 1;
         if(thirst == 25){
            UIManager.instance?.DisplayAction("Você está com sede");
         }
-        if(thirst <= 0){
-         UIManager.instance?.DisplayAction("Você está desidratado");
+        if(thirst <= 0 || thirst == 10){
+           UIManager.instance?.DisplayAction("Você está desidratado");
         }else{
-             thirst -= 1;
-            Hud.instance?.updateWater(thirst);
+           Hud.instance?.updateWater(thirst);
         }           
     }
     public void toEat(int val){
-         hunger += val;
+        hunger += val;
         if(hunger >= hungerMax){
             Debug.Log("Cheio");
             hunger = hungerMax;
@@ -184,10 +178,8 @@ public class GameManager : MonoBehaviour
         addHunger();
         addThirst();
         addTemp();
-        //Ajustes de max status
-        lifeMax = life;
-        hungerMax = hunger;
-        thirstMax = thirst;
+        
+        
         
     }
     void FixedUpdate()
