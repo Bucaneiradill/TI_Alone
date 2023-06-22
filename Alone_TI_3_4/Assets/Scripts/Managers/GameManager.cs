@@ -22,8 +22,11 @@ public class GameManager : MonoBehaviour
     public float tempMin = -30.0f;
     public float tempMax =  30.0f;
     public float tempValue = 0f;
+    AudioSource audioSource;
 
-   
+    [Header("Sounds")]
+    [SerializeField] AudioClip hungry;
+    [SerializeField] AudioClip thirsty;
 
     //methods
     //metodo de preservar o GameManger
@@ -110,12 +113,16 @@ public class GameManager : MonoBehaviour
     public void toHungry(){
         hunger -= 1;
         if(hunger == 25){
-           UIManager.instance?.DisplayAction("Você está com fome");
+            audioSource.clip = hungry;
+            audioSource.Play();
+            UIManager.instance?.DisplayAction("Você está com fome");
         }
         if(hunger <= 0 || hunger == 10){
-           UIManager.instance?.DisplayAction("Você está faminto");
+            audioSource.clip = hungry;
+            audioSource.Play();
+            UIManager.instance?.DisplayAction("Você está faminto");
         }else{       
-           Hud.instance?.updateFood(hunger);
+            Hud.instance?.updateFood(hunger);
         }      
     }
     public void toThirst(){
@@ -172,15 +179,12 @@ public class GameManager : MonoBehaviour
     //metodos Start e Update
     void Start()
     {
-        
         //Ajustes dos sliders
         addLife();
         addHunger();
         addThirst();
         addTemp();
-        
-        
-        
+        audioSource = GetComponent<AudioSource>();
     }
     void FixedUpdate()
     {  
