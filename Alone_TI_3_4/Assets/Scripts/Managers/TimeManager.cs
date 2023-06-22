@@ -57,9 +57,9 @@ public class TimeManager : MonoBehaviour
         if(cont >= 600){
 
             //Ficar com fome
-            GameManager.instance?.toHungry();
+            GameManager.instance?.toHungry(1);
             //Ficar com sede
-            GameManager.instance?.toThirst();
+            GameManager.instance?.toThirst(1);
            GameManager.instance?.temperaturaTest();
            GameManager.instance?.hungryAndThirstDamage();
            cont = 0;
