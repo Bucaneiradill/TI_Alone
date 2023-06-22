@@ -10,6 +10,4 @@ public class AudioController : MonoBehaviour
     {
         GetComponent<AudioSource>().Play();
     }
-
-   
 }
