@@ -5780,7 +5780,6 @@ GameObject:
   - component: {fileID: 975748405}
   - component: {fileID: 975748404}
   - component: {fileID: 975748403}
-  - component: {fileID: 975748406}
   m_Layer: 0
   m_Name: AudioBeach
   m_TagString: Untagged
@@ -5912,20 +5911,6 @@ Transform:
   m_Father: {fileID: 37934684}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &975748406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 975748402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cea70b9146d128240a15e9a5bec68374, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  musica: {fileID: 975748404}
-  sliderVolume: {fileID: 1656621580}
 --- !u!1 &995193455
 GameObject:
   m_ObjectHideFlags: 0
