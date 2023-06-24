@@ -12,6 +12,33 @@ public class Audiomixer : MonoBehaviour
     public Slider musicVol;
     public Slider ambientVol;
 
+    private void OnEnable()
+    {
+        float masterValue;
+        if (mixer.GetFloat("MasterVol", out masterValue))
+        {
+            generalVol.value = masterValue;
+        }
+
+        float musicValue;
+        if (mixer.GetFloat("MusicVol", out musicValue))
+        {
+            musicVol.value = musicValue;
+        }
+
+        float fxValue;
+        if (mixer.GetFloat("FXVol", out fxValue))
+        {
+            fxVol.value = fxValue;
+        }
+
+        float ambientValue;
+        if (mixer.GetFloat("AmbientVol", out ambientValue))
+        {
+            ambientVol.value = ambientValue;
+        }
+    }
+
     public void GeneralVolChange()
     {
         mixer.SetFloat("MasterVol", generalVol.value);
