@@ -7,8 +7,11 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
+    [SerializeField] GameObject menuPanel;
+    [SerializeField] GameObject gamePanel;
     [SerializeField] GameObject messagesPanel;
     [SerializeField] GameObject gameOverPanel;
+    [SerializeField] GameObject settingsPanel;
     [SerializeField] Text messageText;
     [SerializeField] float messageDuration;
 
@@ -25,6 +28,20 @@ public class UIManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            settingsPanel.SetActive(!settingsPanel.active);
+        }
+    }
+
+    public void LoadScene()
+    {
+        gamePanel.SetActive(true);
+        menuPanel.SetActive(false);
+    }
+
     public void DisplayAction(string message)
     {
         Text newMessage = Instantiate(messageText, messagesPanel.transform);
@@ -37,9 +54,22 @@ public class UIManager : MonoBehaviour
         gameOverPanel.SetActive(true);
     }
 
+    public void ShowSettings()
+    {
+        settingsPanel.SetActive(true);
+    }
+
+    public void HideSettings()
+    {
+        settingsPanel.SetActive(false);
+    }
+
     public void BackToMenu()
     {
+        gamePanel.SetActive(false);
+        menuPanel.SetActive(true);
         gameOverPanel.SetActive(false);
+        settingsPanel.SetActive(false);
         SceneManager.LoadScene(0);
     }
 }
