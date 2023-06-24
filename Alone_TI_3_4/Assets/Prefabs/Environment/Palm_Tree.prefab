@@ -118,7 +118,7 @@ MonoBehaviour:
   health: 5
   loot: {fileID: 5898381514524721784, guid: 2ad0ca6a07f3c5244af77e32f2fc956d, type: 3}
   lootAmount: 1
-  lootName: Grafeto
+  lootName: Graveto
   dropPoint: {fileID: 0}
   particlePoint: {fileID: 6397719753786064786}
   particle: {fileID: 3190041756260390103, guid: 161dcb31c3ddf9344961180b1746ce57, type: 3}

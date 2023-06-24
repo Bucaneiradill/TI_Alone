@@ -145,5 +145,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
-  item: {fileID: 11400000, guid: 5b1a9705cdda30843ba39215e1d5c74a, type: 2}
+  health: 5
+  item: {fileID: 11400000, guid: 836f799cc7aa6a643a04ed289f6e0d1e, type: 2}
   amount: 1

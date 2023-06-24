@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58fba91c885dc4c4fabb5bc93744cb3d, type: 3}
+  m_Script: {fileID: 11500000, guid: bffa61ec682f4034c8491e45196d9f2d, type: 3}
   m_Name: Coconut
-  m_EditorClassIdentifier: Assembly-CSharp::Food
+  m_EditorClassIdentifier: 
   itemType: 1
   iD: 0
   name: Coco
@@ -22,3 +22,5 @@ MonoBehaviour:
   isConsumable: 1
   maxStackSize: 99
   ingredients: []
+  foodVal: 5
+  drinkVal: 10

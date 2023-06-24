@@ -9,16 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58fba91c885dc4c4fabb5bc93744cb3d, type: 3}
+  m_Script: {fileID: 11500000, guid: bffa61ec682f4034c8491e45196d9f2d, type: 3}
   m_Name: Banana
-  m_EditorClassIdentifier: Assembly-CSharp::Food
+  m_EditorClassIdentifier: 
   itemType: 1
   iD: 0
-  name: Banana
-  icon: {fileID: 21300000, guid: 1eb6ff38904de50478797fe254b6357d, type: 3}
+  name: Coco
+  icon: {fileID: 21300000, guid: 87cb47a38196c464f845a8a35dcfde3b, type: 3}
   Derscription: 
   isDefaultItem: 0
   isEquipable: 0
   isConsumable: 1
   maxStackSize: 99
   ingredients: []
+  foodVal: 5
+  drinkVal: 10
