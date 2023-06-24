@@ -8,7 +8,6 @@ public class SelectScene : MonoBehaviour
 {
     public void ChangeScene(int scene)
     {
-        GetComponent<AudioSource>().Play();
         SceneManager.LoadScene(scene);
     }
 }

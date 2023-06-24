@@ -7,13 +7,15 @@ using UnityEngine.Audio;
 public class Audiomixer : MonoBehaviour
 {
     public AudioMixer mixer;
+    public Slider generalVol;
     public Slider fxVol;
     public Slider musicVol;
-    void Start()
+    public Slider ambientVol;
+
+    public void GeneralVolChange()
     {
-
+        mixer.SetFloat("MasterVol", generalVol.value);
     }
-
 
     public void MusicVolChange()
     {
@@ -23,6 +25,11 @@ public class Audiomixer : MonoBehaviour
     public void FXVolChange()
     {
         mixer.SetFloat("FXVol", fxVol.value);
+    }
+
+    public void AmbientVolChange()
+    {
+        mixer.SetFloat("AmbientVol", ambientVol.value);
     }
 }
 
