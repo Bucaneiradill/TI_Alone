@@ -13,7 +13,12 @@ public class SceneFader : MonoBehaviour {
 		StartCoroutine(FadeIn());
 	}
 
-	public void FadeTo (int scene)
+    private void OnLevelWasLoaded()
+    {
+        StartCoroutine(FadeIn());
+    }
+
+    public void FadeTo (int scene)
 	{
 		StartCoroutine(FadeOut(scene));
 	}
@@ -42,6 +47,9 @@ public class SceneFader : MonoBehaviour {
 			img.color = new Color(0f, 0f, 0f, a);
 			yield return 0;
 		}
+
+		if (SceneManager.GetActiveScene().buildIndex == 0)
+			UIManager.instance.LoadScene();
 
 		SceneManager.LoadScene(scene);
 	}

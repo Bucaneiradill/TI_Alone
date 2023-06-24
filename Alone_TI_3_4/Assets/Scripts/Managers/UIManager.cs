@@ -35,9 +35,9 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape) && gamePanel.active)
+        if(Input.GetKeyDown(KeyCode.Escape) && gamePanel.activeSelf)
         {
-            settingsPanel.SetActive(!settingsPanel.active);
+            settingsPanel.SetActive(!settingsPanel.activeSelf);
         }
     }
 
