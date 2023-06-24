@@ -25,6 +25,8 @@ public class ColectableSource : Interactable
         if (particlePoint!= null)
         {
             Instantiate(particle, particlePoint.position, Quaternion.identity);
+            GameManager.instance.toHungry(1);
+            GameManager.instance.toThirst(2);
         }
         if(EquipmentManager.instance.equippedItem?.itemType == counterType)
         {

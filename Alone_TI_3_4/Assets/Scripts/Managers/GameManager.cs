@@ -110,8 +110,8 @@ public class GameManager : MonoBehaviour
             Hud.instance?.updateLife(life);
         }
     }
-    public void toHungry(){
-        hunger -= 1;
+    public void toHungry(int val){
+        hunger -= val;
         if(hunger == 25){
             audioSource.clip = hungry;
             audioSource.Play();
@@ -125,8 +125,8 @@ public class GameManager : MonoBehaviour
             Hud.instance?.updateFood(hunger);
         }      
     }
-    public void toThirst(){
-        thirst -= 1;
+    public void toThirst(int val){
+        thirst -= val;
         if(thirst == 25){
            UIManager.instance?.DisplayAction("Você está com sede");
         }
