@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class CraftUI : MonoBehaviour
 {
@@ -56,12 +57,15 @@ public class CraftUI : MonoBehaviour
     public void Craft()
     {
         CraftManager.instance.CraftItem(itemToCraft);
-        foreach(Item item in itemToCraft.ingredients)
+        List<Item> itensCopy = new List<Item>();
+        itensCopy.AddRange(Inventory.instance.items.ToArray());
+        foreach (Item item in itensCopy)
         {
-            if (!Inventory.instance.SearchItem(item))
+            if (!itensCopy.Contains(item))
             {
                 craftButton.enabled = false;
             }
+            itensCopy.Remove(item);
         }
     }
 

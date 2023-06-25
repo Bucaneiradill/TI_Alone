@@ -22,13 +22,16 @@ public class CraftSlot : MonoBehaviour
     //Verifica se tem todos os itens no inventário
     public void CheckRequiredItems()
     {
+        List<Item> itensCopy = new List<Item>();
+        itensCopy.AddRange(Inventory.instance.items.ToArray());
         canCraft = true;
         foreach (Item item in item.ingredients)
         {
-            if (!Inventory.instance.SearchItem(item))
+            if (!itensCopy.Contains(item))
             {
                 canCraft = false;
             }
+            itensCopy.Remove(item);
         }
         recipePanel.GetComponent<CraftUI>().SetItem(item, canCraft);
     }
