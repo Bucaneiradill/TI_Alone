@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject gamePanel;
     [SerializeField] GameObject messagesPanel;
     [SerializeField] GameObject gameOverPanel;
+    [SerializeField] GameObject menuButton;
     [SerializeField] public GameObject settingsPanel;
 
     [SerializeField] Text messageText;
@@ -40,6 +41,7 @@ public class UIManager : MonoBehaviour
         {
             TimeManager.instance.boolPlay();
             settingsPanel.SetActive(!settingsPanel.activeSelf);
+            menuButton.SetActive(!settingsPanel.activeSelf);
         }
     }
 
