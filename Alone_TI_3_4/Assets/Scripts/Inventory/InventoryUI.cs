@@ -1,8 +1,8 @@
 /**************************************************************
     Jogos Digitais SG
-    Inventory
+    InventoryUI
 
-    Descrição:  Gerencia quais itens foram adicionados ao inventário e quanto espaço resta no mesmo.
+    Descrição:  Gerencia a HUD adiconando e removendo item do InventorySlot
 
     Alone - Jogos Digitais SG –  09/04/2022
     Modificado por: 
