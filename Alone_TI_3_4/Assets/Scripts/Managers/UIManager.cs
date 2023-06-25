@@ -83,4 +83,9 @@ public class UIManager : MonoBehaviour
         settingsPanel.SetActive(false);
         SceneManager.LoadScene(0);
     }
+
+    public void QuitCame()
+    {
+        Application.Quit();
+    }
 }
