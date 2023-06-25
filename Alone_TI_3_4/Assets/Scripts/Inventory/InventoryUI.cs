@@ -75,6 +75,12 @@ public class InventoryUI : MonoBehaviour
             }
         }
     }
+    /*------------------------------------------------------------------------------
+    Função:     ClearInventory
+    Descrição:  Limpa e remove todos os itens do inventário
+    Entrada:    -
+    Saída:      -
+    ------------------------------------------------------------------------------*/
     public void ClearInventory(){
         if(Inventory.instance.items.Count >= 0){
             for(int i = 0; i < slots.Length;  i++){ //Loop para passando por todos os slots do inventário.
