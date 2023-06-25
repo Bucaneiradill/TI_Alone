@@ -42,5 +42,12 @@ public class InventoryUI : MonoBehaviour
             }
         }
     }
+    public void ClearInventory(){
+        if(Inventory.instance.items.Count >= 0){
+            for(int i = 0; i < slots.Length;  i++){ //Loop para passando por todos os slots do inventário.
+                slots[i].OnRemoveButton(); //Limpa todo o inventário e a lista.
+            }
+        }
+    } 
 }
 
