@@ -43,7 +43,7 @@ public class Object : Interactable
     Saída:      -
     ------------------------------------------------------------------------------*/
     private void ObjectPickUp(){
-        
+        Debug.Log("Cliquei");
         bool spaceInventory = Inventory.instance.CheckAndAddItem(item);
         if(spaceInventory == true){
             uiManager.DisplayAction($"Coletou {amount} {item.name}");
