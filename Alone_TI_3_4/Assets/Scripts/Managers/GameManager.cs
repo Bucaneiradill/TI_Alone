@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
     {
         tempMax +=  30f;
         tempMin -= -30f;
-        tempValue = 0;
+        tempValue = 0.1f;
         Hud.instance?.UpdateTempHud(tempMax, tempMin);
         Hud.instance?.updateTemp(tempValue);
     }
@@ -70,9 +70,10 @@ public class GameManager : MonoBehaviour
         addLife();
         addHunger();
         addThirst();
-        addTemp();
+        //addTemp();
         if(TimeManager.instance != null)
             TimeManager.instance.seconds = 21643;
+        InventoryUI.instance.ClearInventory();
     }
     //Atualizçãoes
     
@@ -201,12 +202,13 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         //Ajustes dos sliders
-       /* addLife();
+        addLife();
         addHunger();
         addThirst();
-        addTemp();*/
-        reset();
+        addTemp();
+        //reset();
         audioSource = GetComponent<AudioSource>();
+       
     }
     void FixedUpdate()
     {  
