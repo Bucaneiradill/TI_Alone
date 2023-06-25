@@ -1,3 +1,15 @@
+/**************************************************************
+    Jogos Digitais SG
+    InventorySlot
+
+    Descrição:  Gerencia quais itens foram adicionados ao inventário e quanto espaço resta no mesmo.
+
+    Alone - Jogos Digitais SG –  09/04/2022
+    Modificado por: 
+***************************************************************/
+
+//-------------------------- Bibliotecas Usadas --------------------------------
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,9 +19,14 @@ public class InventorySlot : MonoBehaviour
 {
     [SerializeField] Image icon; 
     [SerializeField] Button removeButton;
-    [SerializeField] int stackSize;
     Item item;
 
+    /*------------------------------------------------------------------------------
+    Função:     AddItemSlot
+    Descrição:  Adiciona o item no slot da UI
+    Entrada:    Item - Qual item está sendo adicionado no slot do inventario. 
+    Saída:      -
+    ------------------------------------------------------------------------------*/
     public void AddItemSlot(Item newItem){
         item = newItem;
         icon.sprite = item.icon;
@@ -17,40 +34,33 @@ public class InventorySlot : MonoBehaviour
         icon.preserveAspect = true;
         removeButton.interactable = true;
     }
-
+    /*------------------------------------------------------------------------------
+    Função:     ClearSlot
+    Descrição:  Remove o item no slot da UI
+    Entrada:    -
+    Saída:      -
+    ------------------------------------------------------------------------------*/
     public void ClearSlot(){ 
         item = null;
-       // stackSize = -1;
         icon.sprite = null;
         icon.enabled = false;
         removeButton.interactable = false;
     }
-
+    /*------------------------------------------------------------------------------
+    Função:     OnRemoveButton
+    Descrição:  Remove o item da lista de items
+    Entrada:    -
+    Saída:      -
+    ------------------------------------------------------------------------------*/
     public void OnRemoveButton(){
-        stackSize -= 1;
-        if(stackSize <= 0){
-            Inventory.instance.RemoveItem(item);
-        }
+        Inventory.instance.RemoveItem(item); //Passa pro inventário qual o item está neesse slot do inventário 
     }
-
-    public bool RoomLeftInStack(int AmountToAdd, out int AmountRemaining){
-        AmountRemaining = item.maxStackSize - stackSize;
-        return RoomLeftInStack (AmountToAdd);
-    }
-
-    public bool RoomLeftInStack(int AmountToAdd){
-        if(stackSize + AmountToAdd <= item.maxStackSize) return true;
-        else return false;
-    }
-
-    public void AddStackSlot(int stackAdd){
-        stackSize -= stackAdd;
-    }
-
-    public void RemoveStackSlot(int stackRemove){
-        stackSize -= stackRemove;
-    }
-
+    /*------------------------------------------------------------------------------
+    Função:     OnClickItem
+    Descrição:  Verifica se o usuário clicou no item no inventário
+    Entrada:    -
+    Saída:      -
+    ------------------------------------------------------------------------------*/
     public void OnClickItem()
     {
         if (item.isEquipable)
@@ -62,7 +72,6 @@ public class InventorySlot : MonoBehaviour
         }
         else if (item.isConsumable)
         {
-
             GameManager.instance.toEat(10);
             GameManager.instance.toDrink(10);
             OnRemoveButton();
