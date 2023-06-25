@@ -6,6 +6,7 @@ public class InventoryUI : MonoBehaviour
 {
     public static InventoryUI instance;
     [SerializeField] public Transform itemsParent;
+    [SerializeField] GameObject inventoryUI;
     public GameObject recipeUI;
     InventorySlot[] slots;
 
@@ -28,7 +29,7 @@ public class InventoryUI : MonoBehaviour
 
     void Update(){
         if(Input.GetButtonDown("Inventory")){
-            gameObject.SetActive(!gameObject.activeSelf); //Inverte o estado atual do GameObject e inverte quando a tecla é apertada novamente.
+            inventoryUI.SetActive(!inventoryUI.activeSelf); //Inverte o estado atual do GameObject e inverte quando a tecla é apertada novamente.
         }
     }
 
