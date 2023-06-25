@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -7,10 +9,16 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
+    [Header("Panels")]
+    [SerializeField] GameObject menuPanel;
+    [SerializeField] GameObject gamePanel;
     [SerializeField] GameObject messagesPanel;
     [SerializeField] GameObject gameOverPanel;
+    [SerializeField] GameObject settingsPanel;
+
     [SerializeField] Text messageText;
     [SerializeField] float messageDuration;
+    public TextMeshProUGUI timeTxt;
 
     void Awake()
     {
@@ -25,6 +33,20 @@ public class UIManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape) && gamePanel.activeSelf)
+        {
+            settingsPanel.SetActive(!settingsPanel.activeSelf);
+        }
+    }
+
+    public void LoadScene()
+    {
+        gamePanel.SetActive(true);
+        menuPanel.SetActive(false);
+    }
+
     public void DisplayAction(string message)
     {
         Text newMessage = Instantiate(messageText, messagesPanel.transform);
@@ -37,9 +59,22 @@ public class UIManager : MonoBehaviour
         gameOverPanel.SetActive(true);
     }
 
+    public void ShowPanel(GameObject panel)
+    {
+        panel.SetActive(true);
+    }
+
+    public void HidePanel(GameObject panel)
+    {
+        panel.SetActive(false);
+    }
+
     public void BackToMenu()
     {
+        gamePanel.SetActive(false);
+        menuPanel.SetActive(true);
         gameOverPanel.SetActive(false);
+        settingsPanel.SetActive(false);
         SceneManager.LoadScene(0);
     }
 }

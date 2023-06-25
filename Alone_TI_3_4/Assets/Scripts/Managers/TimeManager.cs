@@ -8,10 +8,6 @@ public class TimeManager : MonoBehaviour
 {
     public static TimeManager instance;
 
-    void Awake()
-    {
-        instance = this;
-    }
     //Variaveis do sistema de dia e noite
     [Header("Variavel de duração do dia")]
     //[SerializeField][Tooltip("Duração do dia em segundos")] private int durationDay;
@@ -23,20 +19,38 @@ public class TimeManager : MonoBehaviour
     public float delay;
     
     public bool isPlaying;
-    [SerializeField][Tooltip("Duração do dia em segundos")] private int seconds = 21643;
+    [SerializeField][Tooltip("Duração do dia em segundos")] public int seconds = 21643;
     private int contHora;
+
+    void Awake()
+    {
+        instance = this;
+    }
+
+    void Start()
+    {
+        /* //Tempo 
+         durationDay = 1440;
+         multiplicador = 86400 / durationDay;*/
+        //Tempo
+        delay = dalayValue;
+        isPlaying = true;
+        Invoke("TimeCount", delay);
+        directionalLight = GameObject.Find("Directional_Light").transform;
+        timeTxt = UIManager.instance.timeTxt;
+    }
 
     void CalcTime(float seconds)
     {
        timeTxt.text = TimeSpan.FromSeconds(seconds).ToString(@"hh\:mm");//\:ss
     }
-
    
     public void prosCeu()
     { 
         //Debug.Log(seconds);
         float rotX = Mathf.Lerp(-90, 270, seconds/86400.0f);
     }
+
     public void tempValue(float temp){
         if(temp <= 86400.0f/2 ){
             GameManager.instance?.toCold();
@@ -45,10 +59,12 @@ public class TimeManager : MonoBehaviour
             GameManager.instance?.toHot();
         }
     }
+
     public void prosCeu(float seconds)
     {
         float rotX = Mathf.Lerp(-90, 270, seconds / 86400);
-        directionalLight.rotation = Quaternion.Euler(rotX, 44.002f, 0);
+        if(directionalLight != null)
+            directionalLight.rotation = Quaternion.Euler(rotX, 44.002f, 0);
     }
 
     public void updateDayCycle(){
@@ -57,15 +73,16 @@ public class TimeManager : MonoBehaviour
         if(cont >= 600){
 
             //Ficar com fome
-            GameManager.instance?.toHungry();
+            GameManager.instance?.toHungry(1);
             //Ficar com sede
-            GameManager.instance?.toThirst();
+            GameManager.instance?.toThirst(1);
            GameManager.instance?.temperaturaTest();
            GameManager.instance?.hungryAndThirstDamage();
            cont = 0;
         }
          cont = cont + 1;
     }
+
     public void setSpeedDay(int mult)
     {
         if (mult == 1)
@@ -84,16 +101,7 @@ public class TimeManager : MonoBehaviour
             delay = (dalayValue/3);
         }
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-       /* //Tempo 
-        durationDay = 1440;
-        multiplicador = 86400 / durationDay;*/
-        //Tempo
-        delay = dalayValue;
-        Invoke("TimeCount", delay);
-    }
+
     void TimeCount(){
         if(isPlaying){
             updateDayCycle();
@@ -101,10 +109,5 @@ public class TimeManager : MonoBehaviour
             CalcTime(seconds);
         }
        Invoke("TimeCount", delay);
-    }
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        
     }
 }

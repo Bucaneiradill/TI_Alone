@@ -10,13 +10,23 @@ public class ColectableSource : Interactable
     [SerializeField] Transform dropPoint;
     [SerializeField] Transform particlePoint;
     [SerializeField] GameObject particle;
+    AudioSource hitAudio;
     public ItemType counterType;
+
+    private void Start()
+    {
+        hitAudio = GetComponent<AudioSource>();
+    }
+
     public override void Interact()
     {
         base.Interact();
-        if(particlePoint!= null)
+        hitAudio.Play();
+        if (particlePoint!= null)
         {
             Instantiate(particle, particlePoint.position, Quaternion.identity);
+            GameManager.instance.toHungry(1);
+            GameManager.instance.toThirst(2);
         }
         if(EquipmentManager.instance.equippedItem?.itemType == counterType)
         {

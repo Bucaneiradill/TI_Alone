@@ -28,16 +28,6 @@ public class MousePosition : MonoBehaviour
                     playerActions.MoveToPoint(rayCastHit.point);
                 }
             }
-
-            //gambiarra sinistra abaixo só pra testar diferentes tipos de interação
-            //else if (Input.GetMouseButtonDown(1))
-            //{
-            //    Colectable colectable = rayCastHit.collider.gameObject.GetComponent<Colectable>();
-            //    if (colectable != null)
-            //    {
-            //        colectable.ObjectConsume();
-            //    }
-            //}
         }
     }
 

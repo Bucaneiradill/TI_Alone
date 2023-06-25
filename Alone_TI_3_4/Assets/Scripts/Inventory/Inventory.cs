@@ -41,7 +41,8 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
-        inventorySpace = InventoryUI.instance.itemsParent.childCount;
+        if(InventoryUI.instance != null)
+            inventorySpace = InventoryUI.instance.itemsParent.childCount;
     }
     /*------------------------------------------------------------------------------
     Função:     AddItem
