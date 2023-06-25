@@ -67,6 +67,7 @@ public class Inventory : MonoBehaviour
                 return false;
             }
             items.Add(item);
+            EquipmentUI.instance.SetItem(item);
             if(onItemChangeCallBack != null) onItemChangeCallBack.Invoke(); //não sei pra que quer serve preciso ver com rock
         }
         return true;

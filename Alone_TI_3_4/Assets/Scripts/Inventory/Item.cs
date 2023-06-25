@@ -23,7 +23,7 @@ public enum ItemType
 
 public abstract class Item : ScriptableObject
 {
-    public abstract void PerformAction(ColectableSource source);
+    public abstract void PerformAction(ColectableSource source = null);
     public ItemType itemType;
     public int iD;
     new public string name = "New Item";

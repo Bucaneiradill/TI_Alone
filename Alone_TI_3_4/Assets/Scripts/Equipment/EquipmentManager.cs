@@ -32,8 +32,16 @@ public class EquipmentManager : MonoBehaviour
 
     public void EquipItem(Item item)
     {
-        equippedItem= item;
-        UIManager.instance.DisplayAction($"Item equipado: {item.name}");
+        if (item.isEquipable)
+        {
+            equippedItem = item;
+            UIManager.instance.DisplayAction($"Item equipado: {item.name}");
+        }
+        else if (item.isConsumable)
+        {
+            item.PerformAction();
+            EquipmentUI.instance.RemoveItem(EquipmentUI.instance.FindItem(item));
+        }
     }
 
     public void UnequipItem()

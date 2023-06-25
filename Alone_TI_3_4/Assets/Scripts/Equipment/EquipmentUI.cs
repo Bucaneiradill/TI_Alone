@@ -22,16 +22,16 @@ public class EquipmentUI : MonoBehaviour
         }
     }
 
-    public bool FindItem(Item item)
+    public int FindItem(Item item)
     {
-        foreach(EquipmentSlot slot in slots)
+        for(int i = 0; i < slots.Length - 1; i++)
         {
-            if(slot.item == item)
+            if(slots[i].item == item)
             {
-                return true;
+                return i;
             }
         }
-        return false;
+        return -1;
     }
 
     public void SetItem(Item item)
