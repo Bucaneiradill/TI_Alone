@@ -22,7 +22,6 @@ public class Inventory : MonoBehaviour
     public List<Item> items = new List<Item>();
     public delegate void OnItemChange();
     public OnItemChange onItemChangeCallBack;
-    //public InventorySlot IventorySlots;
 
     /*------------------------------------------------------------------------------
     Função:     Awake
@@ -38,36 +37,39 @@ public class Inventory : MonoBehaviour
         }
         DontDestroyOnLoad(this.gameObject);
     }
-
+    /*------------------------------------------------------------------------------
+    Função:     Start
+    Descrição:  Verifica se o script do inventário existe e pega o tamanho do inventário;
+    Entrada:    -
+    Saída:      -
+    ------------------------------------------------------------------------------*/
     private void Start()
     {
-        if(InventoryUI.instance != null)
-            inventorySpace = InventoryUI.instance.itemsParent.childCount;
+        if(InventoryUI.instance != null) inventorySpace = InventoryUI.instance.itemsParent.childCount;
     }
     /*------------------------------------------------------------------------------
     Função:     AddItem
-    Descrição:  Adiciona o item ao inventario.
-    Entrada:    Item - Qual item está sendo adicionado ao inventario. 
-    Saída:      Bool - Retorna se o inventario está cheio ou não.
+    Descrição:  
+    Entrada:    -
+    Saída:      -
     ------------------------------------------------------------------------------*/
     public void AddItem(Item item)
     {
         CheckAndAddItem(item);
     }
+    /*------------------------------------------------------------------------------
+    Função:     CheackAndAddItem
+    Descrição:  Adiciona o item ao inventario.
+    Entrada:    Item - Qual item está sendo adicionado ao inventario. 
+    Saída:      Bool - Retorna se o inventario está cheio ou não.
+    ------------------------------------------------------------------------------*/
     public bool CheckAndAddItem(Item item){
         if(!item.isDefaultItem){
-           // if(CoinstainItem){
-               // if(InventorySlots.RoomLeftInStack(amountToAdd)){
-                    //InventorySlots.AddStackSlot(amountToAdd);
-                    //return true;
-               // }
-          //  }
             if(items.Count >= inventorySpace){
                 Debug.Log("Inventario Cheio");
                 return false;
             }
             items.Add(item);
-            //EquipmentUI.instance.SetItem(item);
             if(onItemChangeCallBack != null) onItemChangeCallBack.Invoke(); 
         }
         return true;
@@ -82,7 +84,12 @@ public class Inventory : MonoBehaviour
         items.Remove(item);
         if(onItemChangeCallBack != null) onItemChangeCallBack.Invoke(); 
     }
-
+    /*------------------------------------------------------------------------------
+    Função:     SearchItem
+    Descrição:  Verifica se o item existe no inventário
+    Entrada:    Item - Qual item está sendo procurado no inventário
+    Saída:      bool - Retorna se o item existe ou não.
+    ------------------------------------------------------------------------------*/
     public bool SearchItem(Item item)
     {
         return items.Contains(item);
