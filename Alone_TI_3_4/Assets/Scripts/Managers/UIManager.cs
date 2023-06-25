@@ -47,6 +47,12 @@ public class UIManager : MonoBehaviour
         menuPanel.SetActive(false);
     }
 
+    public void LoadMenu()
+    {
+        gamePanel.SetActive(false);
+        menuPanel.SetActive(true);
+    }
+
     public void DisplayAction(string message)
     {
         Text newMessage = Instantiate(messageText, messagesPanel.transform);

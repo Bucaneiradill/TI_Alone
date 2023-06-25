@@ -48,7 +48,9 @@ public class SceneFader : MonoBehaviour {
 			yield return 0;
 		}
 
-		if (SceneManager.GetActiveScene().buildIndex == 0)
+		if (scene == 0)
+			UIManager.instance.LoadMenu();
+		else
 			UIManager.instance.LoadScene();
 
 		SceneManager.LoadScene(scene);
