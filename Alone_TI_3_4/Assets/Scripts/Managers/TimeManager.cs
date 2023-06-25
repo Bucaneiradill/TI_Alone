@@ -15,6 +15,7 @@ public class TimeManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timeTxt;
     [SerializeField] public Transform directionalLight;
     [SerializeField] private int cont = 0;
+    [SerializeField] private int cont2 = 0;
     [SerializeField][Tooltip("Valor padrão do delay")] private float dalayValue = 0.05f;
     public float delay;
     
@@ -69,9 +70,15 @@ public class TimeManager : MonoBehaviour
 
     public void updateDayCycle(){
         seconds += 1;
-        tempValue(seconds);       
+        tempValue(seconds);
+        if(cont2 >= 200){
+         if(GameManager.instance.hunger == GameManager.instance.hungerMax && GameManager.instance.thirst == GameManager.instance.thirstMax){
+                GameManager.instance.recover(5);
+            }
+          cont2 = 0;      
+        }
         if(cont >= 600){
-
+            
             //Ficar com fome
             GameManager.instance?.toHungry(1);
             //Ficar com sede
@@ -81,6 +88,7 @@ public class TimeManager : MonoBehaviour
            cont = 0;
         }
          cont = cont + 1;
+         cont2 = cont2 + 1;
     }
 
     public void setSpeedDay(int mult)

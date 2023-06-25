@@ -12,11 +12,11 @@ public class GameManager : MonoBehaviour
 
     //Variaveis do sistema de status
     [Header("Variaveis do sistema de status")]
-    private int life;
+    public int life;
     public int lifeMax = 100;
-    private int hunger;
+    public int hunger;
     public int hungerMax = 50;
-    private int thirst;
+    public int thirst;
     public int thirstMax = 50;
     //temperature
     public float tempMin = -30.0f;
