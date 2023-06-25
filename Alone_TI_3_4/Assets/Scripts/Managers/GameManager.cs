@@ -59,10 +59,19 @@ public class GameManager : MonoBehaviour
     }    
     public void addTemp()
     {
-        tempMax += 0f;
-        tempMin -= 0f;
+        tempMax +=  30f;
+        tempMin -= -30f;
+        tempValue = 0;
         Hud.instance?.UpdateTempHud(tempMax, tempMin);
         Hud.instance?.updateTemp(tempValue);
+    }
+    //reset
+    public void reset(){
+        addLife();
+        addHunger();
+        addThirst();
+        addTemp();
+        TimeManager.instance.seconds = 21643;
     }
     //Atualizçãoes
     
@@ -70,6 +79,7 @@ public class GameManager : MonoBehaviour
         if(hunger == 0 || hunger == 0){
             if(life <= 0){                
                 Debug.Log("Morreu");
+                TimeManager.instance.isPlaying = false;
                 UIManager.instance?.ShowGameOver();
             }else{
                 damage(1);
@@ -111,7 +121,7 @@ public class GameManager : MonoBehaviour
         }
     }
     public void toHungry(int val){
-        hunger -= val;
+       
         if(hunger == 25){
             audioSource.clip = hungry;
             audioSource.Play();
@@ -121,18 +131,28 @@ public class GameManager : MonoBehaviour
             audioSource.clip = hungry;
             audioSource.Play();
             UIManager.instance?.DisplayAction("Você está faminto");
-        }else{       
+        }
+        if(hunger<=0){
+            hunger = 0;
             Hud.instance?.updateFood(hunger);
+        }else{ 
+             hunger -= val;      
+             Hud.instance?.updateFood(hunger);
         }      
     }
     public void toThirst(int val){
-        thirst -= val;
+        
         if(thirst == 25){
            UIManager.instance?.DisplayAction("Você está com sede");
         }
         if(thirst <= 0 || thirst == 10){
            UIManager.instance?.DisplayAction("Você está desidratado");
+        }
+        if(thirst <= 0){
+          thirst = 0;
+          Hud.instance?.updateWater(thirst);
         }else{
+            thirst -= val;
            Hud.instance?.updateWater(thirst);
         }           
     }
@@ -180,10 +200,11 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         //Ajustes dos sliders
-        addLife();
+       /* addLife();
         addHunger();
         addThirst();
-        addTemp();
+        addTemp();*/
+        reset();
         audioSource = GetComponent<AudioSource>();
     }
     void FixedUpdate()

@@ -19,7 +19,7 @@ public class TimeManager : MonoBehaviour
     public float delay;
     
     public bool isPlaying;
-    [SerializeField][Tooltip("Duração do dia em segundos")] private int seconds = 21643;
+    [SerializeField][Tooltip("Duração do dia em segundos")] public int seconds = 21643;
     private int contHora;
 
     void Awake()
@@ -34,6 +34,7 @@ public class TimeManager : MonoBehaviour
          multiplicador = 86400 / durationDay;*/
         //Tempo
         delay = dalayValue;
+        isPlaying = true;
         Invoke("TimeCount", delay);
         directionalLight = GameObject.Find("Directional_Light").transform;
         timeTxt = UIManager.instance.timeTxt;
