@@ -40,7 +40,7 @@ public class TimeManager : MonoBehaviour
         directionalLight = GameObject.Find("Directional_Light").transform;
         timeTxt = UIManager.instance.timeTxt;
     }
-
+    
     void CalcTime(float seconds)
     {
        timeTxt.text = TimeSpan.FromSeconds(seconds).ToString(@"hh\:mm");//\:ss
@@ -117,5 +117,9 @@ public class TimeManager : MonoBehaviour
             CalcTime(seconds);
         }
        Invoke("TimeCount", delay);
+    }
+    //bool play
+    public void boolPlay(){
+        isPlaying = !isPlaying;
     }
 }

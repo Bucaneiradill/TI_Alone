@@ -14,7 +14,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject gamePanel;
     [SerializeField] GameObject messagesPanel;
     [SerializeField] GameObject gameOverPanel;
-    [SerializeField] GameObject settingsPanel;
+    [SerializeField] public GameObject settingsPanel;
 
     [SerializeField] Text messageText;
     [SerializeField] float messageDuration;
@@ -22,6 +22,7 @@ public class UIManager : MonoBehaviour
 
     void Awake()
     {
+    
         if (instance == null)
         {
             instance = this;
@@ -37,6 +38,7 @@ public class UIManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape) && gamePanel.activeSelf)
         {
+            TimeManager.instance.boolPlay();
             settingsPanel.SetActive(!settingsPanel.activeSelf);
         }
     }
@@ -88,4 +90,6 @@ public class UIManager : MonoBehaviour
     {
         Application.Quit();
     }
+    
+        
 }
