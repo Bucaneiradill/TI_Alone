@@ -12,5 +12,6 @@ public class Food : Item
         // L�gica espec�fica para a��o da comida
         GameManager.instance.toEat(foodVal);
         GameManager.instance.toDrink(drinkVal);
+        Inventory.instance.RemoveItem(this);
     }
 }
