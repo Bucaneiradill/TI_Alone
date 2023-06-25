@@ -15,9 +15,9 @@ public class GameManager : MonoBehaviour
     public int life;
     public int lifeMax = 100;
     public int hunger;
-    public int hungerMax = 50;
+    public int hungerMax = 100;
     public int thirst;
-    public int thirstMax = 50;
+    public int thirstMax = 100;
     //temperature
     public float tempMin = -30.0f;
     public float tempMax =  30.0f;
@@ -47,13 +47,13 @@ public class GameManager : MonoBehaviour
     }
     public void addHunger()
     {
-         hunger = 15;
+         hunger = 30;
         Hud.instance?.UpdateFomeHud(hungerMax);
         Hud.instance?.updateFood(hunger);
     }
     public void addThirst()
     {
-        thirst = 15;
+        thirst = 30;
         Hud.instance?.UpdateSedeHud(thirstMax);
         Hud.instance?.updateWater(thirst);
     }    
