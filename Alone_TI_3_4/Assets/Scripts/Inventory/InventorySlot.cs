@@ -55,7 +55,7 @@ public class InventorySlot : MonoBehaviour
     {
         if (item.isEquipable)
         {
-            if (EquipmentUI.instance.FindItem(item) != -1)
+            if (EquipmentUI.instance.FindItem(item) == -1)
             {
                 EquipmentUI.instance.SetItem(item);
             }
