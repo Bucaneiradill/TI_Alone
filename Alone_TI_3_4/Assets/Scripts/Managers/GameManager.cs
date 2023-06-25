@@ -71,7 +71,8 @@ public class GameManager : MonoBehaviour
         addHunger();
         addThirst();
         addTemp();
-        TimeManager.instance.seconds = 21643;
+        if(TimeManager.instance != null)
+            TimeManager.instance.seconds = 21643;
     }
     //Atualizçãoes
     
