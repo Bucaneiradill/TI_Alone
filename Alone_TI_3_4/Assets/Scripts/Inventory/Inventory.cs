@@ -67,8 +67,8 @@ public class Inventory : MonoBehaviour
                 return false;
             }
             items.Add(item);
-            EquipmentUI.instance.SetItem(item);
-            if(onItemChangeCallBack != null) onItemChangeCallBack.Invoke(); //não sei pra que quer serve preciso ver com rock
+            //EquipmentUI.instance.SetItem(item);
+            if(onItemChangeCallBack != null) onItemChangeCallBack.Invoke(); 
         }
         return true;
     }
@@ -80,7 +80,7 @@ public class Inventory : MonoBehaviour
     ------------------------------------------------------------------------------*/
     public void RemoveItem(Item item){
         items.Remove(item);
-        if(onItemChangeCallBack != null) onItemChangeCallBack.Invoke(); //não sei pra que quer serve preciso ver com rock
+        if(onItemChangeCallBack != null) onItemChangeCallBack.Invoke(); 
     }
 
     public bool SearchItem(Item item)
