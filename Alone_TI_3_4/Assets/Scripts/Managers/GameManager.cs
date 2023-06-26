@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
     //Atualizçãoes
     
     public void hungryAndThirstDamage(){
-        if(hunger == 0 || hunger == 0){
+        if(hunger <= 0 || thirst <= 0){
             if(life <= 0){                
                 Debug.Log("Morreu");
                 TimeManager.instance.isPlaying = false;
