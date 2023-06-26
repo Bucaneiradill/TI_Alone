@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject gameOverPanel;
     [SerializeField] GameObject menuButton;
     [SerializeField] GameObject controlsPanel;
+    [SerializeField] GameObject creditsPanel;
     [SerializeField] public GameObject settingsPanel;
 
     [SerializeField] Text messageText;
@@ -65,6 +66,16 @@ public class UIManager : MonoBehaviour
 
     public void ExitControlsScreen(){
         controlsPanel.SetActive(false);
+        gamePanel.SetActive(true);
+    }
+
+    public void ShowCredits(){
+        gamePanel.SetActive(false);
+        creditsPanel.SetActive(true);
+    }
+
+    public void ExitCreditsScreen(){
+        creditsPanel.SetActive(false);
         gamePanel.SetActive(true);
     }
 
