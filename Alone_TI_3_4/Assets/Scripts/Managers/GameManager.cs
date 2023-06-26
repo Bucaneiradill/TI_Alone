@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
     //Atualizçãoes
     
     public void hungryAndThirstDamage(){
-        if(hunger <= 0){
+        if(hunger <= 0 || thirst <= 0){
             if(life <= 0){                
                 Debug.Log("Morreu");
                 TimeManager.instance.isPlaying = false;
@@ -86,18 +86,6 @@ public class GameManager : MonoBehaviour
             }else{
                 damage(1);
             }           
-        }
-        if (thirst <= 0)
-        {
-            if (life <= 0 && !TimeManager.instance.isPlaying)
-            {
-                Debug.Log("Morreu");
-                UIManager.instance?.ShowGameOver();
-            }
-            else
-            {
-                damage(1);
-            }
         }
     }
     public void temperaturaTest(){
