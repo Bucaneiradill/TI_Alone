@@ -7,6 +7,7 @@ public class PlayerActions : MonoBehaviour
     NavMeshAgent agent;
     [SerializeField] Interactable target;
     //bool isInteracting;
+    public Animator anim;
 
     private void Start()
     {
@@ -20,10 +21,16 @@ public class PlayerActions : MonoBehaviour
             agent.SetDestination(target.transform.position);
             FaceTarget();
         }
+        if(!agent.hasPath)
+        {
+            Debug.Log("Parado");
+            anim.SetInteger("State", 0);
+        }
     }
 
     public void MoveToPoint(Vector3 point){
         agent.SetDestination(point);
+        anim.SetInteger("State", 1);
     }
 
     public void FollowTarget(Interactable newTarget){
@@ -35,6 +42,7 @@ public class PlayerActions : MonoBehaviour
         agent.updateRotation = true;
         agent.stoppingDistance = 0f;
         target = null;
+        anim.SetInteger("State", 0);
     }
 
     void FaceTarget(){
