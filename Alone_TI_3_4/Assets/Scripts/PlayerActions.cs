@@ -21,6 +21,11 @@ public class PlayerActions : MonoBehaviour
             agent.SetDestination(target.transform.position);
             FaceTarget();
         }
+        if(!agent.hasPath)
+        {
+            Debug.Log("Parado");
+            anim.SetInteger("State", 0);
+        }
     }
 
     public void MoveToPoint(Vector3 point){

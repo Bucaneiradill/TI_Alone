@@ -26,6 +26,7 @@ public class Interactable : MonoBehaviour
             if(distance <= radius)
             {
                 Interact();
+                player.gameObject.GetComponent<PlayerActions>().anim.SetTrigger("Interact");
                 hasInteracted= true;
             }
         }
