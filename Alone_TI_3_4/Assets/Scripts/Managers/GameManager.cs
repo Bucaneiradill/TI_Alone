@@ -12,11 +12,11 @@ public class GameManager : MonoBehaviour
 
     //Variaveis do sistema de status
     [Header("Variaveis do sistema de status")]
-    public int life;
+    private int life;
     public int lifeMax = 100;
-    public int hunger;
+    private int hunger;
     public int hungerMax = 100;
-    public int thirst;
+    private int thirst;
     public int thirstMax = 100;
     //temperature
     public float tempMin = -30.0f;
@@ -111,15 +111,18 @@ public class GameManager : MonoBehaviour
         life -= val;
         Hud.instance?.updateLife(life);
     }
-    public void recover(int val){
-        life += val;
+    public void recover(int val){      
         if(life == lifeMax){
             UIManager.instance?.DisplayAction("Você Maxima");
             life = lifeMax;
             Hud.instance?.updateLife(life);
         }else{
-            life += val;
-            Hud.instance?.updateLife(life);
+            if(hunger >= 50 && thirst >= thirstMax){
+                life += val;
+                Hud.instance?.updateLife(life);
+            }
+            //life += val;
+            
         }
     }
     public void toHungry(int val){
