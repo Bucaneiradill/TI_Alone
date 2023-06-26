@@ -17,7 +17,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject menuButton;
     [SerializeField] GameObject controlsPanel;
     [SerializeField] GameObject creditsPanel;
-    [SerializeField] public GameObject settingsPanel;
+    public GameObject settingsPanel;
+    public GameObject inventoryPanel;
 
     [SerializeField] Text messageText;
     [SerializeField] float messageDuration;

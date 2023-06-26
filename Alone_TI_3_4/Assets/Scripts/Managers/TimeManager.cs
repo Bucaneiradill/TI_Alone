@@ -26,6 +26,7 @@ public class TimeManager : MonoBehaviour
     void Awake()
     {
         instance = this;
+        isPlaying = true;
     }
 
     void Start()
@@ -35,7 +36,7 @@ public class TimeManager : MonoBehaviour
          multiplicador = 86400 / durationDay;*/
         //Tempo
         delay = dalayValue;
-        isPlaying = true;
+        
         Invoke("TimeCount", delay);
         directionalLight = GameObject.Find("Directional_Light").transform;
         timeTxt = UIManager.instance.timeTxt;
