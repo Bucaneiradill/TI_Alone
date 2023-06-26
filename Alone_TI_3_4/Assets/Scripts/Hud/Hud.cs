@@ -48,6 +48,7 @@ public class Hud : MonoBehaviour
         lifeBar.UpdateStats(life);
     }
    public void updateFood(int food){
+        
       hungerBar.UpdateStats(food);
    }
    public void updateWater(int water){
@@ -56,16 +57,5 @@ public class Hud : MonoBehaviour
    public void updateTemp(float temp){
        tempBar.UpdateStatsFloat(temp);
    }
-
-    private void OnLevelWasLoaded()
-    {
-        UpdateFomeHud(100);
-        UpdateSedeHud(100);
-        UpdateVidaHud(100);
-        UpdateTempHud(30, -30);
-        updateFood(30);
-        updateLife(30);
-        updateWater(30);
-    }
 
 }

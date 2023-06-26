@@ -14,9 +14,9 @@ public class GameManager : MonoBehaviour
     [Header("Variaveis do sistema de status")]
     [SerializeField] private int life;
     public int lifeMax = 100;
-    private int hunger;
+    [SerializeField] private int hunger;
     public int hungerMax = 100;
-    private int thirst;
+    [SerializeField] private int thirst;
     public int thirstMax = 100;
     //temperature
     public float tempMin = -30.0f;
@@ -168,7 +168,8 @@ public class GameManager : MonoBehaviour
             hunger = hungerMax;
             Hud.instance?.updateFood(hunger);
             UIManager.instance?.DisplayAction($"Comida +{val}");
-        }else{        
+        }else{
+            Debug.Log("Comeu");
             Hud.instance?.updateFood(hunger);
             UIManager.instance?.DisplayAction($"Comida +{val}");
         }

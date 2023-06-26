@@ -10,8 +10,8 @@ public class Food : Item
     public override void PerformAction(ColectableSource source)
     {
         // L�gica espec�fica para a��o da comida
-        GameManager.instance.toEat(foodVal);
-        GameManager.instance.toDrink(drinkVal);
+        GameManager.instance?.toEat(foodVal);
+        GameManager.instance?.toDrink(drinkVal);
         Inventory.instance.RemoveItem(this);
     }
 }
