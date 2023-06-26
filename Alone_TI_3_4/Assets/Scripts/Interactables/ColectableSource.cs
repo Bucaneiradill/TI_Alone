@@ -21,6 +21,7 @@ public class ColectableSource : Interactable
     public override void Interact()
     {
         base.Interact();
+        player.gameObject.GetComponent<PlayerActions>().anim.SetTrigger("Interact");
         hitAudio.Play();
         if (particlePoint!= null)
         {

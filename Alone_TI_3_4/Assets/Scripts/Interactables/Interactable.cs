@@ -7,7 +7,7 @@ public class Interactable : MonoBehaviour
     public float radius = 3f;
 
     bool isFocus = false;
-    Transform player;
+    public Transform player;
 
     bool hasInteracted = false;
 
@@ -26,7 +26,6 @@ public class Interactable : MonoBehaviour
             if(distance <= radius)
             {
                 Interact();
-                player.gameObject.GetComponent<PlayerActions>().anim.SetTrigger("Interact");
                 hasInteracted= true;
             }
         }

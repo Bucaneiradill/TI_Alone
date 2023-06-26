@@ -148,3 +148,4 @@ MonoBehaviour:
   health: 5
   item: {fileID: 11400000, guid: 836f799cc7aa6a643a04ed289f6e0d1e, type: 2}
   amount: 1
+  player: {fileID: 4257557191405021029, guid: 8d904dc9a797e5942bab7821fbf6168c, type: 3}

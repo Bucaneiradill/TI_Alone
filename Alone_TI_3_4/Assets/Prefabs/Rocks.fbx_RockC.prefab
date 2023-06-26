@@ -260,6 +260,7 @@ MonoBehaviour:
   health: 5
   item: {fileID: 11400000, guid: f34a1b39a03900b4c9779c1402e112ea, type: 2}
   amount: 1
+  player: {fileID: 4257557191405021029, guid: 8d904dc9a797e5942bab7821fbf6168c, type: 3}
 --- !u!208 &3211423087256998376
 NavMeshObstacle:
   m_ObjectHideFlags: 0

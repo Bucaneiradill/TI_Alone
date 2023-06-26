@@ -21,7 +21,7 @@ public class PlayerActions : MonoBehaviour
             agent.SetDestination(target.transform.position);
             FaceTarget();
         }
-        if(!agent.hasPath)
+        if(agent.remainingDistance < 0.5f)
         {
             Debug.Log("Parado");
             anim.SetInteger("State", 0);
