@@ -24,4 +24,5 @@ MonoBehaviour:
   maxStackSize: 1
   ingredients:
   - {fileID: 11400000, guid: 49785011511d4c34da614e7a0d6983a3, type: 2}
-  - {fileID: 11400000, guid: 49785011511d4c34da614e7a0d6983a3, type: 2}
+  - {fileID: 11400000, guid: f34a1b39a03900b4c9779c1402e112ea, type: 2}
+  damage: 2

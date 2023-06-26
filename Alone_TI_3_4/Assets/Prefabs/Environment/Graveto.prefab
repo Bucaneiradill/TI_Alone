@@ -112,5 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 2.2
+  health: 5
   item: {fileID: 11400000, guid: 49785011511d4c34da614e7a0d6983a3, type: 2}
   amount: 1
+  player: {fileID: 4257557191405021029, guid: 8d904dc9a797e5942bab7821fbf6168c, type: 3}

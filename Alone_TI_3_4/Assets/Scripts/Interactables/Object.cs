@@ -19,7 +19,6 @@ public class Object : Interactable
     UIManager uiManager;
     [SerializeField] Item item;
     [SerializeField] int amount = 1;
-    [SerializeField] PlayerActions player;
 
     private void Start()
     {
@@ -47,8 +46,8 @@ public class Object : Interactable
         Debug.Log("Cliquei");
         bool spaceInventory = Inventory.instance.CheckAndAddItem(item);
         if(spaceInventory == true){
+            player.gameObject.GetComponent<PlayerActions>().anim.SetTrigger("Collect");
             uiManager.DisplayAction($"Coletou {amount} {item.name}");
-            player.anim.SetTrigger("Collect");
             Destroy(gameObject);
         }
         else
