@@ -72,10 +72,8 @@ public class TimeManager : MonoBehaviour
         seconds += 1;
         tempValue(seconds);
         if(cont2 >= 200){
-            if(GameManager.instance.hunger == GameManager.instance.hungerMax && GameManager.instance.thirst == GameManager.instance.thirstMax){
-                GameManager.instance.recover(5);
-            }
-            cont2 = 0;      
+            GameManager.instance.recover(5);
+            cont2 = 0;
         }
         if(cont >= 600){
             //Ficar com fome
