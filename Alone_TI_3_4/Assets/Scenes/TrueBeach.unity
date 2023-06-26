@@ -60222,14 +60222,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6152589042288136837, guid: 868afa8295cfc51488cff383d4eca4da, type: 3}
-      propertyPath: hungerMax
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 6152589042288136837, guid: 868afa8295cfc51488cff383d4eca4da, type: 3}
-      propertyPath: thirstMax
-      value: 100
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 868afa8295cfc51488cff383d4eca4da, type: 3}
 --- !u!1001 &1863715863

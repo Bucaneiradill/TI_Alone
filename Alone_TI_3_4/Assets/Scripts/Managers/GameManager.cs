@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 
     //Variaveis do sistema de status
     [Header("Variaveis do sistema de status")]
-    private int life;
+    [SerializeField] private int life;
     public int lifeMax = 100;
     private int hunger;
     public int hungerMax = 100;

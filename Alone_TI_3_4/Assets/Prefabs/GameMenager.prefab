@@ -49,8 +49,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeMax: 100
-  hungerMax: 50
-  thirstMax: 50
+  hungerMax: 100
+  thirstMax: 100
   tempMin: -30
   tempMax: 30
   tempValue: -30
