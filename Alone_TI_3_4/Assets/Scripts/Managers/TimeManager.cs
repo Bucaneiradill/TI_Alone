@@ -72,23 +72,22 @@ public class TimeManager : MonoBehaviour
         seconds += 1;
         tempValue(seconds);
         if(cont2 >= 200){
-         if(GameManager.instance.hunger == GameManager.instance.hungerMax && GameManager.instance.thirst == GameManager.instance.thirstMax){
+            if(GameManager.instance.hunger == GameManager.instance.hungerMax && GameManager.instance.thirst == GameManager.instance.thirstMax){
                 GameManager.instance.recover(5);
             }
-          cont2 = 0;      
+            cont2 = 0;      
         }
         if(cont >= 600){
-            
             //Ficar com fome
             GameManager.instance?.toHungry(1);
             //Ficar com sede
             GameManager.instance?.toThirst(1);
-           GameManager.instance?.temperaturaTest();
-           GameManager.instance?.hungryAndThirstDamage();
-           cont = 0;
+            GameManager.instance?.temperaturaTest();
+            GameManager.instance?.hungryAndThirstDamage();
+            cont = 0;
         }
-         cont = cont + 1;
-         cont2 = cont2 + 1;
+        cont = cont + 1;
+        cont2 = cont2 + 1;
     }
 
     public void setSpeedDay(int mult)
