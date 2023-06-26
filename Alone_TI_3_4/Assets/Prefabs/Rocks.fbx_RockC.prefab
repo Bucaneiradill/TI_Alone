@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 521548209584027661}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 40, y: 40, z: 40}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2143586928161277153}
@@ -110,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 1306053619729945773}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 40, y: 40, z: 40}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2143586928161277153}
@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 6621860856604390288}
   - component: {fileID: 1736624286491554887}
   - component: {fileID: 4742473837394866701}
+  - component: {fileID: 3211423087256998376}
   m_Layer: 8
   m_Name: Rocks.fbx_RockC
   m_TagString: Untagged
@@ -241,8 +242,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.6274376, y: 1.5497575, z: 1.669281}
-  m_Center: {x: 0.08067131, y: -0.38244033, z: 0}
+  m_Size: {x: 0.6817589, y: 0.63458633, z: 0.84562683}
+  m_Center: {x: 0.028810501, y: -0.1505971, z: -0.064064026}
 --- !u!114 &4742473837394866701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,6 +260,22 @@ MonoBehaviour:
   health: 5
   item: {fileID: 11400000, guid: f34a1b39a03900b4c9779c1402e112ea, type: 2}
   amount: 1
+--- !u!208 &3211423087256998376
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654048499073359451}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &9188986898317220284
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +303,7 @@ Transform:
   m_GameObject: {fileID: 9188986898317220284}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 40, y: 40, z: 40}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2143586928161277153}

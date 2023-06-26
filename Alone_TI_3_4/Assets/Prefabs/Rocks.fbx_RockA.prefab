@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1172096062489844577}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 40, y: 40, z: 40}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5458779913623841184}
@@ -110,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 2090412060420808443}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 40, y: 40, z: 40}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5458779913623841184}
@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 980488126144749265}
   - component: {fileID: 4742473838344294414}
   - component: {fileID: 8825071115345476381}
+  - component: {fileID: 8997399353127075425}
   m_Layer: 8
   m_Name: Rocks.fbx_RockA
   m_TagString: Untagged
@@ -257,8 +258,24 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.9639206, y: 1.2144356, z: 2.1717377}
-  m_Center: {x: 0.024459839, y: -0.1677227, z: 0.061408997}
+  m_Size: {x: 0.8382187, y: 0.57456064, z: 0.9156952}
+  m_Center: {x: -0.0051651, y: -0.06107688, z: 0.019935608}
+--- !u!208 &8997399353127075425
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4650718424591659802}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &8952446060853228519
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +303,7 @@ Transform:
   m_GameObject: {fileID: 8952446060853228519}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 40, y: 40, z: 40}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5458779913623841184}
