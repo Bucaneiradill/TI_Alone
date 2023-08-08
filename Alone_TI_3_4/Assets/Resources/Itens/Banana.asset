@@ -15,7 +15,7 @@ MonoBehaviour:
   itemType: 1
   iD: 0
   name: Banana
-  icon: {fileID: 21300000, guid: 1eb6ff38904de50478797fe254b6357d, type: 3}
+  icon: {fileID: 21300000, guid: ee014e69dc5ea274ab42329c30cd9f34, type: 3}
   Derscription: 
   isDefaultItem: 0
   isEquipable: 0
