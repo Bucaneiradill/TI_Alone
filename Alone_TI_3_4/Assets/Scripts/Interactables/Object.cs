@@ -20,9 +20,10 @@ public class Object : Interactable
     [SerializeField] Item item;
     [SerializeField] int amount = 1;
 
-    private void Start()
+    private new void Start()
     {
         uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
+        base.Start();
     }
 
     /*------------------------------------------------------------------------------

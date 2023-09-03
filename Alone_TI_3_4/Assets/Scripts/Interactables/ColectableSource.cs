@@ -13,9 +13,10 @@ public class ColectableSource : Interactable
     AudioSource hitAudio;
     public ItemType counterType;
 
-    private void Start()
+    private new void Start()
     {
         hitAudio = GetComponent<AudioSource>();
+        base.Start();
     }
 
     public override void Interact()
