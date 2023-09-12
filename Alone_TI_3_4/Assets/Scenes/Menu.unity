@@ -713,6 +713,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1819781166093102033, guid: 06e028b875b33ad4da3ad76406aed234, type: 3}
+      propertyPath: m_Value
+      value: 0.027
+      objectReference: {fileID: 0}
+    - target: {fileID: 1819781166093102033, guid: 06e028b875b33ad4da3ad76406aed234, type: 3}
+      propertyPath: m_WholeNumbers
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1819781166093102034, guid: 06e028b875b33ad4da3ad76406aed234, type: 3}
+      propertyPath: m_Name
+      value: Slider-Sanity
+      objectReference: {fileID: 0}
     - target: {fileID: 1819781166138488582, guid: 06e028b875b33ad4da3ad76406aed234, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -873,6 +885,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5737358111005083842, guid: 06e028b875b33ad4da3ad76406aed234, type: 3}
+      propertyPath: sanityBar
+      value: 
+      objectReference: {fileID: 1699819184}
     - target: {fileID: 5749475115805930674, guid: 06e028b875b33ad4da3ad76406aed234, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1551,3 +1567,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06e028b875b33ad4da3ad76406aed234, type: 3}
+--- !u!114 &1699819184 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1819781166093102032, guid: 06e028b875b33ad4da3ad76406aed234, type: 3}
+  m_PrefabInstance: {fileID: 1699819183}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24fa3dfcb783a4e4ebc1a5bd5261652b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

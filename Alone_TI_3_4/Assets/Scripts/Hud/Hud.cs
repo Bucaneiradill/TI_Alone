@@ -13,49 +13,42 @@ public class Hud : MonoBehaviour
    public StatsBar lifeBar;
    public StatsBar hungerBar;
    public StatsBar thirstBar;
-   public StatsBar tempBar;
+   public StatsBar sanityBar;
    //txt e  transform
    
    void Awake(){
       instance = this;
    }
    //Coloca os valores maximos e minimos do Status do player 
-   public void ColocaStatMax(StatsBar stat, int val){
+   public void SetStatMax(StatsBar stat, int val){
       stat.SetStatsMax(val);
    }
-   public void ColocaStatTemp(StatsBar stat, float valMax, float valMin){
-      stat.SetTempMax(valMax);
-      stat.SetTempMin(valMin);
-   }
-   public void ColocaStatMinTemp(StatsBar stat, float val){
-      stat.SetTempMin(val);
-   } 
+  
    public void UpdateVidaHud(int vida){
-        ColocaStatMax(lifeBar, vida);
+      SetStatMax(lifeBar, vida);
    }
-   public void UpdateFomeHud(int fome){
-        ColocaStatMax(hungerBar, fome); 
+   public void UpdateHungerHud(int hunger){
+      SetStatMax(hungerBar, hunger); 
    }
-   public void UpdateSedeHud(int sede){
-        ColocaStatMax(thirstBar, sede); 
+   public void UpdateThirstHud(int thirst){
+      SetStatMax(thirstBar, thirst); 
    }
-   public void UpdateTempHud(float tempMax, float tempMin){
-        ColocaStatTemp(tempBar, tempMax, tempMin);
+   public void UpdateSanityBar(int sanity){
+      SetStatMax(sanityBar, sanity);
    }
+  
    //atualização dos status
-   public void updateLife(int life)
-    {
-        lifeBar.UpdateStats(life);
+   public void updateLife(int life){
+      lifeBar.UpdateStats(life);
     }
-   public void updateFood(int food){
-        
+   public void updateFood(int food){        
       hungerBar.UpdateStats(food);
    }
    public void updateWater(int water){
-       thirstBar.UpdateStats(water);
+      thirstBar.UpdateStats(water);
    }
-   public void updateTemp(float temp){
-       tempBar.UpdateStatsFloat(temp);
+   public void updateSanity(int sanity){
+      sanityBar.UpdateStats(sanity);
    }
 
 }

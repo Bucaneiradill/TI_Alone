@@ -53,15 +53,6 @@ public class TimeManager : MonoBehaviour
         float rotX = Mathf.Lerp(-90, 270, seconds/86400.0f);
     }
 
-    public void tempValue(float temp){
-        if(temp <= 86400.0f/2 ){
-            GameManager.instance?.toCold();
-        }
-        else{
-            GameManager.instance?.toHot();
-        }
-    }
-
     public void prosCeu(float seconds)
     {
         float rotX = Mathf.Lerp(-90, 270, seconds / 86400);
@@ -71,7 +62,6 @@ public class TimeManager : MonoBehaviour
 
     public void updateDayCycle(){
         seconds += 1;
-        tempValue(seconds);
         if(cont2 >= 200){
             GameManager.instance.recover(5);
             cont2 = 0;
@@ -81,7 +71,6 @@ public class TimeManager : MonoBehaviour
             GameManager.instance?.toHungry(1);
             //Ficar com sede
             GameManager.instance?.toThirst(1);
-            GameManager.instance?.temperaturaTest();
             GameManager.instance?.hungryAndThirstDamage();
             cont = 0;
         }

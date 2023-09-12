@@ -19,17 +19,6 @@ public class StatsBar : MonoBehaviour
         //Debug.Log(gameObject.name);
         slider.value = statsVal;  
      }
-     //Define o valor maximo da temperatura
-     public void SetTempMax(float statsMax){
-        slider.maxValue = statsMax;
-     }
-     //Define o valor minimo da temperatura
-     public void SetTempMin(float statsMin){
-        slider.minValue = statsMin;
-     }
-     //Atera o valor usando um float
-     public void UpdateStatsFloat(float statsVal){    
-       slider.value = statsVal;
-     }
+    
      
 }
