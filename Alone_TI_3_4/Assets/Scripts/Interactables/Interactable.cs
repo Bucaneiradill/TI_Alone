@@ -19,16 +19,13 @@ public class Interactable : MonoBehaviour
 
     public void FindOutline()
     {
-        Debug.Log("FindOutline");
         if (gameObject.TryGetComponent(out Outline outline))
         {
             this.outline = outline;
-            Debug.Log("Found outline in " + gameObject.layer.ToString());
         }
         else
         {
             this.outline = gameObject.AddComponent<Outline>();
-            Debug.Log("Created outline in " + gameObject.layer);
         }
         this.outline.enabled = false;
     }
