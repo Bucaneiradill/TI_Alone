@@ -18,10 +18,9 @@ public class GameManager : MonoBehaviour
     public int hungerMax = 100;
     [SerializeField] private int thirst;
     public int thirstMax = 100;
-    //temperature
-    public float tempMin = -30.0f;
-    public float tempMax =  30.0f;
-    public float tempValue = 0f;
+    [SerializeField] private int sanity;
+    public int sanityMax = 100;
+    //AudioSource
     AudioSource audioSource;
 
     [Header("Sounds")]
@@ -48,35 +47,29 @@ public class GameManager : MonoBehaviour
     public void addHunger()
     {
          hunger = 30;
-        Hud.instance?.UpdateFomeHud(hungerMax);
+        Hud.instance?.UpdateHungerHud(hungerMax);
         Hud.instance?.updateFood(hunger);
     }
     public void addThirst()
     {
         thirst = 30;
-        Hud.instance?.UpdateSedeHud(thirstMax);
+        Hud.instance?.UpdateThirstHud(thirstMax);
         Hud.instance?.updateWater(thirst);
-    }    
-    public void addTemp()
-    {
-        tempMax +=  30f;
-        tempMin -= -30f;
-        tempValue = 0.1f;
-        Hud.instance?.UpdateTempHud(tempMax, tempMin);
-        Hud.instance?.updateTemp(tempValue);
+    }  
+    public void addSanity(){
+
     }
     //reset
     public void reset(){
         addLife();
         addHunger();
         addThirst();
-        //addTemp();
+        addSanity();
         if(TimeManager.instance != null)
             TimeManager.instance.seconds = 21643;
         InventoryUI.instance.ClearInventory();
     }
-    //Atualizçãoes
-    
+    //Atualizçãoes  
     public void hungryAndThirstDamage(){
         if(hunger <= 0 || thirst <= 0){
             if(life <= 0){                
@@ -86,15 +79,6 @@ public class GameManager : MonoBehaviour
             }else{
                 damage(1);
             }           
-        }
-    }
-    public void temperaturaTest(){
-        if(tempValue >= 30||tempValue <= -30){
-            if(life <= 0){             
-                Debug.Log("Morreu");
-            }else{
-              damage(1);
-            }
         }
     }
     public void damage(int val){
@@ -121,8 +105,7 @@ public class GameManager : MonoBehaviour
                 life += val;
                 Hud.instance?.updateLife(life);
             }
-            //life += val;
-            
+            //life += val;           
         }
     }
     public void toHungry(int val){
@@ -161,6 +144,15 @@ public class GameManager : MonoBehaviour
            Hud.instance?.updateWater(thirst);
         }           
     }
+    public void toInsane(int val){
+        if(sanity <= 0){
+          sanity = 0;
+          Hud.instance?.updateWater(sanity);
+        }else{
+           sanity -= val;
+           Hud.instance?.updateSanity(sanity);
+        } 
+    }
     public void toEat(int val){
         hunger += val;
         if(hunger >= hungerMax){
@@ -186,20 +178,17 @@ public class GameManager : MonoBehaviour
             UIManager.instance?.DisplayAction($"Hidratação +{val}");
         }
     }
-    public void toCold(){
-        if(tempValue >= tempMin){
-            tempValue += 0.1f*Time.deltaTime;
-            Hud.instance?.updateTemp(tempValue);
+    public void toSane(int val){
+         sanity += val;
+        if(sanity >= sanityMax){
+            Debug.Log("Esta copletamente em si");
+            sanity = sanityMax;
+            Hud.instance?.updateSanity(sanity);
+            UIManager.instance?.DisplayAction($"Sanidade +{val}");
         }else{
-            UIManager.instance?.DisplayAction("Frio Estremo");
-        }
-    }
-    public void toHot(){
-        if(tempValue <= tempMax){
-            tempValue -= 0.1f*Time.deltaTime;
-            Hud.instance?.updateTemp(tempValue);
-        }else{
-            UIManager.instance?.DisplayAction("Calor Estremo");
+            Debug.Log("Recuperou sanidade");
+            Hud.instance?.updateSanity(sanity);
+            UIManager.instance?.DisplayAction($"Sanidade +{val}");
         }
     }
     //metodos Start e Update
@@ -209,7 +198,7 @@ public class GameManager : MonoBehaviour
         addLife();
         addHunger();
         addThirst();
-        addTemp();
+        addSanity();
         //reset();
         audioSource = GetComponent<AudioSource>();
        
