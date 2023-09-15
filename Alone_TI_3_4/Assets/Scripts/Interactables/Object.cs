@@ -22,6 +22,7 @@ public class Object : Interactable
 
     private void Start()
     {
+        FindOutline();
         uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
     }
 
@@ -43,7 +44,6 @@ public class Object : Interactable
     Saída:      -
     ------------------------------------------------------------------------------*/
     private void ObjectPickUp(){
-        Debug.Log("Cliquei");
         bool spaceInventory = Inventory.instance.CheckAndAddItem(item);
         if(spaceInventory == true){
             player.gameObject.GetComponent<PlayerActions>().anim.SetTrigger("Collect");

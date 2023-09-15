@@ -9,17 +9,21 @@ public class MousePosition : MonoBehaviour
     [SerializeField] LayerMask layerMask;
     [SerializeField] PlayerActions playerActions;
     public NavMeshAgent agent;
+    Interactable interactable;
 
     void Update()
     {
-        if(EventSystem.current.IsPointerOverGameObject()) return;
+        if (EventSystem.current.IsPointerOverGameObject()) return;
+        interactable?.HideOutline();
+        interactable = null;
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
         if(Physics.Raycast(ray, out RaycastHit rayCastHit, float.MaxValue, layerMask))
         {
             transform.position = rayCastHit.point;
+            interactable = rayCastHit.collider.gameObject.GetComponentInParent<Interactable>();
+            interactable?.ShowOutline();
             if (Input.GetMouseButtonDown(0))
             {
-                Interactable interactable = rayCastHit.collider.gameObject.GetComponentInParent<Interactable>();
                 if (interactable != null)
                 {
                     SetTarget(interactable);

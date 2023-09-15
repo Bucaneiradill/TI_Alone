@@ -6,11 +6,6 @@ public class Colectable : MonoBehaviour
 {
     [SerializeField] Item item;
 
-    private void Start()
-    {
-
-    }
-
     public void ObjectPickUp()
     {
         bool spaceInventory = Inventory.instance.items.Count < Inventory.instance.inventorySpace;

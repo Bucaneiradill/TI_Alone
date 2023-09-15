@@ -23,7 +23,6 @@ public class PlayerActions : MonoBehaviour
         }
         if(agent.remainingDistance < 0.5f)
         {
-            Debug.Log("Parado");
             anim.SetInteger("State", 0);
         }
     }

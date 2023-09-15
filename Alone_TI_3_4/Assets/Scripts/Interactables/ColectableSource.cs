@@ -16,6 +16,7 @@ public class ColectableSource : Interactable
     private void Start()
     {
         hitAudio = GetComponent<AudioSource>();
+        FindOutline();
     }
 
     public override void Interact()

@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Interactable : MonoBehaviour
 {
@@ -12,6 +14,21 @@ public class Interactable : MonoBehaviour
     bool hasInteracted = false;
 
     public int health = 5;
+
+    public Outline outline;
+
+    public void FindOutline()
+    {
+        if (gameObject.TryGetComponent(out Outline outline))
+        {
+            this.outline = outline;
+        }
+        else
+        {
+            this.outline = gameObject.AddComponent<Outline>();
+        }
+        this.outline.enabled = false;
+    }
 
     public virtual void Interact()
     {
@@ -48,5 +65,21 @@ public class Interactable : MonoBehaviour
     private void OnDrawGizmosSelected() {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, radius);
+    }
+
+    public void ShowOutline()
+    {
+        if (outline != null)
+        {
+            outline.enabled = true;
+        }
+    }
+
+    public void HideOutline()
+    {
+        if (outline != null)
+        {
+            outline.enabled = false;
+        }
     }
 }
