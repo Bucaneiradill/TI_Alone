@@ -15,7 +15,7 @@ MonoBehaviour:
   itemType: 2
   iD: 0
   name: Graveto
-  icon: {fileID: 21300000, guid: 7e26a5f887efc8f40938f8aca1f9e861, type: 3}
+  icon: {fileID: 21300000, guid: 08c3aaf9a5809144a87a5b781666a627, type: 3}
   Derscription: 
   isDefaultItem: 0
   isEquipable: 0
