@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Interactable : MonoBehaviour
 {
@@ -16,15 +17,18 @@ public class Interactable : MonoBehaviour
 
     public Outline outline;
 
-    public void Start()
+    public void FindOutline()
     {
+        Debug.Log("FindOutline");
         if (gameObject.TryGetComponent(out Outline outline))
         {
             this.outline = outline;
+            Debug.Log("Found outline in " + gameObject.layer.ToString());
         }
         else
         {
             this.outline = gameObject.AddComponent<Outline>();
+            Debug.Log("Created outline in " + gameObject.layer);
         }
         this.outline.enabled = false;
     }
@@ -66,15 +70,15 @@ public class Interactable : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, radius);
     }
 
-    private void OnMouseEnter()
+    public void ShowOutline()
     {
-        if(outline != null)
+        if (outline != null)
         {
             outline.enabled = true;
         }
     }
 
-    private void OnMouseExit()
+    public void HideOutline()
     {
         if (outline != null)
         {

@@ -20,10 +20,10 @@ public class Object : Interactable
     [SerializeField] Item item;
     [SerializeField] int amount = 1;
 
-    private new void Start()
+    private void Start()
     {
+        FindOutline();
         uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
-        base.Start();
     }
 
     /*------------------------------------------------------------------------------
@@ -44,7 +44,6 @@ public class Object : Interactable
     Saída:      -
     ------------------------------------------------------------------------------*/
     private void ObjectPickUp(){
-        Debug.Log("Cliquei");
         bool spaceInventory = Inventory.instance.CheckAndAddItem(item);
         if(spaceInventory == true){
             player.gameObject.GetComponent<PlayerActions>().anim.SetTrigger("Collect");
