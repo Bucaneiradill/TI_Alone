@@ -33,7 +33,7 @@ public class Hud : MonoBehaviour
    public void UpdateThirstHud(int thirst){
       SetStatMax(thirstBar, thirst); 
    }
-   public void UpdateSanityBar(int sanity){
+   public void UpdateSanityHud(int sanity){
       SetStatMax(sanityBar, sanity);
    }
   

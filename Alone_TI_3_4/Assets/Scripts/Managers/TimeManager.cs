@@ -73,6 +73,9 @@ public class TimeManager : MonoBehaviour
             GameManager.instance?.toThirst(1);
             GameManager.instance?.hungryAndThirstDamage();
             cont = 0;
+            //Checar a sanidade
+            GameManager.instance?.toInsane(1);
+            GameManager.instance?.sanityCheck();
         }
         cont = cont + 1;
         cont2 = cont2 + 1;

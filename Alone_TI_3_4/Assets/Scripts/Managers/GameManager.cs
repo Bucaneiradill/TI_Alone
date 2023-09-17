@@ -27,6 +27,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] AudioClip hungry;
     [SerializeField] AudioClip thirsty;
 
+    [Header("Sanity")]
+    [SerializeField] private bool calm;
+    [SerializeField] private bool unstable;
+    [SerializeField] private bool insane;
+
     //methods
     //metodo de preservar o GameManger
     void Awake(){
@@ -57,7 +62,9 @@ public class GameManager : MonoBehaviour
         Hud.instance?.updateWater(thirst);
     }  
     public void addSanity(){
-
+        sanity = 80;
+        Hud.instance?.UpdateSanityHud(sanityMax);
+        Hud.instance?.updateSanity(sanity);
     }
     //reset
     public void reset(){
@@ -165,6 +172,7 @@ public class GameManager : MonoBehaviour
             Hud.instance?.updateFood(hunger);
             UIManager.instance?.DisplayAction($"Comida +{val}");
         }
+        toSane(5);
     }
     public void toDrink(int val){
         thirst += val;
@@ -177,6 +185,7 @@ public class GameManager : MonoBehaviour
             Hud.instance?.updateWater(thirst);
             UIManager.instance?.DisplayAction($"Hidratação +{val}");
         }
+        toSane(5);
     }
     public void toSane(int val){
          sanity += val;
@@ -191,6 +200,24 @@ public class GameManager : MonoBehaviour
             UIManager.instance?.DisplayAction($"Sanidade +{val}");
         }
     }
+    public void sanityCheck(){
+        if (sanity <= 25){
+            calm = false;
+            unstable = false;
+            insane = true;
+            UIManager.instance?.DisplayAction("Você está INSANO");
+        }else if(sanity < 75 && sanity >25){
+            calm = false;
+            unstable = true;
+            insane = false;
+            UIManager.instance?.DisplayAction("Você está INSTAVEL");
+        }else{
+            calm = true;
+            unstable = false;
+            insane = false;
+            UIManager.instance?.DisplayAction("Você está CALMO");
+        }
+    }
     //metodos Start e Update
     void Start()
     {
@@ -199,6 +226,7 @@ public class GameManager : MonoBehaviour
         addHunger();
         addThirst();
         addSanity();
+        sanityCheck();
         //reset();
         audioSource = GetComponent<AudioSource>();
        
