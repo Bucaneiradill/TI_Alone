@@ -349,7 +349,7 @@ MonoBehaviour:
   player: {fileID: 0}
   health: 5
   outline: {fileID: 0}
-  loot: {fileID: 4062688706886711010, guid: 4a882832adc194d44b8e96a1c4fb3702, type: 3}
+  loot: {fileID: 3830044629709278434, guid: 8fdaea000aac49449ac79b682083b9d8, type: 3}
   lootAmount: 1
   lootName: Coco
   dropPoint: {fileID: 2042902665442377522}

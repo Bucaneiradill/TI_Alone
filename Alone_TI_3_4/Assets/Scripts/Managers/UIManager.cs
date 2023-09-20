@@ -17,11 +17,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject menuButton;
     [SerializeField] GameObject controlsPanel;
     [SerializeField] GameObject creditsPanel;
+    [SerializeField] int maxMessages = 30;
     public GameObject settingsPanel;
     public GameObject inventoryPanel;
 
     [SerializeField] Text messageText;
-    [SerializeField] float messageDuration;
     public TextMeshProUGUI timeTxt;
 
     void Awake()
@@ -84,7 +84,10 @@ public class UIManager : MonoBehaviour
     {
         Text newMessage = Instantiate(messageText, messagesPanel.transform);
         newMessage.text = message;
-        Destroy(newMessage.gameObject, messageDuration);
+        if(messagesPanel.transform.childCount >= maxMessages)
+        {
+            Destroy(messagesPanel.transform.GetChild(0).gameObject);
+        }
     }
 
     public void ShowGameOver()
