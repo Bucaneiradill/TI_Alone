@@ -18,8 +18,6 @@ public class InventoryUI : MonoBehaviour
 {
     public static InventoryUI instance;
     [SerializeField] public Transform itemsParent;
-    [SerializeField] GameObject inventoryUI;
-    [SerializeField] GameObject inventoryButton;
     public GameObject recipeUI;
     InventorySlot[] slots;
 
@@ -49,18 +47,6 @@ public class InventoryUI : MonoBehaviour
     void Start(){
         Inventory.instance.onItemChangeCallBack += UpdateUI;
         slots = itemsParent.GetComponentsInChildren<InventorySlot>(); //Pega todos os slots que são filhos do InventorySlot.
-    }
-    /*------------------------------------------------------------------------------
-    Função:     Update
-    Descrição:  Verifica quando o usuário abre o inventário
-    Entrada:    -
-    Saída:      -
-    ------------------------------------------------------------------------------*/
-    void Update(){
-        if(Input.GetButtonDown("Inventory")){
-            inventoryUI.SetActive(!inventoryUI.activeSelf); //Inverte o estado atual do GameObject e inverte quando a tecla é apertada novamente.   
-            inventoryButton.SetActive(!inventoryButton.activeSelf);       
-        }
     }
     /*------------------------------------------------------------------------------
     Função:     UpdateUI
