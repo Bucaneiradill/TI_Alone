@@ -18,7 +18,7 @@ public class TimeManager : MonoBehaviour
     [SerializeField] private int cont2 = 0;
     [SerializeField][Tooltip("Valor padrão do delay")] private float dalayValue = 0.05f;
     public float delay;
-    
+    public string timeString;
     public bool isPlaying;
     [SerializeField][Tooltip("Duração do dia em segundos")] public int seconds = 21643;
     private int contHora;
@@ -44,7 +44,8 @@ public class TimeManager : MonoBehaviour
     
     void CalcTime(float seconds)
     {
-       timeTxt.text = TimeSpan.FromSeconds(seconds).ToString(@"hh\:mm");//\:ss
+        timeString = TimeSpan.FromSeconds(seconds).ToString(@"hh\:mm");
+        timeTxt.text = timeString;//\:ss
     }
    
     public void prosCeu()

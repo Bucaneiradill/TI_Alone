@@ -83,7 +83,7 @@ public class UIManager : MonoBehaviour
     public void DisplayAction(string message)
     {
         Text newMessage = Instantiate(messageText, messagesPanel.transform);
-        newMessage.text = message;
+        newMessage.text = $"{TimeManager.instance.timeString}: {message}";
         if(messagesPanel.transform.childCount >= maxMessages)
         {
             Destroy(messagesPanel.transform.GetChild(0).gameObject);
