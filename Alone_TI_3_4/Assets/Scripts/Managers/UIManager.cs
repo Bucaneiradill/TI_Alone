@@ -22,7 +22,6 @@ public class UIManager : MonoBehaviour
     public GameObject inventoryPanel;
 
     [SerializeField] Text messageText;
-    [SerializeField] float messageDuration;
     public TextMeshProUGUI timeTxt;
 
     void Awake()
