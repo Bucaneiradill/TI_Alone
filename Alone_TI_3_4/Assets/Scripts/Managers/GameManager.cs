@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     public int thirstMax = 100;
     [SerializeField] private int sanity;
     public int sanityMax = 100;
-    //AudioSource
+
     AudioSource audioSource;
 
     [Header("Sounds")]
@@ -41,6 +41,17 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         DontDestroyOnLoad(this.gameObject);
+    }
+
+    void Start()
+    {
+        //Ajustes dos sliders
+        addLife();
+        addHunger();
+        addThirst();
+        addSanity();
+        //reset();
+        audioSource = GetComponent<AudioSource>();
     }
     //metodos do sistema de status
     public void addLife()
@@ -118,6 +129,7 @@ public class GameManager : MonoBehaviour
     public void toHungry(int val){
        
         if(hunger == 25){
+            Debug.Log(hungry.name);
             audioSource.clip = hungry;
             audioSource.Play();
             UIManager.instance?.DisplayAction("Você está com fome");
@@ -218,21 +230,4 @@ public class GameManager : MonoBehaviour
             UIManager.instance?.DisplayAction("Você está CALMO");
         }
     }
-    //metodos Start e Update
-    void Start()
-    {
-        //Ajustes dos sliders
-        addLife();
-        addHunger();
-        addThirst();
-        addSanity();
-        sanityCheck();
-        //reset();
-        audioSource = GetComponent<AudioSource>();
-       
-    }
-    void FixedUpdate()
-    {  
-    }
-    
 }
