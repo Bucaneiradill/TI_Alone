@@ -71,7 +71,7 @@ public class InventoryUI : MonoBehaviour
     ------------------------------------------------------------------------------*/
     public void ClearInventory(){
         for(int i = Inventory.instance.items.Count; i >= 0;  i--){ //Loop para passando por todos os slots do inventário.
-            slots[i].OnRemoveButton(); //Limpa todo o inventário e a lista.
+            slots[i].OnDeletItemInventory(); //Limpa todo o inventário e a lista.
         }
     } 
 }

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Stick
   m_EditorClassIdentifier: Assembly-CSharp::Foraging
   itemType: 2
+  PrefabItem: {fileID: 5898381514524721784, guid: 2ad0ca6a07f3c5244af77e32f2fc956d, type: 3}
   iD: 0
   name: Graveto
   icon: {fileID: 21300000, guid: 08c3aaf9a5809144a87a5b781666a627, type: 3}

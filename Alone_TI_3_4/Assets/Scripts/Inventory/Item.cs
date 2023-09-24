@@ -25,6 +25,7 @@ public abstract class Item : ScriptableObject
 {
     public abstract void PerformAction(ColectableSource source = null);
     public ItemType itemType;
+    public GameObject PrefabItem;
     public int iD;
     new public string name = "New Item";
     public Sprite icon = null;
