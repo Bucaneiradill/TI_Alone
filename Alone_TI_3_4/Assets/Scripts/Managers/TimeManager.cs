@@ -92,12 +92,12 @@ public class TimeManager : MonoBehaviour
         else if (mult == 2)
         {
             Debug.Log("2X");
-            delay = (dalayValue/2);
+            delay = (dalayValue/4);
         }
         else if (mult == 3)
         {
             Debug.Log("3X");
-            delay = (dalayValue/3);
+            delay = (dalayValue/6);
         }
     }
 
