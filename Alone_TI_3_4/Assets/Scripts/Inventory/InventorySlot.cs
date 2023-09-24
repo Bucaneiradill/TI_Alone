@@ -53,7 +53,19 @@ public class InventorySlot : MonoBehaviour
     Saída:      -
     ------------------------------------------------------------------------------*/
     public void OnRemoveButton(){
-        Inventory.instance.RemoveItem(item);
+        if(item.PrefabItem != null){
+            Instantiate(item.PrefabItem, Inventory.instance.PlayerPosition.position, Quaternion.identity);
+        }
+        OnDeletItemInventory();
+    }
+    /*------------------------------------------------------------------------------
+    Função:     OnDropItem
+    Descrição:  Dropa o Item
+    Entrada:    -
+    Saída:      -
+    ------------------------------------------------------------------------------*/
+    public void OnDeletItemInventory(){
+        Inventory.instance.RemoveItem(item);     
     }
     /*------------------------------------------------------------------------------
     Função:     OnClickItem
@@ -63,18 +75,20 @@ public class InventorySlot : MonoBehaviour
     ------------------------------------------------------------------------------*/
     public void OnClickItem()
     {
-        if (item.isEquipable)
-        {
-            if (EquipmentUI.instance.FindItem(item) == -1)
+        if(item != null){
+            if (item.isEquipable)
             {
-                EquipmentUI.instance.SetItem(item);
+                if (EquipmentUI.instance.FindItem(item) == -1)
+                {
+                    EquipmentUI.instance.SetItem(item);
+                }
             }
-        }
-        else if (item.isConsumable)
-        {
-            GameManager.instance.toEat(10);
-            GameManager.instance.toDrink(10);
-            OnRemoveButton();
+            else if (item.isConsumable)
+            {
+                GameManager.instance.toEat(10);
+                GameManager.instance.toDrink(10);
+                OnDeletItemInventory();
+            }
         }
     }
 }

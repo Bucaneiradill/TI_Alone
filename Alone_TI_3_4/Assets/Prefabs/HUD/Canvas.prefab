@@ -2715,6 +2715,7 @@ MonoBehaviour:
   messagesPanel: {fileID: 7334877272242553387}
   gameOverPanel: {fileID: 1819781166193589937}
   menuButton: {fileID: 1184783848327009084}
+  inventoryButton: {fileID: 0}
   controlsPanel: {fileID: 6673669545075793961}
   creditsPanel: {fileID: 389291703606737795}
   maxMessages: 30
@@ -2772,8 +2773,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemsParent: {fileID: 1819781166029779321}
-  inventoryUI: {fileID: 1819781167060313536}
-  inventoryButton: {fileID: 7522396299178474048}
   recipeUI: {fileID: 1819781166825094598}
 --- !u!114 &5737358111005083842
 MonoBehaviour:

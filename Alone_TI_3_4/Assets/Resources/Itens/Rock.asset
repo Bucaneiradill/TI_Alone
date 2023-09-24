@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Rock
   m_EditorClassIdentifier: Assembly-CSharp::Foraging
   itemType: 2
+  PrefabItem: {fileID: 4650718424591659802, guid: 13cb33d18a9211b449b1e1b91e983f8f, type: 3}
   iD: 0
   name: Pedra
   icon: {fileID: 21300000, guid: a7497db87eb3f8f438a1be4309a3fc94, type: 3}

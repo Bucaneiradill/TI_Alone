@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject messagesPanel;
     [SerializeField] GameObject gameOverPanel;
     [SerializeField] GameObject menuButton;
+    [SerializeField] GameObject inventoryButton;
     [SerializeField] GameObject controlsPanel;
     [SerializeField] GameObject creditsPanel;
     [SerializeField] int maxMessages = 30;
@@ -39,11 +40,15 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape) && gamePanel.activeSelf)
+        if(Input.GetKeyDown(KeyCode.Escape) && gamePanel.activeSelf && (!inventoryPanel.activeSelf))
         {
             TimeManager.instance.boolPlay();
             settingsPanel.SetActive(!settingsPanel.activeSelf);
-            menuButton.SetActive(!settingsPanel.activeSelf);
+            inventoryButton.SetActive(!settingsPanel.activeSelf);
+        }
+        if(Input.GetButtonDown("Inventory")&& gamePanel.activeSelf && (!settingsPanel.activeSelf)){
+            inventoryPanel.SetActive(!inventoryPanel.activeSelf); //Inverte o estado atual do GameObject e inverte quando a tecla é apertada novamente.   
+            menuButton.SetActive(!menuButton.activeSelf);       
         }
     }
 
@@ -82,7 +87,7 @@ public class UIManager : MonoBehaviour
     public void DisplayAction(string message)
     {
         Text newMessage = Instantiate(messageText, messagesPanel.transform);
-        newMessage.text = $"{TimeManager.instance.timeString}: {message}";
+        newMessage.text = $"{TimeManager.instance?.timeString}: {message}";
         if(messagesPanel.transform.childCount >= maxMessages)
         {
             Destroy(messagesPanel.transform.GetChild(0).gameObject);
@@ -96,12 +101,12 @@ public class UIManager : MonoBehaviour
 
     public void ShowPanel(GameObject panel)
     {
-        panel.SetActive(true);
+        panel.SetActive(!panel.activeSelf);
     }
 
     public void HidePanel(GameObject panel)
     {
-        panel.SetActive(false);
+        panel.SetActive(!panel.activeSelf);
     }
 
     public void BackToMenu()
