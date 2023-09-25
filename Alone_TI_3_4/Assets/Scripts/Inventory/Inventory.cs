@@ -56,7 +56,7 @@ public class Inventory : MonoBehaviour
     Saída:      -
     ------------------------------------------------------------------------------*/  
     private void OnLevelWasLoaded(){
-        PlayerPosition = GameObject.FindWithTag("Player").transform;
+        PlayerPosition = GameObject.FindWithTag("DropItem").transform;
     }
     /*------------------------------------------------------------------------------
     Função:     AddItem
