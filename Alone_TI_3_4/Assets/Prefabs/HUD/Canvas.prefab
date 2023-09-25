@@ -411,10 +411,10 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1819781165500800134}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: ShowPanel
+        m_MethodName: HidePanel
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 7522396299178474048}
+          m_ObjectArgument: {fileID: 1819781167060313536}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -423,11 +423,23 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1819781165500800134}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: HidePanel
+        m_MethodName: interactableButton
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1819781167060313536}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 7196393033950015780}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1819781165500800134}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: interactableButton
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4824728657542292488}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1093,11 +1105,23 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1819781165500800134}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: HidePanel
+        m_MethodName: interactableButton
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1184783848327009084}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 4824728657542292488}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1819781165500800134}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: interactableButton
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7196393033950015780}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2465,11 +2489,23 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1819781165500800134}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: ShowPanel
+        m_MethodName: interactableButton
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1184783848327009084}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 4824728657542292488}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1819781165500800134}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: interactableButton
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7196393033950015780}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2714,8 +2750,8 @@ MonoBehaviour:
   gamePanel: {fileID: 1819781165538500880}
   messagesPanel: {fileID: 7334877272242553387}
   gameOverPanel: {fileID: 1819781166193589937}
-  menuButton: {fileID: 1184783848327009084}
-  inventoryButton: {fileID: 0}
+  menuButton: {fileID: 4824728657542292488}
+  inventoryButton: {fileID: 7196393033950015780}
   controlsPanel: {fileID: 6673669545075793961}
   creditsPanel: {fileID: 389291703606737795}
   maxMessages: 30
@@ -13058,11 +13094,23 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1819781165500800134}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: HidePanel
+        m_MethodName: interactableButton
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 7522396299178474048}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 4824728657542292488}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1819781165500800134}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: interactableButton
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7196393033950015780}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
