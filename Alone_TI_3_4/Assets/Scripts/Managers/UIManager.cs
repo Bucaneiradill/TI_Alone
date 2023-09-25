@@ -14,8 +14,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject gamePanel;
     [SerializeField] GameObject messagesPanel;
     [SerializeField] GameObject gameOverPanel;
-    [SerializeField] GameObject menuButton;
-    [SerializeField] GameObject inventoryButton;
+    [SerializeField] Button menuButton;
+    [SerializeField] Button inventoryButton;
     [SerializeField] GameObject controlsPanel;
     [SerializeField] GameObject creditsPanel;
     [SerializeField] int maxMessages = 30;
@@ -44,11 +44,13 @@ public class UIManager : MonoBehaviour
         {
             TimeManager.instance.boolPlay();
             settingsPanel.SetActive(!settingsPanel.activeSelf);
-            inventoryButton.SetActive(!settingsPanel.activeSelf);
+            inventoryButton.interactable = !inventoryButton.interactable;
+            menuButton.interactable = !menuButton.interactable;
         }
         if(Input.GetButtonDown("Inventory")&& gamePanel.activeSelf && (!settingsPanel.activeSelf)){
             inventoryPanel.SetActive(!inventoryPanel.activeSelf); //Inverte o estado atual do GameObject e inverte quando a tecla é apertada novamente.   
-            menuButton.SetActive(!menuButton.activeSelf);       
+            menuButton.interactable = !menuButton.interactable;      
+            inventoryButton.interactable = !inventoryButton.interactable;
         }
     }
 
@@ -108,7 +110,9 @@ public class UIManager : MonoBehaviour
     {
         panel.SetActive(!panel.activeSelf);
     }
-
+    public void interactableButton(Button button){
+        button.interactable = !button.interactable;
+    }
     public void BackToMenu()
     {
         gamePanel.SetActive(false);
