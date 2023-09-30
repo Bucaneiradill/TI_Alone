@@ -13,12 +13,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Inventory : MonoBehaviour
 {
 
     public int inventorySpace = 2;
     public static Inventory instance;
+    public Transform PlayerPosition;
     public List<Item> items = new List<Item>();
     public delegate void OnItemChange();
     public OnItemChange onItemChangeCallBack;
@@ -46,6 +48,15 @@ public class Inventory : MonoBehaviour
     private void Start()
     {
         if(InventoryUI.instance != null) inventorySpace = InventoryUI.instance.itemsParent.childCount;
+    }
+    /*------------------------------------------------------------------------------
+    Função:     OnLevelWasLoaded
+    Descrição:  Pega o posição do player para ser usada quando um item for dropado
+    Entrada:    -
+    Saída:      -
+    ------------------------------------------------------------------------------*/  
+    private void OnLevelWasLoaded(){
+        PlayerPosition = GameObject.FindWithTag("DropItem").transform;
     }
     /*------------------------------------------------------------------------------
     Função:     AddItem

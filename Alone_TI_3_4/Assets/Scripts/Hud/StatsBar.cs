@@ -16,7 +16,6 @@ public class StatsBar : MonoBehaviour
         slider.minValue = statsMin;
      }
      public void UpdateStats(int statsVal){
-        //Debug.Log(gameObject.name);
         slider.value = statsVal;  
      }
     

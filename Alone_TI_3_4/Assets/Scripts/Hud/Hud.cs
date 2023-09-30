@@ -17,8 +17,16 @@ public class Hud : MonoBehaviour
    //txt e  transform
    
    void Awake(){
-      instance = this;
-   }
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(this.gameObject);
+    }
    //Coloca os valores maximos e minimos do Status do player 
    public void SetStatMax(StatsBar stat, int val){
       stat.SetStatsMax(val);
