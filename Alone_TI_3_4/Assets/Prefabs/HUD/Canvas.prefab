@@ -15950,18 +15950,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventorySlot
       objectReference: {fileID: 0}
-    - target: {fileID: 5611594924305627400, guid: e40fc4cbf5ab9b7459d7694b98dd49a8, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 7babb4565d1d4524cbc879157fabf906, type: 3}
-    - target: {fileID: 5611594924305627402, guid: e40fc4cbf5ab9b7459d7694b98dd49a8, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -9.199989
-      objectReference: {fileID: 0}
-    - target: {fileID: 5611594925657863129, guid: e40fc4cbf5ab9b7459d7694b98dd49a8, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 7babb4565d1d4524cbc879157fabf906, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e40fc4cbf5ab9b7459d7694b98dd49a8, type: 3}
 --- !u!224 &6098237344667807025 stripped
