@@ -47,7 +47,8 @@ public class TimeManager : MonoBehaviour
         timeString = TimeSpan.FromSeconds(seconds).ToString(@"hh\:mm");
         timeTxt.text = timeString;//\:ss
     }
-   
+    
+    //Rotação 
     public void prosCeu()
     { 
         //Debug.Log(seconds);
@@ -112,5 +113,26 @@ public class TimeManager : MonoBehaviour
     //bool play
     public void boolPlay(){
         isPlaying = !isPlaying;
+    }
+    //Pausar o jogo
+    public void pause(){
+        Time.timeScale = 0;
+    }
+    public void play(){
+        Time.timeScale = 1;
+    }
+
+    public void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.P)){
+            if(isPlaying == true){
+                pause();
+                isPlaying = false; 
+            }else if(isPlaying == false){
+                play();
+                isPlaying = true;
+            }
+           
+        }
     }
 }
