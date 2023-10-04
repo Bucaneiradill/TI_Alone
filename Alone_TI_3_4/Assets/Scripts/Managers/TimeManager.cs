@@ -115,24 +115,25 @@ public class TimeManager : MonoBehaviour
         isPlaying = !isPlaying;
     }
     //Pausar o jogo
-    public void pause(){
+    /*public void pause(){
         Time.timeScale = 0;
     }
     public void play(){
         Time.timeScale = 1;
-    }
+    }*/
 
-    public void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.P)){
-            if(isPlaying == true){
-                pause();
-                isPlaying = false; 
+    public void pause(){
+        
+        if(isPlaying == true){
+            Time.timeScale = 0;
+            //pause();
+            isPlaying = false; 
             }else if(isPlaying == false){
-                play();
-                isPlaying = true;
-            }
-           
+            //play();
+            Time.timeScale = 1;
+            isPlaying = true;
         }
-    }
+           
+    } 
+    
 }
