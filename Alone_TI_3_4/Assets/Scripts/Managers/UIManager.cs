@@ -45,6 +45,7 @@ public class UIManager : MonoBehaviour
             TimeManager.instance.boolPlay();
             settingsPanel.SetActive(!settingsPanel.activeSelf);
             inventoryButton.SetActive(!inventoryButton.activeSelf);
+            
         }
         if(Input.GetButtonDown("Inventory")&& gamePanel.activeSelf && (!settingsPanel.activeSelf)){
             inventoryPanel.SetActive(!inventoryPanel.activeSelf); //Inverte o estado atual do GameObject e inverte quando a tecla é apertada novamente.   

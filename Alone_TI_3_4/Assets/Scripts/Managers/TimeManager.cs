@@ -27,6 +27,7 @@ public class TimeManager : MonoBehaviour
     {
         instance = this;
         isPlaying = true;
+        
     }
 
     void Start()
@@ -35,6 +36,7 @@ public class TimeManager : MonoBehaviour
          durationDay = 1440;
          multiplicador = 86400 / durationDay;*/
         //Tempo
+    
         delay = dalayValue;
         
         Invoke("TimeCount", delay);
@@ -113,27 +115,16 @@ public class TimeManager : MonoBehaviour
     //bool play
     public void boolPlay(){
         isPlaying = !isPlaying;
-    }
-    //Pausar o jogo
-    /*public void pause(){
-        Time.timeScale = 0;
-    }
-    public void play(){
-        Time.timeScale = 1;
-    }*/
-
-    public void pause(){
         
-        if(isPlaying == true){
-            Time.timeScale = 0;
-            //pause();
-            isPlaying = false; 
-            }else if(isPlaying == false){
-            //play();
-            Time.timeScale = 1;
-            isPlaying = true;
-        }
-           
-    } 
+    }
     
+    void  Update()
+    {
+         if(isPlaying == true){
+            Time.timeScale = 1;           
+            }
+         if(isPlaying == false){
+            Time.timeScale = 0;          
+        }
+    }
 }

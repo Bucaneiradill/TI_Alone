@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
         addThirst();
         addSanity();
         //reset();
+        Time.timeScale = 1;
         audioSource = GetComponent<AudioSource>();
     }
     //metodos do sistema de status
