@@ -84,4 +84,9 @@ public class CraftUI : MonoBehaviour
         }
         itemIcon.sprite = null;
     }
+
+    private void OnDisable()
+    {
+        craftWindow.SetActive(false);
+    }
 }
