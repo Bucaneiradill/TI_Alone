@@ -7053,10 +7053,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slot: {fileID: 3836855988530757602, guid: e5f679604303f4a45951fa34f5ab4374, type: 3}
-  craftWindow: {fileID: 0}
-  ingredientsPanel: {fileID: 0}
-  itemIcon: {fileID: 0}
-  craftButton: {fileID: 0}
+  craftWindow: {fileID: 8829777320444128394}
+  ingredientsPanel: {fileID: 133642626792209771}
+  itemIcon: {fileID: 338434955743655065}
+  craftButton: {fileID: 6470846602780754761}
   craftSlot: {fileID: 5611594924282704061, guid: f63506738b011cf44bcdd9192713e45e, type: 3}
   itemToCraft: {fileID: 0}
 --- !u!1 &1819781166874195938
