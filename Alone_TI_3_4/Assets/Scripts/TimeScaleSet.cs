@@ -6,11 +6,11 @@ public class TimeScaleSet : MonoBehaviour
 {
     void OnEnable()
     {
-        Time.timeScale = 0;
+        GameManager.instance.gmTimeScaleOff();
     }
    
     void OnDisable()
     {
-        Time.timeScale = 1;
+        GameManager.instance.gmTimeScaleOn();
     }
 }

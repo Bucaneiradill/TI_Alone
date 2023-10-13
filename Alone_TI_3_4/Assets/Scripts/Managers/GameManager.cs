@@ -230,4 +230,10 @@ public class GameManager : MonoBehaviour
             UIManager.instance?.DisplayAction("Você está CALMO");
         }
     }
+    public void gmTimeScaleOn(){
+        Time.timeScale = 1;
+    }
+    public void gmTimeScaleOff(){
+        Time.timeScale = 0; 
+    }
 }
