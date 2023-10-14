@@ -44714,6 +44714,57 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2181171878313158581, guid: 1507d6923a274304ea99a02a62227888, type: 3}
   m_PrefabInstance: {fileID: 1383883866}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1384537973
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1384537975}
+  - component: {fileID: 1384537974}
+  m_Layer: 0
+  m_Name: QuestGiver
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1384537974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384537973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5680e8545dd88644da066c1da5c671c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest:
+    title: Primeiros passos
+    description: Colete 5 recursos
+    goal:
+      goalType: 0
+      requiredAmount: 5
+      currentAmount: 0
+--- !u!4 &1384537975
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384537973}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 34.24206, y: 13.597445, z: 200.14194}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1385736276
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66727,6 +66778,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2143586928161277153, guid: ae33a02d0814b864ca59b7fd34c8a37b, type: 3}
   m_PrefabInstance: {fileID: 1888474483417072028}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &724258748785868907
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 724258748451511673, guid: b6ee04a17df86774eb5e2a6f637150bd, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 724258748451511673, guid: b6ee04a17df86774eb5e2a6f637150bd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 34.24206
+      objectReference: {fileID: 0}
+    - target: {fileID: 724258748451511673, guid: b6ee04a17df86774eb5e2a6f637150bd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 13.597445
+      objectReference: {fileID: 0}
+    - target: {fileID: 724258748451511673, guid: b6ee04a17df86774eb5e2a6f637150bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 200.14194
+      objectReference: {fileID: 0}
+    - target: {fileID: 724258748451511673, guid: b6ee04a17df86774eb5e2a6f637150bd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 724258748451511673, guid: b6ee04a17df86774eb5e2a6f637150bd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 724258748451511673, guid: b6ee04a17df86774eb5e2a6f637150bd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 724258748451511673, guid: b6ee04a17df86774eb5e2a6f637150bd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 724258748451511673, guid: b6ee04a17df86774eb5e2a6f637150bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 724258748451511673, guid: b6ee04a17df86774eb5e2a6f637150bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 724258748451511673, guid: b6ee04a17df86774eb5e2a6f637150bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 724258748451511674, guid: b6ee04a17df86774eb5e2a6f637150bd, type: 3}
+      propertyPath: m_Name
+      value: QuestManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b6ee04a17df86774eb5e2a6f637150bd, type: 3}
 --- !u!1001 &1888474483417072028
 PrefabInstance:
   m_ObjectHideFlags: 0
