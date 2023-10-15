@@ -77,6 +77,7 @@ public class TimeManager : MonoBehaviour
             //Checar a sanidade
             GameManager.instance?.toInsane(1);
             GameManager.instance?.sanityCheck();
+            ClimateManager.instance?.ChangeState();
         }
         cont = cont + 1;
         cont2 = cont2 + 1;
