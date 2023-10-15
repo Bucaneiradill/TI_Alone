@@ -24,6 +24,9 @@ public class QuestManager : MonoBehaviour
     public void AddQuest(Quest quest)
     {
         availableQuests.Add(quest);
+        UIManager.instance.questTitle.text = quest.title;
+        UIManager.instance.questDescription.text = $"{quest.description} (0/{quest.goal.requiredAmount})";
+        UIManager.instance.questDescription.fontStyle = TMPro.FontStyles.Normal;
     }
 
     //remove uma missão da lista
@@ -43,10 +46,13 @@ public class QuestManager : MonoBehaviour
             {
                 finishedQuests.Add(quest);
             }
+            string newDescription = $"{quest.description} ({quest.goal.currentAmount}/{quest.goal.requiredAmount})";
+            UIManager.instance.questDescription.text = newDescription;
         }
         foreach(Quest quest in finishedQuests)
         {
             CompleteQuest(quest);
+            UIManager.instance.questDescription.fontStyle = TMPro.FontStyles.Strikethrough;
         }
     }
 }
