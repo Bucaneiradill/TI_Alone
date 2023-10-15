@@ -41,12 +41,12 @@ public class ClimateManager : MonoBehaviour
         
         lightComp.intensity = 0;
         //state = State.SUN;
-        Invoke("ChangeState", 8.0f);
+       // Invoke("ChangeState", 8.0f);
     }
     void Sun(){
         
         lightComp.intensity = 1;
-      Invoke("ChangeState", 8.0f);
+     // Invoke("ChangeState", 8.0f);
     }
    
     public void ChangeState(){
