@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: MayanAxeMaterial
-    second: {fileID: 2100000, guid: 1e8ce87a4877926478123396c04c80fa, type: 2}
+    second: {fileID: 2100000, guid: 8e1a08afa66a9c94fbc7cc5e4fdee03d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -14,12 +14,11 @@ public class AnimalMachine : MonoBehaviour
 
     void Start()
     {
-            SetState(new AnimalPatrolState(this));
-            agent = GetComponent<NavMeshAgent>();
-            energy = 3;
+        SetState(new AnimalPatrolState(this));
+        agent = GetComponent<NavMeshAgent>();
+        energy = 3;
     }
 
-    // Update is called once per frame
     void Update()
     {
         state?.Update();
@@ -45,28 +44,24 @@ public class AnimalMachine : MonoBehaviour
 
     public void Move()
     {
-        int Index=0;
+        int index = 0;
         energy -= Time.fixedDeltaTime;
-        Vector3 direcao =PatrolPoints[Index].position-transform.position;
+        Vector3 direcao = PatrolPoints[index].position-transform.position;
         if(direcao.magnitude<=1.5f)
-                {
-                    if(Index==2&&direcao.magnitude<=1.5f)
-                    {
-                        Index=-1;
-                    }
-                    Index=Index+1;  
-                }
-        agent.SetDestination(PatrolPoints[Index].transform.position);          
+        {
+            if(index == 2 && direcao.magnitude <= 1.5f)
+            {
+                index = -1;
+            }
+            index++; 
+        }
+        agent.SetDestination(PatrolPoints[index].transform.position);          
     }            
 
     public void Chase()
     {
-        Subjecto.instance.NotifyAll();
+        Subject.instance.NotifyAll();
         energy -= Time.fixedDeltaTime;
         agent.SetDestination(Target.transform.position);
     }
-
-
-    
-    
 }

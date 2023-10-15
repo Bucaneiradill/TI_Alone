@@ -24,7 +24,7 @@ public class AnimalPatrolState : IState
         {
             Animal.SetState(new AnimalIdleState(Animal));
         }
-        if(Animal.IsNearTarget())
+        else if(Animal.IsNearTarget())
         {
             Animal.SetState(new AnimalChaseState(Animal));
         }
