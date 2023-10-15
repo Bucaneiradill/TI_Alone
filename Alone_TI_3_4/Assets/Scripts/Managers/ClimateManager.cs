@@ -5,20 +5,19 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Experimental.GlobalIllumination;
 
+public enum State{SUN, RAIN};
 public class ClimateManager : MonoBehaviour
 {
+    public static ClimateManager instance;
     
-
-public enum State{SUN, RAIN};
-
-    
-    public State state = State.SUN;
-    public float Speed = 1.5f; 
+    public State state = State.SUN; 
     State currentState = State.SUN;
     public GameObject Light;
     Light lightComp;
     
-    
+    void Awake(){
+        instance = this;
+    }
     
     void Start()
     {
@@ -50,7 +49,7 @@ public enum State{SUN, RAIN};
       Invoke("ChangeState", 8.0f);
     }
    
-    void ChangeState(){
+    public void ChangeState(){
         UIManager.instance?.DisplayAction("Trocando de clima");
         int i = Random.Range(0, 100);
         //Debug.Log("Valor do I >>>"+ i + " e "+ i%3);
