@@ -10,9 +10,19 @@ public class QuestGoal
     public int requiredAmount;
     public int currentAmount;
 
+    //verifica se já chegou na quantidade necessária da missão
     public bool IsReached()
     {
         return (currentAmount >= requiredAmount);
+    }
+
+    //atualiza o status da missão de coleta
+    public void ItemCollected()
+    {
+        if(goalType == GoalType.Gathering)
+        {
+            currentAmount++;
+        }
     }
 }
 
