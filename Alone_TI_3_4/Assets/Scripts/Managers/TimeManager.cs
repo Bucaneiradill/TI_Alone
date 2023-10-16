@@ -114,4 +114,13 @@ public class TimeManager : MonoBehaviour
     public void boolPlay(){
         isPlaying = !isPlaying;
     }
+   /* void  Update()
+    {
+         if(isPlaying == true){
+            Time.timeScale = 1;           
+            }
+         if(isPlaying == false){
+            Time.timeScale = 0;          
+        }
+    }*/
 }
