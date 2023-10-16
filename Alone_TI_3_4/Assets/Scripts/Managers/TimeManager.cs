@@ -77,6 +77,7 @@ public class TimeManager : MonoBehaviour
             //Checar a sanidade
             GameManager.instance?.toInsane(1);
             GameManager.instance?.sanityCheck();
+            ClimateManager.instance?.ChangeState();
         }
         cont = cont + 1;
         cont2 = cont2 + 1;
@@ -113,4 +114,13 @@ public class TimeManager : MonoBehaviour
     public void boolPlay(){
         isPlaying = !isPlaying;
     }
+   /* void  Update()
+    {
+         if(isPlaying == true){
+            Time.timeScale = 1;           
+            }
+         if(isPlaying == false){
+            Time.timeScale = 0;          
+        }
+    }*/
 }

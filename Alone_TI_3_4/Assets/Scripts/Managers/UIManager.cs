@@ -21,6 +21,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] int maxMessages = 30;
     public GameObject settingsPanel;
     public GameObject inventoryPanel;
+    public Text questTitle;
+    public TextMeshProUGUI questDescription;
 
     [SerializeField] Text messageText;
     public TextMeshProUGUI timeTxt;
