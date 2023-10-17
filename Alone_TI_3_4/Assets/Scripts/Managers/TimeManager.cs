@@ -16,7 +16,7 @@ public class TimeManager : MonoBehaviour
     [SerializeField] public Transform directionalLight;
     [SerializeField] private int cont = 0;
     [SerializeField] private int cont2 = 0;
-    [SerializeField][Tooltip("Valor padrão do delay")] private float dalayValue = 0.05f;
+    [SerializeField][Tooltip("Valor padrão do delay")] private float dalayValue = 0.1f;
     public float delay;
     public string timeString;
     public bool isPlaying;
@@ -114,13 +114,4 @@ public class TimeManager : MonoBehaviour
     public void boolPlay(){
         isPlaying = !isPlaying;
     }
-   /* void  Update()
-    {
-         if(isPlaying == true){
-            Time.timeScale = 1;           
-            }
-         if(isPlaying == false){
-            Time.timeScale = 0;          
-        }
-    }*/
 }
