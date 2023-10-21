@@ -65,6 +65,7 @@ public class InventorySlot : MonoBehaviour
     Saída:      -
     ------------------------------------------------------------------------------*/
     public void OnDeletItemInventory(){
+        /*
         if (item.isEquipable)
         {
             int index = EquipmentUI.instance.FindItem(item);
@@ -73,6 +74,7 @@ public class InventorySlot : MonoBehaviour
                 EquipmentUI.instance.RemoveItem(index);
             }
         }
+        */
         Inventory.instance.RemoveItem(item);
     }
     /*------------------------------------------------------------------------------
