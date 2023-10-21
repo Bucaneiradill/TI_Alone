@@ -80,7 +80,6 @@ public class UIManager : MonoBehaviour
         if(openIDs.Count > 0){
             int i = openIDs.Pop(); //Desempilha o ultimo elemento do Stack
             panels[i].SetActive(false); 
-            //TimeManager.instance.boolPlay();
             if(openIDs.Count == 0) open = false; //Caso ele tenha desempilhado o ultimo painel diga que não tem mais nada aberto
         }
     }
@@ -98,7 +97,6 @@ public class UIManager : MonoBehaviour
             return;
         }
         if(open && (!stack))return; //Condição que verifica se tem paineis que foram estacados e se tem algum painel aberto
-        //TimeManager.instance.boolPlay();
         openIDs.Push(i); //coloca o painel na lista
         panels[i].SetActive(true); //ativa o painel
         open = true; //diz que tem algum painel ativo no momento
@@ -161,7 +159,9 @@ public class UIManager : MonoBehaviour
     {
         gameOverPanel.SetActive(true);
     }
-
+    public void HideGameOver(){
+        gameOverPanel.SetActive(false);
+    }
     public void ShowPanel(GameObject panel)
     {
         panel.SetActive(!panel.activeSelf);

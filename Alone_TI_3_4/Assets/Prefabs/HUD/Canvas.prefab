@@ -411,39 +411,15 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1819781165500800134}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: HidePanel
-        m_Mode: 2
+        m_MethodName: Close
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 1819781167060313536}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7196393033950015780}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
-        m_MethodName: set_interactable
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 4824728657542292488}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
-        m_MethodName: set_interactable
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1 &704862549998510999
 GameObject:
@@ -1093,32 +1069,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1819781165500800134}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: ShowPanel
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1819781165334715247}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7196393033950015780}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
-        m_MethodName: set_interactable
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4824728657542292488}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
-        m_MethodName: set_interactable
-        m_Mode: 6
+        m_MethodName: Close
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2489,39 +2441,15 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1819781165500800134}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: HidePanel
-        m_Mode: 2
+        m_MethodName: Close
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 1819781165334715247}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7196393033950015780}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
-        m_MethodName: set_interactable
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 4824728657542292488}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
-        m_MethodName: set_interactable
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1 &1819781165476119294
 GameObject:
@@ -2771,6 +2699,12 @@ MonoBehaviour:
   inventoryPanel: {fileID: 1819781167060313536}
   questTitle: {fileID: 6579619317774734750}
   questDescription: {fileID: 5585282322376799136}
+  panels:
+  - {fileID: 1819781165334715247}
+  - {fileID: 1819781167060313536}
+  keys: 1b00000069000000
+  open: 0
+  stack: 0
   messageText: {fileID: 230264042613473314, guid: 4c3eb2ac0b5f18045a4b380cddada295, type: 3}
   timeTxt: {fileID: 1819781165593523078}
 --- !u!114 &5463931841839516037
@@ -7714,6 +7648,7 @@ GameObject:
   - component: {fileID: 1819781167060313537}
   - component: {fileID: 1819781167060313551}
   - component: {fileID: 1819781167060313550}
+  - component: {fileID: 3574761414195068377}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -7783,6 +7718,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3574761414195068377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819781167060313536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37d2c5096664f8144b281a883738b597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1819781167062430440
 GameObject:
   m_ObjectHideFlags: 0
@@ -13391,36 +13338,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1819781165500800134}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: ShowPanel
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1819781167060313536}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7196393033950015780}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
-        m_MethodName: set_interactable
-        m_Mode: 6
+        m_MethodName: Open
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4824728657542292488}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
-        m_MethodName: set_interactable
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

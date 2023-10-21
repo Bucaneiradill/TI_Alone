@@ -6,8 +6,8 @@ public class Restart : MonoBehaviour
 {
     public void OnPress()
     {
-        UIManager.instance.settingsPanel.SetActive(false);
-        UIManager.instance.inventoryPanel.SetActive(false);
+        UIManager.instance.CloseAll();
+        UIManager.instance.HideGameOver();
         GameManager.instance.reset();
     }
 
