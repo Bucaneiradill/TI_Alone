@@ -18,8 +18,15 @@ public class AnimalIdleState : IState
     }
     public void Update()
     {
-        if (Time.time>time)
+        if(Animal.HasEnergy==false)
         {
+            Debug.Log("cansado");
+            Animal.Rest();
+        }
+        
+        if (Animal.HasEnergy==true)
+        {
+            Debug.Log("patrulhand");
             Animal.SetState(new AnimalPatrolState(Animal));
         }
     }

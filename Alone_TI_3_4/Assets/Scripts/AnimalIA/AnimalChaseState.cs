@@ -7,7 +7,6 @@ public class AnimalChaseState : IState
 {
     AnimalMachine Animal;
     Transform target;
-    
     Vector3 dir;
 
     public AnimalChaseState(AnimalMachine Animal )
@@ -24,7 +23,7 @@ public class AnimalChaseState : IState
     public void Update()
     {
         Animal.Chase();
-        if(Animal.energy<=0)
+        if(Animal.HasEnergy==false)
         {
             Animal.SetState(new AnimalIdleState(Animal));
         }
