@@ -20,6 +20,7 @@ public class SceneFader : MonoBehaviour {
 
     public void FadeTo(int scene)
 	{
+		Debug.Log("Fade to " + scene);
 		StartCoroutine(FadeOut(scene));
 	}
 

@@ -105,8 +105,11 @@ public class GameManager : MonoBehaviour
         }
     }
     public void damage(int val){
-        if(life <= 0)
+        life -= val;
+        if (life <= 0)
         {
+            Debug.Log("Morreu");
+            TimeManager.instance.isPlaying = false;
             UIManager.instance?.ShowGameOver();
         }
         else if(life <= 20 && !isLowLife)
@@ -114,7 +117,6 @@ public class GameManager : MonoBehaviour
             isLowLife = true;
             vignette = Instantiate(vignettePrefab);
         }
-        life -= val;
         Hud.instance?.updateLife(life);
     }
     public void recover(int val){      
