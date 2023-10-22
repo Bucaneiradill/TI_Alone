@@ -19,17 +19,25 @@ public class AnimalPatrolState : IState
     }
     public void Update()
     {
-        Animal.Move();
+        
         if(Animal.energy <= 0)
         {
             Animal.SetState(new AnimalIdleState(Animal));
         }
-        else if(Animal.IsNearTarget())
+         if(Animal.HasEnergy==true)
+        {
+            Debug.Log("patrulhando");
+            Animal.Move();
+        }
+        if(Animal.IsNearTarget())
         {
             Animal.SetState(new AnimalChaseState(Animal));
         }
     }
-    public void Exit(){}
+    public void Exit()
+    {
+        
+    }
     
 
 }
