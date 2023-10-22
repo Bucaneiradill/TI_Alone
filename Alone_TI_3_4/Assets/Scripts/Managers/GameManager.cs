@@ -4,6 +4,7 @@ using UnityEngine;
 
 using TMPro;
 using System;
+using UnityEngine.Rendering.PostProcessing;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,6 +21,10 @@ public class GameManager : MonoBehaviour
     public int thirstMax = 100;
     [SerializeField] private int sanity;
     public int sanityMax = 100;
+    public bool isLowLife;
+
+    [SerializeField] GameObject vignettePrefab;
+    GameObject vignette;
 
     AudioSource audioSource;
 
@@ -100,22 +105,20 @@ public class GameManager : MonoBehaviour
         }
     }
     public void damage(int val){
-        if(life == 50){
-            UIManager.instance?.DisplayAction("Vida baixa");
-        }
-        else if(life == 10){
-            UIManager.instance?.DisplayAction("Você esta morrendo");
-        }
-        else if(life <= 0)
+        if(life <= 0)
         {
             UIManager.instance?.ShowGameOver();
+        }
+        else if(life <= 20 && !isLowLife)
+        {
+            isLowLife = true;
+            vignette = Instantiate(vignettePrefab);
         }
         life -= val;
         Hud.instance?.updateLife(life);
     }
     public void recover(int val){      
         if(life == lifeMax){
-            UIManager.instance?.DisplayAction("Você Maxima");
             life = lifeMax;
             Hud.instance?.updateLife(life);
         }else{
@@ -124,6 +127,11 @@ public class GameManager : MonoBehaviour
                 Hud.instance?.updateLife(life);
             }
             //life += val;           
+        }
+        if(life > 20)
+        {
+            isLowLife = false;
+            Destroy(vignette);
         }
     }
     public void toHungry(int val){
