@@ -122,7 +122,7 @@ public class GameManager : MonoBehaviour
             life = lifeMax;
             Hud.instance?.updateLife(life);
         }else{
-            if(hunger >= 50 && thirst >= thirstMax){
+            if(hunger >= 50 && thirst >= 50){
                 life += val;
                 Hud.instance?.updateLife(life);
             }
