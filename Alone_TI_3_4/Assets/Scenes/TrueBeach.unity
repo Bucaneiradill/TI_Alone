@@ -54982,7 +54982,7 @@ MonoBehaviour:
   directionalLight: {fileID: 0}
   cont: 0
   cont2: 0
-  dalayValue: 0.05
+  dalayValue: 0.03
   delay: 0.05
   timeString: 
   isPlaying: 1
