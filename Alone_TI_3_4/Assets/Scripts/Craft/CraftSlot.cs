@@ -15,11 +15,11 @@ public class CraftSlot : MonoBehaviour
         icon.sprite = item.icon;
         icon.enabled = true;
         icon.preserveAspect = true;
-        //tenho q pegar referência do painel
+        //tenho q pegar referï¿½ncia do painel
         recipePanel = InventoryUI.instance.recipeUI;
     }
 
-    //Verifica se tem todos os itens no inventário
+    //Verifica se tem todos os itens no inventï¿½rio
     public void CheckRequiredItems()
     {
         List<Item> itensCopy = new List<Item>();
@@ -33,6 +33,7 @@ public class CraftSlot : MonoBehaviour
             }
             itensCopy.Remove(item);
         }
+        recipePanel.GetComponent<CraftUI>().ClearPanel();
         recipePanel.GetComponent<CraftUI>().SetItem(item, canCraft);
     }
 }
