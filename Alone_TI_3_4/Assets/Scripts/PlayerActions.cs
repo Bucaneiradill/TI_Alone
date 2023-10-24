@@ -21,13 +21,10 @@ public class PlayerActions : MonoBehaviour
             agent.SetDestination(target.transform.position);
             FaceTarget();
         }
-
-        anim.SetFloat("Speed", agent.velocity.magnitude);
-        
-        /*if(agent.remainingDistance < 0.5f)
+        if(agent.remainingDistance < 0.5f)
         {
             anim.SetInteger("State", 0);
-        }*/
+        }
     }
 
     public void MoveToPoint(Vector3 point){
