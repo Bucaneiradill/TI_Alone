@@ -48,14 +48,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d1318fd0995f01478c4f4065613fd41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  life: 0
   lifeMax: 100
+  hunger: 0
   hungerMax: 100
+  thirst: 0
   thirstMax: 100
-  tempMin: -30
-  tempMax: 30
-  tempValue: -30
+  sanity: 0
+  sanityMax: 100
+  isLowLife: 0
+  vignettePrefab: {fileID: 3353464039886964582, guid: f2fdd46d776591d49bfa9b211e265735, type: 3}
   hungry: {fileID: 8300000, guid: 19dcd0b1c8f41ff438898158b93f5217, type: 3}
   thirsty: {fileID: 0}
+  calm: 0
+  unstable: 0
+  insane: 0
 --- !u!114 &6152589042288136838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,6 +76,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventorySpace: 2
+  PlayerPosition: {fileID: 0}
   items: []
 --- !u!114 &6152589042288136832
 MonoBehaviour:
