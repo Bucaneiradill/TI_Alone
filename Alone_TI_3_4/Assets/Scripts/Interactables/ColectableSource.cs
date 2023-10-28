@@ -41,7 +41,9 @@ public class ColectableSource : Interactable
         if (health <= 0)
         {
             Instantiate(loot, dropPoint ? dropPoint.position : transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
+
         }
     }
 }

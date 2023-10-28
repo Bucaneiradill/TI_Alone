@@ -68,6 +68,8 @@ public class TimeManager : MonoBehaviour
             cont2 = 0;
         }
         if(cont >= 600){
+            //respawn de recursos
+            ResourcesRespawn.instance.Respawn();
             //Ficar com fome
             GameManager.instance?.toHungry(1);
             //Ficar com sede

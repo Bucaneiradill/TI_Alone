@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class ResourcesRespawn : MonoBehaviour
 {
+    public static ResourcesRespawn instance;
+    void Awake(){
+        instance = this;
+    }
     //Variaveis
-    protected bool IsBroke = false;
-    public GameObject go;
+    public bool IsBroke;
+    public GameObject gameObj;
     
     //Respawn 
     public void Respawn(){
@@ -15,8 +19,15 @@ public class ResourcesRespawn : MonoBehaviour
             Debug.Log("Ainda possui arvore");
         }else{
             Debug.Log("Respawn da arvore");
-           go.SetActive(true);
+           gameObj.SetActive(true);
            IsBroke = false; 
         }
+    }
+    
+    void Update()
+    {
+       if(!gameObj.activeSelf){
+        IsBroke = true;
+       } 
     }
 }
