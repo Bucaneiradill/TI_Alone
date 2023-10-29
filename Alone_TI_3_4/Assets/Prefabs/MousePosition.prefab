@@ -113,9 +113,8 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   layerMask:
     serializedVersion: 2
-    m_Bits: 480
+    m_Bits: 448
   playerActions: {fileID: 0}
-  exclamationCursor: {fileID: 2800000, guid: d3586b50751f28c48882ab3e1427c950, type: 3}
   agent: {fileID: 0}
 --- !u!1 &1746640723658876859
 GameObject:

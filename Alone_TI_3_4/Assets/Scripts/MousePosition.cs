@@ -8,13 +8,16 @@ public class MousePosition : MonoBehaviour
     [SerializeField] Camera mainCamera;
     [SerializeField] LayerMask layerMask;
     [SerializeField] PlayerActions playerActions;
-    [SerializeField] Texture2D exclamationCursor;
     public NavMeshAgent agent;
     Interactable interactable;
 
     void Update()
     {
-        if (EventSystem.current.IsPointerOverGameObject()) return;
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+            return;
+        }
         interactable?.HideOutline();
         interactable = null;
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
@@ -22,10 +25,9 @@ public class MousePosition : MonoBehaviour
         {
             transform.position = rayCastHit.point;
             interactable = rayCastHit.collider.gameObject.GetComponentInParent<Interactable>();
-            if(interactable != null)
+            if (interactable != null)
             {
                 interactable.ShowOutline();
-                Cursor.SetCursor(exclamationCursor, Vector2.zero, CursorMode.Auto);
             }
             else
             {
@@ -41,10 +43,6 @@ public class MousePosition : MonoBehaviour
                     playerActions.MoveToPoint(rayCastHit.point);
                 }
             }
-        }
-        else
-        {
-            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
         }
     }
 
