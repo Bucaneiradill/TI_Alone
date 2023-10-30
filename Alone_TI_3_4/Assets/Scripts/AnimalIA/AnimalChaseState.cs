@@ -22,6 +22,7 @@ public class AnimalChaseState : IState
 
     public void Update()
     {
+        
         Animal.Chase();
         if(Animal.HasEnergy==false)
         {

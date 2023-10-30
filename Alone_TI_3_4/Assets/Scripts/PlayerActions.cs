@@ -21,15 +21,18 @@ public class PlayerActions : MonoBehaviour
             agent.SetDestination(target.transform.position);
             FaceTarget();
         }
-        if(agent.remainingDistance < 0.5f)
-        {
-            anim.SetInteger("State", 0);
-        }
+        anim.SetFloat("Speed", agent.velocity.magnitude);
+         
+        //if (agent.remainingDistance < 0.5f)
+        //{
+        //    anim.SetInteger("State", 0);
+        //}
     }
 
     public void MoveToPoint(Vector3 point){
         agent.SetDestination(point);
-        anim.SetInteger("State", 1);
+        
+       
     }
 
     public void FollowTarget(Interactable newTarget){
@@ -41,7 +44,7 @@ public class PlayerActions : MonoBehaviour
         agent.updateRotation = true;
         agent.stoppingDistance = 0f;
         target = null;
-        anim.SetInteger("State", 0);
+        
     }
 
     void FaceTarget(){

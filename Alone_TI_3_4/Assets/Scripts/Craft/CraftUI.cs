@@ -75,7 +75,7 @@ public class CraftUI : MonoBehaviour
         ClearPanel();
     }
 
-    private void ClearPanel()
+    public void ClearPanel()
     {
         itemToCraft = null;
         for(int i = 0; i < ingredientsPanel.childCount; i++)

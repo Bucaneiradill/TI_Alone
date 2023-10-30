@@ -5,13 +5,14 @@ using UnityEngine.AI;
 
 public class AnimalMachine : MonoBehaviour
 {
-    NavMeshAgent agent;
+    public NavMeshAgent agent;
     GameObject Player;
     IState state;
     public Transform Target;
     public Transform[] PatrolPoints;
     public bool HasEnergy = true;
     public float energy;
+    public Animator CrocAnim;
 
     void Start()
     {
@@ -25,6 +26,7 @@ public class AnimalMachine : MonoBehaviour
     void Update()
     {
         state?.Update();
+        CrocAnim.SetBool("HasEnergy?", HasEnergy);  
     }
 
     public void SetState(IState state)
@@ -47,16 +49,18 @@ public class AnimalMachine : MonoBehaviour
 
     public void Move()
     {
+        
         int index = 0;
         energy -= Time.fixedDeltaTime;
         agent.speed= 3;
         Vector3 direcao = PatrolPoints[index].position-transform.position;
         if(direcao.magnitude<=1.5f)
         {
-            index = Random.Range(0,3);
+            index = Random.Range(0,4);
             Debug.Log(index);
         }
-        agent.SetDestination(PatrolPoints[index].transform.position);       
+        agent.SetDestination(PatrolPoints[index].transform.position);    
+         
 
         if(energy<=0)
         {
@@ -80,6 +84,7 @@ public class AnimalMachine : MonoBehaviour
         Subject.instance.NotifyAll();
         energy -= Time.fixedDeltaTime;
         agent.SetDestination(Target.transform.position);
+        
          if(energy<=0)
         {
             HasEnergy= false;

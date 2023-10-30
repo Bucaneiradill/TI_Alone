@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class Subject : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static Subject instance;
+    public List<IObserver> list = new List<IObserver>();
+    void Awake()
     {
-        
+        if(instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+        DontDestroyOnLoad(gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AddObserver(IObserver obs)
     {
-        
+        list.Add(obs);
+    }
+
+    public void NotifyAll()
+    {
+        foreach (IObserver obs in list)
+        {
+            obs.Notify();
+        }
     }
 }

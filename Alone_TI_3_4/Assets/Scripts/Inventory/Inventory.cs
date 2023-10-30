@@ -56,7 +56,7 @@ public class Inventory : MonoBehaviour
     Saída:      -
     ------------------------------------------------------------------------------*/  
     private void OnLevelWasLoaded(){
-        PlayerPosition = GameObject.FindWithTag("DropItem").transform;
+        PlayerPosition = GameObject.FindWithTag("DropItem")?.transform;
     }
     /*------------------------------------------------------------------------------
     Função:     AddItem
@@ -81,6 +81,7 @@ public class Inventory : MonoBehaviour
                 return false;
             }
             items.Add(item);
+            QuestManager.instance.UpdateCollectQuests();
             if(onItemChangeCallBack != null) onItemChangeCallBack.Invoke(); 
         }
         return true;
