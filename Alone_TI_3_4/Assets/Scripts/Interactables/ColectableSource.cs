@@ -50,7 +50,8 @@ public class ColectableSource : Interactable
             GameObject obj;
             obj = transform.GetChild(0).gameObject;
             obj.SetActive(false);
-           
+            //time = Time.time + delay;
+           gameObject.GetComponent<SpawnerItem>().time = Time.time + gameObject.GetComponent<SpawnerItem>().delay;
         }
     }
 }

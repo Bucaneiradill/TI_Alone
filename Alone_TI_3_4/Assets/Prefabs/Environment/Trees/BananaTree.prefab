@@ -3860,7 +3860,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 0
   obj: {fileID: 0}
-  delay: 60
+  delay: 20
 --- !u!1 &3658928055448367393
 GameObject:
   m_ObjectHideFlags: 0

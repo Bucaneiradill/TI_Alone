@@ -16,9 +16,9 @@ public class SpawnerItem : MonoBehaviour
     public void Active(){
         obj.SetActive(true);
     }
-    void OnDisable(){
+    void OnMouseDown(){
         time = Time.time + delay;
-        Debug.Log(time);
+        Debug.Log(Time.time);
     }
     
 }
