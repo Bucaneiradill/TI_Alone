@@ -21,8 +21,6 @@ public class TimeManager : MonoBehaviour
     public string timeString;
     public bool isPlaying;
     [SerializeField][Tooltip("Duração do dia em segundos")] public int seconds = 21643;
-    private int contHora;
-
     void Awake()
     {
         instance = this;
@@ -31,6 +29,7 @@ public class TimeManager : MonoBehaviour
 
     void Start()
     {
+        //obj = transform.GetChild(0).gameObject;
         /* //Tempo 
          durationDay = 1440;
          multiplicador = 86400 / durationDay;*/
@@ -40,6 +39,7 @@ public class TimeManager : MonoBehaviour
         Invoke("TimeCount", delay);
         directionalLight = GameObject.Find("Directional_Light").transform;
         timeTxt = UIManager.instance.timeTxt;
+        
     }
     
     void CalcTime(float seconds)
@@ -68,8 +68,7 @@ public class TimeManager : MonoBehaviour
             cont2 = 0;
         }
         if(cont >= 600){
-            //respawn de recursos
-            ResourcesRespawn.instance.Respawn();
+            //ResourcesRespawn.instance.Respawn();
             //Ficar com fome
             GameManager.instance?.toHungry(1);
             //Ficar com sede

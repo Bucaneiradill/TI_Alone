@@ -3003,6 +3003,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8600273111028142505, guid: 97fdb9dae7d71dd4080cd944c10029d0, type: 3}
+      propertyPath: delay
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6589739841758484801, guid: 97fdb9dae7d71dd4080cd944c10029d0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 97fdb9dae7d71dd4080cd944c10029d0, type: 3}
@@ -4798,7 +4802,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &138175851
 Transform:
   m_ObjectHideFlags: 0
@@ -27613,6 +27617,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8600273111028142505, guid: 97fdb9dae7d71dd4080cd944c10029d0, type: 3}
+      propertyPath: delay
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97fdb9dae7d71dd4080cd944c10029d0, type: 3}
 --- !u!4 &868456316 stripped
@@ -35889,6 +35897,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1090941243}
+  - component: {fileID: 1090941244}
   m_Layer: 0
   m_Name: Fruitful
   m_TagString: Untagged
@@ -35954,6 +35963,19 @@ Transform:
   m_Father: {fileID: 177960117}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1090941244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090941242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf183b7cdecd76740a058da6c2f867c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  list: []
 --- !u!1001 &1091061618
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49222,6 +49244,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Croco
       objectReference: {fileID: 0}
+    - target: {fileID: 1259266986962640681, guid: af27d6aea87a93547b7b2af9b2214774, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1259266986962640686, guid: af27d6aea87a93547b7b2af9b2214774, type: 3}
       propertyPath: Target
       value: 
@@ -51983,6 +52009,10 @@ PrefabInstance:
     - target: {fileID: 2063737269332286356, guid: edb7f1283b1054b49bd3cb499ba09b1b, type: 3}
       propertyPath: m_Name
       value: Cubos  de teste
+      objectReference: {fileID: 0}
+    - target: {fileID: 2063737269332286356, guid: edb7f1283b1054b49bd3cb499ba09b1b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2063737269332286357, guid: edb7f1283b1054b49bd3cb499ba09b1b, type: 3}
       propertyPath: m_RootOrder
@@ -71714,6 +71744,7 @@ MonoBehaviour:
   dropPoint: {fileID: 3448199021311199758}
   particlePoint: {fileID: 4667359244486151738, guid: 291c33db285946c4f9d3786790fb0d32, type: 3}
   particle: {fileID: 3190041756260390103, guid: 161dcb31c3ddf9344961180b1746ce57, type: 3}
+  obj: {fileID: 0}
   counterType: 0
 --- !u!1 &9078173990231851423
 GameObject:
