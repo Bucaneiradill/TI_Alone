@@ -16,6 +16,7 @@ public class Interactable : MonoBehaviour
     public int health = 5;
 
     public Outline outline;
+    [SerializeField] Texture2D exclamationCursor;
 
     public void FindOutline()
     {
@@ -73,6 +74,7 @@ public class Interactable : MonoBehaviour
         {
             outline.enabled = true;
         }
+        Cursor.SetCursor(exclamationCursor, Vector2.zero, CursorMode.Auto);
     }
 
     public void HideOutline()
