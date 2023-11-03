@@ -4,10 +4,12 @@ using UnityEngine.AI;
 
 public class PlayerActions : MonoBehaviour
 {
-    NavMeshAgent agent;
+    public NavMeshAgent agent;
     [SerializeField] Interactable target;
     //bool isInteracting;
     public Animator anim;
+    public bool canAct = true;
+    float initialSpeed;
 
     private void Start()
     {
@@ -62,7 +64,6 @@ public class PlayerActions : MonoBehaviour
             target = newTarget;
             FollowTarget(newTarget);
         }
-        
         newTarget.OnFocus(gameObject.transform);
     }
 
@@ -73,5 +74,20 @@ public class PlayerActions : MonoBehaviour
         }
         target = null;
         StopFollowingTarget();
+    }
+
+    public void DisableActions()
+    {
+        initialSpeed = agent.speed;
+        agent.speed = 0;
+        canAct = false;
+        Debug.Log("DisableActions");
+    }
+
+    public void EnableActions()
+    {
+        agent.speed = initialSpeed;
+        canAct = true;
+        Debug.Log("EnableActions");
     }
 }

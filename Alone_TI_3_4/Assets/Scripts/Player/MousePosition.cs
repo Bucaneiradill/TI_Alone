@@ -33,7 +33,7 @@ public class MousePosition : MonoBehaviour
             {
                 Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
             }
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && playerActions.canAct)
             {
                 if (interactable != null)
                 {
