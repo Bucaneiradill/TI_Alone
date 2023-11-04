@@ -20,4 +20,12 @@ public class AnimationEvents : MonoBehaviour
         player?.EnableActions();
         Debug.Log("EnableActions");
     }
+
+    public void Hit()
+    {
+        if (player.target.GetType() == typeof(ColectableSource))
+        {
+            player.target.GetComponent<ColectableSource>().Hit();
+        }
+    }
 }

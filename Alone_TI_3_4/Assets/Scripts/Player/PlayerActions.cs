@@ -5,7 +5,7 @@ using UnityEngine.AI;
 public class PlayerActions : MonoBehaviour
 {
     public NavMeshAgent agent;
-    [SerializeField] Interactable target;
+    public Interactable target;
     //bool isInteracting;
     public Animator anim;
     public bool canAct = true;
