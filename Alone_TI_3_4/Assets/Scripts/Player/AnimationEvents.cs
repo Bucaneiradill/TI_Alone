@@ -1,5 +1,7 @@
 using UnityEngine;
 
+//Classe resposável por receber eventos de animação
+
 public class AnimationEvents : MonoBehaviour
 {
     PlayerActions player;
@@ -26,6 +28,14 @@ public class AnimationEvents : MonoBehaviour
         if (player.target.GetType() == typeof(ColectableSource))
         {
             player.target.GetComponent<ColectableSource>().Hit();
+        }
+    }
+
+    public void ObjectPickUp()
+    {
+        if (player.target.GetType() == typeof(Object))
+        {
+            player.target.GetComponent<Object>().ObjectPickUp();
         }
     }
 }
