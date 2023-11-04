@@ -14,13 +14,11 @@ public class AnimationEvents : MonoBehaviour
     public void DisableActions()
     {
         player?.DisableActions();
-        Debug.Log("DisableActions");
     }
 
     public void EnableActions()
     {
         player?.EnableActions();
-        Debug.Log("EnableActions");
     }
 
     public void Hit()
