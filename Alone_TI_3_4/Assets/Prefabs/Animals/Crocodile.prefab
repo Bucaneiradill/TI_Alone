@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 4706289448395792916}
   - component: {fileID: 8687317527513039588}
   - component: {fileID: 7801416496220941307}
+  - component: {fileID: 1806822550651630194}
   m_Layer: 0
   m_Name: Crocodile
   m_TagString: Untagged
@@ -85,6 +86,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f3d76029b9c1024eac5c2238212c695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 0}
   Target: {fileID: -8679921383154817045, guid: ce935b66472dc3e4586f43f83f292f39, type: 3}
   PatrolPoints:
   - {fileID: 7189083676442528482}
@@ -93,6 +95,7 @@ MonoBehaviour:
   - {fileID: 415388827612048785}
   HasEnergy: 1
   energy: 3
+  CrocAnim: {fileID: 0}
 --- !u!195 &1259266986962640684
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -153,6 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed248b38441a30e4993ade355f775376, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CrocAnim: {fileID: 1806822550651630194}
 --- !u!54 &7801416496220941307
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -169,6 +173,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!95 &1806822550651630194
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259266986962640681}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 93af74fb68d3fb4479879aefa207fb22, type: 3}
+  m_Controller: {fileID: 9100000, guid: 74545b6c566295644ad79588bb2354a2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1611978649009740053
 GameObject:
   m_ObjectHideFlags: 0

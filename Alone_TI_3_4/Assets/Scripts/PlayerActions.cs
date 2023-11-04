@@ -22,7 +22,6 @@ public class PlayerActions : MonoBehaviour
             FaceTarget();
         }
         anim.SetFloat("Speed", agent.velocity.magnitude);
-         
         //if (agent.remainingDistance < 0.5f)
         //{
         //    anim.SetInteger("State", 0);
