@@ -81,13 +81,11 @@ public class PlayerActions : MonoBehaviour
         initialSpeed = agent.speed;
         agent.speed = 0;
         canAct = false;
-        Debug.Log("DisableActions");
     }
 
     public void EnableActions()
     {
         agent.speed = initialSpeed;
         canAct = true;
-        Debug.Log("EnableActions");
     }
 }
