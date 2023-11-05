@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class QuestGiver : MonoBehaviour
 {
-    Quest quest;
+    public Quest quest;
+
+    private void Start()
+    {
+        QuestManager.instance.AddQuest(quest);
+    }
 
     public void EnableQuest()
     {
-        quest.isActive= true;
+        QuestManager.instance.AddQuest(quest);
     }
 }
