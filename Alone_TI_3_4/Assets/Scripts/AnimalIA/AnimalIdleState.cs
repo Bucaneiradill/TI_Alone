@@ -14,19 +14,19 @@ public class AnimalIdleState : IState
     public void Enter()
     {
         time = Time.time+3;
-        Debug.Log("idle");
+        //Debug.Log("idle");
     }
     public void Update()
     {
         if(Animal.HasEnergy==false)
         {
-            Debug.Log("cansado");
+            //Debug.Log("cansado");
             Animal.Rest();
         }
         
         if (Animal.HasEnergy==true)
         {
-            Debug.Log("patrulhand");
+            //Debug.Log("patrulhando");
             Animal.SetState(new AnimalPatrolState(Animal));
         }
     }

@@ -9,7 +9,7 @@ public class NPC1 : MonoBehaviour, IObserver
     void Start()
     {
         Subject.instance.AddObserver(this);
-        Debug.Log("this");
+        //Debug.Log("this");
     }
 
     public void Notify()
