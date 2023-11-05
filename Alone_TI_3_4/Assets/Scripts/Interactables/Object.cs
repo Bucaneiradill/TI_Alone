@@ -48,7 +48,13 @@ public class Object : Interactable
         if(spaceInventory == true){
             player.gameObject.GetComponent<PlayerActions>().anim.SetTrigger("Collect");
             uiManager.DisplayAction($"Coletou {amount} {item.name}");
-            Destroy(gameObject);
+            //Destroy(gameObject);
+
+            GameObject obj;
+            obj = transform.GetChild(0).gameObject;
+            obj.SetActive(false);
+            //time = Time.time + delay;
+           gameObject.GetComponent<SpawnerItem>().time = Time.time + gameObject.GetComponent<SpawnerItem>().delay;
         }
         else
         {

@@ -30452,6 +30452,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 943826862}
+  - component: {fileID: 943826863}
   m_Layer: 0
   m_Name: Scenary
   m_TagString: Untagged
@@ -30482,6 +30483,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &943826863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943826861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf183b7cdecd76740a058da6c2f867c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  list: []
 --- !u!1001 &944802170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35850,7 +35864,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1090941243}
-  - component: {fileID: 1090941244}
   m_Layer: 0
   m_Name: Fruitful
   m_TagString: Untagged
@@ -35915,19 +35928,6 @@ Transform:
   m_Father: {fileID: 177960117}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1090941244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1090941242}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf183b7cdecd76740a058da6c2f867c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  list: []
 --- !u!1001 &1091061618
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49198,7 +49198,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1259266986962640681, guid: af27d6aea87a93547b7b2af9b2214774, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1259266986962640686, guid: af27d6aea87a93547b7b2af9b2214774, type: 3}
       propertyPath: Target
@@ -51964,7 +51964,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2063737269332286356, guid: edb7f1283b1054b49bd3cb499ba09b1b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2063737269332286357, guid: edb7f1283b1054b49bd3cb499ba09b1b, type: 3}
       propertyPath: m_RootOrder
