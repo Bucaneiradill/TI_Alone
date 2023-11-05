@@ -18,7 +18,7 @@ public class Object : Interactable
 {
     UIManager uiManager;
     [SerializeField] Item item;
-    [SerializeField] int amount = 1;
+    public int amount = 1;
 
     private void Start()
     {
@@ -39,6 +39,10 @@ public class Object : Interactable
         if (spaceInventory == true)
         {
             player.gameObject.GetComponent<PlayerActions>().anim.SetTrigger("Collect");
+            for(int i = 0; i < amount - 1; i++)
+            {
+                Inventory.instance.CheckAndAddItem(item);
+            }
         }
         else
         {
