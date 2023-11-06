@@ -35,7 +35,15 @@ public class Object : Interactable
     public override void Interact()
     {
         base.Interact();
-        ObjectPickUp();
+        bool spaceInventory = Inventory.instance.CheckAndAddItem(item);
+        if (spaceInventory == true)
+        {
+            player.gameObject.GetComponent<PlayerActions>().anim.SetTrigger("Collect");
+        }
+        else
+        {
+            uiManager.DisplayAction("Inventário cheio");
+        }
     }
     /*------------------------------------------------------------------------------
     Função:     ObjectPickUp
@@ -43,22 +51,9 @@ public class Object : Interactable
     Entrada:    -
     Saída:      -
     ------------------------------------------------------------------------------*/
-    private void ObjectPickUp(){
-        bool spaceInventory = Inventory.instance.CheckAndAddItem(item);
-        if(spaceInventory == true){
-            player.gameObject.GetComponent<PlayerActions>().anim.SetTrigger("Collect");
-            uiManager.DisplayAction($"Coletou {amount} {item.name}");
-            //Destroy(gameObject);
-
-            GameObject obj;
-            obj = transform.GetChild(0).gameObject;
-            obj.SetActive(false);
-            //time = Time.time + delay;
-           gameObject.GetComponent<SpawnerItem>().time = Time.time + gameObject.GetComponent<SpawnerItem>().delay;
-        }
-        else
-        {
-            uiManager.DisplayAction("Inventário cheio");
-        }
+    public void ObjectPickUp()
+    {
+        uiManager.DisplayAction($"Coletou {amount} {item.name}");
+        Destroy(gameObject);
     }
 }

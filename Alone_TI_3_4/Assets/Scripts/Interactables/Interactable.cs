@@ -10,12 +10,13 @@ public class Interactable : MonoBehaviour
 
     bool isFocus = false;
     public Transform player;
-
+    PlayerActions playerActions;
     bool hasInteracted = false;
 
     public int health = 5;
 
     public Outline outline;
+    [SerializeField] Texture2D exclamationCursor;
 
     public void FindOutline()
     {
@@ -32,7 +33,7 @@ public class Interactable : MonoBehaviour
 
     public virtual void Interact()
     {
-        
+        playerActions.agent.ResetPath();
     }
 
     private void Update()
@@ -52,6 +53,7 @@ public class Interactable : MonoBehaviour
     {
         isFocus = true;
         player= playerTransform;
+        playerActions = playerTransform.gameObject.GetComponent<PlayerActions>();
         hasInteracted = false;
     }
 
@@ -59,6 +61,7 @@ public class Interactable : MonoBehaviour
     {
         isFocus = false;
         player = null;
+        playerActions = null;
         hasInteracted = false;
     }
 
@@ -73,6 +76,7 @@ public class Interactable : MonoBehaviour
         {
             outline.enabled = true;
         }
+        Cursor.SetCursor(exclamationCursor, Vector2.zero, CursorMode.Auto);
     }
 
     public void HideOutline()
