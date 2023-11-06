@@ -31,10 +31,15 @@ public class ColectableSource : Interactable
 
     public void Hit()
     {
-        hitAudio.Play();
-        if (particlePoint != null)
+        hitAudio?.Play();
+        if (particle != null)
         {
             Instantiate(particle, particlePoint.position, Quaternion.identity);
+            GameManager.instance.toHungry(1);
+            GameManager.instance.toThirst(2);
+        }
+        else
+        {
             GameManager.instance.toHungry(1);
             GameManager.instance.toThirst(2);
         }
@@ -48,9 +53,10 @@ public class ColectableSource : Interactable
         }
         if (health <= 0)
         {
-            Instantiate(loot, dropPoint ? dropPoint.position : transform.position, Quaternion.identity);
+            GameObject lootInstance;
+            lootInstance = Instantiate(loot, dropPoint ? dropPoint.position : transform.position, Quaternion.identity);
             //Destroy(gameObject);
-            
+            lootInstance.gameObject.GetComponent<Object>().amount = lootAmount;
             GameObject obj;
             obj = transform.GetChild(0).gameObject;
             obj.SetActive(false);

@@ -176,7 +176,7 @@ MonoBehaviour:
   lootAmount: 1
   lootName: Banana
   dropPoint: {fileID: 4739240464162030707}
-  particlePoint: {fileID: 567505926230366591}
+  particlePoint: {fileID: 4739240464162030707}
   particle: {fileID: 3190041756260390103, guid: 161dcb31c3ddf9344961180b1746ce57, type: 3}
   obj: {fileID: 0}
   counterType: 0
