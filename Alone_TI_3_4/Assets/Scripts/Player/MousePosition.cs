@@ -13,7 +13,11 @@ public class MousePosition : MonoBehaviour
 
     void Update()
     {
-        if (EventSystem.current.IsPointerOverGameObject()) return;
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+            return;
+        }
         interactable?.HideOutline();
         interactable = null;
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
@@ -21,8 +25,15 @@ public class MousePosition : MonoBehaviour
         {
             transform.position = rayCastHit.point;
             interactable = rayCastHit.collider.gameObject.GetComponentInParent<Interactable>();
-            interactable?.ShowOutline();
-            if (Input.GetMouseButtonDown(0))
+            if (interactable != null)
+            {
+                interactable.ShowOutline();
+            }
+            else
+            {
+                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+            }
+            if (Input.GetMouseButtonDown(0) && playerActions.canAct)
             {
                 if (interactable != null)
                 {

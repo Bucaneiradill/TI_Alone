@@ -1760,7 +1760,7 @@ RectTransform:
   - {fileID: 1819781165920581281}
   - {fileID: 5601266126596596912}
   m_Father: {fileID: 1819781165538500881}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2672,7 +2672,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 983
 --- !u!114 &1819781165500800134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2816,6 +2816,7 @@ RectTransform:
   - {fileID: 1819781167060313537}
   - {fileID: 1819781165207590914}
   - {fileID: 1819781166193589950}
+  - {fileID: 4182393916610843155}
   - {fileID: 1819781165334715242}
   m_Father: {fileID: 1819781165500800128}
   m_RootOrder: 0
@@ -9349,10 +9350,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1819781165500800134}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: ExitControlsScreen
-        m_Mode: 1
+      - m_Target: {fileID: 6673669545075793961}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -12852,10 +12853,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1819781165500800134}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: ExitCreditsScreen
-        m_Mode: 1
+      - m_Target: {fileID: 389291703606737795}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -27,14 +27,18 @@ public class ColectableSource : Interactable
     {
         base.Interact();
         player.gameObject.GetComponent<PlayerActions>().anim.SetTrigger("Interact");
+    }
+
+    public void Hit()
+    {
         hitAudio.Play();
-        if (particlePoint!= null)
+        if (particlePoint != null)
         {
             Instantiate(particle, particlePoint.position, Quaternion.identity);
             GameManager.instance.toHungry(1);
             GameManager.instance.toThirst(2);
         }
-        if(EquipmentManager.instance.equippedItem?.itemType == counterType)
+        if (EquipmentManager.instance.equippedItem?.itemType == counterType)
         {
             EquipmentManager.instance.equippedItem.PerformAction(this);
         }
