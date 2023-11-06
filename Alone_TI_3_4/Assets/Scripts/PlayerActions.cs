@@ -8,6 +8,15 @@ public class PlayerActions : MonoBehaviour
     [SerializeField] Interactable target;
     //bool isInteracting;
     public Animator anim;
+    public bool IsWalking = false;
+    public float walkSpeed;
+    public float runSpeed;
+    public static PlayerActions PlayerInstance;
+
+    void Awake()
+    {
+        PlayerInstance = this;
+    }
 
     private void Start()
     {
@@ -26,6 +35,7 @@ public class PlayerActions : MonoBehaviour
         //{
         //    anim.SetInteger("State", 0);
         //}
+        Walk();
     }
 
     public void MoveToPoint(Vector3 point){
@@ -74,5 +84,21 @@ public class PlayerActions : MonoBehaviour
         }
         target = null;
         StopFollowingTarget();
+    }
+
+    public void Walk()
+    {
+        if (Input.GetKey(KeyCode.LeftShift))
+            {
+                agent.speed = walkSpeed;
+                IsWalking = true;
+                
+            } 
+            else
+            {
+                agent.speed = runSpeed;
+                IsWalking = false;
+            }
+        
     }
 }
