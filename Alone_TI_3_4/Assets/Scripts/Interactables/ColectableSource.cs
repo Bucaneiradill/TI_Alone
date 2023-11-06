@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ColectableSource : Interactable
@@ -10,6 +11,9 @@ public class ColectableSource : Interactable
     [SerializeField] Transform dropPoint;
     [SerializeField] Transform particlePoint;
     [SerializeField] GameObject particle;
+    
+    public GameObject obj;
+
     AudioSource hitAudio;
     public ItemType counterType;
 
@@ -45,7 +49,13 @@ public class ColectableSource : Interactable
         if (health <= 0)
         {
             Instantiate(loot, dropPoint ? dropPoint.position : transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            
+            GameObject obj;
+            obj = transform.GetChild(0).gameObject;
+            obj.SetActive(false);
+            //time = Time.time + delay;
+           gameObject.GetComponent<SpawnerItem>().time = Time.time + gameObject.GetComponent<SpawnerItem>().delay;
         }
     }
 }
