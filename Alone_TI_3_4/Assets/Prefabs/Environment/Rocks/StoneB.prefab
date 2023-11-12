@@ -283,7 +283,8 @@ MonoBehaviour:
   dropPoint: {fileID: 626876745981067426, guid: 9f116a0b7282d534485c8ec885f77478, type: 3}
   particlePoint: {fileID: 626876745981067426, guid: 9f116a0b7282d534485c8ec885f77478, type: 3}
   particle: {fileID: 0}
-  counterType: 0
+  obj: {fileID: 0}
+  counterType: {fileID: 11400000, guid: d7d2a37e88aeb5646b62a2af9a6fe182, type: 2}
 --- !u!1 &7703366307480119894
 GameObject:
   m_ObjectHideFlags: 0
