@@ -90,12 +90,14 @@ public class PlayerActions : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftShift))
             {
+                anim.SetBool("Stealth", IsWalking);
                 agent.speed = walkSpeed;
                 IsWalking = true;
                 
             } 
             else
             {
+                anim.SetBool("Stealth", IsWalking);
                 agent.speed = runSpeed;
                 IsWalking = false;
             }
