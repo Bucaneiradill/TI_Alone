@@ -7,7 +7,7 @@ public class AnimalHuntState : IState
    AnimalMachine Animal;
 
    
-   public  AnimalHuntState(AnimalMachine Animal)
+   public AnimalHuntState(AnimalMachine Animal)
    {
          this.Animal = Animal;
    }
@@ -19,7 +19,7 @@ public class AnimalHuntState : IState
 
    public void Update()
    {
-    Animal.Hunt();
+    Animal.Hunt(1.0f);
     if(Animal.HasEnergy==false)
     {
         Animal.SetState(new AnimalIdleState(Animal));

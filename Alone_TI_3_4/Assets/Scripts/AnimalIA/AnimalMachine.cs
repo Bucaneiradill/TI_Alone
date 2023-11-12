@@ -7,6 +7,7 @@ public class AnimalMachine : MonoBehaviour
 {
     public NavMeshAgent agent;
     public GameObject Player;
+    public string AnimalTag;
     IState state;
     public Transform Target;
     public Transform[] PatrolPoints;
@@ -46,7 +47,7 @@ public class AnimalMachine : MonoBehaviour
 
     public bool IsNearTarget()
     {
-        return(TargetDir().magnitude < 6.0f );
+        return(TargetDir().magnitude < 8.0f );
     }
 
     
@@ -83,24 +84,24 @@ public class AnimalMachine : MonoBehaviour
         }
     }
 
-    public void Chase()
+    public void Chase(float speed)
     {
         Subject.instance.NotifyAll();
         energy -= Time.fixedDeltaTime;
         agent.SetDestination(Target.transform.position);
-        
+        agent.speed= speed;
          if(energy<=0)
         {
             HasEnergy= false;
         }   
     }
 
-     public void Hunt()
+     public void Hunt(float speed)
     {
         
         energy -= Time.fixedDeltaTime;
         agent.SetDestination(Target.transform.position);
-        agent.speed= 2.0f;
+        agent.speed= speed;
         
          if(energy<=0)
         {

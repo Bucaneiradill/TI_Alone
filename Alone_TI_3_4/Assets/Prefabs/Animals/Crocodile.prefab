@@ -87,6 +87,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
+  Player: {fileID: 0}
+  AnimalTag: Crocodile
   Target: {fileID: -8679921383154817045, guid: ce935b66472dc3e4586f43f83f292f39, type: 3}
   PatrolPoints:
   - {fileID: 7189083676442528482}
@@ -95,7 +97,7 @@ MonoBehaviour:
   - {fileID: 415388827612048785}
   HasEnergy: 1
   energy: 3
-  CrocAnim: {fileID: 0}
+  Animator: {fileID: 0}
 --- !u!195 &1259266986962640684
 NavMeshAgent:
   m_ObjectHideFlags: 0

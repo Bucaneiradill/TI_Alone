@@ -22,8 +22,15 @@ public class AnimalChaseState : IState
 
     public void Update()
     {
+        if(Animal.AnimalTag==("Crocodile"))
+        {
+            Animal.Chase(3);
+        }
+        if(Animal.AnimalTag==("Tiger"))
+        {
+            Animal.Chase(5);
+        }
         
-        Animal.Chase();
         if(Animal.HasEnergy==false)
         {
             Animal.SetState(new AnimalIdleState(Animal));
