@@ -64,9 +64,7 @@ public class ColectableSource : Interactable
             obj.SetActive(false);
             //time = Time.time + delay;
            gameObject.GetComponent<SpawnerItem>().time = Time.time + gameObject.GetComponent<SpawnerItem>().delay;
+           health = SaveHealth;
         }
-    }
-    void SetActive(){
-         health = SaveHealth;
     }
 }
