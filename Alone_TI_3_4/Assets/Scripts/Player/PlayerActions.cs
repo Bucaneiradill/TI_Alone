@@ -4,10 +4,12 @@ using UnityEngine.AI;
 
 public class PlayerActions : MonoBehaviour
 {
-    NavMeshAgent agent;
-    [SerializeField] Interactable target;
+    public NavMeshAgent agent;
+    public Interactable target;
     //bool isInteracting;
     public Animator anim;
+    public bool canAct = true;
+    float initialSpeed;
     public bool IsWalking = false;
     public float walkSpeed;
     public float runSpeed;
@@ -40,8 +42,7 @@ public class PlayerActions : MonoBehaviour
 
     public void MoveToPoint(Vector3 point){
         agent.SetDestination(point);
-        
-       
+        anim.SetInteger("State", 1);
     }
 
     public void FollowTarget(Interactable newTarget){
@@ -53,7 +54,7 @@ public class PlayerActions : MonoBehaviour
         agent.updateRotation = true;
         agent.stoppingDistance = 0f;
         target = null;
-        
+        anim.SetInteger("State", 0);
     }
 
     void FaceTarget(){
@@ -73,7 +74,6 @@ public class PlayerActions : MonoBehaviour
             target = newTarget;
             FollowTarget(newTarget);
         }
-        
         newTarget.OnFocus(gameObject.transform);
     }
 
@@ -84,6 +84,19 @@ public class PlayerActions : MonoBehaviour
         }
         target = null;
         StopFollowingTarget();
+    }
+
+    public void DisableActions()
+    {
+        initialSpeed = agent.speed;
+        agent.speed = 0;
+        canAct = false;
+    }
+
+    public void EnableActions()
+    {
+        agent.speed = initialSpeed;
+        canAct = true;
     }
 
     public void Walk()

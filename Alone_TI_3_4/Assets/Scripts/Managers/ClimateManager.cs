@@ -56,11 +56,11 @@ public class ClimateManager : MonoBehaviour
         if(i <= 50){
          state = State.RAIN;
           UIManager.instance?.DisplayAction("Chovendo");
-          Debug.Log("RAIN");
+          //Debug.Log("RAIN");
         }else {
             state = State.SUN;
             UIManager.instance?.DisplayAction("Sol");
-            Debug.Log("Sun");
+            //Debug.Log("Sun");
         }
 
         //state = (State)(i%3);

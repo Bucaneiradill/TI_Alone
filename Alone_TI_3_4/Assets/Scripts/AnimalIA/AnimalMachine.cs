@@ -75,7 +75,7 @@ public class AnimalMachine : MonoBehaviour
 
     public void Rest()
     {
-        Debug.Log("Descansando");
+        //Debug.Log("Descansando");
         agent.speed = 0.0f;
         energy+= Time.fixedDeltaTime*1.5f;
         if(energy >= 3.0f)

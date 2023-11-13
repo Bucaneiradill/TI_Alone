@@ -18,7 +18,7 @@ public class Object : Interactable
 {
     UIManager uiManager;
     [SerializeField] Item item;
-    [SerializeField] int amount = 1;
+    public int amount = 1;
 
     private void Start()
     {
@@ -35,7 +35,19 @@ public class Object : Interactable
     public override void Interact()
     {
         base.Interact();
-        ObjectPickUp();
+        bool spaceInventory = Inventory.instance.CheckAndAddItem(item);
+        if (spaceInventory == true)
+        {
+            player.gameObject.GetComponent<PlayerActions>().anim.SetTrigger("Collect");
+            for(int i = 0; i < amount - 1; i++)
+            {
+                Inventory.instance.CheckAndAddItem(item);
+            }
+        }
+        else
+        {
+            uiManager.DisplayAction("Inventário cheio");
+        }
     }
     /*------------------------------------------------------------------------------
     Função:     ObjectPickUp
@@ -43,16 +55,9 @@ public class Object : Interactable
     Entrada:    -
     Saída:      -
     ------------------------------------------------------------------------------*/
-    private void ObjectPickUp(){
-        bool spaceInventory = Inventory.instance.CheckAndAddItem(item);
-        if(spaceInventory == true){
-            player.gameObject.GetComponent<PlayerActions>().anim.SetTrigger("Collect");
-            uiManager.DisplayAction($"Coletou {amount} {item.name}");
-            Destroy(gameObject);
-        }
-        else
-        {
-            uiManager.DisplayAction("Inventário cheio");
-        }
+    public void ObjectPickUp()
+    {
+        uiManager.DisplayAction($"Coletou {amount} {item.name}");
+        Destroy(gameObject);
     }
 }

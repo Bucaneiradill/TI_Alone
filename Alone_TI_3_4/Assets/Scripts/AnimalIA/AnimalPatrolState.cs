@@ -14,7 +14,7 @@ public class AnimalPatrolState : IState
     }
     public void Enter()
     {
-        Debug.Log ("Patrol");
+        //Debug.Log ("Patrol");
         time = Time.time;
     }
     public void Update()
@@ -26,7 +26,7 @@ public class AnimalPatrolState : IState
         }
          if(Animal.HasEnergy==true)
         {
-            Debug.Log("patrulhando");
+            //Debug.Log("patrulhando");
             Animal.Move();
         }
 

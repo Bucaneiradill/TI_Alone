@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviour
     public void hungryAndThirstDamage(){
         if(hunger <= 0 || thirst <= 0){
             if(life <= 0){                
-                Debug.Log("Morreu");
+                //Debug.Log("Morreu");
                 TimeManager.instance.isPlaying = false;
                 UIManager.instance?.ShowGameOver();
             }else{
@@ -108,7 +108,7 @@ public class GameManager : MonoBehaviour
         life -= val;
         if (life <= 0)
         {
-            Debug.Log("Morreu");
+            //Debug.Log("Morreu");
             TimeManager.instance.isPlaying = false;
             UIManager.instance?.ShowGameOver();
         }
@@ -139,7 +139,7 @@ public class GameManager : MonoBehaviour
     public void toHungry(int val){
        
         if(hunger == 25){
-            Debug.Log(hungry.name);
+            //Debug.Log(hungry.name);
             audioSource.clip = hungry;
             audioSource.Play();
             UIManager.instance?.DisplayAction("Você está com fome");
@@ -185,12 +185,12 @@ public class GameManager : MonoBehaviour
     public void toEat(int val){
         hunger += val;
         if(hunger >= hungerMax){
-            Debug.Log("Cheio");
+            //Debug.Log("Cheio");
             hunger = hungerMax;
             Hud.instance?.updateFood(hunger);
             UIManager.instance?.DisplayAction($"Comida +{val}");
         }else{
-            Debug.Log("Comeu");
+            //Debug.Log("Comeu");
             Hud.instance?.updateFood(hunger);
             UIManager.instance?.DisplayAction($"Comida +{val}");
         }
@@ -199,7 +199,7 @@ public class GameManager : MonoBehaviour
     public void toDrink(int val){
         thirst += val;
         if(thirst >= thirstMax){
-            Debug.Log("Cheio");
+            //Debug.Log("Cheio");
             thirst = thirstMax;
             Hud.instance?.updateWater(thirst);
             UIManager.instance?.DisplayAction($"Hidratação +{val}");
@@ -212,12 +212,12 @@ public class GameManager : MonoBehaviour
     public void toSane(int val){
          sanity += val;
         if(sanity >= sanityMax){
-            Debug.Log("Esta copletamente em si");
+            //Debug.Log("Esta copletamente em si");
             sanity = sanityMax;
             Hud.instance?.updateSanity(sanity);
             UIManager.instance?.DisplayAction($"Sanidade +{val}");
         }else{
-            Debug.Log("Recuperou sanidade");
+            //Debug.Log("Recuperou sanidade");
             Hud.instance?.updateSanity(sanity);
             UIManager.instance?.DisplayAction($"Sanidade +{val}");
         }
