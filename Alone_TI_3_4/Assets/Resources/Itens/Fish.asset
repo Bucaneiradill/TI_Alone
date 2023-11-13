@@ -19,7 +19,7 @@ MonoBehaviour:
   Derscription: 
   isDefaultItem: 0
   isEquipable: 0
-  isConsumable: 0
+  isConsumable: 1
   maxStackSize: 0
   ingredients: []
   foodVal: 5
