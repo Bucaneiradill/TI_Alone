@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class UIManager : MonoBehaviour
 {
@@ -18,6 +19,13 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject inventoryButton;
     [SerializeField] GameObject controlsPanel;
     [SerializeField] GameObject creditsPanel;
+
+    [Header("Actions")]
+    public GameObject panelActions;
+    public Button b1;
+    public Button b2;
+    //public Bool hasActionItem = false;
+
     [SerializeField] int maxMessages = 30;
     public GameObject settingsPanel;
     public GameObject inventoryPanel;
@@ -111,6 +119,30 @@ public class UIManager : MonoBehaviour
         openIDs.Clear();
         foreach (var w in panels) w.SetActive(false);
         open = false;
+    }
+    /*------------------------------------------------------------------------------
+    Função:     AddActions
+    Descrição:  Fecha todos os paineis
+    Entrada:    -
+    Saída:      -
+    ------------------------------------------------------------------------------*/
+    public void AddActions(UnityAction a1, UnityAction a2){
+        panelActions.SetActive(true);
+        b1.onClick.RemoveAllListeners();
+        b2.onClick.RemoveAllListeners();
+        b1.onClick.AddListener(a1);
+        b2.onClick.AddListener(a2);
+       //b1.onClick.AddListener(ClosePanel);
+       //b2.onClick.AddListener(ClosePanel);
+    }
+    /*------------------------------------------------------------------------------
+    Função:     ClosePanel
+    Descrição:  Fecha todos os paineis
+    Entrada:    -
+    Saída:      -
+    ------------------------------------------------------------------------------*/
+    public void ClosePanel(){
+        panelActions.SetActive(false);
     }
 
     public void LoadScene()

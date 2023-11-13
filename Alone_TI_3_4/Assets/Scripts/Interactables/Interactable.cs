@@ -11,7 +11,7 @@ public class Interactable : MonoBehaviour
     bool isFocus = false;
     public Transform player;
     PlayerActions playerActions;
-    bool hasInteracted = false;
+    protected bool hasInteracted = false;
 
     public int health = 5;
 
@@ -41,8 +41,7 @@ public class Interactable : MonoBehaviour
         if (isFocus && !hasInteracted)
         {
             float distance = Vector3.Distance(player.position, transform.position);
-            if(distance <= radius)
-            {
+            if(distance <= radius){
                 Interact();
                 hasInteracted= true;
             }

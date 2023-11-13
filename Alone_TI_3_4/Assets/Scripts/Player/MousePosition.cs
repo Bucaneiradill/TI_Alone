@@ -9,7 +9,7 @@ public class MousePosition : MonoBehaviour
     [SerializeField] LayerMask layerMask;
     [SerializeField] PlayerActions playerActions;
     public NavMeshAgent agent;
-    Interactable interactable;
+    public Interactable interactable;
 
     void Update()
     {
