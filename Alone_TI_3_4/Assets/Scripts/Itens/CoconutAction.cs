@@ -6,7 +6,7 @@ public class CoconutAction : Interactable, IItem
 {
     UIManager uiManager;
     [SerializeField] Item item;
-    PlayerActions playerActions;
+    PlayerActions Actions;
     MousePosition mouseDown;
     //[SerializeField] Image icon1;
     //[SerializeField] Image icon2; 
@@ -17,7 +17,7 @@ public class CoconutAction : Interactable, IItem
     {
         FindOutline();
         uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
-        playerActions = GameObject.FindWithTag("Player").GetComponent<PlayerActions>();
+        Actions = GameObject.FindWithTag("Player").GetComponent<PlayerActions>();
         mouseDown = GameObject.FindWithTag("Mouse").GetComponent<MousePosition>();
     }
 
@@ -45,6 +45,7 @@ public class CoconutAction : Interactable, IItem
             for(int i = 0; i < amount - 1; i++)
             {
                 Inventory.instance.CheckAndAddItem(item);
+                ObjectPickUp();
             }
         }
         else
@@ -60,11 +61,7 @@ public class CoconutAction : Interactable, IItem
     ------------------------------------------------------------------------------*/
     public void ActionA(){ //Comer
         SetTarget(this);
-        if(hasInteracted == true){
-        GameManager.instance.toEat(10);
-        GameManager.instance.toDrink(10);
-        Destroy(gameObject);
-        }
+        DefineAction(Food);
     }
     /*------------------------------------------------------------------------------
     Função:     ActionB
@@ -88,6 +85,12 @@ public class CoconutAction : Interactable, IItem
     }
     void SetTarget(Interactable newTarget)
     {
-        playerActions.SetTarget(newTarget);
+        Actions.SetTarget(newTarget);
+    }
+
+    public void Food(){
+        GameManager.instance.toEat(10);
+        GameManager.instance.toDrink(10);
+        Destroy(gameObject);  
     }
 }

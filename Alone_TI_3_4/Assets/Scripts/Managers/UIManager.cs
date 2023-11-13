@@ -132,8 +132,8 @@ public class UIManager : MonoBehaviour
         b2.onClick.RemoveAllListeners();
         b1.onClick.AddListener(a1);
         b2.onClick.AddListener(a2);
-       //b1.onClick.AddListener(ClosePanel);
-       //b2.onClick.AddListener(ClosePanel);
+        b1.onClick.AddListener(ClosePanel);
+        b2.onClick.AddListener(ClosePanel);
     }
     /*------------------------------------------------------------------------------
     Função:     ClosePanel

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-//Classe resposável por receber eventos de animação
+//Classe resposï¿½vel por receber eventos de animaï¿½ï¿½o
 
 public class AnimationEvents : MonoBehaviour
 {

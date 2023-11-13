@@ -41,6 +41,7 @@ public class Object : Interactable
             player.gameObject.GetComponent<PlayerActions>().anim.SetTrigger("Collect");
             for(int i = 0; i < amount - 1; i++)
             {
+                Debug.Log("Inventario");
                 Inventory.instance.CheckAndAddItem(item);
             }
         }
@@ -58,6 +59,7 @@ public class Object : Interactable
     public void ObjectPickUp()
     {
         uiManager.DisplayAction($"Coletou {amount} {item.name}");
+        Debug.Log("Entrei");
         Destroy(gameObject);
     }
 }

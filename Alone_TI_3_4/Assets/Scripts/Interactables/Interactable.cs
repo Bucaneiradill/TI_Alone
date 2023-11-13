@@ -12,6 +12,9 @@ public class Interactable : MonoBehaviour
     public Transform player;
     PlayerActions playerActions;
     protected bool hasInteracted = false;
+    bool Collect = false;
+    public delegate void  ItemAction();
+    public ItemAction action;
 
     public int health = 5;
 
@@ -42,8 +45,13 @@ public class Interactable : MonoBehaviour
         {
             float distance = Vector3.Distance(player.position, transform.position);
             if(distance <= radius){
-                Interact();
-                hasInteracted= true;
+                if(Collect == true){
+                    Interact();
+                }
+                hasInteracted = true;
+                if(action != null){
+                    action();
+                }
             }
         }
     }
@@ -84,5 +92,11 @@ public class Interactable : MonoBehaviour
         {
             outline.enabled = false;
         }
+    }
+    public void CollectNoAction(){
+        Collect = true;
+    }
+    public void DefineAction(ItemAction item){
+        action = item;
     }
 }

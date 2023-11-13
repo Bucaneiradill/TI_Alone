@@ -37,6 +37,7 @@ public class MousePosition : MonoBehaviour
             {
                 if (interactable != null)
                 {
+                    interactable.CollectNoAction();
                     SetTarget(interactable);
                 } else {
                     playerActions.RemoveTarget();
