@@ -29,7 +29,12 @@ public class AnimalPatrolState : IState
             //Debug.Log("patrulhando");
             Animal.Move();
         }
-        if(Animal.IsNearTarget())
+
+        if(Animal.AnimalTag == "Tiger" && Animal.IsNearTarget())
+        {
+            Animal.SetState(new AnimalHuntState(Animal));
+        }
+        else if (Animal.IsNearTarget())
         {
             Animal.SetState(new AnimalChaseState(Animal));
         }

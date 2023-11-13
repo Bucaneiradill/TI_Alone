@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CrocoAgent : MonoBehaviour
+public class TigerAgent : MonoBehaviour
 {
-    
-    public Animator CrocAnim;
+  public Animator TigerAnim;
 
     void Start()
     {
-        CrocAnim = GetComponent<Animator>();
+        TigerAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -23,7 +22,7 @@ public class CrocoAgent : MonoBehaviour
         //InvokeRepeating("Bite", 0.0f, 5.0f);
         if(other.gameObject.CompareTag("Player"))
         {
-            CrocAnim.SetTrigger("Bite");  
+           TigerAnim.SetTrigger("Bite");  
             Bite();
             Debug.Log("moideu");
         }   
@@ -32,6 +31,6 @@ public class CrocoAgent : MonoBehaviour
 
     public void Bite()
     {
-        GameManager.instance.damage(50);
+        GameManager.instance.damage(30);
     }
 }
