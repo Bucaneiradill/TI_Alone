@@ -12,6 +12,7 @@ public class ColectableSource : Interactable
     [SerializeField] Transform particlePoint;
     [SerializeField] GameObject particle;
     
+    public int SaveHealth;
     public GameObject obj;
 
     AudioSource hitAudio;
@@ -19,6 +20,7 @@ public class ColectableSource : Interactable
 
     private void Start()
     {
+        SaveHealth = health;
         hitAudio = GetComponent<AudioSource>();
         FindOutline();
     }
@@ -63,6 +65,7 @@ public class ColectableSource : Interactable
             obj.SetActive(false);
             //time = Time.time + delay;
            gameObject.GetComponent<SpawnerItem>().time = Time.time + gameObject.GetComponent<SpawnerItem>().delay;
+           health = SaveHealth;
         }
     }
 }
