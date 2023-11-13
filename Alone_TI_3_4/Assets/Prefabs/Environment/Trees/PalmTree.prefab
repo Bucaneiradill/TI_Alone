@@ -61,7 +61,7 @@ MonoBehaviour:
   particlePoint: {fileID: 6397719753786064786}
   particle: {fileID: 3190041756260390103, guid: 161dcb31c3ddf9344961180b1746ce57, type: 3}
   obj: {fileID: 0}
-  counterType: 0
+  counterType: {fileID: 11400000, guid: ae517a8408777c6449e2bf96d78c73f8, type: 2}
 --- !u!208 &-6487283179105411942
 NavMeshObstacle:
   m_ObjectHideFlags: 0

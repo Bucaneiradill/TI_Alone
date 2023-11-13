@@ -14,17 +14,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ItemType
-{
-    Axe,
-    Food,
-    Foraging
-}
-
 public abstract class Item : ScriptableObject
 {
     public abstract void PerformAction(ColectableSource source = null);
-    public ItemType itemType;
     public GameObject PrefabItem;
     public int iD;
     new public string name = "New Item";

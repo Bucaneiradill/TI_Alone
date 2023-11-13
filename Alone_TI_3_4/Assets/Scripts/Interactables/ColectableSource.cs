@@ -16,7 +16,7 @@ public class ColectableSource : Interactable
     public GameObject obj;
 
     AudioSource hitAudio;
-    public ItemType counterType;
+    public Item counterType;
 
     private void Start()
     {
@@ -45,9 +45,10 @@ public class ColectableSource : Interactable
             GameManager.instance.toHungry(1);
             GameManager.instance.toThirst(2);
         }
-        if (EquipmentManager.instance.equippedItem?.itemType == counterType)
+        Item equippedItem = EquipmentManager.instance.equippedItem;
+        if (equippedItem?.GetType() == counterType.GetType())
         {
-            EquipmentManager.instance.equippedItem.PerformAction(this);
+            equippedItem.PerformAction(this);
         }
         else
         {
