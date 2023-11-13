@@ -100,7 +100,7 @@ public class GameManager : MonoBehaviour
                 TimeManager.instance.isPlaying = false;
                 UIManager.instance?.ShowGameOver();
             }else{
-                damage(1);
+                damage(10);
             }           
         }
     }
