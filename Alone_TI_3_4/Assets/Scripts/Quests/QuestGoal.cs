@@ -33,6 +33,22 @@ public class QuestGoal
             }
         }
     }
+
+    public void ItemCrafted(Item item)
+    {
+        if (goalType == GoalType.Crafting)
+        {
+            if (specificItem == null)
+            {
+                currentAmount++;
+                return;
+            }
+            else if (item == specificItem)
+            {
+                currentAmount++;
+            }
+        }
+    }
 }
 
 public enum GoalType
