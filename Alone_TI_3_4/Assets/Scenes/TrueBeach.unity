@@ -46243,13 +46243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5680e8545dd88644da066c1da5c671c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quest:
-    title: Primeiros passos
-    description: Colete 5 recursos
-    goal:
-      goalType: 0
-      requiredAmount: 5
-      currentAmount: 0
+  quest: {fileID: 11400000, guid: e1a410b9c895ad04d9f3095424ebaa9e, type: 2}
 --- !u!4 &1384537975
 Transform:
   m_ObjectHideFlags: 0
