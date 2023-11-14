@@ -9,6 +9,7 @@ public class QuestGoal
 
     public int requiredAmount;
     public int currentAmount;
+    public Item specificItem;
 
     //verifica se já chegou na quantidade necessária da missão
     public bool IsReached()
@@ -17,11 +18,19 @@ public class QuestGoal
     }
 
     //atualiza o status da missão de coleta
-    public void ItemCollected()
+    public void ItemCollected(Item item)
     {
         if(goalType == GoalType.Gathering)
         {
-            currentAmount++;
+            if(specificItem == null)
+            {
+                currentAmount++;
+                return;
+            }
+            else if(item == specificItem)
+            {
+                currentAmount++;
+            }
         }
     }
 }

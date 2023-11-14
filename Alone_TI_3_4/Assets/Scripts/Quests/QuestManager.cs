@@ -36,12 +36,12 @@ public class QuestManager : MonoBehaviour
         UIManager.instance.DisplayAction($"Missão '{quest.title}' concluída!");
     }
 
-    public void UpdateCollectQuests()
+    public void UpdateCollectQuests(Item item)
     {
         List<Quest> finishedQuests = new();
         foreach(Quest quest in availableQuests)
         {
-            quest.goal.ItemCollected();
+            quest.goal.ItemCollected(item);
             if (quest.goal.IsReached())
             {
                 finishedQuests.Add(quest);

@@ -81,7 +81,7 @@ public class Inventory : MonoBehaviour
                 return false;
             }
             items.Add(item);
-            QuestManager.instance.UpdateCollectQuests();
+            QuestManager.instance.UpdateCollectQuests(item);
             if(onItemChangeCallBack != null) onItemChangeCallBack.Invoke(); 
         }
         return true;
