@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class CrocoAgent : MonoBehaviour
 {
-    // Start is called before the first frame update
+    
+    public Animator CrocAnim;
+
     void Start()
     {
-        
+        CrocAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -21,6 +23,7 @@ public class CrocoAgent : MonoBehaviour
         //InvokeRepeating("Bite", 0.0f, 5.0f);
         if(other.gameObject.CompareTag("Player"))
         {
+            CrocAnim.SetTrigger("Bite");  
             Bite();
             Debug.Log("moideu");
         }   

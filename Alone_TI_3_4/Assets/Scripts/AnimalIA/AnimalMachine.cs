@@ -5,18 +5,22 @@ using UnityEngine.AI;
 
 public class AnimalMachine : MonoBehaviour
 {
-    NavMeshAgent agent;
-    GameObject Player;
+    public NavMeshAgent agent;
+    public GameObject Player;
+    public string AnimalTag;
     IState state;
     public Transform Target;
     public Transform[] PatrolPoints;
     public bool HasEnergy = true;
     public float energy;
+    public Animator Animator;
+    
 
     void Start()
     {
         SetState(new AnimalPatrolState(this));
         agent = GetComponent<NavMeshAgent>();
+        Animator = GetComponent<Animator>();
         energy = 3;
         Player = GameObject.Find("Player");
         Target = Player.transform;
@@ -25,6 +29,7 @@ public class AnimalMachine : MonoBehaviour
     void Update()
     {
         state?.Update();
+        Animator.SetBool("HasEnergy?", HasEnergy);  
     }
 
     public void SetState(IState state)
@@ -42,21 +47,25 @@ public class AnimalMachine : MonoBehaviour
 
     public bool IsNearTarget()
     {
-        return(TargetDir().magnitude < 6.0f );
+        return(TargetDir().magnitude < 8.0f );
     }
+
+    
 
     public void Move()
     {
+        
         int index = 0;
         energy -= Time.fixedDeltaTime;
         agent.speed= 3;
         Vector3 direcao = PatrolPoints[index].position-transform.position;
         if(direcao.magnitude<=1.5f)
         {
-            index = Random.Range(0,3);
+            index = Random.Range(0,4);
             Debug.Log(index);
         }
-        agent.SetDestination(PatrolPoints[index].transform.position);       
+        agent.SetDestination(PatrolPoints[index].transform.position);    
+         
 
         if(energy<=0)
         {
@@ -75,11 +84,25 @@ public class AnimalMachine : MonoBehaviour
         }
     }
 
-    public void Chase()
+    public void Chase(float speed)
     {
         Subject.instance.NotifyAll();
         energy -= Time.fixedDeltaTime;
         agent.SetDestination(Target.transform.position);
+        agent.speed= speed;
+         if(energy<=0)
+        {
+            HasEnergy= false;
+        }   
+    }
+
+     public void Hunt(float speed)
+    {
+        
+        energy -= Time.fixedDeltaTime;
+        agent.SetDestination(Target.transform.position);
+        agent.speed= speed;
+        
          if(energy<=0)
         {
             HasEnergy= false;

@@ -12,13 +12,15 @@ public class ColectableSource : Interactable
     [SerializeField] Transform particlePoint;
     [SerializeField] GameObject particle;
     
+    public int SaveHealth;
     public GameObject obj;
 
     AudioSource hitAudio;
-    public ItemType counterType;
+    public Item counterType;
 
     private void Start()
     {
+        SaveHealth = health;
         hitAudio = GetComponent<AudioSource>();
         FindOutline();
     }
@@ -43,9 +45,10 @@ public class ColectableSource : Interactable
             GameManager.instance.toHungry(1);
             GameManager.instance.toThirst(2);
         }
-        if (EquipmentManager.instance.equippedItem?.itemType == counterType)
+        Item equippedItem = EquipmentManager.instance.equippedItem;
+        if (equippedItem?.GetType() == counterType.GetType())
         {
-            EquipmentManager.instance.equippedItem.PerformAction(this);
+            equippedItem.PerformAction(this);
         }
         else
         {
@@ -62,6 +65,7 @@ public class ColectableSource : Interactable
             obj.SetActive(false);
             //time = Time.time + delay;
            gameObject.GetComponent<SpawnerItem>().time = Time.time + gameObject.GetComponent<SpawnerItem>().delay;
+           health = SaveHealth;
         }
     }
 }

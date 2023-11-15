@@ -33,8 +33,8 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|LizardBite
-      takeName: Armature|LizardBite
+      name: Armature|LizardSwimming (1)
+      takeName: Armature|LizardSwimming
       internalID: -6951599514641955252
       firstFrame: 0
       lastFrame: 39
@@ -44,7 +44,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -124,7 +124,7 @@ ModelImporter:
       takeName: Armature|LizardWalk
       internalID: 9087792915548281753
       firstFrame: 0
-      lastFrame: 43
+      lastFrame: 39
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

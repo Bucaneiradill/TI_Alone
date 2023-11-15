@@ -25,12 +25,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 521548209584027661}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 40, y: 40, z: 40}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2143586928161277153}
+  m_Father: {fileID: 8892623528436318479}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2821698641717259761
@@ -108,12 +108,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306053619729945773}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 40, y: 40, z: 40}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2143586928161277153}
+  m_Father: {fileID: 8892623528436318479}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1305968171724235963
@@ -179,6 +179,7 @@ GameObject:
   - component: {fileID: 1736624286491554887}
   - component: {fileID: 3211423087256998376}
   - component: {fileID: -7382055698552569068}
+  - component: {fileID: -4389418934954736427}
   m_Layer: 8
   m_Name: StoneC
   m_TagString: Untagged
@@ -198,9 +199,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3367906249003894042}
-  - {fileID: 5724738400249213303}
-  - {fileID: 4360151375913305185}
+  - {fileID: 8892623528436318479}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -283,7 +282,58 @@ MonoBehaviour:
   dropPoint: {fileID: 626876745981067426, guid: 9f116a0b7282d534485c8ec885f77478, type: 3}
   particlePoint: {fileID: 626876745981067426, guid: 9f116a0b7282d534485c8ec885f77478, type: 3}
   particle: {fileID: 0}
-  counterType: 0
+  SaveHealth: 0
+  obj: {fileID: 0}
+  counterType: {fileID: 11400000, guid: d7d2a37e88aeb5646b62a2af9a6fe182, type: 2}
+--- !u!114 &-4389418934954736427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654048499073359451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9685b221d5956c4b9043b6701fd3fb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 0
+  obj: {fileID: 6686036422287310029}
+  delay: 50
+--- !u!1 &6686036422287310029
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8892623528436318479}
+  m_Layer: 8
+  m_Name: StoneC_Mesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8892623528436318479
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6686036422287310029}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3367906249003894042}
+  - {fileID: 5724738400249213303}
+  - {fileID: 4360151375913305185}
+  m_Father: {fileID: 2143586928161277153}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9188986898317220284
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,12 +359,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9188986898317220284}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 40, y: 40, z: 40}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2143586928161277153}
+  m_Father: {fileID: 8892623528436318479}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5038789730126173600

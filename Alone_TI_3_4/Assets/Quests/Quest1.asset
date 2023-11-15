@@ -17,4 +17,6 @@ MonoBehaviour:
   goal:
     goalType: 0
     requiredAmount: 5
-    currentAmount: 0
+    currentAmount: 1
+    specificItem: {fileID: 0}
+  nextQuest: {fileID: 11400000, guid: a96967f6fe4f292408f6e651da02d894, type: 2}

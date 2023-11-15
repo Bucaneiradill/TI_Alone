@@ -18,5 +18,6 @@ public class CraftManager : MonoBehaviour
             Inventory.instance.RemoveItem(ingredient);
         }
         Inventory.instance.AddItem(item);
+        QuestManager.instance.UpdateQuests(item);
     }
 }

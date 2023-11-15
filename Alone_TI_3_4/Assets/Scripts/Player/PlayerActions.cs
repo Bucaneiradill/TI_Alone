@@ -10,6 +10,15 @@ public class PlayerActions : MonoBehaviour
     public Animator anim;
     public bool canAct = true;
     float initialSpeed;
+    public bool IsWalking = false;
+    public float walkSpeed;
+    public float runSpeed;
+    public static PlayerActions PlayerInstance;
+
+    void Awake()
+    {
+        PlayerInstance = this;
+    }
 
     private void Start()
     {
@@ -31,6 +40,7 @@ public class PlayerActions : MonoBehaviour
         //{
         //    anim.SetInteger("State", 0);
         //}
+        Walk();
     }
     public void MoveToPoint(Vector3 point){
         agent.SetDestination(point);
@@ -96,5 +106,23 @@ public class PlayerActions : MonoBehaviour
     {
         agent.speed = initialSpeed;
         canAct = true;
+    }
+
+    public void Walk()
+    {
+        if (Input.GetKey(KeyCode.LeftShift))
+            {
+                anim.SetBool("Stealth", IsWalking);
+                agent.speed = walkSpeed;
+                IsWalking = true;
+                
+            } 
+            else
+            {
+                anim.SetBool("Stealth", IsWalking);
+                agent.speed = runSpeed;
+                IsWalking = false;
+            }
+        
     }
 }
