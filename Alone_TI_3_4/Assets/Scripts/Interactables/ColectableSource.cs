@@ -23,9 +23,9 @@ public class ColectableSource : Interactable
         FindOutline();
     }
 
-    public override void Interact()
+    public override void BaseAction()
     {
-        base.Interact();
+        base.BaseAction();
         player.gameObject.GetComponent<PlayerActions>().anim.SetTrigger("Interact");
     }
 

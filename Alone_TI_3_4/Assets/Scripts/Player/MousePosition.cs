@@ -33,22 +33,41 @@ public class MousePosition : MonoBehaviour
             {
                 Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
             }
-            if (Input.GetMouseButtonDown(0) && playerActions.canAct)
-            {
-                if (interactable != null)
-                {
-                    interactable.CollectNoAction();
-                    SetTarget(interactable);
-                } else {
-                    playerActions.RemoveTarget();
-                    playerActions.MoveToPoint(rayCastHit.point);
-                }
-            }
+            RightButton(interactable, rayCastHit.point);
+            LeftButton(interactable, rayCastHit.point);
         }
     }
-
-    void SetTarget(Interactable newTarget)
-    {
-        playerActions.SetTarget(newTarget);
+ #region Inputs
+    void RightButton(Interactable newTarget, Vector3 point){
+            if (Input.GetMouseButtonDown(1) && playerActions.canAct)
+            {
+                UIManager.instance.ClosePanel();
+               // if (interactable != null)
+               // {
+                    playerActions.SetTarget(interactable, point, 1);
+               // } else {
+                   // playerActions.RemoveTarget();
+                    //playerActions.MoveToPoint(rayCastHit.point);
+               // }
+            }
     }
+    void LeftButton(Interactable newTarget, Vector3 point){
+            if (Input.GetMouseButtonDown(0) && playerActions.canAct)
+            {
+                UIManager.instance.ClosePanel();
+               // if (interactable != null)
+               // {
+                  //  interactable.CollectNoAction();
+                    playerActions.SetTarget(interactable, point, 0);
+               // } else {
+                   // playerActions.RemoveTarget();
+                    //playerActions.MoveToPoint(rayCastHit.point);
+               // }
+            }
+    }
+   // void SetTarget(Interactable newTarget, Vector3 point)
+   // {
+     //   playerActions.SetTarget(newTarget);
+   // }
+   #endregion
 }

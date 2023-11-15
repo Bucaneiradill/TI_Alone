@@ -32,9 +32,9 @@ public class Object : Interactable
     Entrada:    -
     Saída:      -
     ------------------------------------------------------------------------------*/
-    public override void Interact()
+    public override void BaseAction()
     {
-        base.Interact();
+        base.BaseAction();
         bool spaceInventory = Inventory.instance.CheckAndAddItem(item);
         if (spaceInventory == true)
         {
@@ -59,7 +59,6 @@ public class Object : Interactable
     public void ObjectPickUp()
     {
         uiManager.DisplayAction($"Coletou {amount} {item.name}");
-        Debug.Log("Entrei");
         Destroy(gameObject);
     }
 }

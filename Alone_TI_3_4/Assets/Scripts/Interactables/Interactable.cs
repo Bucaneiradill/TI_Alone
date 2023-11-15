@@ -15,7 +15,7 @@ public class Interactable : MonoBehaviour
     bool Collect = false;
     public delegate void  ItemAction();
     public ItemAction action;
-
+    public int button;
     public int health = 5;
 
     public Outline outline;
@@ -33,12 +33,25 @@ public class Interactable : MonoBehaviour
         }
         this.outline.enabled = false;
     }
-
-    public virtual void Interact()
+    public void Interact(Transform player)
     {
-        playerActions.agent.ResetPath();
+        this.player = player;
+        if(button == 0){
+            Debug.Log("Ação basica" + gameObject.name);
+            BaseAction();
+        }else{
+            Debug.Log("Menu de ação" + gameObject.name);
+            UIManager.instance.AddActions(BaseAction,SecundaryAction);
+        }
+        //playerActions.agent.ResetPath();
+    }
+    public virtual void BaseAction(){
+
     }
 
+    public virtual void SecundaryAction(){}
+
+/*
     private void Update()
     {
         if (isFocus && !hasInteracted)
@@ -55,6 +68,7 @@ public class Interactable : MonoBehaviour
             }
         }
     }
+    */
 
     public void OnFocus(Transform playerTransform)
     {

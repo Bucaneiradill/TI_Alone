@@ -35,7 +35,7 @@ public class CoconutAction : Interactable, IItem
     Entrada:    -
     Saída:      -
     ------------------------------------------------------------------------------*/
-    public override void Interact()
+ /*   public override void Interact()
     {
         base.Interact();
         bool spaceInventory = Inventory.instance.CheckAndAddItem(item);
@@ -60,7 +60,7 @@ public class CoconutAction : Interactable, IItem
     Saída:      -
     ------------------------------------------------------------------------------*/
     public void ActionA(){ //Comer
-        SetTarget(this);
+        //SetTarget(this);
         DefineAction(Food);
     }
     /*------------------------------------------------------------------------------
@@ -83,11 +83,12 @@ public class CoconutAction : Interactable, IItem
         uiManager.DisplayAction($"Coletou {amount} {item.name}");
         Destroy(gameObject);
     }
+    /*
     void SetTarget(Interactable newTarget)
     {
         Actions.SetTarget(newTarget);
     }
-
+*/
     public void Food(){
         GameManager.instance.toEat(10);
         GameManager.instance.toDrink(10);

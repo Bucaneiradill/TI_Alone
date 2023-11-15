@@ -16,13 +16,14 @@ public class InteractionTest : Interactable
         uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
     }
 
-    public override void Interact()
+    public override void BaseAction()
     {
-        base.Interact();
+        base.BaseAction();
         GameManager.instance.toDrink(10);
         GameManager.instance.toEat(10);
         Debug.Log("Comeu e Bebeu");
         uiManager.DisplayAction($"Comida e água +10");
         Destroy(gameObject);
     }
+    
 }
