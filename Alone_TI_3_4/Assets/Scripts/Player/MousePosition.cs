@@ -39,35 +39,16 @@ public class MousePosition : MonoBehaviour
     }
  #region Inputs
     void RightButton(Interactable newTarget, Vector3 point){
-            if (Input.GetMouseButtonDown(1) && playerActions.canAct)
-            {
+            if (Input.GetMouseButtonDown(1) && playerActions.canAct){
                 UIManager.instance.ClosePanel();
-               // if (interactable != null)
-               // {
-                    playerActions.SetTarget(interactable, point, 1);
-               // } else {
-                   // playerActions.RemoveTarget();
-                    //playerActions.MoveToPoint(rayCastHit.point);
-               // }
+                playerActions.SetTarget(interactable, point, 1);
             }
     }
     void LeftButton(Interactable newTarget, Vector3 point){
-            if (Input.GetMouseButtonDown(0) && playerActions.canAct)
-            {
+            if (Input.GetMouseButtonDown(0) && playerActions.canAct){
                 UIManager.instance.ClosePanel();
-               // if (interactable != null)
-               // {
-                  //  interactable.CollectNoAction();
-                    playerActions.SetTarget(interactable, point, 0);
-               // } else {
-                   // playerActions.RemoveTarget();
-                    //playerActions.MoveToPoint(rayCastHit.point);
-               // }
+                playerActions.SetTarget(interactable, point, 0);
             }
     }
-   // void SetTarget(Interactable newTarget, Vector3 point)
-   // {
-     //   playerActions.SetTarget(newTarget);
-   // }
    #endregion
 }

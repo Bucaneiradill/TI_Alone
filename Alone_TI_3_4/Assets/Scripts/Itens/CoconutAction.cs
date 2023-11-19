@@ -2,75 +2,44 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoconutAction : Interactable, IItem
+public class CoconutAction : Interactable
 {
     UIManager uiManager;
     [SerializeField] Item item;
-    PlayerActions Actions;
-    MousePosition mouseDown;
     //[SerializeField] Image icon1;
     //[SerializeField] Image icon2; 
 
     public int amount = 1;
 
-    private void Start()
-    {
+    private void Start(){
         FindOutline();
         uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
-        Actions = GameObject.FindWithTag("Player").GetComponent<PlayerActions>();
-        mouseDown = GameObject.FindWithTag("Mouse").GetComponent<MousePosition>();
     }
 
-    void FixedUpdate(){
-        if(mouseDown.interactable != null){ 
-            if(Input.GetMouseButtonDown(1)){
-                Debug.Log("Online");
-                UIManager.instance.AddActions(ActionA, ActionB);
-            }
-        }
-    }
     /*------------------------------------------------------------------------------
-    Função:     Interact
+    Função:     BaseAction
     Descrição:  
     Entrada:    -
     Saída:      -
     ------------------------------------------------------------------------------*/
- /*   public override void Interact()
-    {
-        base.Interact();
+   public override void BaseAction(){
         bool spaceInventory = Inventory.instance.CheckAndAddItem(item);
-        if (spaceInventory == true)
-        {
+        if (spaceInventory == true){
             player.gameObject.GetComponent<PlayerActions>().anim.SetTrigger("Collect");
-            for(int i = 0; i < amount - 1; i++)
-            {
-                Inventory.instance.CheckAndAddItem(item);
-                ObjectPickUp();
-            }
+            ObjectPickUp();
         }
-        else
-        {
+        else{
             uiManager.DisplayAction("Inventário cheio");
         }
     }
     /*------------------------------------------------------------------------------
-    Função:     ActionA
+    Função:     SecundaryAction
     Descrição:  
     Entrada:    -
     Saída:      -
     ------------------------------------------------------------------------------*/
-    public void ActionA(){ //Comer
-        //SetTarget(this);
-        DefineAction(Food);
-    }
-    /*------------------------------------------------------------------------------
-    Função:     ActionB
-    Descrição:  
-    Entrada:    -
-    Saída:      -
-    ------------------------------------------------------------------------------*/
-    public void ActionB(){
-        Debug.Log("Arvore ação B");
+    public override void SecundaryAction(){ 
+        Food();
     }
     /*------------------------------------------------------------------------------
     Função:     ObjectPickUp
@@ -78,17 +47,11 @@ public class CoconutAction : Interactable, IItem
     Entrada:    -
     Saída:      -
     ------------------------------------------------------------------------------*/
-    public void ObjectPickUp()
-    {
+    public void ObjectPickUp(){
         uiManager.DisplayAction($"Coletou {amount} {item.name}");
         Destroy(gameObject);
     }
-    /*
-    void SetTarget(Interactable newTarget)
-    {
-        Actions.SetTarget(newTarget);
-    }
-*/
+
     public void Food(){
         GameManager.instance.toEat(10);
         GameManager.instance.toDrink(10);

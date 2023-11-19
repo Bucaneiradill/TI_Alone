@@ -36,10 +36,9 @@ public class PlayerActions : MonoBehaviour
             target.Interact(this.transform);
             agent.ResetPath();
             target = null;
-        }        //if (agent.remainingDistance < 0.5f)
-        //{
-        //    anim.SetInteger("State", 0);
-        //}
+        }    
+
+        // anim.SetInteger("State", 0);
         Walk();
     }
     public void MoveToPoint(Vector3 point){
@@ -61,6 +60,7 @@ public class PlayerActions : MonoBehaviour
 
     void FaceTarget(){
         if(target == null) return;
+        Debug.Log("Olhei " + target.name) ;
         Vector3 directon = (target.transform.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(directon.x, 0f, directon.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.fixedDeltaTime * 5);
@@ -70,8 +70,7 @@ public class PlayerActions : MonoBehaviour
     {
         agent.SetDestination(point);
         if(newTarget == null) return;
-        if(newTarget != target)
-        {
+        if(newTarget != target){
             target = newTarget;
             target.button = button;
             if(target != null)
@@ -83,7 +82,7 @@ public class PlayerActions : MonoBehaviour
             FollowTarget(newTarget);
             
         }
-        newTarget.OnFocus(gameObject.transform);
+        //newTarget.OnFocus(gameObject.transform);
     }
 
     public void RemoveTarget(){
@@ -112,6 +111,7 @@ public class PlayerActions : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftShift))
             {
+                Debug.Log("Stelfi");
                 anim.SetBool("Stealth", IsWalking);
                 agent.speed = walkSpeed;
                 IsWalking = true;

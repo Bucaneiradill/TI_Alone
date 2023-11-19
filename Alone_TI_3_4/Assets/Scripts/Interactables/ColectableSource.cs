@@ -27,7 +27,7 @@ public class ColectableSource : Interactable
 
     public override void BaseAction()
     {
-        base.BaseAction();
+        //base.BaseAction();
         player.gameObject.GetComponent<PlayerActions>().anim.SetTrigger("Interact");
     }
 
