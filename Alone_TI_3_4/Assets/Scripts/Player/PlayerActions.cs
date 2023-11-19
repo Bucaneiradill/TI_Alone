@@ -68,7 +68,8 @@ public class PlayerActions : MonoBehaviour
 
     public void SetTarget(Interactable newTarget, Vector3 point, int button)
     {
-        agent.SetDestination(point);
+        StopFollowingTarget();
+        MoveToPoint(point);
         if(newTarget == null) return;
         if(newTarget != target){
             target = newTarget;
