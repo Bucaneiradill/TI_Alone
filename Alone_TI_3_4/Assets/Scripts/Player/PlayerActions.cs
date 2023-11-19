@@ -68,7 +68,7 @@ public class PlayerActions : MonoBehaviour
 
     public void SetTarget(Interactable newTarget, Vector3 point, int button)
     {
-        StopFollowingTarget();
+        RemoveTarget();
         MoveToPoint(point);
         if(newTarget == null) return;
         if(newTarget != target){
@@ -110,20 +110,18 @@ public class PlayerActions : MonoBehaviour
 
     public void Walk()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
-            {
-                Debug.Log("Stelfi");
-                anim.SetBool("Stealth", IsWalking);
-                agent.speed = walkSpeed;
-                IsWalking = true;
+        if (Input.GetKey(KeyCode.LeftShift)){ 
+            Debug.Log("Stelfi");
+            anim.SetBool("Stealth", IsWalking);
+            agent.speed = walkSpeed;
+            IsWalking = true;
                 
-            } 
-            else
-            {
-                anim.SetBool("Stealth", IsWalking);
-                agent.speed = runSpeed;
-                IsWalking = false;
-            }
+        } 
+        else{
+            anim.SetBool("Stealth", IsWalking);
+            agent.speed = runSpeed;
+            IsWalking = false;
+        }
         
     }
 }
