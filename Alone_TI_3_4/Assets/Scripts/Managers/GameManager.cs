@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int sanity;
     public int sanityMax = 100;
     public bool isLowLife;
+    protected int[] newGameStats = {30, 30, 30, 80};
 
     [SerializeField] GameObject vignettePrefab;
     GameObject vignette;
@@ -51,43 +52,44 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         //Ajustes dos sliders
-        addLife();
-        addHunger();
-        addThirst();
-        addSanity();
+        addLife(newGameStats[0]);
+        addHunger(newGameStats[1]);
+        addThirst(newGameStats[2]);
+        addSanity(newGameStats[3]);
         //reset();
         audioSource = GetComponent<AudioSource>();
     }
     //metodos do sistema de status
-    public void addLife()
+    public void addLife(int life)
     {
-         life = 30;
+        this.life = life;
         Hud.instance?.UpdateVidaHud(lifeMax);
         Hud.instance?.updateLife(life);
     }
-    public void addHunger()
+    public void addHunger(int hunger)
     {
-         hunger = 30;
+        this.hunger = hunger;
         Hud.instance?.UpdateHungerHud(hungerMax);
         Hud.instance?.updateFood(hunger);
     }
-    public void addThirst()
+    public void addThirst(int thirst)
     {
-        thirst = 30;
+        this.thirst = thirst;
         Hud.instance?.UpdateThirstHud(thirstMax);
         Hud.instance?.updateWater(thirst);
     }  
-    public void addSanity(){
-        sanity = 80;
+    public void addSanity(int sanity){
+        
+        this.sanity = sanity;
         Hud.instance?.UpdateSanityHud(sanityMax);
         Hud.instance?.updateSanity(sanity);
     }
     //reset
     public void reset(){
-        addLife();
-        addHunger();
-        addThirst();
-        addSanity();
+        addLife(newGameStats[0]);
+        addHunger(newGameStats[1]);
+        addThirst(newGameStats[2]);
+        addSanity(newGameStats[3]);
         if(TimeManager.instance != null)
             TimeManager.instance.seconds = 21643;
         InventoryUI.instance.ClearInventory();
@@ -245,5 +247,16 @@ public class GameManager : MonoBehaviour
     }
     public void gmTimeScaleOff(){
         Time.timeScale = 0; 
+    }
+    public void MaxALL(){
+        if(Input.GetKeyDown(KeyCode.K)){
+             addLife(lifeMax);
+             addHunger(hungerMax);
+             addThirst(thirstMax);
+             addSanity(sanityMax);
+        }
+    }
+    void Update(){
+        MaxALL();
     }
 }
