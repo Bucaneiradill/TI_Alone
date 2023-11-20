@@ -55,4 +55,11 @@ public class FlockManager : MonoBehaviour
                                                                 Random.Range(-swimLimits.z, swimLimits.z));
         }
     }
+
+    // Adiciona a função para verificar se o jogador está próximo à margem
+    public bool IsPlayerNearMargin(Transform playerTransform, float distanceThreshold)
+    {
+        float distance = Vector3.Distance(playerTransform.position, transform.position);
+        return distance < distanceThreshold;
+    }
 }
