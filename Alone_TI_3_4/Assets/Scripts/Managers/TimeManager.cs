@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using Unity.VisualScripting;
 
 public class TimeManager : MonoBehaviour
 {
@@ -39,7 +40,8 @@ public class TimeManager : MonoBehaviour
         Invoke("TimeCount", delay);
         directionalLight = GameObject.Find("Directional_Light").transform;
         timeTxt = UIManager.instance.timeTxt;
-        
+        //Sanidade
+        GameManager.instance?.sanityCheck();
     }
     
     void CalcTime(float seconds)
@@ -68,16 +70,23 @@ public class TimeManager : MonoBehaviour
             cont2 = 0;
         }
         if(cont >= 600){
-            //ResourcesRespawn.instance.Respawn();
-            //Ficar com fome
-            GameManager.instance?.toHungry(1);
-            //Ficar com sede
-            GameManager.instance?.toThirst(1);
-            GameManager.instance?.hungryAndThirstDamage();
-            cont = 0;
             //Checar a sanidade
-            GameManager.instance?.toInsane(1);
+            GameManager.instance?.toInsane(1); 
             GameManager.instance?.sanityCheck();
+            //Ficar com fome e sede
+            if(GameManager.instance.calm == true){
+                GameManager.instance?.toHungry(1);
+                GameManager.instance?.toThirst(1);
+            }else if(GameManager.instance.unstable == true){
+                GameManager.instance?.toHungry(3);
+                GameManager.instance?.toThirst(3);
+            }else if(GameManager.instance.insane == true){
+                GameManager.instance?.toHungry(5);
+                GameManager.instance?.toThirst(5);
+            }           
+            GameManager.instance?.hungryAndThirstDamage();
+            cont = 0;             
+            //Clima
             ClimateManager.instance?.ChangeState();
         }
         cont = cont + 1;

@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     [Header("Variaveis do sistema de status")]
     [SerializeField] private int life;
     public int lifeMax = 100;
+    public bool canRecorver;
     [SerializeField] private int hunger;
     public int hungerMax = 100;
     [SerializeField] private int thirst;
@@ -34,9 +35,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] AudioClip thirsty;
 
     [Header("Sanity")]
-    [SerializeField] private bool calm;
-    [SerializeField] private bool unstable;
-    [SerializeField] private bool insane;
+    [SerializeField] public bool calm;
+    [SerializeField] public bool unstable;
+    [SerializeField] public bool insane;
 
     //methods
     //metodo de preservar o GameManger
@@ -58,6 +59,7 @@ public class GameManager : MonoBehaviour
         addSanity(newGameStats[3]);
         //reset();
         audioSource = GetComponent<AudioSource>();
+        canRecorver = false;
     }
     //metodos do sistema de status
     public void addLife(int life)
@@ -108,6 +110,7 @@ public class GameManager : MonoBehaviour
     }
     public void damage(int val){
         life -= val;
+        toInsane(5);
         if (life <= 0)
         {
             //Debug.Log("Morreu");
@@ -124,6 +127,7 @@ public class GameManager : MonoBehaviour
     public void recover(int val){      
         if(life == lifeMax){
             life = lifeMax;
+            canRecorver = false;
             Hud.instance?.updateLife(life);
         }else{
             if(hunger >= 50 && thirst >= 50){
@@ -178,7 +182,7 @@ public class GameManager : MonoBehaviour
     public void toInsane(int val){
         if(sanity <= 0){
           sanity = 0;
-          Hud.instance?.updateWater(sanity);
+          Hud.instance?.updateSanity(sanity);
         }else{
            sanity -= val;
            Hud.instance?.updateSanity(sanity);
