@@ -23,17 +23,11 @@ public class AnimationEvents : MonoBehaviour
 
     public void Hit()
     {
-        if (player.target.GetType() == typeof(ColectableSource))
-        {
-            player.target.GetComponent<ColectableSource>().Hit();
-        }
+        player.target.GetComponent<Interactable>().Hit();
     }
 
     public void ObjectPickUp()
     {
-        if (player.target.GetType() == typeof(Object))
-        {
-            player.target.GetComponent<Object>().ObjectPickUp();
-        }
+        player.target.GetComponent<Interactable>().ObjectPickUp();
     }
 }

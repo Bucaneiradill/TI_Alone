@@ -7,10 +7,8 @@ using UnityEngine.EventSystems;
 public class Interactable : MonoBehaviour
 {
     public float radius = 3f;
-    bool isFocus = false;
     public Transform player;
-    PlayerActions playerActions;
-    protected bool hasInteracted = false;
+    protected PlayerActions playerActions;
     public int button;
     public int health = 5;
 
@@ -31,7 +29,7 @@ public class Interactable : MonoBehaviour
     }
     public void Interact(Transform player)
     {
-        this.player = player;
+        playerActions = player.gameObject.GetComponent<PlayerActions>();
         if(button == 0){
             Debug.Log("Ação basica" + gameObject.name);
             BaseAction();
@@ -39,27 +37,10 @@ public class Interactable : MonoBehaviour
             Debug.Log("Menu de ação" + gameObject.name);
             UIManager.instance.AddActions(BaseAction, SecundaryAction);
         }
-        //playerActions.agent.ResetPath();
     }
 
     public virtual void BaseAction(){}
     public virtual void SecundaryAction(){}
-
-    public void OnFocus(Transform playerTransform)
-    {
-        isFocus = true;
-        player= playerTransform;
-        playerActions = playerTransform.gameObject.GetComponent<PlayerActions>();
-        hasInteracted = false;
-    }
-
-    public void OnDefocused()
-    {
-        isFocus = false;
-        player = null;
-        playerActions = null;
-        hasInteracted = false;
-    }
 
     private void OnDrawGizmosSelected() {
         Gizmos.color = Color.yellow;
@@ -82,4 +63,7 @@ public class Interactable : MonoBehaviour
             outline.enabled = false;
         }
     }
+
+    public virtual void Hit(){}
+    public virtual void ObjectPickUp(){}
 }

@@ -6,7 +6,6 @@ public class PlayerActions : MonoBehaviour
 {
     public NavMeshAgent agent;
     public Interactable target;
-    //bool isInteracting;
     public Animator anim;
     public bool canAct = true;
     float initialSpeed;
@@ -27,7 +26,8 @@ public class PlayerActions : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(agent.velocity.magnitude > 0){
+        Debug.Log(agent.velocity.magnitude);
+        if(agent.velocity.magnitude >= 0){
             anim.SetFloat("Speed", agent.velocity.magnitude);
             FaceTarget();
         }
@@ -37,8 +37,6 @@ public class PlayerActions : MonoBehaviour
             agent.ResetPath();
             target = null;
         }    
-
-        // anim.SetInteger("State", 0);
         Walk();
     }
     public void MoveToPoint(Vector3 point){
@@ -73,24 +71,12 @@ public class PlayerActions : MonoBehaviour
         if(newTarget == null) return;
         if(newTarget != target){
             target = newTarget;
-            target.button = button;
-            if(target != null)
-            {
-                //FaceTarget();
-                target.OnDefocused();
-            }
-            
-            FollowTarget(newTarget);
-            
+            target.button = button;            
+            FollowTarget(newTarget);           
         }
-        //newTarget.OnFocus(gameObject.transform);
     }
 
     public void RemoveTarget(){
-        if(target != null)
-        {
-            target.OnDefocused();
-        }
         target = null;
         StopFollowingTarget();
     }
@@ -111,7 +97,6 @@ public class PlayerActions : MonoBehaviour
     public void Walk()
     {
         if (Input.GetKey(KeyCode.LeftShift)){ 
-            Debug.Log("Stelfi");
             anim.SetBool("Stealth", IsWalking);
             agent.speed = walkSpeed;
             IsWalking = true;
@@ -122,6 +107,12 @@ public class PlayerActions : MonoBehaviour
             agent.speed = runSpeed;
             IsWalking = false;
         }
-        
+    }
+    public void Collect(){
+        Debug.Log("Collect");
+        anim.SetTrigger("Collect");
+    }
+    public void InteractSource(){
+        anim.SetTrigger("Interact");
     }
 }

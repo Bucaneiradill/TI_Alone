@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InteractionTest : Interactable
 {
+    /*
     UIManager uiManager;
 
 
@@ -25,5 +26,5 @@ public class InteractionTest : Interactable
         uiManager.DisplayAction($"Comida e água +10");
         Destroy(gameObject);
     }
-    
+    */
 }

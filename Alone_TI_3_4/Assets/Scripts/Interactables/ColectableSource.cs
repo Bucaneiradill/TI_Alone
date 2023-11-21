@@ -27,11 +27,10 @@ public class ColectableSource : Interactable
 
     public override void BaseAction()
     {
-        //base.BaseAction();
-        player.gameObject.GetComponent<PlayerActions>().anim.SetTrigger("Interact");
+        playerActions.InteractSource();
     }
 
-    public void Hit()
+    public override void Hit()
     {
         hitAudio?.Play();
         if (particle != null)
@@ -59,7 +58,7 @@ public class ColectableSource : Interactable
             GameObject lootInstance;
             lootInstance = Instantiate(loot, dropPoint ? dropPoint.position : transform.position, Quaternion.identity);
             //Destroy(gameObject);
-            lootInstance.gameObject.GetComponent<Object>().amount = lootAmount;
+            //lootInstance.gameObject.GetComponent<Interactable>().amount = lootAmount;
             GameObject obj;
             obj = transform.GetChild(0).gameObject;
             obj.SetActive(false);

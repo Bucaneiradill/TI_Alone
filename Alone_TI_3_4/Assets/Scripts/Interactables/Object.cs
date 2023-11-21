@@ -16,6 +16,7 @@ using UnityEngine;
 
 public class Object : Interactable
 {
+
     UIManager uiManager;
     [SerializeField] Item item;
     public int amount = 1;
@@ -32,6 +33,7 @@ public class Object : Interactable
     Entrada:    -
     Saída:      -
     ------------------------------------------------------------------------------*/
+
     public override void BaseAction()
     {
         base.BaseAction();
@@ -56,7 +58,7 @@ public class Object : Interactable
     Entrada:    -
     Saída:      -
     ------------------------------------------------------------------------------*/
-    public void ObjectPickUp()
+    public override void ObjectPickUp()
     {
         uiManager.DisplayAction($"Coletou {amount} {item.name}");
         Destroy(gameObject);

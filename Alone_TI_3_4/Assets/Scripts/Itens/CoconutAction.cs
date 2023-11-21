@@ -25,7 +25,7 @@ public class CoconutAction : Interactable
    public override void BaseAction(){
         bool spaceInventory = Inventory.instance.CheckAndAddItem(item);
         if (spaceInventory == true){
-            player.gameObject.GetComponent<PlayerActions>().anim.SetTrigger("Collect");
+            playerActions.Collect();
             ObjectPickUp();
         }
         else{
@@ -38,7 +38,9 @@ public class CoconutAction : Interactable
     Entrada:    -
     Saída:      -
     ------------------------------------------------------------------------------*/
-    public override void SecundaryAction(){ 
+    public override void SecundaryAction(){
+        Debug.Log("muçei");
+        playerActions.Collect(); 
         Food();
     }
     /*------------------------------------------------------------------------------
@@ -47,14 +49,13 @@ public class CoconutAction : Interactable
     Entrada:    -
     Saída:      -
     ------------------------------------------------------------------------------*/
-    public void ObjectPickUp(){
+    public override void ObjectPickUp(){
         uiManager.DisplayAction($"Coletou {amount} {item.name}");
         Destroy(gameObject);
     }
 
     public void Food(){
         GameManager.instance.toEat(10);
-        GameManager.instance.toDrink(10);
-        Destroy(gameObject);  
+        GameManager.instance.toDrink(10);  
     }
 }
