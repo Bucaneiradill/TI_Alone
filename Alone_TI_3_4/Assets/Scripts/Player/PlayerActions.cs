@@ -26,7 +26,7 @@ public class PlayerActions : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log(agent.velocity.magnitude);
+       // Debug.Log(agent.velocity.magnitude);
         if(agent.velocity.magnitude >= 0){
             anim.SetFloat("Speed", agent.velocity.magnitude);
             FaceTarget();

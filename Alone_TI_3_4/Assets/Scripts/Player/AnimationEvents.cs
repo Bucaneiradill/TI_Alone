@@ -23,11 +23,20 @@ public class AnimationEvents : MonoBehaviour
 
     public void Hit()
     {
-        player.target.GetComponent<Interactable>().Hit();
+        /*
+        Debug.Log(layer.target);
+        if(player.target.TryGetComponent<Interactable>(out Interactable obj)){
+            obj.Hit();
+        }else{
+            Debug.Log("Item não interagivel " + obj.gameObject.name);
+        }
+        */
     }
-
+ 
     public void ObjectPickUp()
     {
+        /*
         player.target.GetComponent<Interactable>().ObjectPickUp();
+        */
     }
 }

@@ -386,7 +386,7 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &6953016170486683104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,7 +425,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 1
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!1001 &9142769800251804802
@@ -445,7 +445,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 34f62b4c8a83de140877138581cabffd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.012
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 34f62b4c8a83de140877138581cabffd, type: 3}
       propertyPath: m_LocalPosition.z

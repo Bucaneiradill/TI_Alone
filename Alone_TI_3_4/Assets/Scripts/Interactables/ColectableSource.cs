@@ -28,9 +28,10 @@ public class ColectableSource : Interactable
     public override void BaseAction()
     {
         playerActions.InteractSource();
+        Hit();
     }
 
-    public override void Hit()
+    public void Hit()
     {
         hitAudio?.Play();
         if (particle != null)

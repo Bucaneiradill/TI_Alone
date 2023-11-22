@@ -63,7 +63,4 @@ public class Interactable : MonoBehaviour
             outline.enabled = false;
         }
     }
-
-    public virtual void Hit(){}
-    public virtual void ObjectPickUp(){}
 }
