@@ -47477,10 +47477,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1691923125}
     m_Modifications:
-    - target: {fileID: 1417271478, guid: 8fdaea000aac49449ac79b682083b9d8, type: 3}
-      propertyPath: radius
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3830044629709278434, guid: 8fdaea000aac49449ac79b682083b9d8, type: 3}
       propertyPath: m_Name
       value: Coco

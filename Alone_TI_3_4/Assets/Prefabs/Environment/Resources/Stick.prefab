@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3852288476125150945}
   - component: {fileID: 8305139811033162850}
   - component: {fileID: 6051268887864828502}
-  - component: {fileID: 7563677583081281784}
+  - component: {fileID: 7249049880116238261}
   - component: {fileID: -6779256079210595434}
   m_Layer: 8
   m_Name: Stick
@@ -100,7 +100,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &7563677583081281784
+--- !u!114 &7249049880116238261
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,13 +109,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 5898381514524721784}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30125879e7bc29f469c90fe05ef613a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b1dadb94ee750b4a885edf0a06d3e6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 2.2
   player: {fileID: 0}
+  button: 0
   health: 5
   outline: {fileID: 0}
+  exclamationCursor: {fileID: 2800000, guid: d3586b50751f28c48882ab3e1427c950, type: 3}
   item: {fileID: 11400000, guid: 49785011511d4c34da614e7a0d6983a3, type: 2}
   amount: 1
 --- !u!114 &-6779256079210595434

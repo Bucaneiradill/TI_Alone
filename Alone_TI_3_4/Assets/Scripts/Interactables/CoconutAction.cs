@@ -39,8 +39,8 @@ public class CoconutAction : Interactable
     Saída:      -
     ------------------------------------------------------------------------------*/
     public override void SecundaryAction(){
-        Debug.Log("muçei");
         playerActions.Collect(); 
+        ObjectPickUp();
         Food();
     }
     /*------------------------------------------------------------------------------
@@ -49,7 +49,7 @@ public class CoconutAction : Interactable
     Entrada:    -
     Saída:      -
     ------------------------------------------------------------------------------*/
-    public override void ObjectPickUp(){
+    public void ObjectPickUp(){
         uiManager.DisplayAction($"Coletou {amount} {item.name}");
         Destroy(gameObject);
     }
