@@ -50,11 +50,11 @@ public class TimeManager : MonoBehaviour
         timeTxt.text = timeString;//\:ss
     }
    
-    public void prosCeu()
+   /* public void prosCeu()
     { 
         //Debug.Log(seconds);
         float rotX = Mathf.Lerp(-90, 270, seconds/86400.0f);
-    }
+    }*/
 
     public void prosCeu(float seconds)
     {
@@ -103,12 +103,12 @@ public class TimeManager : MonoBehaviour
         else if (mult == 2)
         {
             Debug.Log("2X");
-            delay = (dalayValue/4);
+            delay = dalayValue/4;
         }
         else if (mult == 3)
         {
             Debug.Log("3X");
-            delay = (dalayValue/6);
+            delay = dalayValue/6;
         }
     }
 
