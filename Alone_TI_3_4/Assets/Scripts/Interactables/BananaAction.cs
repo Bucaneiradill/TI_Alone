@@ -6,8 +6,6 @@ public class BananaAction : Interactable
 {
     UIManager uiManager;
     [SerializeField] Item item;
-    //[SerializeField] Image icon1;
-    //[SerializeField] Image icon2; 
 
     public int amount = 1;
 

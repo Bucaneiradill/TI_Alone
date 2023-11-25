@@ -8,6 +8,8 @@ public class Interactable : MonoBehaviour
 {
     public float radius = 3f;
     public Transform player;
+    //public Sprite actionIcon1;
+    //public Sprite actionIcon2;
     protected PlayerActions playerActions;
     public int button;
     public int health = 5;
@@ -35,7 +37,7 @@ public class Interactable : MonoBehaviour
             BaseAction();
         }else{
             Debug.Log("Menu de ação" + gameObject.name);
-            UIManager.instance.AddActions(BaseAction, SecundaryAction);
+            UIManager.instance.AddActions(BaseAction,  SecundaryAction);
         }
     }
 

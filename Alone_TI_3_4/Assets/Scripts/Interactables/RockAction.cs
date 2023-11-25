@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoconutAction : Interactable
+public class RockAction : Interactable
 {
     UIManager uiManager;
     [SerializeField] Item item;
@@ -36,11 +36,7 @@ public class CoconutAction : Interactable
     Entrada:    -
     Saída:      -
     ------------------------------------------------------------------------------*/
-    public override void SecundaryAction(){
-        playerActions.Collect(); 
-        ObjectPickUp();
-        Food();
-    }
+    public override void SecundaryAction(){}
     /*------------------------------------------------------------------------------
     Função:     ObjectPickUp
     Descrição:  
@@ -50,10 +46,5 @@ public class CoconutAction : Interactable
     public void ObjectPickUp(){
         uiManager.DisplayAction($"Coletou {amount} {item.name}");
         Destroy(gameObject);
-    }
-
-    public void Food(){
-        GameManager.instance.toEat(10);
-        GameManager.instance.toDrink(10);  
     }
 }

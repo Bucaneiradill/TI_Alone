@@ -31,6 +31,10 @@ public class ColectableSource : Interactable
         Hit();
     }
 
+    public override void SecundaryAction(){
+        
+    }
+
     public void Hit()
     {
         hitAudio?.Play();

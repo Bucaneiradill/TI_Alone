@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 2143586928161277153}
   - component: {fileID: 6621860856604390288}
   - component: {fileID: 1736624286491554887}
-  - component: {fileID: 4742473837394866701}
+  - component: {fileID: 6997126696651770608}
   - component: {fileID: 3211423087256998376}
   m_Layer: 8
   m_Name: RockC
@@ -244,7 +244,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.6817589, y: 0.63458633, z: 0.84562683}
   m_Center: {x: 0.028810501, y: -0.1505971, z: -0.064064026}
---- !u!114 &4742473837394866701
+--- !u!114 &6997126696651770608
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -253,11 +253,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1654048499073359451}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30125879e7bc29f469c90fe05ef613a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 52dd0b86da75a4648adfef185ced7d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 2.2
-  player: {fileID: 4257557191405021029, guid: 8d904dc9a797e5942bab7821fbf6168c, type: 3}
+  player: {fileID: 0}
+  button: 0
   health: 5
   outline: {fileID: 0}
   exclamationCursor: {fileID: 2800000, guid: d3586b50751f28c48882ab3e1427c950, type: 3}
