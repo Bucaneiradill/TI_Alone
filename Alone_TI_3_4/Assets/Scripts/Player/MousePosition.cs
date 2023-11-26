@@ -11,6 +11,12 @@ public class MousePosition : MonoBehaviour
     public NavMeshAgent agent;
     Interactable interactable;
 
+    [Header("Building")]
+    bool buildMode = false;
+    public event Action OnClicked, OnExit;
+    private Vector3 lastPosition;
+    [SerializeField] private LayerMask placementLayermask;
+
     void Update()
     {
         if (EventSystem.current.IsPointerOverGameObject())
@@ -18,32 +24,61 @@ public class MousePosition : MonoBehaviour
             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
             return;
         }
-        interactable?.HideOutline();
-        interactable = null;
-        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-        if(Physics.Raycast(ray, out RaycastHit rayCastHit, float.MaxValue, layerMask))
+        if (!buildMode)
         {
-            transform.position = rayCastHit.point;
-            interactable = rayCastHit.collider.gameObject.GetComponentInParent<Interactable>();
-            if (interactable != null)
+            interactable?.HideOutline();
+            interactable = null;
+            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit rayCastHit, float.MaxValue, layerMask))
             {
-                interactable.ShowOutline();
-            }
-            else
-            {
-                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-            }
-            if (Input.GetMouseButtonDown(0) && playerActions.canAct)
-            {
+                transform.position = rayCastHit.point;
+                interactable = rayCastHit.collider.gameObject.GetComponentInParent<Interactable>();
                 if (interactable != null)
                 {
-                    SetTarget(interactable);
-                } else {
-                    playerActions.RemoveTarget();
-                    playerActions.MoveToPoint(rayCastHit.point);
+                    interactable.ShowOutline();
+                }
+                else
+                {
+                    Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                }
+                if (Input.GetMouseButtonDown(0) && playerActions.canAct)
+                {
+                    if (interactable != null)
+                    {
+                        SetTarget(interactable);
+                    }
+                    else
+                    {
+                        playerActions.RemoveTarget();
+                        playerActions.MoveToPoint(rayCastHit.point);
+                    }
                 }
             }
         }
+        else
+        {
+            if (Input.GetMouseButtonDown(0))
+                OnClicked?.Invoke();
+            if (Input.GetKeyDown(KeyCode.Escape))
+                OnExit?.Invoke();
+        }
+        
+    }
+
+    public bool IsPointerOverUI()
+        => EventSystem.current.IsPointerOverGameObject();
+
+    public Vector3 GetSelectedMapPosition()
+    {
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = mainCamera.nearClipPlane;
+        Ray ray = mainCamera.ScreenPointToRay(mousePos);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 100, placementLayermask))
+        {
+            lastPosition = hit.point;
+        }
+        return lastPosition;
     }
 
     void SetTarget(Interactable newTarget)
