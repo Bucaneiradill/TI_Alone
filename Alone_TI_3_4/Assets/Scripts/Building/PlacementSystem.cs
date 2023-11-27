@@ -39,23 +39,25 @@ public class PlacementSystem : MonoBehaviour
 
     private void Start()
     {
-        gridVisualization.SetActive(false);
+        //gridVisualization.SetActive(false);
         floorData = new();
         furnitureData = new();
+
+        StartPlacement(0);
     }
 
     public void StartPlacement(int ID)
     {
         StopPlacement();
-        gridVisualization.SetActive(true);
+        //gridVisualization.SetActive(true);
         buildingState = new PlacementState(ID,
                                            grid,
                                            preview,
                                            database,
                                            floorData,
                                            furnitureData,
-                                           objectPlacer,
-                                           soundFeedback);
+                                           objectPlacer);
+                                           //soundFeedback);
         inputManager.OnClicked += PlaceStructure;
         inputManager.OnExit += StopPlacement;
     }
@@ -76,9 +78,8 @@ public class PlacementSystem : MonoBehaviour
             return;
         }
         Vector3 mousePosition = inputManager.GetSelectedMapPosition();
-        Vector3Int gridPosition = grid.WorldToCell(mousePosition);
 
-        buildingState.OnAction(gridPosition);
+        buildingState.OnAction(mousePosition);
 
     }
 
@@ -93,10 +94,10 @@ public class PlacementSystem : MonoBehaviour
 
     private void StopPlacement()
     {
-        soundFeedback.PlaySound(SoundType.Click);
+        //soundFeedback.PlaySound(SoundType.Click);
         if (buildingState == null)
             return;
-        gridVisualization.SetActive(false);
+        //gridVisualization.SetActive(false);
         buildingState.EndState();
         inputManager.OnClicked -= PlaceStructure;
         inputManager.OnExit -= StopPlacement;
@@ -109,12 +110,7 @@ public class PlacementSystem : MonoBehaviour
         if (buildingState == null)
             return;
         Vector3 mousePosition = inputManager.GetSelectedMapPosition();
-        Vector3Int gridPosition = grid.WorldToCell(mousePosition);
-        if (lastDetectedPosition != gridPosition)
-        {
-            buildingState.UpdateState(gridPosition);
-            lastDetectedPosition = gridPosition;
-        }
+        buildingState.UpdateState(mousePosition);
 
     }
 }

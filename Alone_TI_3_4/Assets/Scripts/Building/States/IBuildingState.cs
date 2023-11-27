@@ -3,6 +3,6 @@ using UnityEngine;
 public interface IBuildingState
 {
     void EndState();
-    void OnAction(Vector3Int gridPosition);
-    void UpdateState(Vector3Int gridPosition);
+    void OnAction(Vector3 position);
+    void UpdateState(Vector3 position);
 }
