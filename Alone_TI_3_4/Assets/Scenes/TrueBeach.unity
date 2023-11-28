@@ -24129,10 +24129,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coqueiro (7)
       objectReference: {fileID: 0}
-    - target: {fileID: 3816042478557351313, guid: abbc77ae038f4924fbaec06f36b63691, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 2596773882158050120, guid: 97105695914e8084894ac7c446cfe840, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abbc77ae038f4924fbaec06f36b63691, type: 3}
 --- !u!4 &611036531 stripped
@@ -27476,6 +27472,7 @@ Transform:
   - {fileID: 631111120}
   - {fileID: 245216490}
   - {fileID: 34129727}
+  - {fileID: 3330739530845396186}
   m_Father: {fileID: 943826862}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -28218,10 +28215,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coqueiro (15)
       objectReference: {fileID: 0}
-    - target: {fileID: 3816042478557351313, guid: abbc77ae038f4924fbaec06f36b63691, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 2596773882158050120, guid: 97105695914e8084894ac7c446cfe840, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abbc77ae038f4924fbaec06f36b63691, type: 3}
 --- !u!4 &717728750 stripped
@@ -31001,10 +30994,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coqueiro (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 3816042478557351313, guid: abbc77ae038f4924fbaec06f36b63691, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 2596773882158050120, guid: 97105695914e8084894ac7c446cfe840, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abbc77ae038f4924fbaec06f36b63691, type: 3}
 --- !u!4 &807352318 stripped
@@ -32420,10 +32409,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coqueiro (9)
       objectReference: {fileID: 0}
-    - target: {fileID: 3816042478557351313, guid: abbc77ae038f4924fbaec06f36b63691, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 2596773882158050120, guid: 97105695914e8084894ac7c446cfe840, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abbc77ae038f4924fbaec06f36b63691, type: 3}
 --- !u!4 &853425237 stripped
@@ -47479,10 +47464,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coqueiro (8)
       objectReference: {fileID: 0}
-    - target: {fileID: 3816042478557351313, guid: abbc77ae038f4924fbaec06f36b63691, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 2596773882158050120, guid: 97105695914e8084894ac7c446cfe840, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abbc77ae038f4924fbaec06f36b63691, type: 3}
 --- !u!4 &1288927452 stripped
@@ -59302,10 +59283,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coqueiro
       objectReference: {fileID: 0}
-    - target: {fileID: 3816042478557351313, guid: abbc77ae038f4924fbaec06f36b63691, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 2596773882158050120, guid: 97105695914e8084894ac7c446cfe840, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abbc77ae038f4924fbaec06f36b63691, type: 3}
 --- !u!4 &1716575884 stripped
@@ -71071,10 +71048,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coqueiro (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 3816042478557351313, guid: abbc77ae038f4924fbaec06f36b63691, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 2596773882158050120, guid: 97105695914e8084894ac7c446cfe840, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abbc77ae038f4924fbaec06f36b63691, type: 3}
 --- !u!4 &2067088570 stripped
@@ -73522,6 +73495,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afca0f54cb5c6c34188f600d40ba569c, type: 3}
+--- !u!4 &3330739530845396186 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3004904298626213536, guid: afca0f54cb5c6c34188f600d40ba569c, type: 3}
+  m_PrefabInstance: {fileID: 3330739530845396185}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4136707384651788505
 PrefabInstance:
   m_ObjectHideFlags: 0
