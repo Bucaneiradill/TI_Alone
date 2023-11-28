@@ -115,4 +115,13 @@ public class TimeManager : MonoBehaviour
     public void boolPlay(){
         isPlaying = !isPlaying;
     }
+    // Salvar o TimeManager
+    public TimeManagerData GetTimeManagerData(){
+        TimeManagerData data = new TimeManagerData(seconds);
+        return data;
+    }
+    //Load do save
+    public void SetTimeManagerData(TimeManagerData data){
+        seconds = data.seconds;
+    }
 }
