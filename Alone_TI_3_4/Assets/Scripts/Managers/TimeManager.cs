@@ -21,7 +21,8 @@ public class TimeManager : MonoBehaviour
     public float delay;
     public string timeString;
     public bool isPlaying;
-    [SerializeField][Tooltip("Duração do dia em segundos")] public int seconds = 21643;
+    [SerializeField][Tooltip("Duração do dia em segundos")] public int seconds;
+    //valores de tempo: 6h da manha => 21600
     void Awake()
     {
         instance = this;
@@ -123,5 +124,14 @@ public class TimeManager : MonoBehaviour
     //bool play
     public void boolPlay(){
         isPlaying = !isPlaying;
+    }
+    // Salvar o TimeManager
+    public TimeManagerData GetTimeManagerData(){
+        TimeManagerData data = new TimeManagerData(seconds);
+        return data;
+    }
+    //Load do save
+    public void SetTimeManagerData(TimeManagerData data){
+        seconds = data.seconds;
     }
 }

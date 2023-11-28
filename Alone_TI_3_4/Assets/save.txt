@@ -1,0 +1,11 @@
+{
+    "gameManager": {
+        "life": 100,
+        "hunger": 100,
+        "thirst": 100,
+        "sanity": 100
+    },
+    "timeManager": {
+        "seconds": 22162
+    }
+}
