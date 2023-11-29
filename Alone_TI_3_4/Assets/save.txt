@@ -1,11 +1,23 @@
 {
     "gameManager": {
         "life": 100,
-        "hunger": 100,
-        "thirst": 100,
-        "sanity": 100
+        "hunger": 99,
+        "thirst": 99,
+        "sanity": 99
     },
     "timeManager": {
-        "seconds": 21915
+        "seconds": 22371
+    },
+    "playerData": {
+        "position": {
+            "x": 46.284854888916019,
+            "y": 5.99908447265625,
+            "z": 204.4340057373047
+        },
+        "rotation": {
+            "x": 0.0,
+            "y": 111.42151641845703,
+            "z": 0.0
+        }
     }
 }
