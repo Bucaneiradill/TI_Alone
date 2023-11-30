@@ -33,9 +33,14 @@ public class Fishing : MonoBehaviour
     void Update()
     {
         // Verifica se o jogador está perto da área dos peixes e pressiona F para iniciar a pescaria
-        if (!isCasting && Time.time >= nextFishingTime && Input.GetKeyDown(KeyCode.F) && IsPlayerNearMargin())
+        if (Input.GetKeyDown(KeyCode.F))
         {
-            StartFishing();
+            Debug.Log(isCasting);
+            Debug.Log(IsPlayerNearMargin());
+            if (!isCasting && Time.time >= nextFishingTime && IsPlayerNearMargin())
+            {
+                StartFishing();
+            }
         }
 
         if (waitingAfterThreshold)
