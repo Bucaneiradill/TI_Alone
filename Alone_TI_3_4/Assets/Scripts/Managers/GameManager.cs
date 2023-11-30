@@ -270,6 +270,7 @@ public class GameManager : MonoBehaviour
         hunger = data.hunger;
         thirst = data.thirst;
         sanity = data.sanity;
+        //TimeManager.instance.updateDayCycle();
     }
 
 }

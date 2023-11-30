@@ -6,6 +6,7 @@ class SceneData{
    public TimeManagerData timeManager;
    public PlayerData playerData;
    public InventoryData inventoryData;
+   //public HotBarData[] hotBarData;
    public EnemyData[] enemyData;
 }
 
@@ -23,6 +24,9 @@ public class SaveGame : MonoBehaviour
             Load();
         }
     }
+    public void OnButtonEnter(){
+        
+    }
 
     void Save(){
         SceneData data = new SceneData();
@@ -39,15 +43,18 @@ public class SaveGame : MonoBehaviour
         //Player
         PlayerActions player = FindObjectOfType<PlayerActions>();
         data.playerData = new PlayerAdapter(player);
-       
+        //Inventory
+        data.inventoryData = Inventory.instance.GetInventoryData();
+        //data.inventoryData = EquipmentUI.instance.GetHotBar();
+        //-------------------------
         string s = JsonUtility.ToJson(data, true);
         Debug.Log("S");
         File.WriteAllText(path, s);
     }
     void Load(){
-        //player locate
+        //player locate        
         PlayerActions player = FindObjectOfType<PlayerActions>();
-        player.RemoveTarget();
+        player.agent.ResetPath();
         string s =File.ReadAllText(path);
         SceneData data = JsonUtility.FromJson<SceneData>(s);
         //GameManager
@@ -56,13 +63,16 @@ public class SaveGame : MonoBehaviour
         TimeManager.instance.SetTimeManagerData(data.timeManager);
         //player
         player.transform.position = data.playerData.position; 
-        player.transform.eulerAngles = data.playerData.rotation;
+        player.transform.eulerAngles = data.playerData.rotation;        
         //NPCs
         EnemySave[] enemies = FindObjectsOfType<EnemySave>();
         for(int i = 0; i < data.enemyData.Length; i++){
             enemies[i].transform.position = data.enemyData[i].position;
             enemies[i].transform.eulerAngles = data.enemyData[i].position;
-
         }
+        //Inventory
+        InventoryUI.instance.ClearInventory();
+        Inventory.instance.SetInventoryData(data.inventoryData);
+        //EquipmentUI.instance.SetHotBar(data.hotBarData);
     }
 }
