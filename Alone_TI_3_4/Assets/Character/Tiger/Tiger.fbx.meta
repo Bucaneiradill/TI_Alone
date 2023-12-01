@@ -3,7 +3,12 @@ guid: 26f954ee61447194bb29c857e503f050
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tiger
+    second: {fileID: 2100000, guid: 77d617c27775d0e4595b13aee9792d48, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
