@@ -12,9 +12,8 @@ public class MousePosition : MonoBehaviour
     Interactable interactable;
 
     [Header("Building")]
-    bool buildMode = true;
+    bool buildMode = false;
     public event Action OnClicked, OnExit;
-    private Vector3 lastPosition;
     [SerializeField] private LayerMask placementLayermask;
 
     void Update()
@@ -68,6 +67,11 @@ public class MousePosition : MonoBehaviour
     public Vector3 GetSelectedMapPosition()
     {
         return transform.position;
+    }
+
+    public void ChangeBuildMode()
+    {
+        buildMode = !buildMode;
     }
 
     void SetTarget(Interactable newTarget)

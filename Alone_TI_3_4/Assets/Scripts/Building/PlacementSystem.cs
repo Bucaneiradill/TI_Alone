@@ -6,16 +6,13 @@ using UnityEngine;
 
 public class PlacementSystem : MonoBehaviour
 {
+    public static PlacementSystem instance;
+
     [SerializeField]
     private MousePosition inputManager;
-    [SerializeField]
-    private Grid grid;
 
     [SerializeField]
     private ObjectsDatabaseSO database;
-
-    [SerializeField]
-    private GameObject gridVisualization;
 
     [SerializeField]
     private AudioClip correctPlacementClip, wrongPlacementClip;
@@ -37,27 +34,28 @@ public class PlacementSystem : MonoBehaviour
     [SerializeField]
     private SoundFeedback soundFeedback;
 
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void Start()
     {
-        //gridVisualization.SetActive(false);
         floorData = new();
         furnitureData = new();
-
-        StartPlacement(0);
     }
 
     public void StartPlacement(int ID)
     {
         StopPlacement();
-        //gridVisualization.SetActive(true);
         buildingState = new PlacementState(ID,
-                                           grid,
                                            preview,
                                            database,
                                            floorData,
                                            furnitureData,
                                            objectPlacer);
-                                           //soundFeedback);
+        //soundFeedback);
+        inputManager.ChangeBuildMode();
         inputManager.OnClicked += PlaceStructure;
         inputManager.OnExit += StopPlacement;
     }
@@ -65,8 +63,7 @@ public class PlacementSystem : MonoBehaviour
     public void StartRemoving()
     {
         StopPlacement();
-        gridVisualization.SetActive(true);
-        buildingState = new RemovingState(grid, preview, floorData, furnitureData, objectPlacer, soundFeedback);
+        buildingState = new RemovingState(preview, floorData, furnitureData, objectPlacer, soundFeedback);
         inputManager.OnClicked += PlaceStructure;
         inputManager.OnExit += StopPlacement;
     }
@@ -92,13 +89,14 @@ public class PlacementSystem : MonoBehaviour
     //    return selectedData.CanPlaceObejctAt(gridPosition, database.objectsData[selectedObjectIndex].Size);
     //}
 
-    private void StopPlacement()
+    public void StopPlacement()
     {
         //soundFeedback.PlaySound(SoundType.Click);
         if (buildingState == null)
             return;
         //gridVisualization.SetActive(false);
         buildingState.EndState();
+        inputManager.ChangeBuildMode();
         inputManager.OnClicked -= PlaceStructure;
         inputManager.OnExit -= StopPlacement;
         lastDetectedPosition = Vector3Int.zero;

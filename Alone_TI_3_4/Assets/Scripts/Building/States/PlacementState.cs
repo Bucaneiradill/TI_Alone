@@ -7,7 +7,6 @@ public class PlacementState : IBuildingState
 {
     private int selectedObjectIndex = -1;
     int ID;
-    Grid grid;
     PreviewSystem previewSystem;
     ObjectsDatabaseSO database;
     GridData floorData;
@@ -16,7 +15,6 @@ public class PlacementState : IBuildingState
     SoundFeedback soundFeedback;
 
     public PlacementState(int iD,
-                          Grid grid,
                           PreviewSystem previewSystem,
                           ObjectsDatabaseSO database,
                           GridData floorData,
@@ -25,7 +23,6 @@ public class PlacementState : IBuildingState
                           //SoundFeedback soundFeedback)
     {
         ID = iD;
-        this.grid = grid;
         this.previewSystem = previewSystem;
         this.database = database;
         //this.floorData = floorData;
@@ -60,7 +57,7 @@ public class PlacementState : IBuildingState
             return;
         }
         //soundFeedback.PlaySound(SoundType.Place);
-        int index = objectPlacer.PlaceObject(database.objectsData[selectedObjectIndex].PrefabItem,
+        int index = objectPlacer.PlaceObject(database.objectsData[selectedObjectIndex],
             position);
 
         //GridData selectedData = database.objectsData[selectedObjectIndex].iD == 0 ?

@@ -6,21 +6,19 @@ using UnityEngine;
 public class RemovingState : IBuildingState
 {
     private int gameObjectIndex = -1;
-    Grid grid;
     PreviewSystem previewSystem;
     GridData floorData;
     GridData furnitureData;
     ObjectPlacer objectPlacer;
     SoundFeedback soundFeedback;
 
-    public RemovingState(Grid grid,
+    public RemovingState(
                          PreviewSystem previewSystem,
                          GridData floorData,
                          GridData furnitureData,
                          ObjectPlacer objectPlacer,
                          SoundFeedback soundFeedback)
     {
-        this.grid = grid;
         this.previewSystem = previewSystem;
         this.floorData = floorData;
         this.furnitureData = furnitureData;
