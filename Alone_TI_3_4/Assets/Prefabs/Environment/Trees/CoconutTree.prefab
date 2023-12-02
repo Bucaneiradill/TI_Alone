@@ -228,7 +228,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1615203465152138258, guid: 46fee4856e81b9146b790cecc581f341, type: 3}
+  - {fileID: 2100000, guid: 46cb24c022530884cb9bb6088d674de2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -339,6 +339,7 @@ MonoBehaviour:
   dropPoint: {fileID: 2042902665442377522}
   particlePoint: {fileID: 2861089735640116311}
   particle: {fileID: 3190041756260390103, guid: 161dcb31c3ddf9344961180b1746ce57, type: 3}
+  SaveHealth: 0
   obj: {fileID: 0}
   counterType: {fileID: 11400000, guid: ae517a8408777c6449e2bf96d78c73f8, type: 2}
 --- !u!208 &-7323370654939611085
@@ -366,7 +367,7 @@ AudioSource:
   m_GameObject: {fileID: 2906847649293791863}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 2596773882158050120, guid: 97105695914e8084894ac7c446cfe840, type: 2}
   m_audioClip: {fileID: 8300000, guid: 8077784ac77c56543aacccc8eaa07122, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -17510,7 +17511,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -4093714342338375385, guid: 46fee4856e81b9146b790cecc581f341, type: 3}
+  - {fileID: 2100000, guid: e8d45190e1b0589449a6fe59973b98b2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
