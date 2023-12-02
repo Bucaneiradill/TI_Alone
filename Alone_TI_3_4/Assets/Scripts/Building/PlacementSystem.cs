@@ -29,7 +29,7 @@ public class PlacementSystem : MonoBehaviour
     [SerializeField]
     private ObjectPlacer objectPlacer;
 
-    IBuildingState buildingState;
+    public IBuildingState buildingState;
 
     [SerializeField]
     private SoundFeedback soundFeedback;
