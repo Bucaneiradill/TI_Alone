@@ -9,6 +9,8 @@ public class PreviewSystem : MonoBehaviour
     private Material previewMaterialPrefab;
     private Material previewMaterialInstance;
     [SerializeField] LayerMask previewLayerMask;
+    Renderer[] renderers;
+    [HideInInspector] public bool placementAvailable;
 
     private void Start()
     {
@@ -23,7 +25,7 @@ public class PreviewSystem : MonoBehaviour
 
     private void PreparePreview(GameObject previewObject)
     {
-        Renderer[] renderers = previewObject.GetComponentsInChildren<Renderer>();
+        renderers = previewObject.GetComponentsInChildren<Renderer>();
         foreach (Renderer renderer in renderers)
         {
             Material[] materials = renderer.materials;
@@ -48,15 +50,13 @@ public class PreviewSystem : MonoBehaviour
             MovePreview(position);
             //checar aqui se o previewObject está colidindo com algo
             bool isColliding = CheckCollision();
+            placementAvailable = !isColliding;
             ApplyFeedbackToPreview(!isColliding);
         }
     }
 
     private bool CheckCollision()
     {
-        // Obter renderers do objeto de preview
-        Renderer[] renderers = previewObject.GetComponentsInChildren<Renderer>();
-
         // Inicializar o tamanho do objeto de preview
         Bounds bounds = new Bounds(previewObject.transform.position, Vector3.zero);
 
@@ -80,8 +80,6 @@ public class PreviewSystem : MonoBehaviour
         // Se houver colisões, trate-as aqui
         if (colliders.Length > 0)
         {
-            // Faça algo quando houver colisões, se necessário
-            Debug.Log("Colidindo com: " + colliders[0].gameObject.name);
             return true;
         }
 

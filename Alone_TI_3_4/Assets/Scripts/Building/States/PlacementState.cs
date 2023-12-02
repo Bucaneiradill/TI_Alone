@@ -48,36 +48,14 @@ public class PlacementState : IBuildingState
 
     public void OnAction(Vector3 position)
     {
-
-        //bool placementValidity = CheckPlacementValidity(gridPosition, selectedObjectIndex);
-        bool placementValidity = true;
+        bool placementValidity = previewSystem.placementAvailable;
         if (placementValidity == false)
         {
-            soundFeedback.PlaySound(SoundType.wrongPlacement);
+            //soundFeedback.PlaySound(SoundType.wrongPlacement);
             return;
         }
         //soundFeedback.PlaySound(SoundType.Place);
-        int index = objectPlacer.PlaceObject(database.objectsData[selectedObjectIndex],
-            position);
-
-        //GridData selectedData = database.objectsData[selectedObjectIndex].iD == 0 ?
-        //    floorData :
-        //    furnitureData;
-        //selectedData.AddObjectAt(position,
-        //    Vector2Int.one,
-        //    database.objectsData[selectedObjectIndex].iD,
-        //    index);
-
-        //previewSystem.UpdatePosition(grid.CellToWorld(position), false);
-    }
-
-    private bool CheckPlacementValidity(Vector3Int gridPosition, int selectedObjectIndex)
-    {
-        GridData selectedData = database.objectsData[selectedObjectIndex].iD == 0 ?
-            floorData :
-            furnitureData;
-
-        return selectedData.CanPlaceObejctAt(gridPosition, Vector2Int.one);
+        objectPlacer.PlaceObject(database.objectsData[selectedObjectIndex], position);
     }
 
     public void UpdateState(Vector3 position)
