@@ -3,16 +3,12 @@ using UnityEngine;
 
 public class PreviewSystem : MonoBehaviour
 {
-    [SerializeField]
-    private float previewYOffset = 0.06f;
-
     private GameObject previewObject;
 
     [SerializeField]
     private Material previewMaterialPrefab;
     private Material previewMaterialInstance;
-
-    private Renderer cellIndicatorRenderer;
+    [SerializeField] LayerMask previewLayerMask;
 
     private void Start()
     {
@@ -50,15 +46,52 @@ public class PreviewSystem : MonoBehaviour
         if (previewObject != null)
         {
             MovePreview(position);
-            ApplyFeedbackToPreview(validity);
-
+            //checar aqui se o previewObject está colidindo com algo
+            bool isColliding = CheckCollision();
+            ApplyFeedbackToPreview(!isColliding);
         }
     }
+
+    private bool CheckCollision()
+    {
+        // Obter renderers do objeto de preview
+        Renderer[] renderers = previewObject.GetComponentsInChildren<Renderer>();
+
+        // Inicializar o tamanho do objeto de preview
+        Bounds bounds = new Bounds(previewObject.transform.position, Vector3.zero);
+
+        // Calcular os limites combinados dos renderers
+        foreach (Renderer renderer in renderers)
+        {
+            bounds.Encapsulate(renderer.bounds);
+        }
+
+        // Verificar colisões usando um cubo de colisão ao redor do objeto de preview
+        Collider[] colliders = Physics.OverlapBox(bounds.center, bounds.extents, Quaternion.identity, previewLayerMask);
+
+        foreach (Collider collider in colliders)
+        {
+            if (collider.gameObject == previewObject)
+            {
+                Physics.IgnoreCollision(previewObject.GetComponent<Collider>(), collider);
+            }
+        }
+
+        // Se houver colisões, trate-as aqui
+        if (colliders.Length > 0)
+        {
+            // Faça algo quando houver colisões, se necessário
+            Debug.Log("Colidindo com: " + colliders[0].gameObject.name);
+            return true;
+        }
+
+        return false;
+    }
+
 
     private void ApplyFeedbackToPreview(bool validity)
     {
         Color c = validity ? Color.white : Color.red;
-
         c.a = 0.5f;
         previewMaterialInstance.color = c;
     }

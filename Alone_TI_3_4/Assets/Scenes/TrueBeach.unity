@@ -60353,8 +60353,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46660d9547e7df14e805b129d6725180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  previewYOffset: 0.06
   previewMaterialPrefab: {fileID: 2100000, guid: 4915ae4d91d6eab44b9985fdeb4bab1d, type: 2}
+  previewLayerMask:
+    serializedVersion: 2
+    m_Bits: 947
 --- !u!1001 &1740245951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61590,6 +61592,14 @@ PrefabInstance:
       propertyPath: PlayerPosition
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6152589042288136838, guid: 868afa8295cfc51488cff383d4eca4da, type: 3}
+      propertyPath: items.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6152589042288136838, guid: 868afa8295cfc51488cff383d4eca4da, type: 3}
+      propertyPath: items.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 497bd75a610e1fe4783c0471f6124d29, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 868afa8295cfc51488cff383d4eca4da, type: 3}
 --- !u!1001 &1791205981
