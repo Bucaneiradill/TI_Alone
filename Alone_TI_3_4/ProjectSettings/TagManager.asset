@@ -18,6 +18,7 @@ TagManager:
   - ColectableSource
   - Colectable
   - MapPoint
+  - Cursor
   - fishLayer
   - 
   - 

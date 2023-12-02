@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e382da6795bb4642ab227542ab983ad, type: 3}
+  m_Name: Campfire
+  m_EditorClassIdentifier: 
+  PrefabItem: {fileID: 919132149155446097, guid: 830a32edfa538e044b39c71b2ed3f88c, type: 3}
+  iD: 0
+  name: Fogueira
+  icon: {fileID: 21300000, guid: 0473c79bb86fac74c8f1fedb29809617, type: 3}
+  Derscription: 
+  isDefaultItem: 0
+  isEquipable: 0
+  isConsumable: 0
+  isPlaceable: 1
+  maxStackSize: 0
+  ingredients:
+  - {fileID: 11400000, guid: 49785011511d4c34da614e7a0d6983a3, type: 2}
+  - {fileID: 11400000, guid: 49785011511d4c34da614e7a0d6983a3, type: 2}
+  - {fileID: 11400000, guid: 49785011511d4c34da614e7a0d6983a3, type: 2}
+  - {fileID: 11400000, guid: f34a1b39a03900b4c9779c1402e112ea, type: 2}
+  - {fileID: 11400000, guid: f34a1b39a03900b4c9779c1402e112ea, type: 2}
+  - {fileID: 11400000, guid: f34a1b39a03900b4c9779c1402e112ea, type: 2}

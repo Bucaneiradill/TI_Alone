@@ -11,6 +11,11 @@ public class MousePosition : MonoBehaviour
     public NavMeshAgent agent;
     Interactable interactable;
 
+    [Header("Building")]
+    bool buildMode = false;
+    public event Action OnClicked, OnExit;
+    [SerializeField] private LayerMask placementLayermask;
+
     void Update()
     {
         if (EventSystem.current.IsPointerOverGameObject())
@@ -21,7 +26,7 @@ public class MousePosition : MonoBehaviour
         interactable?.HideOutline();
         interactable = null;
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-        if(Physics.Raycast(ray, out RaycastHit rayCastHit, float.MaxValue, layerMask))
+        if (Physics.Raycast(ray, out RaycastHit rayCastHit, float.MaxValue, layerMask))
         {
             transform.position = rayCastHit.point;
             interactable = rayCastHit.collider.gameObject.GetComponentInParent<Interactable>();
@@ -35,15 +40,38 @@ public class MousePosition : MonoBehaviour
             }
             if (Input.GetMouseButtonDown(0) && playerActions.canAct)
             {
-                if (interactable != null)
+                if (buildMode)
                 {
-                    SetTarget(interactable);
-                } else {
-                    playerActions.RemoveTarget();
-                    playerActions.MoveToPoint(rayCastHit.point);
+                    OnClicked?.Invoke();
+                }
+                else
+                {
+                    if (interactable != null)
+                    {
+                        SetTarget(interactable);
+                    }
+                    else
+                    {
+                        playerActions.RemoveTarget();
+                        playerActions.MoveToPoint(rayCastHit.point);
+                    }
                 }
             }
         }
+        if (Input.GetKeyDown(KeyCode.Escape) && buildMode) OnExit?.Invoke();
+    }
+
+    public bool IsPointerOverUI()
+        => EventSystem.current.IsPointerOverGameObject();
+
+    public Vector3 GetSelectedMapPosition()
+    {
+        return transform.position;
+    }
+
+    public void ChangeBuildMode()
+    {
+        buildMode = !buildMode;
     }
 
     void SetTarget(Interactable newTarget)

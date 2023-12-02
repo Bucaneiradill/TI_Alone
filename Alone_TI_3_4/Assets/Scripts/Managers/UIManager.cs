@@ -73,7 +73,7 @@ public class UIManager : MonoBehaviour
     Saída:      -
     ------------------------------------------------------------------------------*/
     public void Close(){
-        if (openIDs.Count == 0){ //Verifica se tem algum painel aberto, caso não tenha abra asa configurações e saia do codigo
+        if (openIDs.Count == 0 && PlacementSystem.instance.buildingState == null){ //Verifica se tem algum painel aberto, caso não tenha abra asa configurações e saia do codigo
             Open(settings); 
             return;  
         }

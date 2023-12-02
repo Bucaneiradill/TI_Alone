@@ -66,10 +66,8 @@ public class AnimalMachine : MonoBehaviour
         {
             
            index =Random.Range(0,4); 
-           Debug.Log("RandomIndex="+index);
                  
         }
-        Debug.Log("Out index"+index);
         
         agent.SetDestination(PatrolPoints[index].transform.position);    
       

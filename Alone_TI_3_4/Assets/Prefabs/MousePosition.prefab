@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1746640722018967439}
   - component: {fileID: 1746640722018967440}
   - component: {fileID: 1746640722018967441}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,6 +116,9 @@ MonoBehaviour:
     m_Bits: 448
   playerActions: {fileID: 0}
   agent: {fileID: 0}
+  placementLayermask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1746640723658876859
 GameObject:
   m_ObjectHideFlags: 0
