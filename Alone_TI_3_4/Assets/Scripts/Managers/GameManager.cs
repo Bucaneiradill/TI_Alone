@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public bool calm;
     [SerializeField] public bool unstable;
     [SerializeField] public bool insane;
-
+     
     //methods
     //metodo de preservar o GameManger
     void Awake(){
@@ -263,5 +263,18 @@ public class GameManager : MonoBehaviour
     void Update(){
         MaxALL();
     }
-    
+    //Salvar o GamaManager
+    public GameManagerData GetGameManager(){
+        GameManagerData data = new GameManagerData(life,hunger,thirst,sanity);
+        return data;
+    }
+    //load do save
+    public void SetGameManagerData(GameManagerData data){
+        life = data.life;
+        hunger = data.hunger;
+        thirst = data.thirst;
+        sanity = data.sanity;
+        //TimeManager.instance.updateDayCycle();
+    }
+
 }

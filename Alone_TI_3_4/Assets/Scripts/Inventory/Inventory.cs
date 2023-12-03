@@ -106,4 +106,15 @@ public class Inventory : MonoBehaviour
     {
         return items.Contains(item);
     }
+
+    //save inventory
+    public InventoryData GetInventoryData(){
+        InventoryData data = new InventoryData(items);
+        return data;
+    }
+    //load
+    public void SetInventoryData(InventoryData data){
+        items = data.inventoryDataItens;
+        if(onItemChangeCallBack != null) onItemChangeCallBack.Invoke();
+    }
 }

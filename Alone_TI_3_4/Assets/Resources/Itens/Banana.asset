@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bffa61ec682f4034c8491e45196d9f2d, type: 3}
   m_Name: Banana
   m_EditorClassIdentifier: 
-  itemType: 1
   PrefabItem: {fileID: 4337459113726495721, guid: e784b5fa70ce44240942b70774a05b9b, type: 3}
   iD: 0
   name: Banana
@@ -23,5 +22,5 @@ MonoBehaviour:
   isConsumable: 1
   maxStackSize: 99
   ingredients: []
-  foodVal: 5
-  drinkVal: 10
+  foodVal: 10
+  drinkVal: 5

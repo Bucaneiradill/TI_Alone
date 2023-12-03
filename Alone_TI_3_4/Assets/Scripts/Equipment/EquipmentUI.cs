@@ -57,4 +57,16 @@ public class EquipmentUI : MonoBehaviour
     {
         slots[slotIndex].ClearSlot();
     }
+    
+    //save da HotBar
+    public HotBarData GetHotBar(){
+        HotBarData data = new HotBarData(slots);
+        return data;
+    }
+    //Load da HotBar
+    public void SetHotBar(EquipmentSlot[] equipmentSlots){
+      for(int i = 0; i < equipmentSlots.Length; i++){
+            slots[i] = equipmentSlots[i];
+       }
+    }
 }
