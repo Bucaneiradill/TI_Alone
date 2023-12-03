@@ -53,7 +53,7 @@ public class SceneFader : MonoBehaviour {
 			UIManager.instance.LoadMenu();
 		else
 			UIManager.instance.LoadScene();
-
+			
 		SceneManager.LoadScene(scene);
 	}
 

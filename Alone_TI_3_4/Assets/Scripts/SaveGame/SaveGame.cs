@@ -12,23 +12,26 @@ class SceneData{
 
 public class SaveGame : MonoBehaviour
 {
+    public static SaveGame instance;
     string path;
     void Awake(){
         path = Application.dataPath + "/save.txt";
+         if(instance == null){
+            instance = this;
+        }else{
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(this.gameObject);
     }
     public void Update(){
         if(Input.GetKeyDown(KeyCode.S)){
             Save();
         }
-        if(Input.GetKeyDown(KeyCode.L)){
-            Load();
-        }
-    }
-    public void OnButtonEnter(){
         
     }
+    
 
-    void Save(){
+    public void Save(){
         SceneData data = new SceneData();
         //NPCs
         EnemySave[] enemies = FindObjectsOfType<EnemySave>();
@@ -51,7 +54,7 @@ public class SaveGame : MonoBehaviour
         Debug.Log("S");
         File.WriteAllText(path, s);
     }
-    void Load(){
+    public void Load(){
         //player locate        
         PlayerActions player = FindObjectOfType<PlayerActions>();
         player.agent.ResetPath();

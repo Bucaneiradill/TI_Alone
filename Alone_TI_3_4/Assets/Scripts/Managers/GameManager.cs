@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public bool calm;
     [SerializeField] public bool unstable;
     [SerializeField] public bool insane;
-
+     
     //methods
     //metodo de preservar o GameManger
     void Awake(){
