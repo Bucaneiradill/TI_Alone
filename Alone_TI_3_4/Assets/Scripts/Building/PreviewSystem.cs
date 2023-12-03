@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PreviewSystem : MonoBehaviour
 {
@@ -20,6 +21,10 @@ public class PreviewSystem : MonoBehaviour
     public void StartShowingPlacementPreview(GameObject prefab)
     {
         previewObject = Instantiate(prefab);
+        if(previewObject.TryGetComponent(out NavMeshObstacle obstacle) == true)
+        {
+            obstacle.enabled = false;
+        }
         PreparePreview(previewObject);
     }
 
