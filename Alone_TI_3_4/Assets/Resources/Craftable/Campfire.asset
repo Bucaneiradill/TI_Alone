@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e382da6795bb4642ab227542ab983ad, type: 3}
   m_Name: Campfire
   m_EditorClassIdentifier: 
-  PrefabItem: {fileID: 919132149155446097, guid: 830a32edfa538e044b39c71b2ed3f88c, type: 3}
+  PrefabItem: {fileID: 5633067216899394577, guid: beb859d7a73cff846a27807d4ab28afb, type: 3}
   iD: 0
   name: Fogueira
-  icon: {fileID: 21300000, guid: 0473c79bb86fac74c8f1fedb29809617, type: 3}
+  icon: {fileID: 21300000, guid: 0a95f3373e6840a499b94cc3d53dee08, type: 3}
   Derscription: 
   isDefaultItem: 0
   isEquipable: 0
