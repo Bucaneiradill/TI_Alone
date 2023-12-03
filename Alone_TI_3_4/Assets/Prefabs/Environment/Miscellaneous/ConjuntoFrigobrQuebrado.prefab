@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5791200753410617217}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: ConjuntoFrigobrQuebrado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,9 +86,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1063395512428731470, guid: 7d9d2e2ef0e26ae438f1472d0ed61e38, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7d9d2e2ef0e26ae438f1472d0ed61e38, type: 3}
       propertyPath: m_Name
       value: GarrafasQuebradas
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7d9d2e2ef0e26ae438f1472d0ed61e38, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1425145829613395435, guid: 7d9d2e2ef0e26ae438f1472d0ed61e38, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838561733951512548, guid: 7d9d2e2ef0e26ae438f1472d0ed61e38, type: 3}
+      propertyPath: m_Layer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d9d2e2ef0e26ae438f1472d0ed61e38, type: 3}
@@ -148,9 +164,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1063395512428731470, guid: 7d9d2e2ef0e26ae438f1472d0ed61e38, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7d9d2e2ef0e26ae438f1472d0ed61e38, type: 3}
       propertyPath: m_Name
       value: GarrafasQuebradas (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7d9d2e2ef0e26ae438f1472d0ed61e38, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1425145829613395435, guid: 7d9d2e2ef0e26ae438f1472d0ed61e38, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838561733951512548, guid: 7d9d2e2ef0e26ae438f1472d0ed61e38, type: 3}
+      propertyPath: m_Layer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d9d2e2ef0e26ae438f1472d0ed61e38, type: 3}
@@ -210,9 +242,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8411987756848567153, guid: 01d272b2f6013ae4aaefc3e049ac7339, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 01d272b2f6013ae4aaefc3e049ac7339, type: 3}
       propertyPath: m_Name
       value: FrigobarQuebrado
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 01d272b2f6013ae4aaefc3e049ac7339, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2662638048195616931, guid: 01d272b2f6013ae4aaefc3e049ac7339, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708709757031228980, guid: 01d272b2f6013ae4aaefc3e049ac7339, type: 3}
+      propertyPath: m_Layer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01d272b2f6013ae4aaefc3e049ac7339, type: 3}
@@ -272,9 +320,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1063395512428731470, guid: 7d9d2e2ef0e26ae438f1472d0ed61e38, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7d9d2e2ef0e26ae438f1472d0ed61e38, type: 3}
       propertyPath: m_Name
       value: GarrafasQuebradas
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7d9d2e2ef0e26ae438f1472d0ed61e38, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1425145829613395435, guid: 7d9d2e2ef0e26ae438f1472d0ed61e38, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838561733951512548, guid: 7d9d2e2ef0e26ae438f1472d0ed61e38, type: 3}
+      propertyPath: m_Layer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d9d2e2ef0e26ae438f1472d0ed61e38, type: 3}

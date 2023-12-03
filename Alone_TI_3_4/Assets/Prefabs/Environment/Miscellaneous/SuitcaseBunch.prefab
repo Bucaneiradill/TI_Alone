@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4337501930253822958}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: SuitcaseBunch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,6 +89,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MalaDeCouro (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 830a32edfa538e044b39c71b2ed3f88c, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 830a32edfa538e044b39c71b2ed3f88c, type: 3}
 --- !u!4 &216041602208009581 stripped
@@ -151,6 +155,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MalaDeCouro
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 830a32edfa538e044b39c71b2ed3f88c, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 830a32edfa538e044b39c71b2ed3f88c, type: 3}
 --- !u!4 &4553438951302257522 stripped
@@ -212,6 +220,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 830a32edfa538e044b39c71b2ed3f88c, type: 3}
       propertyPath: m_Name
       value: MalaDeCouro (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 830a32edfa538e044b39c71b2ed3f88c, type: 3}
+      propertyPath: m_Layer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 830a32edfa538e044b39c71b2ed3f88c, type: 3}

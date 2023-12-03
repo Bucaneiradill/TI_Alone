@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2646062723395829738}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: BucketWithRod
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,6 +41,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2646062723395829738}
     m_Modifications:
+    - target: {fileID: -8817464968719111229, guid: 030b187e4e2873a4ba2cc2f7558d8afe, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 030b187e4e2873a4ba2cc2f7558d8afe, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -85,9 +89,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6556366588769973740, guid: 030b187e4e2873a4ba2cc2f7558d8afe, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 030b187e4e2873a4ba2cc2f7558d8afe, type: 3}
       propertyPath: m_Name
       value: Balde
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 030b187e4e2873a4ba2cc2f7558d8afe, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3955713797743698245, guid: 030b187e4e2873a4ba2cc2f7558d8afe, type: 3}
+      propertyPath: m_Layer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 030b187e4e2873a4ba2cc2f7558d8afe, type: 3}
@@ -151,6 +167,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VaraDePescar (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e3815d069a4f5f44f9cd933c23ddcc0c, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3815d069a4f5f44f9cd933c23ddcc0c, type: 3}
 --- !u!4 &1877654285372443762 stripped
@@ -212,6 +232,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e3815d069a4f5f44f9cd933c23ddcc0c, type: 3}
       propertyPath: m_Name
       value: VaraDePescar
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e3815d069a4f5f44f9cd933c23ddcc0c, type: 3}
+      propertyPath: m_Layer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3815d069a4f5f44f9cd933c23ddcc0c, type: 3}
