@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3372352003747990165}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: ConjuntoAcampamentoImprovisado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,9 +101,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8241199142583162874, guid: 40bb03d1310a6fc4d81eaae1c8e40f86, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -4184746214291826488, guid: 40bb03d1310a6fc4d81eaae1c8e40f86, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 40bb03d1310a6fc4d81eaae1c8e40f86, type: 3}
       propertyPath: m_Name
       value: TroncoCoqueiro
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 40bb03d1310a6fc4d81eaae1c8e40f86, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2408987030569148124, guid: 40bb03d1310a6fc4d81eaae1c8e40f86, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8972795842066188042, guid: 40bb03d1310a6fc4d81eaae1c8e40f86, type: 3}
+      propertyPath: m_Layer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40bb03d1310a6fc4d81eaae1c8e40f86, type: 3}
@@ -163,9 +183,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8390488059159393280, guid: 84df881a023488d4a8f92aea8dab3bb7, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 84df881a023488d4a8f92aea8dab3bb7, type: 3}
       propertyPath: m_Name
       value: FogaoPortatilQuebrado
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 84df881a023488d4a8f92aea8dab3bb7, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7734104665747764174, guid: 84df881a023488d4a8f92aea8dab3bb7, type: 3}
+      propertyPath: m_Layer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84df881a023488d4a8f92aea8dab3bb7, type: 3}
@@ -225,9 +257,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1259977170416995758, guid: 584d9faf4c802e148ae269151c81d7f1, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 452255961408653538, guid: 584d9faf4c802e148ae269151c81d7f1, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 584d9faf4c802e148ae269151c81d7f1, type: 3}
       propertyPath: m_Name
       value: Coqueiro (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 584d9faf4c802e148ae269151c81d7f1, type: 3}
+      propertyPath: m_Layer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 584d9faf4c802e148ae269151c81d7f1, type: 3}
@@ -287,9 +331,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4471571726245103513, guid: 2b056a1c681cd9c4ea357abe99a77d39, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2b056a1c681cd9c4ea357abe99a77d39, type: 3}
       propertyPath: m_Name
       value: PaDeSobrevivencia
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2b056a1c681cd9c4ea357abe99a77d39, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5905650911747977424, guid: 2b056a1c681cd9c4ea357abe99a77d39, type: 3}
+      propertyPath: m_Layer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b056a1c681cd9c4ea357abe99a77d39, type: 3}
@@ -349,9 +405,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6327563033559242862, guid: 88947f36e58c6f24dbaa1f5eef22f874, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -759347826107903011, guid: 88947f36e58c6f24dbaa1f5eef22f874, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 88947f36e58c6f24dbaa1f5eef22f874, type: 3}
       propertyPath: m_Name
       value: Esqueiro
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 88947f36e58c6f24dbaa1f5eef22f874, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8036902771979813557, guid: 88947f36e58c6f24dbaa1f5eef22f874, type: 3}
+      propertyPath: m_Layer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88947f36e58c6f24dbaa1f5eef22f874, type: 3}
@@ -411,9 +483,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1259977170416995758, guid: 584d9faf4c802e148ae269151c81d7f1, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 452255961408653538, guid: 584d9faf4c802e148ae269151c81d7f1, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 584d9faf4c802e148ae269151c81d7f1, type: 3}
       propertyPath: m_Name
       value: Coqueiro (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 584d9faf4c802e148ae269151c81d7f1, type: 3}
+      propertyPath: m_Layer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 584d9faf4c802e148ae269151c81d7f1, type: 3}
@@ -473,9 +557,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1259977170416995758, guid: 584d9faf4c802e148ae269151c81d7f1, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 452255961408653538, guid: 584d9faf4c802e148ae269151c81d7f1, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 584d9faf4c802e148ae269151c81d7f1, type: 3}
       propertyPath: m_Name
       value: Coqueiro
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 584d9faf4c802e148ae269151c81d7f1, type: 3}
+      propertyPath: m_Layer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 584d9faf4c802e148ae269151c81d7f1, type: 3}

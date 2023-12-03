@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1986935636663276601}
   - component: {fileID: 8109958652481277331}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: ConjuntoPedras
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,9 +112,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -5.681
       objectReference: {fileID: 0}
+    - target: {fileID: -4926519153600303083, guid: 512915bd2618f1b4cb0b6ae3cae1da8b, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -2504278060636774376, guid: 512915bd2618f1b4cb0b6ae3cae1da8b, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -432554936394449526, guid: 512915bd2618f1b4cb0b6ae3cae1da8b, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 512915bd2618f1b4cb0b6ae3cae1da8b, type: 3}
       propertyPath: m_Name
       value: PedraPontiaguda (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 512915bd2618f1b4cb0b6ae3cae1da8b, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1687211636182554999, guid: 512915bd2618f1b4cb0b6ae3cae1da8b, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760804049291942417, guid: 512915bd2618f1b4cb0b6ae3cae1da8b, type: 3}
+      propertyPath: m_Layer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 512915bd2618f1b4cb0b6ae3cae1da8b, type: 3}
@@ -174,9 +198,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4926519153600303083, guid: 512915bd2618f1b4cb0b6ae3cae1da8b, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -2504278060636774376, guid: 512915bd2618f1b4cb0b6ae3cae1da8b, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -432554936394449526, guid: 512915bd2618f1b4cb0b6ae3cae1da8b, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 512915bd2618f1b4cb0b6ae3cae1da8b, type: 3}
       propertyPath: m_Name
       value: PedraPontiaguda
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 512915bd2618f1b4cb0b6ae3cae1da8b, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1687211636182554999, guid: 512915bd2618f1b4cb0b6ae3cae1da8b, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760804049291942417, guid: 512915bd2618f1b4cb0b6ae3cae1da8b, type: 3}
+      propertyPath: m_Layer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 512915bd2618f1b4cb0b6ae3cae1da8b, type: 3}
@@ -248,9 +296,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -7.356
       objectReference: {fileID: 0}
+    - target: {fileID: -4926519153600303083, guid: 512915bd2618f1b4cb0b6ae3cae1da8b, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -2504278060636774376, guid: 512915bd2618f1b4cb0b6ae3cae1da8b, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -432554936394449526, guid: 512915bd2618f1b4cb0b6ae3cae1da8b, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 512915bd2618f1b4cb0b6ae3cae1da8b, type: 3}
       propertyPath: m_Name
       value: PedraPontiaguda (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 512915bd2618f1b4cb0b6ae3cae1da8b, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1687211636182554999, guid: 512915bd2618f1b4cb0b6ae3cae1da8b, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760804049291942417, guid: 512915bd2618f1b4cb0b6ae3cae1da8b, type: 3}
+      propertyPath: m_Layer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 512915bd2618f1b4cb0b6ae3cae1da8b, type: 3}
