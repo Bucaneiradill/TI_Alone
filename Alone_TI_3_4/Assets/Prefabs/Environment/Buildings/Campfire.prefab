@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7355438327284872227}
   - component: {fileID: 3673276127525209127}
   - component: {fileID: 8023849594496773077}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Campfire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,9 +114,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3192461847160232569, guid: 6c678aae6523dce429756caacdcebb03, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198026935679068139, guid: 6c678aae6523dce429756caacdcebb03, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6c678aae6523dce429756caacdcebb03, type: 3}
       propertyPath: m_Name
       value: Campfire
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6c678aae6523dce429756caacdcebb03, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2697052672765611388, guid: 6c678aae6523dce429756caacdcebb03, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c678aae6523dce429756caacdcebb03, type: 3}
