@@ -7,6 +7,8 @@ public class EquipmentUI : MonoBehaviour
 {
     public static EquipmentUI instance;
     public EquipmentSlot[] slots;
+    [SerializeField] Transform selection;
+    public int selectedSlot = 0;
 
     private void Awake()
     {
@@ -27,6 +29,7 @@ public class EquipmentUI : MonoBehaviour
         {
             slots[i].slotNumber.text = (i + 1).ToString();
         }
+        selection.position = slots[0].transform.position;
     }
 
     public int FindItem(Item item)
@@ -47,10 +50,17 @@ public class EquipmentUI : MonoBehaviour
         {
             if (slots[i].item == null)
             {
+                if(selectedSlot == i) EquipmentManager.instance.EquipItem(item);
                 slots[i].SetItem(item);
                 return;
             }
         }
+    }
+
+    public void UpdateHotbar(int index)
+    {
+        selectedSlot = index;
+        selection.position = slots[index].transform.position;
     }
 
     public void RemoveItem(int slotIndex)
