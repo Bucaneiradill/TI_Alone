@@ -22,9 +22,8 @@ public class EquipmentManager : MonoBehaviour
             {
                 if (numberPressed >= 1 && numberPressed <= EquipmentUI.instance.slots.Length)
                 {
-                    if (EquipmentUI.instance.slots[numberPressed - 1].item != null)
-                        EquipItem(EquipmentUI.instance.slots[numberPressed - 1].item);
-                    else UnequipItem();
+                    EquipItem(EquipmentUI.instance.slots[numberPressed - 1].item);
+                    EquipmentUI.instance.UpdateHotbar(numberPressed - 1);
                 }
             }
         }
@@ -32,6 +31,11 @@ public class EquipmentManager : MonoBehaviour
 
     public void EquipItem(Item item)
     {
+        if (item == null)
+        {
+            equippedItem = null;
+            return;
+        }
         if (item.isEquipable)
         {
             equippedItem = item;
