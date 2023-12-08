@@ -16,6 +16,7 @@ public class VignettePulse : MonoBehaviour
         m_Vignette.intensity.Override(1f);
         m_Vignette.color.Override(vignetteColor);
         m_Volume = PostProcessManager.instance.QuickVolume(gameObject.layer, 100f, m_Vignette);
+        GameManager.instance.updateVignette = UpdateMaxValue;
     }
     void Update()
     {
@@ -24,5 +25,13 @@ public class VignettePulse : MonoBehaviour
     void OnDestroy()
     {
         RuntimeUtilities.DestroyVolume(m_Volume, true, true);
+    }
+
+    public void UpdateMaxValue(int life)
+    {
+        if(life <= 10)
+        {
+            maxValue *= 2;
+        }
     }
 }
