@@ -6,11 +6,13 @@ public class Campfire : Interactable
 {
     bool turnedOn;
     [SerializeField] float effectRadius = 4f;
+    [SerializeField] Light fireLight;
 
     public override void Interact()
     {
         base.Interact();
         turnedOn = !turnedOn;
+        fireLight.gameObject.SetActive(turnedOn);
     }
 
     public override void Update()
