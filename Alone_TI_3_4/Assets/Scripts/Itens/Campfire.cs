@@ -7,37 +7,48 @@ public class Campfire : Interactable
     bool turnedOn;
     [SerializeField] float effectRadius = 4f;
     [SerializeField] Light fireLight;
+    [SerializeField] GameObject fireObject;
 
     public override void Interact()
     {
         base.Interact();
         turnedOn = !turnedOn;
         fireLight.gameObject.SetActive(turnedOn);
-    }
-
-    public override void Update()
-    {
-        base.Update();
-        if (turnedOn)
+        fireObject.SetActive(turnedOn);
+        if (!turnedOn)
         {
-            // Verificar se o jogador está dentro da esfera
+            GameManager.instance.nearFire = false;
+        }
+        else
+        {
             Collider[] colliders = Physics.OverlapSphere(transform.position, effectRadius);
 
             foreach (Collider collider in colliders)
             {
                 if (collider.CompareTag("Player"))
                 {
-                    // O jogador está dentro da área da fogueira
-                    Debug.Log("Player is inside campfire radius");
-                    // Faça o que precisar fazer quando o jogador estiver dentro da área
+                    GameManager.instance.nearFire = true;
                 }
             }
         }
     }
 
-    void OnDrawGizmosSelected()
+    private void OnTriggerEnter(Collider other)
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, effectRadius);
+        if (turnedOn)
+        {
+            if (other.CompareTag("Player"))
+            {
+                GameManager.instance.nearFire = true;
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            GameManager.instance.nearFire = false;
+        }
     }
 }

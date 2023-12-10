@@ -41,6 +41,8 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector] public delegate void UpdateVignette(int life);
     [HideInInspector] public UpdateVignette updateVignette;
+
+    [HideInInspector] public bool nearFire;
      
     //methods
     //metodo de preservar o GameManger
