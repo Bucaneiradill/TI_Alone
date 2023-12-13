@@ -31,10 +31,7 @@ public class TimeManager : MonoBehaviour
 
     void Start()
     {
-        //obj = transform.GetChild(0).gameObject;
-        /* //Tempo 
-         durationDay = 1440;
-         multiplicador = 86400 / durationDay;*/
+        setSpeedDay(1);
         //Tempo
         delay = dalayValue;
         
@@ -72,7 +69,11 @@ public class TimeManager : MonoBehaviour
         }
         if(cont >= 600){
             //Checar a sanidade
-            GameManager.instance?.toInsane(1); 
+            if(ClimateManager.instance.state == State.RAIN){
+              GameManager.instance?.toInsane(5); 
+            }else{
+             GameManager.instance?.toInsane(1); 
+            }           
             GameManager.instance?.sanityCheck();
             //Ficar com fome e sede
             if(GameManager.instance.calm == true){
@@ -89,6 +90,8 @@ public class TimeManager : MonoBehaviour
             cont = 0;             
             //Clima
             ClimateManager.instance?.ChangeState();
+            
+            
         }
         cont = cont + 1;
         cont2 = cont2 + 1;
@@ -99,17 +102,20 @@ public class TimeManager : MonoBehaviour
         if (mult == 1)
         {
             Debug.Log("1X");
+            Time.timeScale = 1;
             delay = dalayValue;
         }
         else if (mult == 2)
         {
             Debug.Log("2X");
-            delay = dalayValue/4;
+            Time.timeScale = 2;
+            //delay = dalayValue/4;
         }
         else if (mult == 3)
         {
             Debug.Log("3X");
-            delay = dalayValue/6;
+            Time.timeScale = 3;
+            //delay = dalayValue/6;
         }
     }
 
