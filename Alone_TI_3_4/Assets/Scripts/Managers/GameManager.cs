@@ -38,6 +38,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] public bool calm;
     [SerializeField] public bool unstable;
     [SerializeField] public bool insane;
+
+    [HideInInspector] public delegate void UpdateVignette(int life);
+    [HideInInspector] public UpdateVignette updateVignette;
+
+    [HideInInspector] public bool nearFire;
      
     //methods
     //metodo de preservar o GameManger
@@ -104,8 +109,8 @@ public class GameManager : MonoBehaviour
                 TimeManager.instance.isPlaying = false;
                 UIManager.instance?.ShowGameOver();
             }else{
-                damage(10);
-            }           
+                damage(5);
+            }
         }
     }
     public void damage(int val){
@@ -117,10 +122,14 @@ public class GameManager : MonoBehaviour
             TimeManager.instance.isPlaying = false;
             UIManager.instance?.ShowGameOver();
         }
-        else if(life <= 20 && !isLowLife)
+        else if(life <= 20)
         {
-            isLowLife = true;
-            vignette = Instantiate(vignettePrefab);
+            if (!isLowLife)
+            {
+                isLowLife = true;
+                vignette = Instantiate(vignettePrefab);
+            }
+            if(updateVignette != null) updateVignette(life);
         }
         Hud.instance?.updateLife(life);
     }

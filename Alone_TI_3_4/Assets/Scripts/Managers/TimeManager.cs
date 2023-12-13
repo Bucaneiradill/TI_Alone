@@ -72,7 +72,7 @@ public class TimeManager : MonoBehaviour
         }
         if(cont >= 600){
             //Checar a sanidade
-            GameManager.instance?.toInsane(1); 
+            GameManager.instance?.toInsane(GameManager.instance.nearFire ? 1 : 2); 
             GameManager.instance?.sanityCheck();
             //Ficar com fome e sede
             if(GameManager.instance.calm == true){

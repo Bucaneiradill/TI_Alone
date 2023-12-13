@@ -60547,7 +60547,7 @@ MonoBehaviour:
   previewMaterialPrefab: {fileID: 2100000, guid: 4915ae4d91d6eab44b9985fdeb4bab1d, type: 2}
   previewLayerMask:
     serializedVersion: 2
-    m_Bits: 947
+    m_Bits: 2994
   placementAvailable: 0
 --- !u!1001 &1740245951
 PrefabInstance:
@@ -61792,6 +61792,10 @@ PrefabInstance:
       propertyPath: items.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 497bd75a610e1fe4783c0471f6124d29, type: 2}
+    - target: {fileID: 6152589042288136838, guid: 868afa8295cfc51488cff383d4eca4da, type: 3}
+      propertyPath: items.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: d7d2a37e88aeb5646b62a2af9a6fe182, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 868afa8295cfc51488cff383d4eca4da, type: 3}
 --- !u!1001 &1791205981

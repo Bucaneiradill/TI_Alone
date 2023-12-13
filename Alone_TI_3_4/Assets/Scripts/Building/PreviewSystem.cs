@@ -25,6 +25,7 @@ public class PreviewSystem : MonoBehaviour
         {
             obstacle.enabled = false;
         }
+        previewObject.layer = LayerMask.NameToLayer("Preview");
         PreparePreview(previewObject);
     }
 
@@ -76,12 +77,14 @@ public class PreviewSystem : MonoBehaviour
 
         foreach (Collider collider in colliders)
         {
-            if (collider.gameObject == previewObject)
+            if (collider.gameObject.layer == LayerMask.NameToLayer("Preview"))
             {
+                Debug.Log(collider.gameObject.name);
                 Physics.IgnoreCollision(previewObject.GetComponent<Collider>(), collider);
             }
+            
         }
-
+        
         // Se houver colisões, trate-as aqui
         if (colliders.Length > 0)
         {
