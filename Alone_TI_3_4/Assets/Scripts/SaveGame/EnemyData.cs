@@ -5,5 +5,5 @@ using UnityEngine;
 public class EnemyData 
 {
     public Vector3 position;
-    public Vector3 rotation;
+    public Quaternion rotation;
 }

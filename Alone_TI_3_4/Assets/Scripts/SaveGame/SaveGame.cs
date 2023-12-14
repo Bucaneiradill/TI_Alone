@@ -6,13 +6,14 @@ class SceneData{
    public TimeManagerData timeManager;
    public PlayerData playerData;
    public InventoryData inventoryData;
-   //public HotBarData[] hotBarData;
    public EnemyData[] enemyData;
+   public BuildsData builds;
 }
 
 public class SaveGame : MonoBehaviour
 {
     public static SaveGame instance;
+    public GameObject[] animals;
     string path;
     void Awake(){
         path = Application.dataPath + "/save.txt";
@@ -48,7 +49,8 @@ public class SaveGame : MonoBehaviour
         data.playerData = new PlayerAdapter(player);
         //Inventory
         data.inventoryData = Inventory.instance.GetInventoryData();
-        //data.inventoryData = EquipmentUI.instance.GetHotBar();
+        //builds
+        data.builds = ObjectPlacer.instance.GetPlacedObj();
         //-------------------------
         string s = JsonUtility.ToJson(data, true);
         Debug.Log("S");
@@ -69,13 +71,19 @@ public class SaveGame : MonoBehaviour
         player.transform.eulerAngles = data.playerData.rotation;        
         //NPCs
         EnemySave[] enemies = FindObjectsOfType<EnemySave>();
-        for(int i = 0; i < data.enemyData.Length; i++){
+        foreach(EnemySave e in enemies){
+            Destroy(e.gameObject);
+        }
+        Instantiate(animals[1],data.enemyData[1].position,data.enemyData[1].rotation);
+        Instantiate(animals[0],data.enemyData[0].position,data.enemyData[0].rotation);
+        /*for(int i = 0; i < data.enemyData.Length; i++){
             enemies[i].transform.position = data.enemyData[i].position;
             enemies[i].transform.eulerAngles = data.enemyData[i].position;
-        }
+        }*/
         //Inventory
         InventoryUI.instance.ClearInventory();
         Inventory.instance.SetInventoryData(data.inventoryData);
-        //EquipmentUI.instance.SetHotBar(data.hotBarData);
+        //builds
+        ObjectPlacer.instance.SetPlacedObj(data.builds.placedObj);
     }
 }

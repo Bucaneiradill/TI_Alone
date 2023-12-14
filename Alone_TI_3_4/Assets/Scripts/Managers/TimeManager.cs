@@ -69,7 +69,7 @@ public class TimeManager : MonoBehaviour
         }
         if(cont >= 600){
             //Checar a sanidade
-            if(ClimateManager.instance.state == State.RAIN){
+            if(ClimateManager.instance.state == State.RAIN || seconds > 69304 || seconds < 21600){
               GameManager.instance?.toInsane(5); 
             }else{
              GameManager.instance?.toInsane(1); 

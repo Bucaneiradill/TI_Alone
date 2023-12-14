@@ -863,6 +863,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 646406bb43a749f48840ba810d991d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animals:
+  - {fileID: 3480207774763403203, guid: 1473ac8f0dbb7fd4988c1cd734ea096e, type: 3}
+  - {fileID: 2923284309798361958, guid: bb23a970ab60cc44889f6d7aac814d30, type: 3}
 --- !u!4 &1229991367
 Transform:
   m_ObjectHideFlags: 0
@@ -1363,6 +1366,14 @@ PrefabInstance:
     - target: {fileID: 3280795560382315571, guid: 06e028b875b33ad4da3ad76406aed234, type: 3}
       propertyPath: m_SizeDelta.y
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043759352999633203, guid: 06e028b875b33ad4da3ad76406aed234, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7422216769516570060, guid: 06e028b875b33ad4da3ad76406aed234, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7986875011510878537, guid: 06e028b875b33ad4da3ad76406aed234, type: 3}
       propertyPath: m_AnchorMax.x
