@@ -34171,6 +34171,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 646406bb43a749f48840ba810d991d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animals:
+  - {fileID: 3480207774763403203, guid: 1473ac8f0dbb7fd4988c1cd734ea096e, type: 3}
+  - {fileID: 2923284309798361958, guid: bb23a970ab60cc44889f6d7aac814d30, type: 3}
 --- !u!1001 &900457224
 PrefabInstance:
   m_ObjectHideFlags: 0

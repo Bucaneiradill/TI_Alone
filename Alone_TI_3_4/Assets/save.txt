@@ -1,31 +1,27 @@
 {
     "gameManager": {
-        "life": 100,
-        "hunger": 93,
-        "thirst": 92,
-        "sanity": 86
+        "life": 30,
+        "hunger": 30,
+        "thirst": 30,
+        "sanity": 80
     },
     "timeManager": {
-        "seconds": 25455
+        "seconds": 21747
     },
     "playerData": {
         "position": {
-            "x": 37.12052917480469,
-            "y": 5.5520524978637699,
-            "z": 208.4700469970703
+            "x": 38.05473327636719,
+            "y": 4.947670936584473,
+            "z": 200.4136505126953
         },
         "rotation": {
             "x": 0.0,
-            "y": 83.2926254272461,
+            "y": 296.1004638671875,
             "z": 0.0
         }
     },
     "inventoryData": {
-        "inventoryDataItens": [
-            {
-                "instanceID": 28282
-            }
-        ]
+        "inventoryDataItens": []
     },
     "enemyData": [
         {
@@ -58,7 +54,7 @@
     "builds": {
         "placedObj": [
             {
-                "instanceID": -1242304
+                "instanceID": -403302
             }
         ]
     }
