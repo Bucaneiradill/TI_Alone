@@ -6,22 +6,26 @@
         "sanity": 80
     },
     "timeManager": {
-        "seconds": 21747
+        "seconds": 21841
     },
     "playerData": {
         "position": {
-            "x": 38.05473327636719,
-            "y": 4.947670936584473,
-            "z": 200.4136505126953
+            "x": 38.124122619628909,
+            "y": 5.95147705078125,
+            "z": 210.75762939453126
         },
         "rotation": {
             "x": 0.0,
-            "y": 296.1004638671875,
+            "y": 357.888427734375,
             "z": 0.0
         }
     },
     "inventoryData": {
-        "inventoryDataItens": []
+        "inventoryDataItens": [
+            {
+                "instanceID": 29258
+            }
+        ]
     },
     "enemyData": [
         {
@@ -50,12 +54,5 @@
                 "w": 1.0
             }
         }
-    ],
-    "builds": {
-        "placedObj": [
-            {
-                "instanceID": -403302
-            }
-        ]
-    }
+    ]
 }

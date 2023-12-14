@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ObjectPlacer : MonoBehaviour
@@ -33,19 +34,15 @@ public class ObjectPlacer : MonoBehaviour
     }
     public BuildsData GetPlacedObj(){
         BuildsData data = new BuildsData(placedGameObjects);
+        
         return data;
     }
     public void SetPlacedObj(List<GameObject> placed){
-        
-        if(placedGameObjects != null){
-            int i = 0;
-            while(placedGameObjects != null){
-                RemoveObjectAt(i);
-                i++;
-            }   
-        }   
-        for(int j = 0; j <= placed.Count;j++){
-            PlaceObject(placed[j].GetComponent<Item>(),placed[j].GetComponent<Transform>().position);
+        placed.RemoveAll(item => item == null);
+        placedGameObjects = placed;       
+        foreach (GameObject obj in placed)
+        {
+        Instantiate(obj);
         }
     }
 }

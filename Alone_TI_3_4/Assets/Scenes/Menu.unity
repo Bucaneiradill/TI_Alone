@@ -866,6 +866,8 @@ MonoBehaviour:
   animals:
   - {fileID: 3480207774763403203, guid: 1473ac8f0dbb7fd4988c1cd734ea096e, type: 3}
   - {fileID: 2923284309798361958, guid: bb23a970ab60cc44889f6d7aac814d30, type: 3}
+  builds:
+  - {fileID: 919132149155446097, guid: 6c678aae6523dce429756caacdcebb03, type: 3}
 --- !u!4 &1229991367
 Transform:
   m_ObjectHideFlags: 0
