@@ -76,6 +76,7 @@ public class SceneFader : MonoBehaviour {
         }
 
 		TimeManager.instance.SkipTime();
+		yield return new WaitForSeconds(.5f);
 		StartCoroutine(FadeIn());
     }
 }
