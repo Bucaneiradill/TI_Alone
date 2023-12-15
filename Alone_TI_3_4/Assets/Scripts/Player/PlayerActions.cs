@@ -6,6 +6,7 @@ public class PlayerActions : MonoBehaviour
 {
     public NavMeshAgent agent;
     public Interactable target;
+    Vector3 point;
     public Animator anim;
     public bool canAct = true;
     float initialSpeed;
@@ -33,7 +34,7 @@ public class PlayerActions : MonoBehaviour
         }
         if(target == null) return;
         if(Vector3.Distance(transform.position, target.transform.position) < target.radius){
-            target.Interact(this.transform);
+            target.Interact(this.transform, point);
             agent.ResetPath();
             target = null;
         }    
@@ -68,6 +69,7 @@ public class PlayerActions : MonoBehaviour
     {
         RemoveTarget();
         MoveToPoint(point);
+        this.point = point;
         if(newTarget == null) return;
         if(newTarget != target){
             target = newTarget;

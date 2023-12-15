@@ -13,7 +13,7 @@ public class Interactable : MonoBehaviour
     protected PlayerActions playerActions;
     public int button;
     public int health = 5;
-
+    private Renderer renderer;
     public Outline outline;
     [SerializeField] Texture2D exclamationCursor;
 
@@ -29,15 +29,15 @@ public class Interactable : MonoBehaviour
         }
         this.outline.enabled = false;
     }
-    public void Interact(Transform player)
+    public void Interact(Transform player, Vector3 point)
     {
         playerActions = player.gameObject.GetComponent<PlayerActions>();
         if(button == 0){
-            Debug.Log("Ação basica" + gameObject.name);
             BaseAction();
         }else{
-            Debug.Log("Menu de ação" + gameObject.name);
-            UIManager.instance.AddActions(BaseAction,  SecundaryAction);
+            renderer = GetComponentInChildren<Renderer>();
+            Vector3 offset = renderer.bounds.center;
+            UIActions.instance.AddActions(BaseAction, SecundaryAction, point);
         }
     }
 

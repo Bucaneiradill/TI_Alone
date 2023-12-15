@@ -120,21 +120,7 @@ public class UIManager : MonoBehaviour
         foreach (var w in panels) w.SetActive(false);
         open = false;
     }
-    /*------------------------------------------------------------------------------
-    Função:     AddActions
-    Descrição:  Fecha todos os paineis
-    Entrada:    -
-    Saída:      -
-    ------------------------------------------------------------------------------*/
-    public void AddActions(UnityAction a1, UnityAction a2){
-        panelActions.SetActive(true);
-        b1.onClick.RemoveAllListeners();
-        b2.onClick.RemoveAllListeners();
-        b1.onClick.AddListener(a1);
-        b2.onClick.AddListener(a2);
-        b1.onClick.AddListener(ClosePanel);
-        b2.onClick.AddListener(ClosePanel);
-    }
+
     /*------------------------------------------------------------------------------
     Função:     ClosePanel
     Descrição:  Fecha todos os paineis

@@ -40,13 +40,13 @@ public class MousePosition : MonoBehaviour
  #region Inputs
     void RightButton(Interactable newTarget, Vector3 point){
             if (Input.GetMouseButtonDown(1) && playerActions.canAct){
-                UIManager.instance.ClosePanel();
+                UIActions.instance.ClosePanel();
                 playerActions.SetTarget(interactable, point, 1);
             }
     }
     void LeftButton(Interactable newTarget, Vector3 point){
             if (Input.GetMouseButtonDown(0) && playerActions.canAct){
-                UIManager.instance.ClosePanel();
+                UIActions.instance.ClosePanel();
                 playerActions.SetTarget(interactable, point, 0);
             }
     }
