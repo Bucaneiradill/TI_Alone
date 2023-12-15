@@ -6,6 +6,7 @@ using UnityEngine;
 public class ColectableSource : Interactable
 {
     [SerializeField] GameObject loot;
+    [SerializeField] Item item;
     [SerializeField] int lootAmount;
     [SerializeField] string lootName;
     [SerializeField] Transform dropPoint;
@@ -32,7 +33,13 @@ public class ColectableSource : Interactable
     }
 
     public override void SecundaryAction(){
-        
+        bool spaceInventory = Inventory.instance.CheckAndAddItem(item);
+        if (spaceInventory == true){
+            playerActions.Collect();
+        }
+        else{
+            //uiManager.DisplayAction("Inventário cheio");
+        }  
     }
 
     public void Hit()

@@ -8,12 +8,14 @@ public class UIActions : MonoBehaviour
 {
     public static UIActions instance;
 
-    RectTransform PanelTransform;
+    private RectTransform PanelTransform;
 
     [Header("Actions")]
-    public GameObject panelActions;
-    public Button b1;
-    public Button b2;
+    [SerializeField] Image Icon1;
+    [SerializeField] Image Icon2;
+    [SerializeField] GameObject panelActions;
+    [SerializeField] Button b1;
+    [SerializeField] Button b2;
 
     void Awake()
     {
@@ -39,9 +41,11 @@ public class UIActions : MonoBehaviour
     Saída:      -
     ------------------------------------------------------------------------------*/
 
-    public void AddActions(UnityAction a1, UnityAction a2, Vector3 position){
+    public void AddActions(UnityAction a1, UnityAction a2, Vector3 position, Sprite actionIcon1, Sprite actionIcon2){
         Debug.Log("Item: " + position);
         transform.position = position;
+        Icon1.sprite = actionIcon1;
+        Icon2.sprite = actionIcon2;
         PanelTransform.anchoredPosition = Vector3.zero;
         panelActions.SetActive(true);
         Debug.Log("Passei");

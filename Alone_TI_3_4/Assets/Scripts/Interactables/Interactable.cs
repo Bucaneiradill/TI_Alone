@@ -8,8 +8,8 @@ public class Interactable : MonoBehaviour
 {
     public float radius = 3f;
     public Transform player;
-    //public Sprite actionIcon1;
-    //public Sprite actionIcon2;
+    public Sprite actionIcon1 = null;
+    public Sprite actionIcon2 = null;
     protected PlayerActions playerActions;
     public int button;
     public int health = 5;
@@ -29,7 +29,7 @@ public class Interactable : MonoBehaviour
         }
         this.outline.enabled = false;
     }
-    public void Interact(Transform player, Vector3 point)
+    public void Interact(Transform player)
     {
         playerActions = player.gameObject.GetComponent<PlayerActions>();
         if(button == 0){
@@ -37,7 +37,7 @@ public class Interactable : MonoBehaviour
         }else{
             renderer = GetComponentInChildren<Renderer>();
             Vector3 offset = renderer.bounds.center;
-            UIActions.instance.AddActions(BaseAction, SecundaryAction, point);
+            UIActions.instance.AddActions(BaseAction, SecundaryAction, offset, actionIcon1, actionIcon2);
         }
     }
 
