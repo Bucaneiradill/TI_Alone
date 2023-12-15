@@ -14,12 +14,7 @@ public class BtnVelDay : MonoBehaviour
     {
         Ressetbtn(); 
     }
-    void Update()
-    {
-         if(Time.timeScale == 1){
-           Ressetbtn();
-         }
-    }
+    
     void Ressetbtn(){
         Color col = button.GetComponent<Image>().color;
         for(int i = 0; i<3; i++){

@@ -834,6 +834,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de267f9b05804714db4dab05f9bb2a1c, type: 3}
+--- !u!1 &1152824480 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1819781166177618343, guid: 06e028b875b33ad4da3ad76406aed234, type: 3}
+  m_PrefabInstance: {fileID: 1699819183}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1229991365
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,8 +871,8 @@ MonoBehaviour:
   animals:
   - {fileID: 3480207774763403203, guid: 1473ac8f0dbb7fd4988c1cd734ea096e, type: 3}
   - {fileID: 2923284309798361958, guid: bb23a970ab60cc44889f6d7aac814d30, type: 3}
-  builds:
-  - {fileID: 919132149155446097, guid: 6c678aae6523dce429756caacdcebb03, type: 3}
+  contructions:
+  - {fileID: 5633067216899394577, guid: beb859d7a73cff846a27807d4ab28afb, type: 3}
 --- !u!4 &1229991367
 Transform:
   m_ObjectHideFlags: 0
@@ -1213,6 +1218,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1819781166177618341, guid: 06e028b875b33ad4da3ad76406aed234, type: 3}
+      propertyPath: buttons.Array.data[0]
+      value: 
+      objectReference: {fileID: 1152824480}
+    - target: {fileID: 1819781166177618341, guid: 06e028b875b33ad4da3ad76406aed234, type: 3}
+      propertyPath: buttons.Array.data[1]
+      value: 
+      objectReference: {fileID: 1999815083}
+    - target: {fileID: 1819781166177618341, guid: 06e028b875b33ad4da3ad76406aed234, type: 3}
+      propertyPath: buttons.Array.data[2]
+      value: 
+      objectReference: {fileID: 2133129623}
     - target: {fileID: 1819781166190334109, guid: 06e028b875b33ad4da3ad76406aed234, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -1249,6 +1266,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1819781166620188679, guid: 06e028b875b33ad4da3ad76406aed234, type: 3}
+      propertyPath: buttons.Array.data[1]
+      value: 
+      objectReference: {fileID: 1999815083}
+    - target: {fileID: 1819781166620188679, guid: 06e028b875b33ad4da3ad76406aed234, type: 3}
+      propertyPath: buttons.Array.data[2]
+      value: 
+      objectReference: {fileID: 2133129623}
     - target: {fileID: 1819781166706148605, guid: 06e028b875b33ad4da3ad76406aed234, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -1620,3 +1645,13 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!1 &1999815083 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1819781166620188729, guid: 06e028b875b33ad4da3ad76406aed234, type: 3}
+  m_PrefabInstance: {fileID: 1699819183}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2133129623 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1819781165837755841, guid: 06e028b875b33ad4da3ad76406aed234, type: 3}
+  m_PrefabInstance: {fileID: 1699819183}
+  m_PrefabAsset: {fileID: 0}

@@ -9,14 +9,14 @@ class SceneData{
    public PlayerData playerData;
    public InventoryData inventoryData;
    public EnemyData[] enemyData;
-   //public BuildsData builds;
+   public BuildsData[] builds;
 }
 
 public class SaveGame : MonoBehaviour
 {
     public static SaveGame instance;
     public GameObject[] animals;
-
+    public GameObject[] contructions;
     string path;
     void Awake(){
         path = Application.dataPath + "/save.txt";
@@ -53,8 +53,11 @@ public class SaveGame : MonoBehaviour
         //Inventory
         data.inventoryData = Inventory.instance.GetInventoryData();
         //builds
-        //data.builds = ObjectPlacer.instance.GetPlacedObj();
-        //Debug.Log(data.builds.ToString());
+        BuildSave[] builds = FindObjectsOfType<BuildSave>();
+        data.builds = new BuildsData[builds.Length];
+        for(int i = 0; i < builds.Length; i++){
+            data.builds[i] = new BuildsAdapter(builds[i]);
+        }
         //-------------------------
         string s = JsonUtility.ToJson(data, true);
         Debug.Log("S");
@@ -78,15 +81,26 @@ public class SaveGame : MonoBehaviour
         foreach(EnemySave e in enemies){
             Destroy(e.gameObject);
         }
-        Instantiate(animals[1],data.enemyData[1].position,data.enemyData[1].rotation);
-        Instantiate(animals[0],data.enemyData[0].position,data.enemyData[0].rotation);
+        for(int i = 0; i <data.enemyData.Length;i++){
+            if(data.enemyData[i].name == "CrocodilePrefab"){
+               Instantiate(animals[1],data.enemyData[i].position,data.enemyData[i].rotation);
+            }
+            if(data.enemyData[i].name == "TigerPrefab"){
+               Instantiate(animals[0],data.enemyData[i].position,data.enemyData[i].rotation);
+            }
+        }    
         //Inventory
         InventoryUI.instance.ClearInventory();
         Inventory.instance.SetInventoryData(data.inventoryData);
         //builds
-        //foreach(BuildsData build in data.builds){
-        //GameObject objPrefab = Resources.Load<GameObject>(build.name);
+        BuildSave[] builds = FindObjectsOfType<BuildSave>();
+        foreach(BuildSave e in builds){
+            Destroy(e.gameObject);
+        }
+        for(int i = 0; i < data.builds.Length;i++){
+            if(data.builds[i].gameObjectName == "Campfire(Clone)"){
+            Instantiate(contructions[0],data.builds[i].pos,data.builds[i].rot);
+        }          
+        }
     }
-
-    
 }

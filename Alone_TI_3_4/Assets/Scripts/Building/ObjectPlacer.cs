@@ -33,9 +33,9 @@ public class ObjectPlacer : MonoBehaviour
         placedGameObjects[gameObjectIndex] = null;
     }
     public BuildsData GetPlacedObj(){
-        BuildsData data = new BuildsData(placedGameObjects);
         
-        return data;
+        
+        return null;
     }
     public void SetPlacedObj(List<GameObject> placed){
         placed.RemoveAll(item => item == null);
