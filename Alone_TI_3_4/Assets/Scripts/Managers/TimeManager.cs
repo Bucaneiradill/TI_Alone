@@ -44,6 +44,20 @@ public class TimeManager : MonoBehaviour
         //Sanidade
         GameManager.instance?.sanityCheck();
     }
+
+    public void SkipTime(int seconds = 21600)
+    {
+        this.seconds += seconds;
+        int curLife = GameManager.instance.life;
+        int curHunger = GameManager.instance.hunger;
+        int curThirst = GameManager.instance.thirst;
+        GameManager.instance.addLife(curLife + (curThirst+curHunger)/2);
+        GameManager.instance.addSanity(40);
+        GameManager.instance.toHungry(10);
+        GameManager.instance.toThirst(10);
+        prosCeu(seconds);
+        CalcTime(seconds);
+    }
     
     void CalcTime(float seconds)
     {
@@ -72,7 +86,7 @@ public class TimeManager : MonoBehaviour
         }
         if(cont >= 600){
             //Checar a sanidade
-            GameManager.instance?.toInsane(1); 
+            GameManager.instance?.toInsane(GameManager.instance.nearFire ? 1 : 2); 
             GameManager.instance?.sanityCheck();
             //Ficar com fome e sede
             if(GameManager.instance.calm == true){

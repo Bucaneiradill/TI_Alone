@@ -47,4 +47,4 @@ MonoBehaviour:
   m_Volume: {fileID: 0}
   m_Vignette: {fileID: 0}
   vignetteColor: {r: 1, g: 0.3160377, b: 0.3160377, a: 0}
-  maxValue: 0.3
+  maxValue: 0.4

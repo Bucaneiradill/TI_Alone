@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 1153362355988479449}
   - component: {fileID: 7404728806621353763}
   - component: {fileID: 1249314180418651107}
-  - component: {fileID: -2384259732749921909}
+  - component: {fileID: -8282615098721510184}
   m_Layer: 8
   m_Name: StoneB
   m_TagString: Untagged
@@ -287,12 +287,12 @@ NavMeshObstacle:
   m_GameObject: {fileID: 2519834521002097690}
   m_Enabled: 1
   serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_Shape: 0
+  m_Extents: {x: 0.3, y: 1, z: 0.3}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -0.3, z: -0.13}
   m_TimeToStationary: 0.5
 --- !u!114 &7404728806621353763
 MonoBehaviour:
@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f79ba14c0a3c6f429f049550677c516, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 3
+  radius: 2
   player: {fileID: 0}
   health: 10
   outline: {fileID: 0}
@@ -335,7 +335,7 @@ MonoBehaviour:
   time: 0
   obj: {fileID: 1612884735780000011}
   delay: 60
---- !u!82 &-2384259732749921909
+--- !u!82 &-8282615098721510184
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

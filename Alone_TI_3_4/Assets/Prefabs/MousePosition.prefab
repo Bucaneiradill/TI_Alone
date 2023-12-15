@@ -113,7 +113,7 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   layerMask:
     serializedVersion: 2
-    m_Bits: 448
+    m_Bits: 2496
   playerActions: {fileID: 0}
   agent: {fileID: 0}
   placementLayermask:
@@ -128,7 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1746640723658876857}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MousePosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}

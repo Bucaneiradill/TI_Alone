@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f79ba14c0a3c6f429f049550677c516, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 3
+  radius: 2
   player: {fileID: 0}
   health: 5
   outline: {fileID: 0}
@@ -178,6 +178,7 @@ MonoBehaviour:
   dropPoint: {fileID: 4739240464162030707}
   particlePoint: {fileID: 4739240464162030707}
   particle: {fileID: 3190041756260390103, guid: 161dcb31c3ddf9344961180b1746ce57, type: 3}
+  SaveHealth: 0
   obj: {fileID: 0}
   counterType: {fileID: 11400000, guid: ae517a8408777c6449e2bf96d78c73f8, type: 2}
 --- !u!208 &-6576499660876610042

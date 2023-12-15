@@ -36,7 +36,7 @@ public class Interactable : MonoBehaviour
         playerActions.agent.ResetPath();
     }
 
-    private void Update()
+    public virtual void Update()
     {
         if (isFocus && !hasInteracted)
         {
