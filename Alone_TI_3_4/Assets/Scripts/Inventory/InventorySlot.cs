@@ -93,9 +93,7 @@ public class InventorySlot : MonoBehaviour
             }
             else if (item.isConsumable)
             {
-                GameManager.instance.toEat(10);
-                GameManager.instance.toDrink(10);
-                OnDeletItemInventory();
+                item.PerformAction();
             }else if (item.isPlaceable)
             {
                 PlacementSystem.instance.StartPlacement(item.iD);
