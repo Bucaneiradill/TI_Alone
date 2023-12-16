@@ -11,8 +11,8 @@ public class UIActions : MonoBehaviour
     private RectTransform PanelTransform;
 
     [Header("Actions")]
-    [SerializeField] Image Icon1;
-    [SerializeField] Image Icon2;
+    [SerializeField] public Text text1;
+    [SerializeField] public Text text2;
     [SerializeField] GameObject panelActions;
     [SerializeField] Button b1;
     [SerializeField] Button b2;
@@ -41,14 +41,12 @@ public class UIActions : MonoBehaviour
     Saída:      -
     ------------------------------------------------------------------------------*/
 
-    public void AddActions(UnityAction a1, UnityAction a2, Vector3 position, Sprite actionIcon1, Sprite actionIcon2){
-        Debug.Log("Item: " + position);
+    public void AddActions(UnityAction a1, UnityAction a2, Vector3 position, string textAction1, string textAction2){
         transform.position = position;
-        Icon1.sprite = actionIcon1;
-        Icon2.sprite = actionIcon2;
+        text1.text = textAction1;
+        text2.text = textAction2;
         PanelTransform.anchoredPosition = Vector3.zero;
         panelActions.SetActive(true);
-        Debug.Log("Passei");
         b1.onClick.RemoveAllListeners();
         b2.onClick.RemoveAllListeners();
         b1.onClick.AddListener(a1);

@@ -274,6 +274,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 2.2
   player: {fileID: 0}
+  textAction1: Coletar
+  textAction2: Cancelar
   button: 0
   health: 5
   outline: {fileID: 0}

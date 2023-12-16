@@ -12,6 +12,8 @@ public class ColectableSource : Interactable
     [SerializeField] Transform dropPoint;
     [SerializeField] Transform particlePoint;
     [SerializeField] GameObject particle;
+    [SerializeField] int cooldown = 300;
+    int time = 0;
     
     public int SaveHealth;
     public GameObject obj;
@@ -33,15 +35,26 @@ public class ColectableSource : Interactable
     }
 
     public override void SecundaryAction(){
-        bool spaceInventory = Inventory.instance.CheckAndAddItem(item);
-        if (spaceInventory == true){
-            playerActions.Collect();
-        }
-        else{
-            //uiManager.DisplayAction("Inventário cheio");
-        }  
-    }
 
+        if (TimeManager.instance.seconds > time){
+            time = TimeManager.instance.seconds + cooldown;
+
+
+
+
+
+            bool spaceInventory = Inventory.instance.CheckAndAddItem(item);
+            if (spaceInventory == true){
+                playerActions.Collect();
+            }
+            else{
+                UIManager.instance.DisplayAction("Inventário cheio");
+            }
+        }else{
+            int timeres = ((time - TimeManager.instance.seconds)/60);
+            UIManager.instance.DisplayAction($"Faltam {timeres} mimutos para poder coletar de novo");
+        }
+    }
     public void Hit()
     {
         hitAudio?.Play();

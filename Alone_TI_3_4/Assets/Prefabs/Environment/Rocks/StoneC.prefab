@@ -274,8 +274,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 2
   player: {fileID: 0}
-  actionIcon1: {fileID: 0}
-  actionIcon2: {fileID: 0}
+  textAction1: Bater
+  textAction2: Coletar
   button: 0
   health: 10
   outline: {fileID: 0}

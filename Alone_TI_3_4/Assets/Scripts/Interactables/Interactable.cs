@@ -8,8 +8,8 @@ public class Interactable : MonoBehaviour
 {
     public float radius = 3f;
     public Transform player;
-    public Sprite actionIcon1 = null;
-    public Sprite actionIcon2 = null;
+    public string textAction1 = null;
+    public string textAction2 = "Cancelar";
     protected PlayerActions playerActions;
     public int button;
     public int health = 5;
@@ -37,7 +37,7 @@ public class Interactable : MonoBehaviour
         }else{
             renderer = GetComponentInChildren<Renderer>();
             Vector3 offset = renderer.bounds.center;
-            UIActions.instance.AddActions(BaseAction, SecundaryAction, offset, actionIcon1, actionIcon2);
+            UIActions.instance.AddActions(BaseAction, SecundaryAction, offset, textAction1, textAction2);
         }
     }
 

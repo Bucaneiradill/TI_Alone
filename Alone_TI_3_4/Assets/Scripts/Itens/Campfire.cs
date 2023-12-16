@@ -17,6 +17,7 @@ public class Campfire : Interactable
         if (!turnedOn)
         {
             GameManager.instance.nearFire = false;
+            textAction1 = "Acender";
         }
         else
         {
@@ -27,6 +28,7 @@ public class Campfire : Interactable
                 if (collider.CompareTag("Player"))
                 {
                     GameManager.instance.nearFire = true;
+                    textAction1 = "Apagar";
                 }
             }
         }

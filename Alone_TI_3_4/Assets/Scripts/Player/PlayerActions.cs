@@ -58,7 +58,6 @@ public class PlayerActions : MonoBehaviour
 
     void FaceTarget(){
         if(target == null) return;
-        Debug.Log("Olhei " + target.name) ;
         Vector3 directon = (target.transform.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(directon.x, 0f, directon.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.fixedDeltaTime * 5);
@@ -109,7 +108,6 @@ public class PlayerActions : MonoBehaviour
         }
     }
     public void Collect(){
-        Debug.Log("Collect");
         anim.SetTrigger("Collect");
     }
     public void InteractSource(){
