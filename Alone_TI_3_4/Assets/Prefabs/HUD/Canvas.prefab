@@ -452,12 +452,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1819781165500800134}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: ShowCredits
-        m_Mode: 1
+        m_MethodName: Open
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3480,6 +3480,9 @@ MonoBehaviour:
   panels:
   - {fileID: 1819781165334715247}
   - {fileID: 1819781167060313536}
+  - {fileID: 7482608818902876848}
+  - {fileID: 389291703606737795}
+  - {fileID: 6673669545075793961}
   keys: 1b00000069000000
   open: 0
   stack: 0
@@ -6170,12 +6173,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1819781165500800134}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: ShowPanel
-        m_Mode: 2
+        m_MethodName: Open
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 7482608818902876848}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 1
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -16157,12 +16160,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1819781165500800134}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: ShowControls
-        m_Mode: 1
+        m_MethodName: Open
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
