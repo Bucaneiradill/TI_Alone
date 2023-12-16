@@ -2,6 +2,7 @@ using UnityEngine;
 using System.IO;
 using System.Text.Json;
 using Palmmedia.ReportGenerator.Core.Common;
+using Unity.VisualScripting;
 
 class SceneData{
    public GameManagerData gameManager;
@@ -27,13 +28,6 @@ public class SaveGame : MonoBehaviour
         }
         DontDestroyOnLoad(this.gameObject);
     }
-    public void Update(){
-        if(Input.GetKeyDown(KeyCode.S)){
-            Save();
-        }
-        
-    }
-    
 
     public void Save(){
         SceneData data = new SceneData();
@@ -64,10 +58,11 @@ public class SaveGame : MonoBehaviour
         File.WriteAllText(path, s);
     }
     public void Load(){
+        if(path != null){
         //player locate        
         PlayerActions player = FindObjectOfType<PlayerActions>();
         player.agent.ResetPath();
-        string s =File.ReadAllText(path);
+        string s =File.ReadAllText(path);   
         SceneData data = JsonUtility.FromJson<SceneData>(s);
         //GameManager
         GameManager.instance.SetGameManagerData(data.gameManager);
@@ -100,7 +95,13 @@ public class SaveGame : MonoBehaviour
         for(int i = 0; i < data.builds.Length;i++){
             if(data.builds[i].gameObjectName == "Campfire(Clone)"){
             Instantiate(contructions[0],data.builds[i].pos,data.builds[i].rot);
-        }          
+            }  //Shelter(Clone)
+            if(data.builds[i].gameObjectName == "Shelter(Clone)"){
+            Instantiate(contructions[1],data.builds[i].pos,data.builds[i].rot);
+            }
+                 
         }
+        }
+        
     }
 }
