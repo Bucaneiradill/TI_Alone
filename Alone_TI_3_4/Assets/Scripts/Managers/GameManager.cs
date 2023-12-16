@@ -13,15 +13,17 @@ public class GameManager : MonoBehaviour
 
     //Variaveis do sistema de status
     [Header("Variaveis do sistema de status")]
-    [SerializeField] private int life;
+    [SerializeField] public int life;
     public int lifeMax = 100;
-    [SerializeField] private int hunger;
+    public bool canRecorver;
+    [SerializeField] public int hunger;
     public int hungerMax = 100;
-    [SerializeField] private int thirst;
+    [SerializeField] public int thirst;
     public int thirstMax = 100;
     [SerializeField] private int sanity;
     public int sanityMax = 100;
     public bool isLowLife;
+    protected int[] newGameStats = {30, 30, 30, 80};
 
     [SerializeField] GameObject vignettePrefab;
     GameObject vignette;
@@ -33,10 +35,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] AudioClip thirsty;
 
     [Header("Sanity")]
-    [SerializeField] private bool calm;
-    [SerializeField] private bool unstable;
-    [SerializeField] private bool insane;
+    [SerializeField] public bool calm;
+    [SerializeField] public bool unstable;
+    [SerializeField] public bool insane;
 
+    [HideInInspector] public delegate void UpdateVignette(int life);
+    [HideInInspector] public UpdateVignette updateVignette;
+
+    [HideInInspector] public bool nearFire;
+     
     //methods
     //metodo de preservar o GameManger
     void Awake(){
@@ -51,43 +58,45 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         //Ajustes dos sliders
-        addLife();
-        addHunger();
-        addThirst();
-        addSanity();
+        addLife(newGameStats[0]);
+        addHunger(newGameStats[1]);
+        addThirst(newGameStats[2]);
+        addSanity(newGameStats[3]);
         //reset();
         audioSource = GetComponent<AudioSource>();
+        canRecorver = false;
     }
     //metodos do sistema de status
-    public void addLife()
+    public void addLife(int life)
     {
-         life = 30;
+        this.life = life;
         Hud.instance?.UpdateVidaHud(lifeMax);
         Hud.instance?.updateLife(life);
     }
-    public void addHunger()
+    public void addHunger(int hunger)
     {
-         hunger = 30;
+        this.hunger = hunger;
         Hud.instance?.UpdateHungerHud(hungerMax);
         Hud.instance?.updateFood(hunger);
     }
-    public void addThirst()
+    public void addThirst(int thirst)
     {
-        thirst = 30;
+        this.thirst = thirst;
         Hud.instance?.UpdateThirstHud(thirstMax);
         Hud.instance?.updateWater(thirst);
     }  
-    public void addSanity(){
-        sanity = 80;
+    public void addSanity(int sanity){
+        
+        this.sanity = sanity;
         Hud.instance?.UpdateSanityHud(sanityMax);
         Hud.instance?.updateSanity(sanity);
     }
     //reset
     public void reset(){
-        addLife();
-        addHunger();
-        addThirst();
-        addSanity();
+        addLife(newGameStats[0]);
+        addHunger(newGameStats[1]);
+        addThirst(newGameStats[2]);
+        addSanity(newGameStats[3]);
         if(TimeManager.instance != null)
             TimeManager.instance.seconds = 21643;
         InventoryUI.instance.ClearInventory();
@@ -100,28 +109,34 @@ public class GameManager : MonoBehaviour
                 TimeManager.instance.isPlaying = false;
                 UIManager.instance?.ShowGameOver();
             }else{
-                damage(10);
-            }           
+                damage(5);
+            }
         }
     }
     public void damage(int val){
         life -= val;
+        toInsane(5);
         if (life <= 0)
         {
             //Debug.Log("Morreu");
             TimeManager.instance.isPlaying = false;
             UIManager.instance?.ShowGameOver();
         }
-        else if(life <= 20 && !isLowLife)
+        else if(life <= 20)
         {
-            isLowLife = true;
-            vignette = Instantiate(vignettePrefab);
+            if (!isLowLife)
+            {
+                isLowLife = true;
+                vignette = Instantiate(vignettePrefab);
+            }
+            if(updateVignette != null) updateVignette(life);
         }
         Hud.instance?.updateLife(life);
     }
     public void recover(int val){      
         if(life == lifeMax){
             life = lifeMax;
+            canRecorver = false;
             Hud.instance?.updateLife(life);
         }else{
             if(hunger >= 50 && thirst >= 50){
@@ -176,7 +191,7 @@ public class GameManager : MonoBehaviour
     public void toInsane(int val){
         if(sanity <= 0){
           sanity = 0;
-          Hud.instance?.updateWater(sanity);
+          Hud.instance?.updateSanity(sanity);
         }else{
            sanity -= val;
            Hud.instance?.updateSanity(sanity);
@@ -246,4 +261,29 @@ public class GameManager : MonoBehaviour
     public void gmTimeScaleOff(){
         Time.timeScale = 0; 
     }
+    public void MaxALL(){
+        if(Input.GetKeyDown(KeyCode.K)){
+             addLife(lifeMax);
+             addHunger(hungerMax);
+             addThirst(thirstMax);
+             addSanity(sanityMax);
+        }
+    }
+    void Update(){
+        MaxALL();
+    }
+    //Salvar o GamaManager
+    public GameManagerData GetGameManager(){
+        GameManagerData data = new GameManagerData(life,hunger,thirst,sanity);
+        return data;
+    }
+    //load do save
+    public void SetGameManagerData(GameManagerData data){
+        life = data.life;
+        hunger = data.hunger;
+        thirst = data.thirst;
+        sanity = data.sanity;
+        //TimeManager.instance.updateDayCycle();
+    }
+
 }

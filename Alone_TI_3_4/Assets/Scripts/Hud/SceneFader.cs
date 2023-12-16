@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using UnityEditor.SearchService;
 
 public class SceneFader : MonoBehaviour {
 
@@ -22,6 +23,11 @@ public class SceneFader : MonoBehaviour {
 	{
 		Debug.Log("Fade to " + scene);
 		StartCoroutine(FadeOut(scene));
+	}
+
+	public void SkipTime()
+	{
+		StartCoroutine(AltFadeOut());
 	}
 
 	IEnumerator FadeIn ()
@@ -53,8 +59,24 @@ public class SceneFader : MonoBehaviour {
 			UIManager.instance.LoadMenu();
 		else
 			UIManager.instance.LoadScene();
-
+			
 		SceneManager.LoadScene(scene);
 	}
 
+	IEnumerator AltFadeOut()
+	{
+        float t = 0f;
+
+        while (t < 1f)
+        {
+            t += Time.deltaTime;
+            float a = curve.Evaluate(t);
+            img.color = new Color(0f, 0f, 0f, a);
+			yield return 0;
+        }
+
+		TimeManager.instance.SkipTime();
+		yield return new WaitForSeconds(.5f);
+		StartCoroutine(FadeIn());
+    }
 }

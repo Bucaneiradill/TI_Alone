@@ -22,5 +22,5 @@ MonoBehaviour:
   isConsumable: 1
   maxStackSize: 99
   ingredients: []
-  foodVal: 5
-  drinkVal: 10
+  foodVal: 10
+  drinkVal: 5

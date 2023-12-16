@@ -14,6 +14,7 @@ public class AnimalMachine : MonoBehaviour
     public bool HasEnergy = true;
     public float energy;
     public Animator Animator;
+    public int index;
     
 
     void Start()
@@ -55,16 +56,25 @@ public class AnimalMachine : MonoBehaviour
     public void Move()
     {
         
-        int index = 0;
-        energy -= Time.fixedDeltaTime;
+       
+        
+        
         agent.speed= 3;
         Vector3 direcao = PatrolPoints[index].position-transform.position;
-        if(direcao.magnitude<=1.5f)
+         
+        if(direcao.magnitude<2.5f)
         {
-            index = Random.Range(0,4);
-            Debug.Log(index);
+            
+           index =Random.Range(0,4); 
+                 
         }
+        
         agent.SetDestination(PatrolPoints[index].transform.position);    
+      
+       
+
+        
+        
          
 
         if(energy<=0)

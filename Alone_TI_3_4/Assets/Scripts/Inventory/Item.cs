@@ -26,6 +26,7 @@ public abstract class Item : ScriptableObject
     public bool isDefaultItem = false;
     public bool isEquipable = false;
     public bool isConsumable = false;
+    public bool isPlaceable = false;
     public int maxStackSize;
     public List<Item> ingredients;
 }

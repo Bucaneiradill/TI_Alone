@@ -47,6 +47,7 @@ public class InventoryUI : MonoBehaviour
     void Start(){
         Inventory.instance.onItemChangeCallBack += UpdateUI;
         slots = itemsParent.GetComponentsInChildren<InventorySlot>(); //Pega todos os slots que são filhos do InventorySlot.
+        UpdateUI();
     }
     /*------------------------------------------------------------------------------
     Função:     UpdateUI

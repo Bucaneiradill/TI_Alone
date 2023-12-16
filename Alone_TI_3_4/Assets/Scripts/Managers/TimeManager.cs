@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using Unity.VisualScripting;
 
 public class TimeManager : MonoBehaviour
 {
@@ -20,7 +21,8 @@ public class TimeManager : MonoBehaviour
     public float delay;
     public string timeString;
     public bool isPlaying;
-    [SerializeField][Tooltip("Duração do dia em segundos")] public int seconds = 21643;
+    [SerializeField][Tooltip("Duração do dia em segundos")] public int seconds;
+    //valores de tempo: 6h da manha => 21600
     void Awake()
     {
         instance = this;
@@ -39,7 +41,22 @@ public class TimeManager : MonoBehaviour
         Invoke("TimeCount", delay);
         directionalLight = GameObject.Find("Directional_Light").transform;
         timeTxt = UIManager.instance.timeTxt;
-        
+        //Sanidade
+        GameManager.instance?.sanityCheck();
+    }
+
+    public void SkipTime(int seconds = 21600)
+    {
+        this.seconds += seconds;
+        int curLife = GameManager.instance.life;
+        int curHunger = GameManager.instance.hunger;
+        int curThirst = GameManager.instance.thirst;
+        GameManager.instance.addLife(curLife + (curThirst+curHunger)/2);
+        GameManager.instance.addSanity(40);
+        GameManager.instance.toHungry(10);
+        GameManager.instance.toThirst(10);
+        prosCeu(seconds);
+        CalcTime(seconds);
     }
     
     void CalcTime(float seconds)
@@ -48,11 +65,11 @@ public class TimeManager : MonoBehaviour
         timeTxt.text = timeString;//\:ss
     }
    
-    public void prosCeu()
+   /* public void prosCeu()
     { 
         //Debug.Log(seconds);
         float rotX = Mathf.Lerp(-90, 270, seconds/86400.0f);
-    }
+    }*/
 
     public void prosCeu(float seconds)
     {
@@ -68,16 +85,23 @@ public class TimeManager : MonoBehaviour
             cont2 = 0;
         }
         if(cont >= 600){
-            //ResourcesRespawn.instance.Respawn();
-            //Ficar com fome
-            GameManager.instance?.toHungry(1);
-            //Ficar com sede
-            GameManager.instance?.toThirst(1);
-            GameManager.instance?.hungryAndThirstDamage();
-            cont = 0;
             //Checar a sanidade
-            GameManager.instance?.toInsane(1);
+            GameManager.instance?.toInsane(GameManager.instance.nearFire ? 1 : 2); 
             GameManager.instance?.sanityCheck();
+            //Ficar com fome e sede
+            if(GameManager.instance.calm == true){
+                GameManager.instance?.toHungry(1);
+                GameManager.instance?.toThirst(1);
+            }else if(GameManager.instance.unstable == true){
+                GameManager.instance?.toHungry(3);
+                GameManager.instance?.toThirst(3);
+            }else if(GameManager.instance.insane == true){
+                GameManager.instance?.toHungry(5);
+                GameManager.instance?.toThirst(5);
+            }           
+            GameManager.instance?.hungryAndThirstDamage();
+            cont = 0;             
+            //Clima
             ClimateManager.instance?.ChangeState();
         }
         cont = cont + 1;
@@ -94,12 +118,12 @@ public class TimeManager : MonoBehaviour
         else if (mult == 2)
         {
             Debug.Log("2X");
-            delay = (dalayValue/4);
+            delay = dalayValue/4;
         }
         else if (mult == 3)
         {
             Debug.Log("3X");
-            delay = (dalayValue/6);
+            delay = dalayValue/6;
         }
     }
 
@@ -114,5 +138,14 @@ public class TimeManager : MonoBehaviour
     //bool play
     public void boolPlay(){
         isPlaying = !isPlaying;
+    }
+    // Salvar o TimeManager
+    public TimeManagerData GetTimeManagerData(){
+        TimeManagerData data = new TimeManagerData(seconds);
+        return data;
+    }
+    //Load do save
+    public void SetTimeManagerData(TimeManagerData data){
+        seconds = data.seconds;
     }
 }

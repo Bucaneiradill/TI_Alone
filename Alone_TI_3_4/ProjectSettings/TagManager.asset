@@ -19,9 +19,9 @@ TagManager:
   - ColectableSource
   - Colectable
   - MapPoint
-  - 
-  - 
-  - 
+  - Cursor
+  - Building
+  - Preview
   - 
   - 
   - 

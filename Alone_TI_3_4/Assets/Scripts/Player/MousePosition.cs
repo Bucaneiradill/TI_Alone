@@ -11,6 +11,11 @@ public class MousePosition : MonoBehaviour
     public NavMeshAgent agent;
     public Interactable interactable;
 
+    [Header("Building")]
+    bool buildMode = false;
+    public event Action OnClicked, OnExit;
+    [SerializeField] private LayerMask placementLayermask;
+
     void Update()
     {
         if (EventSystem.current.IsPointerOverGameObject())
@@ -21,7 +26,7 @@ public class MousePosition : MonoBehaviour
         interactable?.HideOutline();
         interactable = null;
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-        if(Physics.Raycast(ray, out RaycastHit rayCastHit, float.MaxValue, layerMask))
+        if (Physics.Raycast(ray, out RaycastHit rayCastHit, float.MaxValue, layerMask))
         {
             transform.position = rayCastHit.point;
             interactable = rayCastHit.collider.gameObject.GetComponentInParent<Interactable>();
@@ -36,19 +41,47 @@ public class MousePosition : MonoBehaviour
             RightButton(interactable, rayCastHit.point);
             LeftButton(interactable, rayCastHit.point);
         }
+        if (Input.GetKeyDown(KeyCode.Escape) && buildMode) OnExit?.Invoke();
     }
- #region Inputs
-    void RightButton(Interactable newTarget, Vector3 point){
-            if (Input.GetMouseButtonDown(1) && playerActions.canAct){
+
+    public bool IsPointerOverUI()
+        => EventSystem.current.IsPointerOverGameObject();
+
+    public Vector3 GetSelectedMapPosition()
+    {
+        return transform.position;
+    }
+
+    public void ChangeBuildMode()
+    {
+        buildMode = !buildMode;
+    }
+    #region Inputs
+    void RightButton(Interactable newTarget, Vector3 point)
+    {
+        if (Input.GetMouseButtonDown(1) && playerActions.canAct)
+        {
+            if (!buildMode)
+            {
                 UIActions.instance.ClosePanel();
                 playerActions.SetTarget(interactable, point, 1);
             }
+        }
     }
-    void LeftButton(Interactable newTarget, Vector3 point){
-            if (Input.GetMouseButtonDown(0) && playerActions.canAct){
+    void LeftButton(Interactable newTarget, Vector3 point)
+    {
+        if (Input.GetMouseButtonDown(0) && playerActions.canAct)
+        {
+            if (buildMode)
+            {
+                OnClicked?.Invoke();
+            }
+            else
+            {
                 UIActions.instance.ClosePanel();
                 playerActions.SetTarget(interactable, point, 0);
             }
+        }
     }
-   #endregion
+    #endregion
 }

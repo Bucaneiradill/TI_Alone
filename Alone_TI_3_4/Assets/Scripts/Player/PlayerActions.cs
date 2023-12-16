@@ -115,4 +115,6 @@ public class PlayerActions : MonoBehaviour
     public void InteractSource(){
         anim.SetTrigger("Interact");
     }
+
+    //save player
 }

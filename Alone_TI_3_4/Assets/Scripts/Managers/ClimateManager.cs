@@ -13,6 +13,7 @@ public class ClimateManager : MonoBehaviour
     public State state = State.SUN; 
     State currentState = State.SUN;
     public GameObject Light;
+    public GameObject VFX_chuva;
     Light lightComp;
     
     void Awake(){
@@ -22,6 +23,7 @@ public class ClimateManager : MonoBehaviour
     void Start()
     {
         lightComp = Light.GetComponent<Light>();
+        VFX_chuva.SetActive(false);
        ChangeState();
     }
 
@@ -37,23 +39,28 @@ public class ClimateManager : MonoBehaviour
          
         
     }
-    void Rain(){      
-        
-        lightComp.intensity = 0;
-        //state = State.SUN;
-       // Invoke("ChangeState", 8.0f);
+    void Rain(){   
+       // float fade = 1;    
+        VFX_chuva.SetActive(true);
+        /*do{
+            fade = fade- 0.1f;
+            lightComp.intensity = fade;
+        }while(lightComp.intensity == 0);*/
     }
     void Sun(){
-        
-        lightComp.intensity = 1;
-     // Invoke("ChangeState", 8.0f);
+        //float fade = 0;   
+        VFX_chuva.SetActive(false);
+        /*do{
+            fade = fade + 0.1f;
+            lightComp.intensity = fade;
+        }while(lightComp.intensity == 1);*/
     }
    
     public void ChangeState(){
         UIManager.instance?.DisplayAction("Trocando de clima");
         int i = Random.Range(0, 100);
         //Debug.Log("Valor do I >>>"+ i + " e "+ i%3);
-        if(i <= 50){
+        if(i <= 15){
          state = State.RAIN;
           UIManager.instance?.DisplayAction("Chovendo");
           //Debug.Log("RAIN");

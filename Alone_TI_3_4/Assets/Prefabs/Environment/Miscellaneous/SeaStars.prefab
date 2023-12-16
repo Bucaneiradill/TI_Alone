@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4708967962454046135}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: SeaStars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,9 +86,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -388389191966959437, guid: c7ae570912389d5409321867e1048a56, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c7ae570912389d5409321867e1048a56, type: 3}
       propertyPath: m_Name
       value: EstrelaDoMar
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c7ae570912389d5409321867e1048a56, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257682224211007146, guid: c7ae570912389d5409321867e1048a56, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7090354147966345965, guid: c7ae570912389d5409321867e1048a56, type: 3}
+      propertyPath: m_Layer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7ae570912389d5409321867e1048a56, type: 3}
@@ -160,9 +176,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -14.366
       objectReference: {fileID: 0}
+    - target: {fileID: -388389191966959437, guid: c7ae570912389d5409321867e1048a56, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c7ae570912389d5409321867e1048a56, type: 3}
       propertyPath: m_Name
       value: EstrelaDoMar (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c7ae570912389d5409321867e1048a56, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257682224211007146, guid: c7ae570912389d5409321867e1048a56, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7090354147966345965, guid: c7ae570912389d5409321867e1048a56, type: 3}
+      propertyPath: m_Layer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7ae570912389d5409321867e1048a56, type: 3}
@@ -234,9 +266,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -20.239
       objectReference: {fileID: 0}
+    - target: {fileID: -388389191966959437, guid: c7ae570912389d5409321867e1048a56, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c7ae570912389d5409321867e1048a56, type: 3}
       propertyPath: m_Name
       value: EstrelaDoMar (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c7ae570912389d5409321867e1048a56, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257682224211007146, guid: c7ae570912389d5409321867e1048a56, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7090354147966345965, guid: c7ae570912389d5409321867e1048a56, type: 3}
+      propertyPath: m_Layer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7ae570912389d5409321867e1048a56, type: 3}
@@ -308,9 +356,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -20.239
       objectReference: {fileID: 0}
+    - target: {fileID: -388389191966959437, guid: c7ae570912389d5409321867e1048a56, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c7ae570912389d5409321867e1048a56, type: 3}
       propertyPath: m_Name
       value: EstrelaDoMar (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c7ae570912389d5409321867e1048a56, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257682224211007146, guid: c7ae570912389d5409321867e1048a56, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7090354147966345965, guid: c7ae570912389d5409321867e1048a56, type: 3}
+      propertyPath: m_Layer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7ae570912389d5409321867e1048a56, type: 3}
