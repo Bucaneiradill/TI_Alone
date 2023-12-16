@@ -1,57 +1,35 @@
 {
     "gameManager": {
-        "life": 100,
-        "hunger": 100,
-        "thirst": 100,
-        "sanity": 100
+        "life": 30,
+        "hunger": 30,
+        "thirst": 30,
+        "sanity": 80
     },
     "timeManager": {
-        "seconds": 22085
+        "seconds": 21771
     },
     "playerData": {
         "position": {
-            "x": 37.371429443359378,
-            "y": 4.963697910308838,
-            "z": 205.7002410888672
+            "x": 43.65858840942383,
+            "y": 5.893553256988525,
+            "z": 203.91094970703126
         },
         "rotation": {
             "x": 0.0,
-            "y": 327.8612976074219,
+            "y": 18.674402236938478,
             "z": 0.0
         }
     },
     "inventoryData": {
-        "inventoryDataItens": []
+        "inventoryDataItens": [
+            {
+                "instanceID": 29484
+            },
+            {
+                "instanceID": 29486
+            }
+        ]
     },
     "enemyData": [],
-    "builds": [
-        {
-            "gameObjectName": "Shelter(Clone)",
-            "pos": {
-                "x": 40.79547119140625,
-                "y": 4.987707614898682,
-                "z": 207.78939819335938
-            },
-            "rot": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            }
-        },
-        {
-            "gameObjectName": "Campfire(Clone)",
-            "pos": {
-                "x": 46.11260986328125,
-                "y": 4.999083995819092,
-                "z": 204.78591918945313
-            },
-            "rot": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            }
-        }
-    ]
+    "builds": []
 }

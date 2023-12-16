@@ -59,18 +59,20 @@ public class SaveGame : MonoBehaviour
     }
     public void Load(){
         if(path != null){
+        //find save.txt
+        string s =File.ReadAllText(path);   
+        SceneData data = JsonUtility.FromJson<SceneData>(s);
         //player locate        
         PlayerActions player = FindObjectOfType<PlayerActions>();
         player.agent.ResetPath();
-        string s =File.ReadAllText(path);   
-        SceneData data = JsonUtility.FromJson<SceneData>(s);
+        //player
+        player.transform.position = data.playerData.position; 
+        player.transform.eulerAngles = data.playerData.rotation;
         //GameManager
         GameManager.instance.SetGameManagerData(data.gameManager);
         //TimeManager
         TimeManager.instance.SetTimeManagerData(data.timeManager);
-        //player
-        player.transform.position = data.playerData.position; 
-        player.transform.eulerAngles = data.playerData.rotation;        
+               
         //NPCs
         EnemySave[] enemies = FindObjectsOfType<EnemySave>();
         foreach(EnemySave e in enemies){
