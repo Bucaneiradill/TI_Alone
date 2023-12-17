@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73f2dc203c464b6499bfb08af59f4bcd, type: 3}
   m_Name: Axe
   m_EditorClassIdentifier: Assembly-CSharp::AxeItem
-  PrefabItem: {fileID: 8296075723943382770, guid: 5a8992625e3af0149aded70c20ec1f91, type: 3}
+  PrefabItem: {fileID: 1143957667558960069, guid: 5a8992625e3af0149aded70c20ec1f91, type: 3}
   iD: 0
   name: Machado
   icon: {fileID: 21300000, guid: 834f68c36466b09489f1ff54f340b23f, type: 3}
