@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 using TMPro;
 using System;
@@ -36,6 +37,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private bool calm;
     [SerializeField] private bool unstable;
     [SerializeField] private bool insane;
+
+    [Header("BoatQuest")]
+    public int BoatPartsCollected = 0;
+    
 
     //methods
     //metodo de preservar o GameManger
@@ -245,5 +250,17 @@ public class GameManager : MonoBehaviour
     }
     public void gmTimeScaleOff(){
         Time.timeScale = 0; 
+    }
+
+
+    public void CollectBoatPart(){
+
+        BoatPartsCollected = BoatPartsCollected+1;
+        Debug.Log("coletou"+ BoatPartsCollected + "partes do barco" );
+        if(BoatPartsCollected == 4)
+        {
+            SceneManager.LoadScene("Fuga");
+        }
+        
     }
 }
