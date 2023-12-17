@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7993568675647817363}
   - component: {fileID: 6431430326649784630}
   - component: {fileID: 9125964684622724604}
-  - component: {fileID: 2150232845070336076}
   - component: {fileID: -3889644006732427130}
-  m_Layer: 0
+  - component: {fileID: -345971639154350716}
+  m_Layer: 8
   m_Name: MayanAxe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7324274625278237737}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 41.76232, y: 3.7958884, z: 196.68835}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7324274625278237737}
-  m_Mesh: {fileID: -3536397180732387420, guid: 85a4178c57f5a2a44ad03c28ef8dd446, type: 3}
+  m_Mesh: {fileID: -3536397180732387420, guid: 55b630f4daa6b8040b84c5c40823d780, type: 3}
 --- !u!23 &9125964684622724604
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1e8ce87a4877926478123396c04c80fa, type: 2}
+  - {fileID: 2100000, guid: 8e1a08afa66a9c94fbc7cc5e4fdee03d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,24 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2150232845070336076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7324274625278237737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30125879e7bc29f469c90fe05ef613a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 3
-  player: {fileID: 0}
-  health: 0
-  outline: {fileID: 0}
-  item: {fileID: 11400000, guid: ae517a8408777c6449e2bf96d78c73f8, type: 2}
-  amount: 1
 --- !u!64 &-3889644006732427130
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -117,3 +99,25 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3536397180732387420, guid: 85a4178c57f5a2a44ad03c28ef8dd446, type: 3}
+--- !u!114 &-345971639154350716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7324274625278237737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2c1f57a2501e7d44938721276e5fb39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 3
+  player: {fileID: 0}
+  textAction1: Coletar
+  textAction2: Cancelar
+  button: 0
+  health: 0
+  outline: {fileID: 0}
+  exclamationCursor: {fileID: 2800000, guid: d3586b50751f28c48882ab3e1427c950, type: 3}
+  item: {fileID: 11400000, guid: ae517a8408777c6449e2bf96d78c73f8, type: 2}
+  amount: 1

@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StickAction : Interactable
+public class AxeAction : Interactable
 {
-
     [SerializeField] Item item;
+
     public int amount = 1;
 
     private void Start(){

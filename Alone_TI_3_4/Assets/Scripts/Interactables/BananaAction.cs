@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class BananaAction : Interactable
 {
-    UIManager uiManager;
-    [SerializeField] Item item;
 
+    [SerializeField] Item item;
     public int amount = 1;
 
     private void Start(){
         FindOutline();
-        uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
     }
 
     /*------------------------------------------------------------------------------
@@ -27,7 +25,7 @@ public class BananaAction : Interactable
             ObjectPickUp();
         }
         else{
-            uiManager.DisplayAction("Inventário cheio");
+            UIManager.instance.DisplayAction("Inventário cheio");
         }
     }
     /*------------------------------------------------------------------------------
@@ -48,7 +46,7 @@ public class BananaAction : Interactable
     Saída:      -
     ------------------------------------------------------------------------------*/
     public void ObjectPickUp(){
-        uiManager.DisplayAction($"Coletou {amount} {item.name}");
+        UIManager.instance.DisplayAction($"Coletou {amount} {item.name}");
         Destroy(gameObject);
     }
 

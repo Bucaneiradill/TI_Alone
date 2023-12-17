@@ -33,7 +33,6 @@ public class Campfire : Interactable
             }
         }
     }
-
     private void OnTriggerEnter(Collider other)
     {
         if (turnedOn)

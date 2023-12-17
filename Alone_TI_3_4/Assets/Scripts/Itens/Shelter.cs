@@ -16,10 +16,10 @@ public class Shelter : Interactable
         }
         else
         {
-            UIManager.instance.DisplayAction($"Você só pode dormir a cada {cooldown} segundos");
+            UIManager.instance.DisplayAction($"Vocï¿½ sï¿½ pode dormir a cada {cooldown} segundos");
         }
     }
-
+    
     IEnumerator UseCoolDown()
     {
         yield return new WaitForSeconds(cooldown);
