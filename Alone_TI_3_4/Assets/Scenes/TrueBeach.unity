@@ -34538,6 +34538,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 646406bb43a749f48840ba810d991d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animals: []
+  contructions: []
 --- !u!1001 &900457224
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41226,6 +41228,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1819781167122293757, guid: 06e028b875b33ad4da3ad76406aed234, type: 3}
       propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1819781167156588258, guid: 06e028b875b33ad4da3ad76406aed234, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1819781167252551052, guid: 06e028b875b33ad4da3ad76406aed234, type: 3}
@@ -76513,7 +76519,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7845228587449335851, guid: a0cce0d59a2b54d4d9834cb2880c46ed, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0cce0d59a2b54d4d9834cb2880c46ed, type: 3}
