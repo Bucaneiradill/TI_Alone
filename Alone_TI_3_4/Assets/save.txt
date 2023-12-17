@@ -1,27 +1,37 @@
 {
     "gameManager": {
-        "life": 100,
-        "hunger": 100,
-        "thirst": 100,
-        "sanity": 100
+        "life": 68,
+        "hunger": 14,
+        "thirst": 0,
+        "sanity": 30
     },
     "timeManager": {
-        "seconds": 21798
+        "seconds": 73386
     },
     "playerData": {
         "position": {
-            "x": 41.2818489074707,
-            "y": 5.99908447265625,
-            "z": 207.7783966064453
+            "x": 41.68364334106445,
+            "y": 2.8900656700134279,
+            "z": 191.82192993164063
         },
         "rotation": {
             "x": 0.0,
-            "y": 356.4595642089844,
+            "y": 166.62289428710938,
             "z": 0.0
         }
     },
     "inventoryData": {
-        "inventoryDataItens": []
+        "inventoryDataItens": [
+            {
+                "instanceID": 11500
+            },
+            {
+                "instanceID": 11626
+            },
+            {
+                "instanceID": 11538
+            }
+        ]
     },
     "enemyData": [
         {
@@ -53,5 +63,20 @@
             }
         }
     ],
-    "builds": []
+    "builds": [
+        {
+            "gameObjectName": "Shelter(Clone)",
+            "pos": {
+                "x": 51.19975280761719,
+                "y": 2.0077905654907228,
+                "z": 183.03958129882813
+            },
+            "rot": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            }
+        }
+    ]
 }

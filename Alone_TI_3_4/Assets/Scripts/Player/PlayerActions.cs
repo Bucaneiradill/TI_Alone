@@ -31,13 +31,13 @@ public class PlayerActions : MonoBehaviour
             anim.SetFloat("Speed", agent.velocity.magnitude);
             FaceTarget();
         }
+        Walk();
         if(target == null) return;
         if(Vector3.Distance(transform.position, target.transform.position) < target.radius){
             target.Interact(this.transform);
             agent.ResetPath();
             target = null;
         }    
-        Walk();
     }
     public void MoveToPoint(Vector3 point){
         agent.SetDestination(point);
@@ -96,6 +96,7 @@ public class PlayerActions : MonoBehaviour
     public void Walk()
     {
         if (Input.GetKey(KeyCode.LeftShift)){ 
+            Debug.Log("AII");
             anim.SetBool("Stealth", IsWalking);
             agent.speed = walkSpeed;
             IsWalking = true;
@@ -113,6 +114,4 @@ public class PlayerActions : MonoBehaviour
     public void InteractSource(){
         anim.SetTrigger("Interact");
     }
-
-    //save player
 }
