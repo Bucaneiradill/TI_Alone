@@ -1,8 +1,5 @@
 using UnityEngine;
 using System.IO;
-using System.Text.Json;
-using Palmmedia.ReportGenerator.Core.Common;
-using Unity.VisualScripting;
 
 class SceneData{
    public GameManagerData gameManager;
