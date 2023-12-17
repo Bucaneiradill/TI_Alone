@@ -1,6 +1,6 @@
 using UnityEngine;
 
-//Classe resposável por receber eventos de animação
+//Classe resposï¿½vel por receber eventos de animaï¿½ï¿½o
 
 public class AnimationEvents : MonoBehaviour
 {
@@ -23,17 +23,20 @@ public class AnimationEvents : MonoBehaviour
 
     public void Hit()
     {
-        if (player.target.GetType() == typeof(ColectableSource))
-        {
-            player.target.GetComponent<ColectableSource>().Hit();
+        /*
+        Debug.Log(layer.target);
+        if(player.target.TryGetComponent<Interactable>(out Interactable obj)){
+            obj.Hit();
+        }else{
+            Debug.Log("Item nÃ£o interagivel " + obj.gameObject.name);
         }
+        */
     }
-
+ 
     public void ObjectPickUp()
     {
-        if (player.target.GetType() == typeof(Object))
-        {
-            player.target.GetComponent<Object>().ObjectPickUp();
-        }
+        /*
+        player.target.GetComponent<Interactable>().ObjectPickUp();
+        */
     }
 }

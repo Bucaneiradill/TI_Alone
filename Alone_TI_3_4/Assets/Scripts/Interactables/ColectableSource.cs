@@ -6,11 +6,14 @@ using UnityEngine;
 public class ColectableSource : Interactable
 {
     [SerializeField] GameObject loot;
+    [SerializeField] Item item;
     [SerializeField] int lootAmount;
     [SerializeField] string lootName;
     [SerializeField] Transform dropPoint;
     [SerializeField] Transform particlePoint;
     [SerializeField] GameObject particle;
+    [SerializeField] int cooldown = 300;
+    int time = 0;
     
     public int SaveHealth;
     public GameObject obj;
@@ -25,12 +28,33 @@ public class ColectableSource : Interactable
         FindOutline();
     }
 
-    public override void Interact()
+    public override void BaseAction()
     {
-        base.Interact();
-        player.gameObject.GetComponent<PlayerActions>().anim.SetTrigger("Interact");
+        playerActions.InteractSource();
+        Hit();
     }
 
+    public override void SecundaryAction(){
+
+        if (TimeManager.instance.seconds > time){
+            time = TimeManager.instance.seconds + cooldown;
+
+
+
+
+
+            bool spaceInventory = Inventory.instance.CheckAndAddItem(item);
+            if (spaceInventory == true){
+                playerActions.Collect();
+            }
+            else{
+                UIManager.instance.DisplayAction("Inventário cheio");
+            }
+        }else{
+            int timeres = ((time - TimeManager.instance.seconds)/60);
+            UIManager.instance.DisplayAction($"Faltam {timeres} mimutos para poder coletar de novo");
+        }
+    }
     public void Hit()
     {
         hitAudio?.Play();
@@ -59,7 +83,7 @@ public class ColectableSource : Interactable
             GameObject lootInstance;
             lootInstance = Instantiate(loot, dropPoint ? dropPoint.position : transform.position, Quaternion.identity);
             //Destroy(gameObject);
-            lootInstance.gameObject.GetComponent<Object>().amount = lootAmount;
+            //lootInstance.gameObject.GetComponent<Interactable>().amount = lootAmount;
             GameObject obj;
             obj = transform.GetChild(0).gameObject;
             obj.SetActive(false);

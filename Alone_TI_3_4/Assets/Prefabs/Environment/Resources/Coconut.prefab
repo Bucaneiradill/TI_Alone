@@ -259,8 +259,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4498214085217130072}
   - component: {fileID: 8662324554678935849}
-  - component: {fileID: 1417271478}
   - component: {fileID: 1417271479}
+  - component: {fileID: 2195355130995781760}
   m_Layer: 8
   m_Name: Coconut
   m_TagString: Untagged
@@ -313,25 +313,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 4498491371135267264}
   m_Enabled: 1
---- !u!114 &1417271478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3830044629709278434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30125879e7bc29f469c90fe05ef613a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 2.1
-  player: {fileID: 0}
-  health: 5
-  outline: {fileID: 0}
-  exclamationCursor: {fileID: 0}
-  item: {fileID: 11400000, guid: 7f95610021a7f4449af6ecb182171b96, type: 2}
-  amount: 1
 --- !u!135 &1417271479
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -345,3 +326,25 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.23570588
   m_Center: {x: -0.0028520587, y: 0.30371934, z: 0.4918208}
+--- !u!114 &2195355130995781760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3830044629709278434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3465f8bda2b376b448d4eac4612753a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 3
+  player: {fileID: 0}
+  textAction1: Coletar
+  textAction2: Comer
+  button: 0
+  health: 5
+  outline: {fileID: 0}
+  exclamationCursor: {fileID: 2800000, guid: d3586b50751f28c48882ab3e1427c950, type: 3}
+  item: {fileID: 11400000, guid: 7f95610021a7f4449af6ecb182171b96, type: 2}
+  amount: 1

@@ -9,7 +9,7 @@ public class MousePosition : MonoBehaviour
     [SerializeField] LayerMask layerMask;
     [SerializeField] PlayerActions playerActions;
     public NavMeshAgent agent;
-    Interactable interactable;
+    public Interactable interactable;
 
     [Header("Building")]
     bool buildMode = false;
@@ -38,25 +38,8 @@ public class MousePosition : MonoBehaviour
             {
                 Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
             }
-            if (Input.GetMouseButtonDown(0) && playerActions.canAct)
-            {
-                if (buildMode)
-                {
-                    OnClicked?.Invoke();
-                }
-                else
-                {
-                    if (interactable != null)
-                    {
-                        SetTarget(interactable);
-                    }
-                    else
-                    {
-                        playerActions.RemoveTarget();
-                        playerActions.MoveToPoint(rayCastHit.point);
-                    }
-                }
-            }
+            RightButton(interactable, rayCastHit.point);
+            LeftButton(interactable, rayCastHit.point);
         }
         if (Input.GetKeyDown(KeyCode.Escape) && buildMode) OnExit?.Invoke();
     }
@@ -73,9 +56,32 @@ public class MousePosition : MonoBehaviour
     {
         buildMode = !buildMode;
     }
-
-    void SetTarget(Interactable newTarget)
+    #region Inputs
+    void RightButton(Interactable newTarget, Vector3 point)
     {
-        playerActions.SetTarget(newTarget);
+        if (Input.GetMouseButtonDown(1) && playerActions.canAct)
+        {
+            if (!buildMode)
+            {
+                UIActions.instance.ClosePanel();
+                playerActions.SetTarget(interactable, point, 1);
+            }
+        }
     }
+    void LeftButton(Interactable newTarget, Vector3 point)
+    {
+        if (Input.GetMouseButtonDown(0) && playerActions.canAct)
+        {
+            if (buildMode)
+            {
+                OnClicked?.Invoke();
+            }
+            else
+            {
+                UIActions.instance.ClosePanel();
+                playerActions.SetTarget(interactable, point, 0);
+            }
+        }
+    }
+    #endregion
 }

@@ -9,15 +9,15 @@ public class Campfire : Interactable
     [SerializeField] Light fireLight;
     [SerializeField] GameObject fireObject;
 
-    public override void Interact()
+    public override void BaseAction()
     {
-        base.Interact();
         turnedOn = !turnedOn;
         fireLight.gameObject.SetActive(turnedOn);
         fireObject.SetActive(turnedOn);
         if (!turnedOn)
         {
             GameManager.instance.nearFire = false;
+            textAction1 = "Acender";
         }
         else
         {
@@ -28,6 +28,7 @@ public class Campfire : Interactable
                 if (collider.CompareTag("Player"))
                 {
                     GameManager.instance.nearFire = true;
+                    textAction1 = "Apagar";
                 }
             }
         }

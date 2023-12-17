@@ -7,14 +7,13 @@ using UnityEngine.EventSystems;
 public class Interactable : MonoBehaviour
 {
     public float radius = 3f;
-
-    bool isFocus = false;
     public Transform player;
-    PlayerActions playerActions;
-    bool hasInteracted = false;
-
+    public string textAction1 = null;
+    public string textAction2 = "Cancelar";
+    protected PlayerActions playerActions;
+    public int button;
     public int health = 5;
-
+    private Renderer renderer;
     public Outline outline;
     [SerializeField] Texture2D exclamationCursor;
 
@@ -30,41 +29,20 @@ public class Interactable : MonoBehaviour
         }
         this.outline.enabled = false;
     }
-
-    public virtual void Interact()
+    public void Interact(Transform player)
     {
-        playerActions.agent.ResetPath();
-    }
-
-    public virtual void Update()
-    {
-        if (isFocus && !hasInteracted)
-        {
-            float distance = Vector3.Distance(player.position, transform.position);
-            if(distance <= radius)
-            {
-                Debug.Log("Interact");
-                hasInteracted= true;
-                Interact();
-            }
+        playerActions = player.gameObject.GetComponent<PlayerActions>();
+        if(button == 0){
+            BaseAction();
+        }else{
+            renderer = GetComponentInChildren<Renderer>();
+            Vector3 offset = renderer.bounds.center;
+            UIActions.instance.AddActions(BaseAction, SecundaryAction, offset, textAction1, textAction2);
         }
     }
 
-    public void OnFocus(Transform playerTransform)
-    {
-        isFocus = true;
-        player= playerTransform;
-        playerActions = playerTransform.gameObject.GetComponent<PlayerActions>();
-        hasInteracted = false;
-    }
-
-    public void OnDefocused()
-    {
-        isFocus = false;
-        player = null;
-        playerActions = null;
-        hasInteracted = false;
-    }
+    public virtual void BaseAction(){}
+    public virtual void SecundaryAction(){}
 
     private void OnDrawGizmosSelected() {
         Gizmos.color = Color.yellow;

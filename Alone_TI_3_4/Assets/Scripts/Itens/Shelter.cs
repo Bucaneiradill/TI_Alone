@@ -6,9 +6,8 @@ public class Shelter : Interactable
 {
     bool canUse = true;
     float cooldown = 10;
-    public override void Interact()
+    public override void BaseAction()
     {
-        base.Interact();
         if (canUse)
         {
             canUse = false;
