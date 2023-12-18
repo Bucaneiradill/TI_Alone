@@ -19,6 +19,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject inventoryButton;
     [SerializeField] GameObject controlsPanel;
     [SerializeField] GameObject creditsPanel;
+    [SerializeField] GameObject VictoryPanel;
 
     [Header("Actions")]
     public GameObject panelActions;
@@ -203,6 +204,10 @@ public class UIManager : MonoBehaviour
     {
         Application.Quit();
     }
-    
+
+     public void ShowVictoryPanel()
+    {
+        VictoryPanel.SetActive(true);
+    }  
         
 }
