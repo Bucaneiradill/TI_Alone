@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 890372bf30156f44cafde145456b0118, type: 3}
   m_Name: Boat
   m_EditorClassIdentifier: 
-  PrefabItem: {fileID: 0}
+  PrefabItem: {fileID: 919132149155446097, guid: b721382df92726a4595aeeb7b7a5bbd1, type: 3}
   iD: 0
   name: New Item
   icon: {fileID: 0}
@@ -20,5 +20,6 @@ MonoBehaviour:
   isDefaultItem: 0
   isEquipable: 0
   isConsumable: 0
+  isPlaceable: 0
   maxStackSize: 0
   ingredients: []

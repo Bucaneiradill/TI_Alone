@@ -9,7 +9,7 @@ public class QuestGoal
 
     public int requiredAmount;
     public int currentAmount;
-    public Item specificItem;
+    public List<Item> specificItem;
 
     //verifica se já chegou na quantidade necessária da missão
     public bool IsReached()
@@ -22,12 +22,12 @@ public class QuestGoal
     {
         if(goalType == GoalType.Gathering)
         {
-            if(specificItem == null)
+            if(specificItem.Count == 0)
             {
                 currentAmount++;
                 return;
             }
-            else if(item == specificItem)
+            else if(specificItem.Contains(item))
             {
                 currentAmount++;
             }
@@ -38,12 +38,12 @@ public class QuestGoal
     {
         if (goalType == GoalType.Crafting)
         {
-            if (specificItem == null)
+            if (specificItem.Count == 0)
             {
                 currentAmount++;
                 return;
             }
-            else if (item == specificItem)
+            else if (specificItem.Contains(item))
             {
                 currentAmount++;
             }
