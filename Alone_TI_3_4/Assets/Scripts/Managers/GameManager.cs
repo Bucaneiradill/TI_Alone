@@ -291,7 +291,13 @@ public class GameManager : MonoBehaviour
         //TimeManager.instance.updateDayCycle();
     }
 
-
+    private void OnLevelWasLoaded()
+    {
+        if(SceneManager.GetActiveScene().name == "Menu")
+        {
+            BoatPartsCollected = 0;
+        }
+    }
 
     public void CollectBoatPart(){
 

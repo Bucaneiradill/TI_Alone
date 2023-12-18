@@ -343,6 +343,7 @@ MonoBehaviour:
   dropPoint: {fileID: 2042902665442377522}
   particlePoint: {fileID: 2861089735640116311}
   particle: {fileID: 3190041756260390103, guid: 161dcb31c3ddf9344961180b1746ce57, type: 3}
+  cooldown: 1800
   SaveHealth: 0
   obj: {fileID: 0}
   counterType: {fileID: 11400000, guid: ae517a8408777c6449e2bf96d78c73f8, type: 2}
