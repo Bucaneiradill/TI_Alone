@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87c099315f36ae341beea1258e0c6531, type: 3}
+  m_Name: Quest4
+  m_EditorClassIdentifier: 
+  title: Sucateador
+  description: Colete as partes perdidas do barco
+  goal:
+    goalType: 0
+    requiredAmount: 4
+    currentAmount: 0
+    specificItem:
+    - {fileID: 11400000, guid: 89c1dfd28d3e6354eb74df1094ba69ec, type: 2}
+    - {fileID: 11400000, guid: 7262861fb12731e4fa547dfd68615643, type: 2}
+    - {fileID: 11400000, guid: 3bf453045749dba41bba0c4f60aa0e0f, type: 2}
+    - {fileID: 11400000, guid: b0c88a5578f8c3d479affccb6b7402be, type: 2}
+  nextQuest: {fileID: 0}
