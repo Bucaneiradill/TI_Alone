@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 using TMPro;
 using System;
@@ -38,6 +39,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] public bool calm;
     [SerializeField] public bool unstable;
     [SerializeField] public bool insane;
+
+    [Header("BoatQuest")]
+    public int BoatPartsCollected = 0;
+    
 
     [HideInInspector] public delegate void UpdateVignette(int life);
     [HideInInspector] public UpdateVignette updateVignette;
@@ -286,4 +291,16 @@ public class GameManager : MonoBehaviour
         //TimeManager.instance.updateDayCycle();
     }
 
+
+
+    public void CollectBoatPart(){
+
+        BoatPartsCollected = BoatPartsCollected+1;
+        Debug.Log("coletou"+ BoatPartsCollected + "partes do barco" );
+        if(BoatPartsCollected == 4)
+        {
+            SceneManager.LoadScene("Fuga");
+        }
+        
+    }
 }

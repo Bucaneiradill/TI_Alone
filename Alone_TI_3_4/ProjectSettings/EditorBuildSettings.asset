@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TrueBeach.unity
     guid: 40aed5f893f94524cb7cb106b4ac7587
+  - enabled: 1
+    path: Assets/Scenes/Fuga.unity
+    guid: ad7cb4c26dab4c143b506e5630459e9a
   m_configObjects: {}

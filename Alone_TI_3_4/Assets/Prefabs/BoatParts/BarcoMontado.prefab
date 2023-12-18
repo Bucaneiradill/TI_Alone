@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1943726554072845580}
+  - component: {fileID: -1311380306372521732}
   m_Layer: 0
   m_Name: BarcoMontado
   m_TagString: Untagged
@@ -35,6 +36,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-1311380306372521732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6442194799587279114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69c8f942a82657e4c9023301c7dcbf86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 3
+  player: {fileID: 0}
+  health: 5
+  outline: {fileID: 0}
+  exclamationCursor: {fileID: 2800000, guid: d3586b50751f28c48882ab3e1427c950, type: 3}
 --- !u!1001 &649929198013960466
 PrefabInstance:
   m_ObjectHideFlags: 0
