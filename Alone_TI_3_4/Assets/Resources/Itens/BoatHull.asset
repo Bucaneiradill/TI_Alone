@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 890372bf30156f44cafde145456b0118, type: 3}
   m_Name: BoatHull
   m_EditorClassIdentifier: 
-  PrefabItem: {fileID: 0}
+  PrefabItem: {fileID: 8309259742511784363, guid: 0d4b063d06e06d440bed3198a70a6428, type: 3}
   iD: 0
   name: New Item
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: e9f8d913a7f0caa4da520905c7400601, type: 3}
   Derscription: 
   isDefaultItem: 0
   isEquipable: 0
   isConsumable: 0
+  isPlaceable: 0
   maxStackSize: 0
   ingredients: []
