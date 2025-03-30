@@ -5,7 +5,8 @@ using UnityEngine;
 public class EnemyAdapter : EnemyData
 {
      public EnemyAdapter(EnemySave enemy){
+        name = enemy.name;
         position = enemy.transform.position;
-        rotation = enemy.transform.rotation.eulerAngles;
+        rotation = enemy.transform.rotation;
      }
 }
