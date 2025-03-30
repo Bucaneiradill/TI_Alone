@@ -4,7 +4,7 @@
 
     Descrição:  Gerencia quais itens foram adicionados ao inventário e quanto espaço resta no mesmo.
 
-    Alone - Jogos Digitais SG –  09/04/2022
+    Alone - Jogos Digitais SG –  09/04/2023
     Modificado por: Italo 
 ***************************************************************/
 

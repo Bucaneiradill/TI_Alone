@@ -6,7 +6,6 @@ public class PlayerActions : MonoBehaviour
 {
     public NavMeshAgent agent;
     public Interactable target;
-    //bool isInteracting;
     public Animator anim;
     public bool canAct = true;
     float initialSpeed;
@@ -27,19 +26,19 @@ public class PlayerActions : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (target != null)
-        {
-            agent.SetDestination(target.transform.position);
+       // Debug.Log(agent.velocity.magnitude);
+        if(agent.velocity.magnitude >= 0){
+            anim.SetFloat("Speed", agent.velocity.magnitude);
             FaceTarget();
         }
-        anim.SetFloat("Speed", agent.velocity.magnitude);
-        //if (agent.remainingDistance < 0.5f)
-        //{
-        //    anim.SetInteger("State", 0);
-        //}
+        if(target == null) return;
+        if(Vector3.Distance(transform.position, target.transform.position) < target.radius){
+            target.Interact(this.transform);
+            agent.ResetPath();
+            target = null;
+        }    
         Walk();
     }
-
     public void MoveToPoint(Vector3 point){
         agent.SetDestination(point);
         anim.SetInteger("State", 1);
@@ -47,7 +46,7 @@ public class PlayerActions : MonoBehaviour
 
     public void FollowTarget(Interactable newTarget){
         agent.updateRotation = false;
-        agent.stoppingDistance = newTarget.radius * .8f;
+        //agent.stoppingDistance = newTarget.radius * .8f;
     }
 
     public void StopFollowingTarget(){
@@ -58,30 +57,25 @@ public class PlayerActions : MonoBehaviour
     }
 
     void FaceTarget(){
+        if(target == null) return;
         Vector3 directon = (target.transform.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(directon.x, 0f, directon.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.fixedDeltaTime * 5);
     }
 
-    public void SetTarget(Interactable newTarget)
+    public void SetTarget(Interactable newTarget, Vector3 point, int button)
     {
-        if(newTarget != target)
-        {
-            if(target != null)
-            {
-                target.OnDefocused();
-            }
+        RemoveTarget();
+        MoveToPoint(point);
+        if(newTarget == null) return;
+        if(newTarget != target){
             target = newTarget;
-            FollowTarget(newTarget);
+            target.button = button;            
+            FollowTarget(newTarget);           
         }
-        newTarget.OnFocus(gameObject.transform);
     }
 
     public void RemoveTarget(){
-        if(target != null)
-        {
-            target.OnDefocused();
-        }
         target = null;
         StopFollowingTarget();
     }
@@ -101,20 +95,23 @@ public class PlayerActions : MonoBehaviour
 
     public void Walk()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
-            {
-                anim.SetBool("Stealth", IsWalking);
-                agent.speed = walkSpeed;
-                IsWalking = true;
+        if (Input.GetKey(KeyCode.LeftShift)){ 
+            anim.SetBool("Stealth", IsWalking);
+            agent.speed = walkSpeed;
+            IsWalking = true;
                 
-            } 
-            else
-            {
-                anim.SetBool("Stealth", IsWalking);
-                agent.speed = runSpeed;
-                IsWalking = false;
-            }
-        
+        } 
+        else{
+            anim.SetBool("Stealth", IsWalking);
+            agent.speed = runSpeed;
+            IsWalking = false;
+        }
+    }
+    public void Collect(){
+        anim.SetTrigger("Collect");
+    }
+    public void InteractSource(){
+        anim.SetTrigger("Interact");
     }
 
     //save player

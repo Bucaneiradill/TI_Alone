@@ -4,7 +4,7 @@
 
     Descrição:  Armazena o nome e icone do item.
 
-    Alone - Jogos Digitais SG –  09/04/2022
+    Alone - Jogos Digitais SG –  09/10/2023
     Modificado por: Italo 
 ***************************************************************/
 

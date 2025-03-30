@@ -4,8 +4,8 @@
 
     Descrição:  Gerencia a interface e adiciona os itens no InventorySlot.
 
-    Alone - Jogos Digitais SG –  09/04/2022
-    Modificado por: 
+    Alone - Jogos Digitais SG –  09/04/2023
+    Modificado por: Italo
 ***************************************************************/
 
 //-------------------------- Bibliotecas Usadas --------------------------------

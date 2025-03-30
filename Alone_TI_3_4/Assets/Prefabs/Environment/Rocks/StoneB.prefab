@@ -308,10 +308,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 2
   player: {fileID: 0}
+  textAction1: Bater
+  textAction2: Coletar
+  button: 0
   health: 10
   outline: {fileID: 0}
   exclamationCursor: {fileID: 2800000, guid: d3586b50751f28c48882ab3e1427c950, type: 3}
   loot: {fileID: 2519834521002097690, guid: afca0f54cb5c6c34188f600d40ba569c, type: 3}
+  item: {fileID: 11400000, guid: f34a1b39a03900b4c9779c1402e112ea, type: 2}
   lootAmount: 3
   lootName: Pedra(s)
   dropPoint: {fileID: 626876745981067426, guid: 9f116a0b7282d534485c8ec885f77478, type: 3}

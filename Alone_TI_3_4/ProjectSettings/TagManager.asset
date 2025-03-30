@@ -7,6 +7,7 @@ TagManager:
   - RecipePanel
   - DropItem
   - Vignette
+  - Mouse
   layers:
   - Default
   - TransparentFX
